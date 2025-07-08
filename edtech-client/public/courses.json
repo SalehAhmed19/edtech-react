@@ -1,0 +1,314 @@
+[
+  {
+    "courseId": "CS101",
+    "courseTitle": "Introduction to Programming with Python",
+    "courseBannerImage": "https://placehold.co/600x400/87CEEB/FFFFFF?text=Python+Intro",
+    "lessionsNumber": 25,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Popular"
+  },
+  {
+    "courseId": "WEB201",
+    "courseTitle": "Modern Web Development with React & Tailwind CSS",
+    "courseBannerImage": "https://placehold.co/600x400/98FB98/FFFFFF?text=React+WebDev",
+    "lessionsNumber": 40,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Trending"
+  },
+  {
+    "courseId": "DS305",
+    "courseTitle": "Data Science Fundamentals with R",
+    "courseBannerImage": "https://placehold.co/600x400/FFD700/FFFFFF?text=Data+Science+R",
+    "lessionsNumber": 30,
+    "lessionLevel": "Advanced",
+    "coursesPopularityStatus": "Popular"
+  },
+  {
+    "courseId": "GD150",
+    "courseTitle": "Graphic Design Principles for Beginners",
+    "courseBannerImage": "https://placehold.co/600x400/DDA0DD/FFFFFF?text=Graphic+Design",
+    "lessionsNumber": 18,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "New"
+  },
+  {
+    "courseId": "ML400",
+    "courseTitle": "Machine Learning with TensorFlow",
+    "courseBannerImage": "https://placehold.co/600x400/FF6347/FFFFFF?text=TensorFlow+ML",
+    "lessionsNumber": 35,
+    "lessionLevel": "Expert",
+    "coursesPopularityStatus": "Trending"
+  },
+  {
+    "courseId": "CYB101",
+    "courseTitle": "Cybersecurity Essentials",
+    "courseBannerImage": "https://placehold.co/600x400/ADD8E6/FFFFFF?text=Cybersecurity",
+    "lessionsNumber": 22,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Popular"
+  },
+  {
+    "courseId": "DB301",
+    "courseTitle": "Advanced SQL and Database Design",
+    "courseBannerImage": "https://placehold.co/600x400/8A2BE2/FFFFFF?text=SQL+Databases",
+    "lessionsNumber": 28,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Popular"
+  },
+  {
+    "courseId": "PM200",
+    "courseTitle": "Agile Project Management",
+    "courseBannerImage": "https://placehold.co/600x400/3CB371/FFFFFF?text=Agile+PM",
+    "lessionsNumber": 15,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "New"
+  },
+  {
+    "courseId": "UX250",
+    "courseTitle": "User Experience (UX) Design Principles",
+    "courseBannerImage": "https://placehold.co/600x400/FFB6C1/FFFFFF?text=UX+Design",
+    "lessionsNumber": 20,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Trending"
+  },
+  {
+    "courseId": "CLD401",
+    "courseTitle": "Cloud Computing with AWS",
+    "courseBannerImage": "https://placehold.co/600x400/FF8C00/FFFFFF?text=AWS+Cloud",
+    "lessionsNumber": 38,
+    "lessionLevel": "Advanced",
+    "coursesPopularityStatus": "Popular"
+  },
+  {
+    "courseId": "GAM101",
+    "courseTitle": "Game Development with Unity",
+    "courseBannerImage": "https://placehold.co/600x400/B0E0E6/FFFFFF?text=Unity+GameDev",
+    "lessionsNumber": 32,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Trending"
+  },
+  {
+    "courseId": "BIO205",
+    "courseTitle": "Bioinformatics for Beginners",
+    "courseBannerImage": "https://placehold.co/600x400/9370DB/FFFFFF?text=Bioinformatics",
+    "lessionsNumber": 20,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "New"
+  },
+  {
+    "courseId": "FIN310",
+    "courseTitle": "Financial Modeling & Analysis",
+    "courseBannerImage": "https://placehold.co/600x400/D2B48C/FFFFFF?text=Financial+Analysis",
+    "lessionsNumber": 25,
+    "lessionLevel": "Advanced",
+    "coursesPopularityStatus": "Popular"
+  },
+  {
+    "courseId": "MRK200",
+    "courseTitle": "Digital Marketing Strategies",
+    "courseBannerImage": "https://placehold.co/600x400/F08080/FFFFFF?text=Digital+Marketing",
+    "lessionsNumber": 17,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Trending"
+  },
+  {
+    "courseId": "AI500",
+    "courseTitle": "Deep Learning with PyTorch",
+    "courseBannerImage": "https://placehold.co/600x400/4682B4/FFFFFF?text=PyTorch+DL",
+    "lessionsNumber": 45,
+    "lessionLevel": "Expert",
+    "coursesPopularityStatus": "Popular"
+  },
+  {
+    "courseId": "IOT201",
+    "courseTitle": "Introduction to IoT Development",
+    "courseBannerImage": "https://placehold.co/600x400/6A5ACD/FFFFFF?text=IoT+Dev",
+    "lessionsNumber": 20,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "New"
+  },
+  {
+    "courseId": "ARVR300",
+    "courseTitle": "Augmented & Virtual Reality Development",
+    "courseBannerImage": "https://placehold.co/600x400/00CED1/FFFFFF?text=ARVR+Dev",
+    "lessionsNumber": 30,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Trending"
+  },
+  {
+    "courseId": "SEC405",
+    "courseTitle": "Ethical Hacking & Penetration Testing",
+    "courseBannerImage": "https://placehold.co/600x400/B22222/FFFFFF?text=Ethical+Hacking",
+    "lessionsNumber": 35,
+    "lessionLevel": "Advanced",
+    "coursesPopularityStatus": "Popular"
+  },
+  {
+    "courseId": "DES100",
+    "courseTitle": "Introduction to UI Design",
+    "courseBannerImage": "https://placehold.co/600x400/FFC0CB/FFFFFF?text=UI+Design",
+    "lessionsNumber": 15,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "New"
+  },
+  {
+    "courseId": "BLOCK300",
+    "courseTitle": "Blockchain Development with Solidity",
+    "courseBannerImage": "https://placehold.co/600x400/4169E1/FFFFFF?text=Blockchain+Solidity",
+    "lessionsNumber": 28,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Trending"
+  },
+  {
+    "courseId": "BIGD400",
+    "courseTitle": "Big Data Analytics with Spark",
+    "courseBannerImage": "https://placehold.co/600x400/DAA520/FFFFFF?text=BigData+Spark",
+    "lessionsNumber": 33,
+    "lessionLevel": "Expert",
+    "coursesPopularityStatus": "Popular"
+  },
+  {
+    "courseId": "NET101",
+    "courseTitle": "Networking Fundamentals",
+    "courseBannerImage": "https://placehold.co/600x400/F0F8FF/000000?text=Networking",
+    "lessionsNumber": 20,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "New"
+  },
+  {
+    "courseId": "MOB301",
+    "courseTitle": "Mobile App Development with Flutter",
+    "courseBannerImage": "https://placehold.co/600x400/8B008B/FFFFFF?text=Flutter+Mobile",
+    "lessionsNumber": 38,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Trending"
+  },
+  {
+    "courseId": "DEVOPS200",
+    "courseTitle": "DevOps Principles & Practices",
+    "courseBannerImage": "https://placehold.co/600x400/6B8E23/FFFFFF?text=DevOps",
+    "lessionsNumber": 25,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Popular"
+  },
+  {
+    "courseId": "PM350",
+    "courseTitle": "Product Management Masterclass",
+    "courseBannerImage": "https://placehold.co/600x400/FF4500/FFFFFF?text=Product+Mgmt",
+    "lessionsNumber": 20,
+    "lessionLevel": "Advanced",
+    "coursesPopularityStatus": "Trending"
+  },
+  {
+    "courseId": "SOFTENG400",
+    "courseTitle": "Software Architecture Design",
+    "courseBannerImage": "https://placehold.co/600x400/778899/FFFFFF?text=Software+Arch",
+    "lessionsNumber": 30,
+    "lessionLevel": "Expert",
+    "coursesPopularityStatus": "Popular"
+  },
+  {
+    "courseId": "CYB200",
+    "courseTitle": "Network Security & Cryptography",
+    "courseBannerImage": "https://placehold.co/600x400/483D8B/FFFFFF?text=Network+Security",
+    "lessionsNumber": 28,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Popular"
+  },
+  {
+    "courseId": "WEB301",
+    "courseTitle": "Backend Development with Node.js & Express",
+    "courseBannerImage": "https://placehold.co/600x400/008080/FFFFFF?text=Node.js+Backend",
+    "lessionsNumber": 35,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Trending"
+  },
+  {
+    "courseId": "DS400",
+    "courseTitle": "Machine Learning Engineering",
+    "courseBannerImage": "https://placehold.co/600x400/BDB76B/FFFFFF?text=MLEngineering",
+    "lessionsNumber": 42,
+    "lessionLevel": "Expert",
+    "coursesPopularityStatus": "Popular"
+  },
+  {
+    "courseId": "GD200",
+    "courseTitle": "Advanced Typography & Layout",
+    "courseBannerImage": "https://placehold.co/600x400/FF69B4/FFFFFF?text=Typography+Layout",
+    "lessionsNumber": 20,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "New"
+  },
+  {
+    "courseId": "FREE101",
+    "courseTitle": "Introduction to HTML & CSS",
+    "courseBannerImage": "https://placehold.co/600x400/E0BBE4/FFFFFF?text=HTML+CSS+Free",
+    "lessionsNumber": 10,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Free"
+  },
+  {
+    "courseId": "FREE102",
+    "courseTitle": "Basics of Microsoft Excel",
+    "courseBannerImage": "https://placehold.co/600x400/957DAD/FFFFFF?text=Excel+Basics+Free",
+    "lessionsNumber": 8,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Free"
+  },
+  {
+    "courseId": "FREE103",
+    "courseTitle": "Understanding Digital Photography",
+    "courseBannerImage": "https://placehold.co/600x400/D291BC/FFFFFF?text=Digital+Photo+Free",
+    "lessionsNumber": 12,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Free"
+  },
+  {
+    "courseId": "FREE104",
+    "courseTitle": "Introduction to Graphic Design Tools",
+    "courseBannerImage": "https://placehold.co/600x400/FFC107/000000?text=Design+Tools+Free",
+    "lessionsNumber": 15,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Free"
+  },
+  {
+    "courseId": "FREE105",
+    "courseTitle": "Public Speaking Fundamentals",
+    "courseBannerImage": "https://placehold.co/600x400/20B2AA/FFFFFF?text=Public+Speaking+Free",
+    "lessionsNumber": 10,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Free"
+  },
+  {
+    "courseId": "FREE106",
+    "courseTitle": "Basic Financial Literacy",
+    "courseBannerImage": "https://placehold.co/600x400/F0E68C/000000?text=Financial+Literacy+Free",
+    "lessionsNumber": 8,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Free"
+  },
+  {
+    "courseId": "FREE107",
+    "courseTitle": "Introduction to Data Analytics Concepts",
+    "courseBannerImage": "https://placehold.co/600x400/C0C0C0/000000?text=Data+Analytics+Free",
+    "lessionsNumber": 12,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Free"
+  },
+  {
+    "courseId": "FREE108",
+    "courseTitle": "Healthy Habits for a Better Life",
+    "courseBannerImage": "https://placehold.co/600x400/90EE90/000000?text=Healthy+Habits+Free",
+    "lessionsNumber": 7,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Free"
+  },
+  {
+    "courseId": "FREE109",
+    "courseTitle": "Mindfulness and Meditation for Stress Relief",
+    "courseBannerImage": "https://placehold.co/600x400/B0E0E6/000000?text=Mindfulness+Free",
+    "lessionsNumber": 5,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Free"
+  }
+]
