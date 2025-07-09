@@ -9,7 +9,7 @@ export default function QuickTutorial() {
           Lorem ipsum dolor sit, amet consectetur adipisicing <br /> elit.
           Sapiente, at dolore voluptas laboriosam rem incidunt!
         </p>
-        <div className="mt-5 bg-white p-5 md:max-w-[1280px] lg:max-w-[1440px] mx-auto rounded-t-2xl">
+        <div className="mt-5 bg-white p-5 md:max-w-[920px] lg:max-w-[1280px] mx-auto rounded-t-2xl">
           <img src={tutorial} alt="" className="mx-auto mt-5" />
         </div>
       </div>

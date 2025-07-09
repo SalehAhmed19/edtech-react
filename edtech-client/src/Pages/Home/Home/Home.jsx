@@ -21,7 +21,7 @@ import { IoIosArrowUp } from "react-icons/io";
 export default function Home() {
   return (
     <>
-      <div className="md:max-w-[1280px] lg:max-w-[1440px] mx-auto flex flex-col gap-22">
+      <div className="md:max-w-[920px] lg:max-w-[1280px] mx-auto flex flex-col gap-22">
         <Banner />
         <Courses />
         <PopularCourses />
@@ -37,7 +37,7 @@ export default function Home() {
       <FreeCourses />
       <QuickTutorial />
       <Stats />
-      <div className="md:max-w-[1280px] lg:max-w-[1440px] mx-auto flex flex-col gap-22">
+      <div className="md:max-w-[1180px] lg:max-w-[1280px] mx-auto flex flex-col gap-22">
         <NewsLetter />
         <ContactSection />
       </div>

@@ -18,7 +18,7 @@ export default function ContactSection() {
           </div>
         </div>
         <div>
-          <div className="p-5 shadow-lg rounded-xl">
+          <div className="p-5 shadow-lg rounded-xl -mb-10 bg-white">
             <h4 className="font-semibold text-xl">Wanna say something?</h4>
             <form className="flex flex-col gap-2 mt-3">
               <div>

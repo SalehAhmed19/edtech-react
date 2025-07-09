@@ -17,7 +17,7 @@ export default function FreeCourses() {
 
   return (
     <div className="relative my-20">
-      <div className="flex items-center justify-between md:max-w-[1280px] lg:max-w-[1440px] mx-auto">
+      <div className="flex items-center justify-between md:max-w-[920px] lg:max-w-[1280px] mx-auto">
         <div>
           <h2 className="text-[40px] font-semibold text-[#FC5A57]">
             Free Courses
