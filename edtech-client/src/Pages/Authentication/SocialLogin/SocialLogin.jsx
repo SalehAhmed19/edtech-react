@@ -4,8 +4,11 @@ import { useDispatch } from "react-redux";
 import google from "../../../assets/images/google.png";
 import { auth } from "../../../firebase/firebase.config";
 import { postUsers } from "../../../RTK/Features/UsersSlice/UsersSlice";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 export default function SocialLogin() {
+  const navigate = useNavigate();
   const [signInWithGoogle, loading, error] = useSignInWithGoogle(auth);
   const dispatch = useDispatch();
 
@@ -21,6 +24,8 @@ export default function SocialLogin() {
         };
         const actionResult = await dispatch(postUsers(userInfo)).unwrap();
         console.log("User data successfully posted to DB:", actionResult);
+        navigate("/");
+        toast.success("Google sign in success!");
       } else if (error) {
         console.error("Firebase Google Sign-In Error:", error.message);
       }

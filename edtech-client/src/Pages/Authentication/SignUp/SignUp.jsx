@@ -1,15 +1,44 @@
 import { useForm } from "react-hook-form";
-
+import toast, { Toaster } from "react-hot-toast";
 import bg from "../../../assets/images/whyBg.jpg";
 import google from "../../../assets/images/google.png";
 import Divider from "../../../Components/UI/Divider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { auth } from "../../../firebase/firebase.config";
+import { postUsers } from "../../../RTK/Features/UsersSlice/UsersSlice";
 
 export default function SignUp() {
+  const navigate = useNavigate();
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+  const dispatch = useDispatch();
   const { register, handleSubmit, reset } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-    reset();
+  const handleSignInEmailPassword = async (data) => {
+    const { email, password } = data;
+    const result = await createUserWithEmailAndPassword(email, password);
+
+    try {
+      if (result && result.user) {
+        const { displayName, email, photoURL } = result.user;
+        const userInfo = {
+          name: displayName,
+          email: email,
+          photo: photoURL,
+        };
+
+        const response = await dispatch(postUsers(userInfo)).unwrap();
+        console.log("User data successfully posted to DB:", response);
+        reset();
+        navigate("/");
+        toast.success("Sign up success!");
+      } else {
+        console.error("User creation by email and pass Error:", error);
+      }
+    } catch (reduxError) {
+      console.error("Error posting user data to Redux store:", reduxError);
+    }
   };
 
   return (
@@ -21,7 +50,10 @@ export default function SignUp() {
       <p>Please sign up using your name, email address and password</p>
 
       <div className="w-2/6 mx-auto p-10">
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
+        <form
+          onSubmit={handleSubmit(handleSignInEmailPassword)}
+          className="flex flex-col gap-3"
+        >
           <input
             {...register("name")}
             type="text"
@@ -62,6 +94,7 @@ export default function SignUp() {
           </Link>
         </p>
       </div>
+      <Toaster />
     </div>
   );
 }

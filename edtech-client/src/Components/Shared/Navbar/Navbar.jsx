@@ -1,6 +1,17 @@
+import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import { auth } from "../../../firebase/firebase.config";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Navbar() {
+  const [user] = useAuthState(auth);
+  const [signOut, loading, error] = useSignOut(auth);
+  const handleSignOut = async () => {
+    const signout = await signOut();
+    if (signout) {
+      toast.success("You're signed out!");
+    }
+  };
   return (
     <div className="bg-[#fc5a57] p-5 text-white sticky top-0 z-50">
       {" "}
@@ -12,14 +23,24 @@ export default function Navbar() {
             <li>Course</li>
             <li>About Us</li>
             <li>Contact</li>
-            <Link to="/authentication/login">
-              <button className="bg-white text-black px-5 py-2 rounded-md cursor-pointer">
-                Login
+            {user ? (
+              <button
+                onClick={handleSignOut}
+                className="bg-white text-black px-5 py-2 rounded-md cursor-pointer"
+              >
+                Sign out
               </button>
-            </Link>
+            ) : (
+              <Link to="/authentication/login">
+                <button className="bg-white text-black px-5 py-2 rounded-md cursor-pointer">
+                  Login
+                </button>
+              </Link>
+            )}
           </ul>
         </div>
-      </div>{" "}
+      </div>
+      <Toaster />
     </div>
   );
 }
