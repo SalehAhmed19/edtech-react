@@ -1,14 +1,25 @@
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import bg from "../../../assets/images/whyBg.jpg";
 import Divider from "../../../Components/UI/Divider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import { auth } from "../../../firebase/firebase.config";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Login() {
   const { register, handleSubmit, reset } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-    reset();
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const navigate = useNavigate();
+
+  const handleEmailLogin = async (data) => {
+    const { email, password } = data;
+    const result = await signInWithEmailAndPassword(email, password);
+    if (result && result.user) {
+      navigate("/");
+      toast.success("Logged in successful!");
+    }
   };
   return (
     <div
@@ -22,10 +33,13 @@ export default function Login() {
       </p>
 
       <div className="w-2/6 mx-auto p-10">
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
+        <form
+          onSubmit={handleSubmit(handleEmailLogin)}
+          className="flex flex-col gap-3"
+        >
           <input
-            {...register("name")}
-            type="text"
+            {...register("email")}
+            type="email"
             placeholder="Write your email here"
             className="border border-[#FC5957] px-5 py-2 rounded-md w-full bg-white"
           />
@@ -55,6 +69,7 @@ export default function Login() {
           </Link>
         </p>
       </div>
+      <Toaster />
     </div>
   );
 }
