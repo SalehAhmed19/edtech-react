@@ -1,8 +1,8 @@
 import bg from "../../../assets/images/whyBg.jpg";
-import google from "../../../assets/images/google.png";
 import Divider from "../../../Components/UI/Divider";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 export default function Login() {
   const { register, handleSubmit, reset } = useForm();
@@ -43,9 +43,7 @@ export default function Login() {
 
         <Divider />
 
-        <button className="bg-white px-5 py-2 flex items-center gap-5 justify-center w-full border border-[#fc5a5749] rounded-md cursor-pointer">
-          <img src={google} alt="" className="w-6" /> Sign in with Google
-        </button>
+        <SocialLogin />
 
         <p className="mt-5 text-center">
           New to EdTech?{" "}
