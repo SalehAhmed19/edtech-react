@@ -11,7 +11,7 @@ export default function NewsLetter() {
           className="rounded-full px-5 py-2 w-full"
           placeholder="Write your email"
         />
-        <button className="bg-[#FC5A57] px-5 py-2 rounded-full text-white">
+        <button className="bg-[#333] px-5 py-2 rounded-full text-white">
           Subscribe
         </button>
       </form>

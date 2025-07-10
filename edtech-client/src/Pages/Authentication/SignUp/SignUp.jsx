@@ -80,7 +80,7 @@ export default function SignUp() {
 
         <Divider />
 
-        <button className="bg-white px-5 py-2 flex items-center gap-5 justify-center w-full border border-[#fc5a5749] rounded-md cursor-pointer">
+        <button className="bg-white px-5 py-2 flex items-center gap-5 justify-center w-full border border-[#33349] rounded-md cursor-pointer">
           <img src={google} alt="" className="w-6" /> Sign in with Google
         </button>
 

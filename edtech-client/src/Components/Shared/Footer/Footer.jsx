@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <>
-      <div className="bg-[#FC5A57] text-white grid grid-cols-4 gap-5 px-10 py-20">
+      <div className="bg-[#333] text-white grid grid-cols-4 gap-5 px-10 py-20">
         <div className="flex flex-col justify-between">
           <div>
             <h3 className="font-semibold text-2xl">EdTech</h3>

@@ -14,7 +14,7 @@ export default function BecomeInstructor() {
           as an instructor now!
         </p>
 
-        <button className="px-5 py-2 bg-[#FC5A57] block mx-auto mt-5 rounded-md text-white">
+        <button className="px-5 py-2 bg-[#333] block mx-auto mt-5 rounded-md text-white">
           Become a teacher
         </button>
       </div>

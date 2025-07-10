@@ -44,7 +44,7 @@ export default function Home() {
       <ScrollToTop
         smooth
         style={{
-          backgroundColor: "#FC5A57",
+          backgroundColor: "#333",
           borderRadius: "100px",
           display: "flex",
           justifyContent: "center",

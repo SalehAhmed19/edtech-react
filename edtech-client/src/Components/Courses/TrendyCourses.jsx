@@ -1,7 +1,7 @@
 import SectionTitle from "../SectionTitle/SectionTitle";
 import avatar from "../../assets/images/avtar.jpg";
 
-import PopularCourseCard from "../Cards/PopularCourseCard";
+import PopularCourseCard from "../Cards/CourseCard";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getCourses } from "../../RTK/Features/CoursesSlice/CoursesSlice";

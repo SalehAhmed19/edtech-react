@@ -3,7 +3,7 @@ import tutorial from "../../assets/images/tutorial.svg";
 export default function QuickTutorial() {
   return (
     <>
-      <div className="bg-[#FC5A57] pt-10 text-center text-white">
+      <div className="bg-[#333] pt-10 text-center text-white">
         <h2 className="text-[40px] font-semibold">Quick Tutorial</h2>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing <br /> elit.

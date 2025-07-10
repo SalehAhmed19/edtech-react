@@ -21,10 +21,10 @@ export default function Banner() {
         </h1>
 
         <div className="flex gap-5">
-          <button className="bg-[#fc5a57] text-white px-5 py-2 rounded-md cursor-pointer">
+          <button className="bg-[#333] text-white px-5 py-2 rounded-md cursor-pointer">
             Enroll Now
           </button>
-          <button className="bg-white text-[#fc5a57] px-5 py-2 rounded-md cursor-pointer border border-dashed">
+          <button className="bg-white text-[#333] px-5 py-2 rounded-md cursor-pointer border border-dashed">
             About us
           </button>
         </div>
@@ -36,7 +36,7 @@ export default function Banner() {
           eligendi laudantium aut.
         </p>
 
-        <div className="my-5 flex items-center gap-5 text-[#FC5A57] text-2xl">
+        <div className="my-5 flex items-center gap-5 text-[#333] text-2xl">
           <p>
             <FaFacebook />
           </p>

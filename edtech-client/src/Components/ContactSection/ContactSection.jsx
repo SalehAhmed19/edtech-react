@@ -48,7 +48,7 @@ export default function ContactSection() {
                 />
               </div>
 
-              <button className="bg-[#FC5A57] px-5 py-2 rounded-md text-white">
+              <button className="bg-[#333] px-5 py-2 rounded-md text-white">
                 Send Message
               </button>
             </form>

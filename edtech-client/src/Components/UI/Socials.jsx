@@ -69,7 +69,7 @@ const StyledWrapper = styled.div`
   .background {
     position: absolute;
     inset: 0;
-    background-color: #fc5a57;
+    background-color: #333;
   }
 
   .logo {

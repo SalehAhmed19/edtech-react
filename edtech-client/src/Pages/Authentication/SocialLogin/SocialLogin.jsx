@@ -37,7 +37,7 @@ export default function SocialLogin() {
   return (
     <button
       onClick={handleGoogleSignin}
-      className="bg-white px-5 py-2 flex items-center gap-5 justify-center w-full border border-[#fc5a5749] rounded-md cursor-pointer"
+      className="bg-white px-5 py-2 flex items-center gap-5 justify-center w-full border border-[#33349] rounded-md cursor-pointer"
       disabled={loading}
     >
       <img src={google} alt="Google logo" className="w-6" />

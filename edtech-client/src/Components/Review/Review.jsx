@@ -40,10 +40,10 @@ export default function Review() {
         <div ref={sliderRef} className="keen-slider">
           {urls.map((url) => (
             <div className="keen-slider__slide relative">
-              <div className="p-2 bg-[#FC5A57] h-10 w-10 flex justify-center items-center text-white rounded-full ml-5 -mb-5">
+              <div className="p-2 bg-[#333] h-10 w-10 flex justify-center items-center text-white rounded-full ml-5 -mb-5">
                 <FaQuoteLeft />
               </div>
-              <div className="border border-[#FC5A57] px-5 py-10 rounded-md">
+              <div className="border border-[#333] px-5 py-10 rounded-md">
                 <p>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex
                   unde sit nostrum? Expedita quod, laudantium quo ducimus, quasi
