@@ -1,17 +1,11 @@
 import SectionTitle from "../SectionTitle/SectionTitle";
 import NewCourseCard from "../Cards/NewCourseCard";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { getCourses } from "../../RTK/Features/CoursesSlice/CoursesSlice";
+import useGetCourses from "../../Hooks/Courses/useGetCourses";
+import { useState } from "react";
 
 export default function NewCourses() {
   const [show, setShow] = useState();
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getCourses());
-  }, [dispatch]);
-
-  const courses = useSelector((state) => state.CoursesSlice.courses);
+  const { courses } = useGetCourses();
   const newCourses = courses.filter(
     (course) => course.coursesPopularityStatus === "New"
   );

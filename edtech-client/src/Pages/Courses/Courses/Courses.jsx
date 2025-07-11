@@ -155,6 +155,7 @@ export default function Courses() {
     { tab: "Software Engineering", items: softwareEngineeringCourses },
     { tab: "Software Skills", items: softwareSkillsCourses },
     { tab: "Photography", items: photographyCourses },
+    { tab: "IoT", items: ioTCourses },
     { tab: "Soft Skills", items: softSkillsCourses },
     { tab: "Health & Wellness", items: healthCourses },
   ];
@@ -182,6 +183,8 @@ export default function Courses() {
                     title={course.courseTitle}
                     lesson={course.lessionsNumber}
                     level={course.lessionLevel}
+                    id={course.courseId}
+                    course={course}
                   />
                 ))}
               </div>

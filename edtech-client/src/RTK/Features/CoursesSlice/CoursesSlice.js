@@ -10,7 +10,7 @@ const initialState = {
 
 // get action
 export const getCourses = createAsyncThunk("courses", async () => {
-  const response = await axios.get("courses.json");
+  const response = await axios.get("http://localhost:4000/api/courses");
 
   return response.data;
 });
@@ -25,7 +25,7 @@ const CoursesSlice = createSlice({
       state.isLoading = false;
     });
 
-    builder.addCase(getCourses.pending, (state, action) => {
+    builder.addCase(getCourses.pending, (state) => {
       state.isLoading = true;
     });
 

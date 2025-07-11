@@ -1,16 +1,10 @@
 import curve from "../../assets/images/curve.svg";
 import avatar from "../../assets/images/avtar.jpg";
 import PopularCourseCard from "../Cards/CourseCard";
-import { useDispatch, useSelector } from "react-redux";
-import { getCourses } from "../../RTK/Features/CoursesSlice/CoursesSlice";
-import { useEffect } from "react";
+import useGetCourses from "../../Hooks/Courses/useGetCourses";
 
 export default function FreeCourses() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getCourses());
-  }, [dispatch]);
-  const courses = useSelector((state) => state.CoursesSlice.courses);
+  const { courses } = useGetCourses();
   const freeCourses = courses.filter(
     (course) => course.coursesPopularityStatus === "Free"
   );
