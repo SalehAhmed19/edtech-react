@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import bg from "../../../assets/images/whyBg.jpg";
-import google from "../../../assets/images/google.png";
 import Divider from "../../../Components/UI/Divider";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -90,7 +89,6 @@ export default function SignUp() {
           </Link>
         </p>
       </div>
-      <Toaster />
     </div>
   );
 }

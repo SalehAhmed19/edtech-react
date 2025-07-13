@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { auth } from "../../../firebase/firebase.config";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 export default function Login() {
   const { register, handleSubmit } = useForm();
@@ -73,7 +73,7 @@ export default function Login() {
           </Link>
         </p>
       </div>
-      <Toaster />
+      {/* <Toaster /> */}
     </div>
   );
 }

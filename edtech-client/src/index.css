@@ -7,3 +7,12 @@
 .text-primary {
   color: #333;
 }
+button {
+  cursor: pointer;
+}
+input {
+  outline: none;
+}
+textarea {
+  outline: none;
+}

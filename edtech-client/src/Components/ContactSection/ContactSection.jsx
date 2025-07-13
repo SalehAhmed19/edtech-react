@@ -1,6 +1,14 @@
+import { useForm } from "react-hook-form";
 import contact from "../../assets/images/contact.svg";
+import toast from "react-hot-toast";
 
 export default function ContactSection() {
+  const { register, handleSubmit, reset } = useForm();
+  const onsubmit = (data) => {
+    console.log(data);
+    toast.success("Message sent!");
+    reset();
+  };
   return (
     <div>
       <img src={contact} alt="" className="mx-auto" />
@@ -20,10 +28,14 @@ export default function ContactSection() {
         <div>
           <div className="p-5 shadow-lg rounded-xl -mb-10 bg-white">
             <h4 className="font-semibold text-xl">Wanna say something?</h4>
-            <form className="flex flex-col gap-2 mt-3">
+            <form
+              onSubmit={handleSubmit(onsubmit)}
+              className="flex flex-col gap-2 mt-3"
+            >
               <div>
                 <label className="font-semibold">Name</label>
                 <input
+                  {...register("name")}
                   type="text"
                   placeholder="Your Name"
                   className="border border-[#00000020] w-full rounded-md px-5 py-2 mt-2"
@@ -33,6 +45,7 @@ export default function ContactSection() {
               <div>
                 <label className="font-semibold">Email</label>
                 <input
+                  {...register("email")}
                   type="email"
                   placeholder="Your Email"
                   className="border border-[#00000020] w-full rounded-md px-5 py-2 mt-2"
@@ -42,6 +55,7 @@ export default function ContactSection() {
               <div>
                 <label className="font-semibold">Your Message</label>
                 <textarea
+                  {...register("message")}
                   type="text"
                   placeholder="Your Message"
                   className="border border-[#00000020] w-full rounded-md px-5 py-2 mt-2"
