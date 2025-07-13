@@ -17,30 +17,34 @@ export default function Navbar() {
       {" "}
       <div className="md:max-w-[1280px] lg:max-w-[1440px] mx-auto flex items-center justify-between">
         {" "}
-        <h3 className="font-semibold text-xl">EdTech</h3>
+        <Link to="/">
+          <h3 className="font-semibold text-xl">EdTech</h3>
+        </Link>
         <div>
           <ul className="flex items-center gap-5">
             <li>
               <Link to="/courses">Course</Link>
             </li>
             <li>About Us</li>
-            <li>Contact</li>
-            {user ? (
-              <button
-                onClick={handleSignOut}
-                className="bg-white text-black px-5 py-2 rounded-md cursor-pointer"
-              >
-                Sign out
-              </button>
-            ) : (
-              <Link to="/authentication/login">
-                <button className="bg-white text-black px-5 py-2 rounded-md cursor-pointer">
-                  Login
-                </button>
-              </Link>
-            )}
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
           </ul>
         </div>
+        {user ? (
+          <button
+            onClick={handleSignOut}
+            className="bg-white text-black px-5 py-2 rounded-md cursor-pointer"
+          >
+            Sign out
+          </button>
+        ) : (
+          <Link to="/authentication/login">
+            <button className="bg-white text-black px-5 py-2 rounded-md cursor-pointer">
+              Login
+            </button>
+          </Link>
+        )}
       </div>
       <Toaster />
     </div>

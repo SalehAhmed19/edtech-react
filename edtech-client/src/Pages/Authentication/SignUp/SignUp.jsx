@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "../../../firebase/firebase.config";
 import { postUsers } from "../../../RTK/Features/UsersSlice/UsersSlice";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -58,37 +59,32 @@ export default function SignUp() {
             {...register("name")}
             type="text"
             placeholder="Full Name"
-            className="border border-[#FC5957] px-5 py-2 rounded-md w-full bg-white"
+            className="border border-[#333] px-5 py-2 rounded-md w-full bg-white"
           />
           <input
             {...register("email")}
             type="text"
             placeholder="Write your email here"
-            className="border border-[#FC5957] px-5 py-2 rounded-md w-full bg-white"
+            className="border border-[#333] px-5 py-2 rounded-md w-full bg-white"
           />
           <input
             {...register("password")}
             type="password"
             placeholder="Write your password here"
-            className="border border-[#FC5957] px-5 py-2 rounded-md w-full bg-white"
+            className="border border-[#333] px-5 py-2 rounded-md w-full bg-white"
           />
 
-          <button className="bg-[#FC5957] px-5 py-2 rounded-md text-white font-semibold cursor-pointer">
+          <button className="bg-[#333] px-5 py-2 rounded-md text-white font-semibold cursor-pointer">
             Sign in
           </button>
         </form>
-
         <Divider />
-
-        <button className="bg-white px-5 py-2 flex items-center gap-5 justify-center w-full border border-[#33349] rounded-md cursor-pointer">
-          <img src={google} alt="" className="w-6" /> Sign in with Google
-        </button>
-
+        <SocialLogin />
         <p className="mt-5 text-center">
           Already have an account?{" "}
           <Link
             to="/authentication/login"
-            className="text-[#FC5957] font-semibold ml-2"
+            className="text-[#333] font-semibold ml-2"
           >
             Sign in now
           </Link>

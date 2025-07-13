@@ -42,9 +42,6 @@ export default function SocialLogin() {
     >
       <img src={google} alt="Google logo" className="w-6" />
       {loading ? "Signing In..." : "Sign in with Google"}
-      {error && (
-        <span className="text-red-500 text-sm ml-2">({error.message})</span>
-      )}
     </button>
   );
 }

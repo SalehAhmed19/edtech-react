@@ -8,8 +8,8 @@ import { auth } from "../../../firebase/firebase.config";
 import toast, { Toaster } from "react-hot-toast";
 
 export default function Login() {
-  const { register, handleSubmit, reset } = useForm();
-  const [signInWithEmailAndPassword, user, loading, error] =
+  const { register, handleSubmit } = useForm();
+  const [signInWithEmailAndPassword, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const navigate = useNavigate();
 
@@ -41,21 +41,25 @@ export default function Login() {
             {...register("email")}
             type="email"
             placeholder="Write your email here"
-            className="border border-[#FC5957] px-5 py-2 rounded-md w-full bg-white"
+            className="border border-[#333] px-5 py-2 rounded-md w-full bg-white"
           />
           <input
             {...register("password")}
             type="password"
             placeholder="Write your password here"
-            className="border border-[#FC5957] px-5 py-2 rounded-md w-full bg-white"
+            className="border border-[#333] px-5 py-2 rounded-md w-full bg-white"
           />
 
-          <button className="bg-[#FC5957] px-5 py-2 rounded-md text-white font-semibold cursor-pointer">
+          <button className="bg-[#333] px-5 py-2 rounded-md text-white font-semibold cursor-pointer">
             Sign in
           </button>
         </form>
 
         <Divider />
+        {loading && "Signing In..."}
+        {error && (
+          <span className="text-red-500 text-sm ml-2">({error.message})</span>
+        )}
 
         <SocialLogin />
 
@@ -63,7 +67,7 @@ export default function Login() {
           New to EdTech?{" "}
           <Link
             to="/authentication/signup"
-            className="text-[#FC5957] font-semibold ml-2"
+            className="text-[#333] font-semibold ml-2"
           >
             Sign up now
           </Link>
