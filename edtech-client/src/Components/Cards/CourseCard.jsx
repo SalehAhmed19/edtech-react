@@ -2,14 +2,7 @@ import { FaBook, FaTrophy } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import { Link } from "react-router-dom";
 
-export default function CourseCard({
-  avatar,
-  title,
-  lesson,
-  level,
-  id,
-  course,
-}) {
+export default function CourseCard({ avatar, title, lesson, level, id }) {
   return (
     <div className="p-5 shadow rounded-md bg-white">
       <img className="rounded-md w-full" src={avatar} alt="" />
@@ -25,7 +18,7 @@ export default function CourseCard({
         </div>
       </div>
       <Link to={`/courses/${id}`}>
-        <button className="bg-[#333] text-white px-5 py-2 rounded-md mt-5 flex items-center gap-5">
+        <button className="bg-[#333] text-white px-5 py-2 rounded-md mt-5 flex items-center gap-5 cursor-pointer">
           Start the course <IoIosArrowForward />
         </button>
       </Link>
