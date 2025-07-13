@@ -1,5 +1,7 @@
 import SectionTitleTwo from "../../Components/SectionTitle/SectionTitleTwo";
+import Stats from "../../Components/Stats/Stats";
 import man from "../../assets/images/man.png";
+import HowToStart from "./HowToStart";
 import ReasonToStart from "./ReasonToStart";
 
 export default function BecomeInstructorPage() {
@@ -24,6 +26,10 @@ export default function BecomeInstructorPage() {
         </div>
       </div>
       <ReasonToStart />
+      <Stats />
+      <div className="md:max-w-[920px] lg:max-w-[1280px] mx-auto flex flex-col gap-22">
+        <HowToStart />
+      </div>
     </div>
   );
 }
