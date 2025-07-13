@@ -33,7 +33,7 @@ export default function Course() {
               <FreeClass />
               <WhatYouLearn course={course} />
             </div>
-            <CourseFee />
+            <CourseFee course={course} />
           </div>
           <CourseOutline course={course} />
           <CourseDesignedFor course={course} />
