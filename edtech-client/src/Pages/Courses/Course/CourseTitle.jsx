@@ -1,11 +1,8 @@
-export default function CourseTitle() {
+export default function CourseTitle({ course }) {
   return (
     <>
-      <h2 className="text-[40px] font-bold">Master in Photoshop</h2>
-      <p>
-        Join the Master in Adobe Photoshop / Illustrator course to build a
-        career as a successful graphics designer.
-      </p>
+      <h2 className="text-[40px] font-bold">{course?.courseTitle}</h2>
+      <p>{course?.courseSubtitle}</p>
     </>
   );
 }

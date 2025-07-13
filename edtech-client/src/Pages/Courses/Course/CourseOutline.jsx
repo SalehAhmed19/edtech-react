@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Accordant from "../../../Components/Accordant/Accordant";
 import SectionTitleTwo from "../../../Components/SectionTitle/SectionTitleTwo";
+import CourseOutlineAccordant from "../../../Components/Accordant/CourseOutlineAccordant";
 
-export default function CourseOutline() {
+export default function CourseOutline({ course }) {
   const [activeIndex, setActiveIndex] = useState(null);
 
   /**
@@ -50,11 +50,10 @@ export default function CourseOutline() {
   return (
     <div>
       <SectionTitleTwo title={"Course Outline"} />
-      {accordionData.map((item, index) => (
-        <Accordant
+      {course?.courseOutline.map((item, index) => (
+        <CourseOutlineAccordant
           key={index} // Using index as key is generally fine for static lists without reordering
-          title={item.title}
-          content={item.content}
+          item={item}
           index={index}
           activeIndex={activeIndex}
           onToggle={handleToggle}

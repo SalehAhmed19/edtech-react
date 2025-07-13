@@ -8,6 +8,7 @@ import CourseFee from "./CourseFee";
 import CourseTitle from "./CourseTitle";
 import Instructors from "./Instructors";
 import Help from "./Help";
+import Loader from "../../../Components/Loader/Loader";
 
 export default function Course() {
   const { id } = useParams();
@@ -19,40 +20,30 @@ export default function Course() {
 
   return (
     <>
-      {/* {isLoading ? (
+      {isLoading ? (
         <div className="h-[80vh]">
           <Loader />
         </div>
       ) : (
-        <div className="flex flex-col gap-10 my-10 md:max-w-[920px] lg:max-w-[1280px] mx-auto">
-          <SectionTitle title={course?.courseTitle} />
-          <div>
-            <img src={course?.courseBannerImage} alt="" className="w-full" />
+        <div className="my-10 md:max-w-[920px] lg:max-w-[1280px] mx-auto flex flex-col gap-10">
+          <img className="w-full" src={course?.courseBannerImage} alt="" />
+          <div className="grid grid-cols-2 gap-5">
+            <div className="flex flex-col gap-10">
+              <CourseTitle course={course} />
+              <FreeClass />
+              <WhatYouLearn course={course} />
+            </div>
+            <CourseFee />
           </div>
-        </div>
-      )} */}
-      <div className="my-10 md:max-w-[920px] lg:max-w-[1280px] mx-auto flex flex-col gap-10">
-        <img
-          className="w-full"
-          src="https://img-c.udemycdn.com/course/750x422/16799_e077_20.jpg"
-          alt=""
-        />
-        <div className="grid grid-cols-2 gap-5">
-          <div className="flex flex-col gap-10">
-            <CourseTitle />
-            <FreeClass />
-            <WhatYouLearn />
-          </div>
-          <CourseFee />
-        </div>
-        <CourseOutline />
-        <CourseDesignedFor />
+          <CourseOutline course={course} />
+          <CourseDesignedFor course={course} />
 
-        <div className="grid grid-cols-2 gap-5">
-          <Instructors />
-          <Help />
+          <div className="grid grid-cols-2 gap-5">
+            <Instructors course={course} />
+            <Help />
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }

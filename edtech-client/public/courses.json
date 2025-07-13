@@ -2,6 +2,11 @@
   {
     "courseId": "CS101",
     "courseTitle": "Introduction to Programming with Python",
+    "courseSubtitle": "",
+    "whatYouLearn": [""],
+    "courseOutline": [{ "title": "", "content": "" }],
+    "courseDesignedFor": "",
+    "instructors": [{ "image": "", "name": "", "designation": "" }],
     "courseBannerImage": "https://placehold.co/600x400/87CEEB/FFFFFF?text=Python+Intro",
     "lessionsNumber": 25,
     "lessionLevel": "Beginner",
