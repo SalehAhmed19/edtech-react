@@ -6,6 +6,7 @@ import SignUp from "../Pages/Authentication/SignUp/SignUp";
 import Courses from "../Pages/Courses/Courses/Courses";
 import Course from "../Pages/Courses/Course/Course";
 import Contact from "../Pages/Contact/Contact";
+import BecomeInstructorPage from "../Pages/BecomeInstructorPage/BecomeInstructorPage";
 
 const routes = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const routes = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/courses", element: <Courses /> },
       { path: "/contact", element: <Contact /> },
+      { path: "/become-instructor", element: <BecomeInstructorPage /> },
       { path: "/courses/:id", element: <Course /> },
       { path: "/authentication/login", element: <Login /> },
       { path: "/authentication/signup", element: <SignUp /> },

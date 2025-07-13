@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import tutor from "../../assets/images/tutor.png";
 
 export default function BecomeInstructor() {
@@ -14,9 +15,11 @@ export default function BecomeInstructor() {
           as an instructor now!
         </p>
 
-        <button className="px-5 py-2 bg-[#333] block mx-auto mt-5 rounded-md text-white">
-          Become a teacher
-        </button>
+        <Link to="/become-instructor">
+          <button className="px-5 py-2 bg-[#333] block mx-auto mt-5 rounded-md text-white">
+            Become a teacher
+          </button>
+        </Link>
       </div>
     </div>
   );
