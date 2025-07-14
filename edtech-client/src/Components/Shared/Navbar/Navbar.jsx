@@ -29,9 +29,11 @@ export default function Navbar() {
             <li>
               <Link to="/contact">Contact</Link>
             </li>
-            <li>
-              <Link to="/dashboard/student">Contact</Link>
-            </li>
+            {user && (
+              <li className="font-semibold">
+                <Link to="/dashboard/">Dashboard</Link>
+              </li>
+            )}
           </ul>
         </div>
         {user ? (

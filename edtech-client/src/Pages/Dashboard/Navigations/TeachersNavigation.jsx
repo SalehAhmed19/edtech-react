@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-export default function StudentsNavigation() {
+export default function TeachersNavigation() {
   return (
-    <div className="rounded-md shadow h-screen bg-slate-100">
+    <div className="rounded-md shadow min-h-[90vh] bg-slate-100">
       <Link to="/">
         <div className="py-5">
           <img
@@ -34,22 +34,22 @@ export default function StudentsNavigation() {
         </Link>
         <Link to="/dashboard/student-courses">
           <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer">
-            My Courses
+            Students Review
           </li>
         </Link>
         <Link to="/dashboard/student-skillset">
           <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer">
-            My Skillset
+            Assignments
           </li>
         </Link>
         <Link to="/dashboard/order-history">
           <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer">
-            Order History
+            Resourses
           </li>
         </Link>
         <Link to="/dashboard/certificates">
           <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer">
-            My Certificet
+            Support
           </li>
         </Link>
       </ul>
