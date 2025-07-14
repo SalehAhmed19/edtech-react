@@ -1,9 +1,5 @@
-import { useEffect } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import { useDispatch, useSelector } from "react-redux";
-import { IoFolderOpenOutline } from "react-icons/io5";
-import { getCourses } from "../../../RTK/Features/CoursesSlice/CoursesSlice";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import CourseCard from "../../../Components/Cards/CourseCard";
 import PopularCourses from "../../../Components/Courses/PopularCourses";
@@ -11,13 +7,10 @@ import NewCourses from "../../../Components/Courses/NewCourses";
 import FreeCourses from "../../../Components/FreeCourses/FreeCourses";
 import { IoIosArrowUp } from "react-icons/io";
 import ScrollToTop from "react-scroll-to-top";
+import useGetCourses from "../../../Hooks/Courses/useGetCourses";
 
 export default function Courses() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getCourses());
-  }, [dispatch]);
-  const courses = useSelector((state) => state.CoursesSlice.courses);
+  const { courses } = useGetCourses();
 
   const programmingCourses = courses.filter(
     (course) => course.category === "Programming"
@@ -160,7 +153,7 @@ export default function Courses() {
     { tab: "Health & Wellness", items: healthCourses },
   ];
   const tabItems = tabs.map((tab) => tab.items);
-  console.log(tabItems);
+  // console.log(tabItems);
 
   return (
     <div className="md:max-w-[920px] lg:max-w-[1280px] mx-auto my-10">

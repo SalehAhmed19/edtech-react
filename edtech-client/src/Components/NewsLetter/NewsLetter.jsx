@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 export default function NewsLetter() {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     toast.success("News letter subscribed!");
     reset();
   };

@@ -1,6 +1,5 @@
 import { FaCalendar } from "react-icons/fa";
 import Modal from "../../../Components/UI/Modals/Modal";
-import { useState } from "react";
 import useModal from "../../../Hooks/useModal";
 import FreeClassForm from "../../../Components/Forms/FreeClassForm";
 

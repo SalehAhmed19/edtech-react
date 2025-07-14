@@ -29,7 +29,7 @@ export default function SignUp() {
         };
 
         const response = await dispatch(postUsers(userInfo)).unwrap();
-        console.log("User data successfully posted to DB:", response);
+        // console.log("User data successfully posted to DB:", response);
         reset();
         navigate("/");
         toast.success("Sign up success!");

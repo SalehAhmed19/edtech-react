@@ -15,10 +15,10 @@ import { useState } from "react";
 export default function Course() {
   const { id } = useParams();
   const { courses, isLoading } = useGetCourses();
-  console.log(courses);
+  // console.log(courses);
 
   const course = courses.find((course) => course.courseId === id);
-  console.log(course);
+  // console.log(course);
 
   return (
     <>

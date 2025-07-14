@@ -1,7 +1,7 @@
 import curve from "../../assets/images/curve.svg";
 import avatar from "../../assets/images/avtar.jpg";
-import PopularCourseCard from "../Cards/CourseCard";
 import useGetCourses from "../../Hooks/Courses/useGetCourses";
+import CourseCard from "../Cards/CourseCard";
 
 export default function FreeCourses() {
   const { courses } = useGetCourses();
@@ -23,12 +23,13 @@ export default function FreeCourses() {
         </div>
         <div className="my-10 z-10 grid grid-cols-3 gap-5">
           {freeCourses.slice(0, 6).map((course) => (
-            <PopularCourseCard
+            <CourseCard
               key={course.courseId}
               avatar={avatar}
               title={course.courseTitle}
               lesson={course.lessionsNumber}
               level={course.lessionLevel}
+              id={course.courseId}
             />
           ))}
         </div>

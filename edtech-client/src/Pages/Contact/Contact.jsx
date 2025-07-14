@@ -21,7 +21,7 @@ export default function Contact() {
             alt=""
           />
         </div>
-        <div className="p-20 text-right place-content-center">
+        <div className="pr-20 text-right place-content-center">
           <SectionTitleTwo title={"Contact"} />
         </div>
       </div>
@@ -42,9 +42,9 @@ export default function Contact() {
               //   width="600"
               //   height="450"
               style={{ border: "0" }}
-              allowfullscreen=""
+              allowFullScreen=""
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
+              referrerPolicy="no-referrer-when-downgrade"
             />
 
             <div>

@@ -38,8 +38,8 @@ export default function Courses() {
       <SectionTitle title={"Courses"} />
       <div className="navigation-wrapper">
         <div ref={sliderRef} className="keen-slider">
-          {urls.map((url) => (
-            <div className="keen-slider__slide ">
+          {urls.map((url, idx) => (
+            <div key={idx} className="keen-slider__slide ">
               <div className="p-5 rounded-md border-[#33353] border-2 flex items-center gap-5">
                 <div className="bg-[#33353] p-3 rounded-full">
                   <FaBook />

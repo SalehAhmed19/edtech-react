@@ -55,11 +55,11 @@ async function run() {
 run().catch(console.dir);
 
 app.get("/", (req, res) => {
-  res.send("Bistro Boss running");
+  res.send("EdTech running");
 });
 
 app.listen(port, () => {
-  console.log(`Bistro Boss running at post ${port}`);
+  console.log(`EdTech running at post ${port}`);
 });
 
 /**

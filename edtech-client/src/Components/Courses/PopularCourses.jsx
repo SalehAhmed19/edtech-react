@@ -8,12 +8,12 @@ import useGetCourses from "../../Hooks/Courses/useGetCourses";
 
 export default function PopularCourses() {
   const { courses } = useGetCourses();
-  console.log(courses.length);
+  // console.log(courses.length);
   const popularCourses = courses.filter(
     (course) => course.coursesPopularityStatus === "Popular"
   );
 
-  console.log(popularCourses);
+  // console.log(popularCourses);
 
   return (
     <div>

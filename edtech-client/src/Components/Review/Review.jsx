@@ -38,8 +38,8 @@ export default function Review() {
       <SectionTitle title={"Why everyone trust us?"} />
       <div className="navigation-wrapper">
         <div ref={sliderRef} className="keen-slider">
-          {urls.map((url) => (
-            <div className="keen-slider__slide relative">
+          {urls.map((url, idx) => (
+            <div key={idx} className="keen-slider__slide relative">
               <div className="p-2 bg-[#333] h-10 w-10 flex justify-center items-center text-white rounded-full ml-5 -mb-5">
                 <FaQuoteLeft />
               </div>

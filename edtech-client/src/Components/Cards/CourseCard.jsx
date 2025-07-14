@@ -7,7 +7,9 @@ export default function CourseCard({ avatar, title, lesson, level, id }) {
     <div className="p-5 border border-[#00000017] rounded-md bg-white">
       <img className="rounded-md w-full" src={avatar} alt="" />
       <div className="mt-5 flex flex-col gap-3">
-        <h4 className="text-primary font-semibold text-xl">{title}</h4>
+        <h4 className="text-primary font-semibold text-xl">
+          {title.slice(0, 23) + "..."}
+        </h4>
         <div className="flex gap-5 text-sm">
           <p className="flex items-center gap-2">
             <FaBook className="text-[#333]" /> Lesson: {lesson}

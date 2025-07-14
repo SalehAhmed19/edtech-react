@@ -23,7 +23,7 @@ export default function SocialLogin() {
           photo: photoURL,
         };
         const actionResult = await dispatch(postUsers(userInfo)).unwrap();
-        console.log("User data successfully posted to DB:", actionResult);
+        // console.log("User data successfully posted to DB:", actionResult);
         navigate("/");
         toast.success("Google sign in success!");
       } else if (error) {

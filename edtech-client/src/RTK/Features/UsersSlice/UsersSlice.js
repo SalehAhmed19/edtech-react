@@ -32,7 +32,7 @@ const UsersSlice = createSlice({
     });
     builder.addCase(postUsers.rejected, (state, action) => {
       state.isLoading = true;
-      console.log(action.payload);
+      // console.log(action.payload);
     });
   },
 });

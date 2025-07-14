@@ -6,12 +6,12 @@ import useGetCourses from "../../Hooks/Courses/useGetCourses";
 
 export default function TrendyCourses() {
   const { courses } = useGetCourses();
-  console.log(courses.length);
+  // console.log(courses.length);
   const trendingCourses = courses.filter(
     (course) => course.coursesPopularityStatus === "Trending"
   );
 
-  console.log(trendingCourses);
+  // console.log(trendingCourses);
 
   return (
     <div>
