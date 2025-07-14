@@ -13,9 +13,9 @@ export default function Navbar() {
     }
   };
   return (
-    <div className="bg-[#333] p-5 text-white sticky top-0 z-50">
+    <div className="bg-[#33333310] p-5 text-[#333] sticky top-0 z-50 backdrop-blur-3xl">
       {" "}
-      <div className="md:max-w-[1280px] lg:max-w-[1440px] mx-auto flex items-center justify-between">
+      <div className="md:max-w-[1180px] lg:max-w-[1280px] mx-auto flex items-center justify-between">
         {" "}
         <Link to="/">
           <h3 className="font-semibold text-xl">EdTech</h3>
@@ -28,6 +28,9 @@ export default function Navbar() {
             <li>About Us</li>
             <li>
               <Link to="/contact">Contact</Link>
+            </li>
+            <li>
+              <Link to="/dashboard/student">Contact</Link>
             </li>
           </ul>
         </div>

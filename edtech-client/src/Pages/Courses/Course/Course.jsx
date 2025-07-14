@@ -9,6 +9,8 @@ import CourseTitle from "./CourseTitle";
 import Instructors from "./Instructors";
 import Help from "./Help";
 import Loader from "../../../Components/Loader/Loader";
+import Modal from "../../../Components/UI/Modals/Modal";
+import { useState } from "react";
 
 export default function Course() {
   const { id } = useParams();
@@ -35,6 +37,7 @@ export default function Course() {
             </div>
             <CourseFee course={course} />
           </div>
+
           <CourseOutline course={course} />
           <CourseDesignedFor course={course} />
 

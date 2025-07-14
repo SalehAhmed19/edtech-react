@@ -6,10 +6,10 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import SectionTitleTwo from "../../Components/SectionTitle/SectionTitleTwo";
-import ContactForm from "./ContactForm";
 import FeaturedTwo from "../../Components/FeaturedTwo/FeaturedTwo";
 import NewsLetter from "../../Components/NewsLetter/NewsLetter";
 import ContactSection from "../../Components/ContactSection/ContactSection";
+import ContactForm from "../../Components/Forms/ContactForm";
 
 export default function Contact() {
   return (

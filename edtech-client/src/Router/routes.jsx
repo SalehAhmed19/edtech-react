@@ -7,6 +7,13 @@ import Courses from "../Pages/Courses/Courses/Courses";
 import Course from "../Pages/Courses/Course/Course";
 import Contact from "../Pages/Contact/Contact";
 import BecomeInstructorPage from "../Pages/BecomeInstructorPage/BecomeInstructorPage";
+import Dashboard from "../Layout/Dashboard";
+import StudentsHome from "../Pages/Dashboard/Students/StudentsHome";
+import StudentsProfile from "../Pages/Dashboard/Students/StudentsProfile";
+import StudentsSkillSet from "../Pages/Dashboard/Students/StudentsSkillSet";
+import OrderHistory from "../Pages/Dashboard/Students/OrderHistory";
+import Certificates from "../Pages/Dashboard/Students/Certificates";
+import StudentCourses from "../Pages/Dashboard/Students/StudentCourses";
 
 const routes = createBrowserRouter([
   {
@@ -20,6 +27,18 @@ const routes = createBrowserRouter([
       { path: "/courses/:id", element: <Course /> },
       { path: "/authentication/login", element: <Login /> },
       { path: "/authentication/signup", element: <SignUp /> },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+    children: [
+      { path: "/dashboard", element: <StudentsHome /> },
+      { path: "student-profile", element: <StudentsProfile /> },
+      { path: "student-courses", element: <StudentCourses /> },
+      { path: "student-skillset", element: <StudentsSkillSet /> },
+      { path: "order-history", element: <OrderHistory /> },
+      { path: "certificates", element: <Certificates /> },
     ],
   },
 ]);
