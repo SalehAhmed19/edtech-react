@@ -38,6 +38,8 @@ async function run() {
       .db("edTech")
       .collection("studentsCollection");
 
+    const cartsCollection = client.db("edTech").collection("cartsCollection");
+
     // get courses
     app.get("/api/courses", async (req, res) => {
       const result = await coursesCollection.find().toArray();
@@ -73,6 +75,25 @@ async function run() {
       const student = await studentsCollection.findOne(query);
 
       res.send(student);
+    });
+
+    // add to carts
+    app.post("/api/carts", async (req, res) => {
+      const carts = req.body;
+
+      const result = await cartsCollection.insertOne(carts);
+
+      res.send(result);
+    });
+
+    // get carts by email
+    app.get("/api/carts", async (req, res) => {
+      const email = req.query.email;
+      const query = { email: email };
+
+      const result = await cartsCollection.find(query).toArray();
+
+      res.send(result);
     });
 
     // Send a ping to confirm a successful connection
