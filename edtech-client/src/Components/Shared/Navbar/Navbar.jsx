@@ -2,10 +2,11 @@ import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import { auth } from "../../../firebase/firebase.config";
 import toast, { Toaster } from "react-hot-toast";
+import logo from "../../../assets/images/logo-transparent.png";
 
 export default function Navbar() {
   const [user] = useAuthState(auth);
-  const [signOut, loading, error] = useSignOut(auth);
+  const [signOut] = useSignOut(auth);
   const handleSignOut = async () => {
     const signout = await signOut();
     if (signout) {
@@ -18,7 +19,8 @@ export default function Navbar() {
       <div className="md:max-w-[1180px] lg:max-w-[1280px] mx-auto flex items-center justify-between">
         {" "}
         <Link to="/">
-          <h3 className="font-semibold text-xl">EdTech</h3>
+          {/* <h3 className="font-semibold text-xl">EdTech</h3> */}
+          <img src={logo} alt="" className="w-16" />
         </Link>
         <div>
           <ul className="flex items-center gap-5">

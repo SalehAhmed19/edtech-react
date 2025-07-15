@@ -8,6 +8,7 @@ import FreeCourses from "../../../Components/FreeCourses/FreeCourses";
 import { IoIosArrowUp } from "react-icons/io";
 import ScrollToTop from "react-scroll-to-top";
 import useGetCourses from "../../../Hooks/Courses/useGetCourses";
+import CoursesTabs from "../../../Components/UI/Tabs/CoursesTabs";
 
 export default function Courses() {
   const { courses } = useGetCourses();
@@ -159,36 +160,12 @@ export default function Courses() {
     <div className="md:max-w-[920px] lg:max-w-[1280px] mx-auto my-10">
       <SectionTitle title={"Our Courses"} />
       <div className="flex flex-col gap-20">
-        <Tabs className="flex flex-col items-center border-0">
-          <TabList className="mb-5">
-            {tabs.map((tab, idx) => (
-              <Tab key={idx}>{tab.tab}</Tab>
-            ))}
-          </TabList>
-
-          {tabs.map((tab) => (
-            <TabPanel>
-              <div className="grid grid-cols-4 gap-5">
-                {tab.items.map((course) => (
-                  <CourseCard
-                    key={course.courseId}
-                    avatar={course.courseBannerImage}
-                    title={course.courseTitle}
-                    lesson={course.lessionsNumber}
-                    level={course.lessionLevel}
-                    id={course.courseId}
-                    course={course}
-                  />
-                ))}
-              </div>
-            </TabPanel>
-          ))}
-        </Tabs>
-
+        <CoursesTabs data={tabs} />
         <PopularCourses />
         <NewCourses />
         <FreeCourses />
       </div>
+
       <ScrollToTop
         smooth
         style={{
