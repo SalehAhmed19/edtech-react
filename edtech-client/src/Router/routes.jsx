@@ -14,6 +14,7 @@ import OrderHistory from "../Pages/Dashboard/Students/OrderHistory";
 import Certificates from "../Pages/Dashboard/Students/Certificates";
 import StudentCourses from "../Pages/Dashboard/Students/StudentCourses";
 import StudentsProfile from "../Pages/Dashboard/Students/StudentsProfile/StudentsProfile";
+import Carts from "../Pages/Dashboard/Students/Carts";
 
 const routes = createBrowserRouter([
   {
@@ -37,6 +38,7 @@ const routes = createBrowserRouter([
       { path: "student-profile", element: <StudentsProfile /> },
       { path: "student-courses", element: <StudentCourses /> },
       { path: "student-skillset", element: <StudentsSkillSet /> },
+      { path: "carts", element: <Carts /> },
       { path: "order-history", element: <OrderHistory /> },
       { path: "certificates", element: <Certificates /> },
     ],

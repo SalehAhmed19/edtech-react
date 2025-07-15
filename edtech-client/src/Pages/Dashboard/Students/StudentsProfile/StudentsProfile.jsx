@@ -1,4 +1,4 @@
-import React from "react";
+import { GrUpdate } from "react-icons/gr";
 
 import DashboardSectionTitle from "../../../../Components/SectionTitle/DashboardSectionTitle";
 import StudentsDetails from "./StudentsDetails";
@@ -19,8 +19,9 @@ export default function StudentsProfile() {
 
       <button
         onClick={handleOpenModal}
-        className="p-5 rounded-2xl border border-dashed border-slate-300 w-1/2 mx-auto hover:bg-slate-300 duration-500"
+        className="p-5 rounded-2xl border border-dashed border-slate-300 w-1/2 mx-auto hover:bg-slate-300 duration-500 flex justify-center items-center gap-3"
       >
+        <GrUpdate className="animate-spin" />
         Update Profile
       </button>
       <Modal

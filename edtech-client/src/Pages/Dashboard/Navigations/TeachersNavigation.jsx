@@ -26,7 +26,7 @@ export default function TeachersNavigation() {
           </p>
         </div>
       </Link>
-      <ul className="my-5 flex flex-col gap-2 px-10">
+      <ul className="my-5 flex flex-col gap-2 px-10 h-[30vh] overflow-y-auto scroll-smooth border-b border-dashed border-slate-300">
         <Link to="/dashboard/student-profile">
           <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer">
             Profile
