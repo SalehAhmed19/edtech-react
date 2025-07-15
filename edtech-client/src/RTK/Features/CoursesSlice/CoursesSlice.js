@@ -31,7 +31,7 @@ const CoursesSlice = createSlice({
 
     builder.addCase(getCourses.rejected, (state, action) => {
       state.isError = true;
-      // console.log(action.payload);
+      console.log(action.payload);
     });
   },
 });
