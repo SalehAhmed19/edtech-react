@@ -34,11 +34,45 @@ async function run() {
       .db("edTech")
       .collection("coursesCollection");
 
+    const studentsCollection = client
+      .db("edTech")
+      .collection("studentsCollection");
+
     // get courses
     app.get("/api/courses", async (req, res) => {
       const result = await coursesCollection.find().toArray();
 
       res.send(result);
+    });
+
+    // TODO:USERS
+    // post users to db: student
+    app.post("/api/users/students", async (req, res) => {
+      const student = req.body;
+
+      const query = { email: student.email };
+      const existingUser = await studentsCollection.findOne(query);
+      if (existingUser) return; // user exists, do nothing
+
+      const result = await studentsCollection.insertOne(student);
+
+      res.send(result);
+    });
+
+    // get users from db: students
+    app.get("/api/users/students", async (req, res) => {
+      const students = await studentsCollection.find().toArray();
+
+      res.send(students);
+    });
+
+    // get users from db: students
+    app.get("/api/users/students/:email", async (req, res) => {
+      const email = req.params.email;
+      const query = { email: email };
+      const student = await studentsCollection.findOne(query);
+
+      res.send(student);
     });
 
     // Send a ping to confirm a successful connection

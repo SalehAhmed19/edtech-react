@@ -44,8 +44,7 @@ const Modal = ({ isOpen, onClose, children, title, className = "" }) => {
   return (
     // Modal Overlay (fixed, covers entire viewport, semi-transparent background)
     <div
-      className="fixed inset-0 bg-[#00000046] bg-opacity-50 flex items-center justify-center z-50
-                 transition-opacity duration-300 ease-out"
+      className="fixed inset-0 bg-[#00000046] bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 ease-out"
       onClick={onClose} // Close modal when clicking on the overlay
       role="dialog"
       aria-modal="true"

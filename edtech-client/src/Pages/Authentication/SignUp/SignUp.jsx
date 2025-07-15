@@ -6,12 +6,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "../../../firebase/firebase.config";
-import { postUsers } from "../../../RTK/Features/UsersSlice/UsersSlice";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import { postStudent } from "../../../RTK/Features/UsersSlice/StudentsSlice";
 
 export default function SignUp() {
   const navigate = useNavigate();
-  const [createUserWithEmailAndPassword, user, loading, error] =
+  const [createUserWithEmailAndPassword, error] =
     useCreateUserWithEmailAndPassword(auth);
   const dispatch = useDispatch();
   const { register, handleSubmit, reset } = useForm();
@@ -21,15 +21,18 @@ export default function SignUp() {
 
     try {
       if (result && result.user) {
-        const { displayName, email, photoURL } = result.user;
+        const { email, photoURL } = result.user;
+        const studentId = Math.random().toString(36).substring(2, 11);
         const userInfo = {
-          name: displayName,
+          studentId: "ET_" + studentId,
+          name: data.name,
           email: email,
           photo: photoURL,
+          role: "student",
         };
 
-        const response = await dispatch(postUsers(userInfo)).unwrap();
-        // console.log("User data successfully posted to DB:", response);
+        const response = await dispatch(postStudent(userInfo)).unwrap();
+        console.log("User data successfully posted to DB:", response);
         reset();
         navigate("/");
         toast.success("Sign up success!");

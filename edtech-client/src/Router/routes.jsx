@@ -9,11 +9,11 @@ import Contact from "../Pages/Contact/Contact";
 import BecomeInstructorPage from "../Pages/BecomeInstructorPage/BecomeInstructorPage";
 import Dashboard from "../Layout/Dashboard";
 import StudentsHome from "../Pages/Dashboard/Students/StudentsHome";
-import StudentsProfile from "../Pages/Dashboard/Students/StudentsProfile";
 import StudentsSkillSet from "../Pages/Dashboard/Students/StudentsSkillSet";
 import OrderHistory from "../Pages/Dashboard/Students/OrderHistory";
 import Certificates from "../Pages/Dashboard/Students/Certificates";
 import StudentCourses from "../Pages/Dashboard/Students/StudentCourses";
+import StudentsProfile from "../Pages/Dashboard/Students/StudentsProfile/StudentsProfile";
 
 const routes = createBrowserRouter([
   {

@@ -3,9 +3,9 @@ import { useDispatch } from "react-redux";
 
 import google from "../../../assets/images/google.png";
 import { auth } from "../../../firebase/firebase.config";
-import { postUsers } from "../../../RTK/Features/UsersSlice/UsersSlice";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { postStudent } from "../../../RTK/Features/UsersSlice/StudentsSlice";
 
 export default function SocialLogin() {
   const navigate = useNavigate();
@@ -15,17 +15,22 @@ export default function SocialLogin() {
   const handleGoogleSignin = async () => {
     try {
       const result = await signInWithGoogle();
+      if (result) {
+        navigate("/");
+        toast.success("Google sign in success!");
+      }
       if (result && result.user) {
         const { displayName, email, photoURL } = result.user;
+        const studentId = Math.random().toString(36).substring(2, 11);
         const userInfo = {
+          studentId: "ET_" + studentId,
           name: displayName,
           email: email,
           photo: photoURL,
+          role: "student",
         };
-        const actionResult = await dispatch(postUsers(userInfo)).unwrap();
-        // console.log("User data successfully posted to DB:", actionResult);
-        navigate("/");
-        toast.success("Google sign in success!");
+        const response = await dispatch(postStudent(userInfo)).unwrap();
+        console.log("User data successfully posted to DB:", response);
       } else if (error) {
         console.error("Firebase Google Sign-In Error:", error.message);
       }

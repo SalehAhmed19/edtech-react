@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import useGetStudent from "../../../Hooks/Users/useGetStudent";
+import AvatarSkeleton from "../../../Components/UI/AvatarSkeleton/AvatarSkeleton";
 
 export default function StudentsNavigation() {
+  const { students } = useGetStudent();
+  console.log(students);
   return (
     <div className="rounded-md shadow h-screen bg-slate-100">
       <Link to="/">
@@ -15,14 +19,18 @@ export default function StudentsNavigation() {
       </Link>
 
       <Link to="/dashboard">
-        <div className="border-t border-b border-[#0000001b] p-3 flex gap-5 items-center">
+        <div className="border-t border-b border-[#0000001b] p-3 flex flex-col gap-1 items-center">
           <img
-            src="https://lumiere-a.akamaihd.net/v1/images/a_avatarpandorapedia_neytiri_16x9_1098_01_0e7d844a.jpeg?region=420%2C0%2C1080%2C1080"
-            alt=""
-            className="rounded-full w-16"
+            src={`${students?.photo}`}
+            alt={students?.name}
+            className="rounded-full w-20 border-3 border-slate-300"
           />
-          <p>
-            Welcome, <span className="font-semibold">Student Name</span>
+
+          <p className="font-semibold text-xl">{students?.name}</p>
+          <p className="text-[#787878]">{students?.studentId}</p>
+          <p className="text-[#787878]">{students?.email}</p>
+          <p className="text-[#787878]">
+            {students?.phone ? students.phone : "N/A"}
           </p>
         </div>
       </Link>

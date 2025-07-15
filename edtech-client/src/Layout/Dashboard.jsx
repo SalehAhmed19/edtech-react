@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import StudentsNavigation from "../Pages/Dashboard/Navigations/StudentsNavigation";
 import { useState } from "react";
 import TeachersNavigation from "../Pages/Dashboard/Navigations/TeachersNavigation";
+import { Toaster } from "react-hot-toast";
 
 export default function Dashboard() {
   const [role, setRole] = useState("student");
@@ -26,6 +27,7 @@ export default function Dashboard() {
             : "Toogle to Student's Menu"}
         </button>
       </div>
+      <Toaster />
     </div>
   );
 }
