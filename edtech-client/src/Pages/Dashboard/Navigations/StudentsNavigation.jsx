@@ -4,7 +4,7 @@ import logo from "../../../assets/images/logo.png";
 
 export default function StudentsNavigation() {
   const { students, isLoading } = useGetStudent();
-  console.log(students);
+  // console.log(students);
   return (
     <div className="rounded-md shadow h-screen bg-slate-100">
       <Link to="/">

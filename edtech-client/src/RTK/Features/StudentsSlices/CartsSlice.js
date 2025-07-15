@@ -14,6 +14,15 @@ export const addToCart = createAsyncThunk("carts", async (data) => {
   return response.data;
 });
 
+// get cart
+export const getCarts = createAsyncThunk("getCarts", async (data) => {
+  const response = await axios.get(
+    `http://localhost:4000/api/carts?email=${data}`
+  );
+
+  return response.data;
+});
+
 const CartsSlice = createSlice({
   name: "carts",
   initialState,
@@ -27,6 +36,19 @@ const CartsSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(addToCart.rejected, (state, action) => {
+      state.isError = true;
+      console.log(action.payload);
+    });
+
+    // get cart
+    builder.addCase(getCarts.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.carts = action.payload;
+    });
+    builder.addCase(getCarts.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(getCarts.rejected, (state, action) => {
       state.isError = true;
       console.log(action.payload);
     });

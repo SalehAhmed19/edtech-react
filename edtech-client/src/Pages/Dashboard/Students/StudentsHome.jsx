@@ -2,9 +2,10 @@ import DashboardSectionTitle from "../../../Components/SectionTitle/DashboardSec
 import Calendar from "../../../Components/UI/Calendar/Calendar";
 import course from "../../../assets/images/course.svg";
 import DashboardHighlightCard from "../../../Components/UI/DashboardHighlightCard/DashboardHighlightCard";
+import useGetCarts from "../../../Hooks/Students/useGetCarts";
 
 export default function StudentsHome() {
-  // const [value, onChange] = useState(new Date());
+  const { carts, isLoading } = useGetCarts();
   return (
     <div>
       <DashboardSectionTitle title={"Welcome to dashboard!"} />
@@ -21,7 +22,7 @@ export default function StudentsHome() {
             icon={course}
             endpoint={"carts"}
             title={"Carts"}
-            length={0}
+            length={carts.length}
           />
           <DashboardHighlightCard
             icon={course}

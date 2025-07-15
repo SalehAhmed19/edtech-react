@@ -1,20 +1,30 @@
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../../RTK/Features/StudentsSlices/cartsSlice";
+
 import toast from "react-hot-toast";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../../firebase/firebase.config";
+import { addToCart } from "../../../RTK/Features/StudentsSlices/cartsSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function CourseFee({ course }) {
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleAddToCart = () => {
     const courseItem = {
+      email: user?.email,
       courseName: course.courseTitle,
+      image: course.courseBannerImage,
       courseId: course.courseId,
       courseFee: course.courseFee,
       category: course.category,
       instructors: course.instructors,
+      status: "Unpaid",
     };
 
     dispatch(addToCart(courseItem));
     toast.success("Added to cart!");
+    navigate("/dashboard/carts");
   };
   console.log(course);
   return (
