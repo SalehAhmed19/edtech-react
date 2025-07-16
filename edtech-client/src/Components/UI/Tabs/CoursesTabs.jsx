@@ -79,6 +79,7 @@ const CoursesTabs = ({
                 level={course.lessionLevel}
                 id={course.courseId}
                 course={course}
+                fee={course.courseFee}
               />
             ))}
           </div>

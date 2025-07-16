@@ -6,7 +6,7 @@ export default function StudentsNavigation() {
   const { students, isLoading } = useGetStudent();
   // console.log(students);
   return (
-    <div className="rounded-md shadow h-screen bg-slate-100">
+    <div className="rounded-md shadow h-[90vh] bg-slate-100">
       <Link to="/">
         <div className="py-5">
           <img src={logo} className="w-20 mx-auto" alt="" />

@@ -14,7 +14,7 @@ import { FaTrash } from "react-icons/fa";
  * DashedTable component displays data in a table with dashed borders.
  * @param {DashedTableProps} props
  */
-const CartsTable = ({ headers, data, className = "" }) => {
+const CartsTable = ({ headers, data, className = "", handleDelete }) => {
   if (!headers || headers.length === 0) {
     return <p className="text-red-500">Error: Table headers are required.</p>;
   }
@@ -22,9 +22,10 @@ const CartsTable = ({ headers, data, className = "" }) => {
     return <p className="text-gray-500">No data to display in the table.</p>;
   }
 
+  console.log(data);
   return (
     <div
-      className={`overflow-x-auto bg-white rounded-lg border border-dashed border-slate-300 ${className}`}
+      className={`overflow-x-auto bg-white rounded-lg border border-dashed border-slate-300 ${className} overflow-y-scroll h-[82vh]`}
     >
       <table className="min-w-full divide-y divide-dashed divide-gray-300">
         {/* Table Header */}
@@ -43,7 +44,7 @@ const CartsTable = ({ headers, data, className = "" }) => {
         </thead>
         {/* Table Body */}
         <tbody className="divide-y divide-dashed divide-gray-200">
-          {data.map((row, rowIndex) => (
+          {data?.map((row, rowIndex) => (
             <tr key={rowIndex}>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-b border-dashed border-slate-300">
                 <img src={`${row.image}`} alt="" className="w-16 rounded-md" />
@@ -61,7 +62,10 @@ const CartsTable = ({ headers, data, className = "" }) => {
                 </button>
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-b border-dashed border-slate-300">
-                <button className="p-2 rounded-full bg-slate-100 text-red-500">
+                <button
+                  onClick={() => handleDelete(row.courseId)}
+                  className="p-2 rounded-full bg-slate-100 text-red-500"
+                >
                   <FaTrash />
                 </button>
               </td>

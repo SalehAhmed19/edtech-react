@@ -21,7 +21,7 @@ export default function Course() {
   return (
     <>
       {isLoading ? (
-        <div className="h-[80vh]">
+        <div className="h-[80vh] flex justify-center items-center">
           <Loader />
         </div>
       ) : (

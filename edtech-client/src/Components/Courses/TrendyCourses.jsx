@@ -1,8 +1,7 @@
 import SectionTitle from "../SectionTitle/SectionTitle";
 
-import PopularCourseCard from "../Cards/CourseCard";
-
 import useGetCourses from "../../Hooks/Courses/useGetCourses";
+import CourseCard from "../Cards/CourseCard";
 
 export default function TrendyCourses() {
   const { courses } = useGetCourses();
@@ -18,12 +17,14 @@ export default function TrendyCourses() {
       <SectionTitle title={"Trending Courses"} />
       <div className="mt-10 grid grid-cols-4 gap-5">
         {trendingCourses.map((course) => (
-          <PopularCourseCard
+          <CourseCard
             key={course.courseId}
             avatar={course.courseBannerImage}
             title={course.courseTitle}
             lesson={course.lessionsNumber}
             level={course.lessionLevel}
+            id={course.courseId}
+            fee={course.courseFee}
           />
         ))}
       </div>

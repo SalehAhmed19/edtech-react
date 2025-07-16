@@ -10,7 +10,7 @@ export const addToCart = createAsyncThunk(
   "carts",
   async ({ courseItem, axiosPrivate }, { rejectWithValue }) => {
     try {
-      const response = await axiosPrivate.post("/carts", courseItem);
+      const response = await axiosPrivate.post("/post/carts", courseItem);
 
       return response.data;
     } catch (err) {
@@ -24,7 +24,21 @@ export const getCarts = createAsyncThunk(
   "getCarts",
   async ({ email, axiosPrivate }, { rejectWithValue }) => {
     try {
-      const response = await axiosPrivate.get(`/carts?email=${email}`);
+      const response = await axiosPrivate.get(`/get/carts?email=${email}`);
+
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.response?.data?.message || err.message);
+    }
+  }
+);
+
+// delete from cart
+export const deleteCartItem = createAsyncThunk(
+  "deteleCartItem",
+  async ({ id, axiosPrivate }, { rejectWithValue }) => {
+    try {
+      const response = await axiosPrivate.delete(`/delete/carts/${id}`);
 
       return response.data;
     } catch (err) {
@@ -59,6 +73,23 @@ const CartsSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(getCarts.rejected, (state, action) => {
+      state.isError = true;
+      console.log(action.payload);
+    });
+
+    // delete carts items
+    builder.addCase(deleteCartItem.fulfilled, (state, action) => {
+      const id = action.meta.arg.id;
+      if (id) {
+        state.carts = state.carts.filter((cart) => cart.courseId !== id);
+        state.isLoading = false;
+      }
+      console.log(action.meta.arg.id);
+    });
+    builder.addCase(deleteCartItem.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(deleteCartItem.rejected, (state, action) => {
       state.isError = true;
       console.log(action.payload);
     });

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Loader from "../../../Components/Loader/Loader";
 import DashboardSectionTitle from "../../../Components/SectionTitle/DashboardSectionTitle";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
@@ -6,15 +6,34 @@ import CartsTable from "../../../Components/UI/Table/CartsTable";
 import useGetCarts from "../../../Hooks/Students/useGetCarts";
 import course from "../../../assets/images/course.svg";
 import HelpBanner from "../HelpBanner";
-import CartsItems from "./CartsItems";
+import { useDispatch } from "react-redux";
+import { deleteCartItem } from "../../../RTK/Features/StudentsSlices/cartsSlice";
+import useAxiosPrivate from "../../../Hooks/Axios/useAxiosPrivate";
+import toast from "react-hot-toast";
 
 export default function Carts() {
+  const axiosPrivate = useAxiosPrivate();
+  const { carts, isLoading } = useGetCarts();
+
+  const dispatch = useDispatch();
+  const handleDelete = async (id) => {
+    isLoading;
+    const response = await dispatch(deleteCartItem({ id, axiosPrivate }));
+    if (response.payload.deletedCount > 0) {
+      toast.success("Delete items!");
+    }
+    console.log({ id, response });
+  };
+
   const tableHeaders = ["", "Course Name / ID", "Price", "Status", ""];
 
-  const { carts, isLoading } = useGetCarts();
   console.log(carts);
   if (isLoading) {
-    return <Loader />;
+    return (
+      <div className="h-[80vh] flex justify-center items-center">
+        <Loader />
+      </div>
+    );
   }
   if (!carts || carts.length === 0) {
     return (
@@ -40,9 +59,19 @@ export default function Carts() {
 
   return (
     <>
-      {carts.length}
-
-      <CartsTable headers={tableHeaders} data={carts} />
+      <div className="mb-5 flex justify-between items-center">
+        <DashboardSectionTitle title={"My Cart"} />
+        <Link to="/courses">
+          <button className="text-white bg-[#333] px-5 py-2 rounded-md mt-5 mx-auto block">
+            Explore Courses
+          </button>
+        </Link>
+      </div>
+      <CartsTable
+        headers={tableHeaders}
+        data={carts}
+        handleDelete={handleDelete}
+      />
     </>
   );
 }

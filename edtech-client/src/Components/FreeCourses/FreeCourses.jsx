@@ -30,6 +30,7 @@ export default function FreeCourses() {
               lesson={course.lessionsNumber}
               level={course.lessionLevel}
               id={course.courseId}
+              fee={course.courseFee}
             />
           ))}
         </div>

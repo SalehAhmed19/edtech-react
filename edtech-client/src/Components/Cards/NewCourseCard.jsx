@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function NewCourseCard({ course }) {
   const { courseTitle, courseBannerImage } = course;
   return (
@@ -10,7 +12,16 @@ export default function NewCourseCard({ course }) {
           accusantium quam ex, expedita tempora voluptatem velit doloribus
           corrupti veritatis magnam!
         </p>
-        <p className="text-primary font-semibold my-2">Price: 20$</p>
+        <div className="flex justify-between items-center mt-3 pr-7">
+          <p className="text-primary font-semibold my-2">
+            Price: {course.courseFee} BDT
+          </p>
+          <Link to={`/courses/${course.courseId}`}>
+            <button className="border border-dashed border-slate-300 hover:border-0 hover:bg-[#333] px-5 py-1 rounded-md hover:text-white duration-500">
+              Details
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

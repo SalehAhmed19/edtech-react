@@ -27,6 +27,7 @@ export default function PopularCourses() {
             lesson={course.lessionsNumber}
             level={course.lessionLevel}
             id={course.courseId}
+            fee={course.courseFee}
           />
         ))}
       </div>

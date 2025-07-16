@@ -48,7 +48,7 @@ async function run() {
       const token = jwt.sign(user, process.env.SECRET_TOKEN, {
         expiresIn: "1h",
       });
-      console.log(token);
+      // console.log(token);
       res.send({ token });
     });
 
@@ -56,7 +56,7 @@ async function run() {
     const verifyToken = (req, res, next) => {
       // console.log({ fromMiddleWare: req.headers });
       const token = req.headers.authorization.split(" ")[1];
-      console.log(token);
+      // console.log(token);
       if (!req.headers.authorization) {
         return res.status(401).send({ message: "Forbiddent access!" });
       }
@@ -112,7 +112,7 @@ async function run() {
     });
 
     // add to carts
-    app.post("/api/carts", verifyToken, async (req, res) => {
+    app.post("/api/post/carts", verifyToken, async (req, res) => {
       const carts = req.body;
 
       const result = await cartsCollection.insertOne(carts);
@@ -121,11 +121,19 @@ async function run() {
     });
 
     // get carts by email
-    app.get("/api/carts", verifyToken, async (req, res) => {
+    app.get("/api/get/carts", verifyToken, async (req, res) => {
       const email = req.query.email;
       const query = { email: email };
 
       const result = await cartsCollection.find(query).toArray();
+
+      res.send(result);
+    });
+
+    app.delete("/api/delete/carts/:id", verifyToken, async (req, res) => {
+      const id = req.params.id;
+      const query = { courseId: id };
+      const result = await cartsCollection.deleteOne(query);
 
       res.send(result);
     });
