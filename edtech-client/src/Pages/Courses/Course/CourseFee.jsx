@@ -13,22 +13,31 @@ export default function CourseFee({ course }) {
   const dispatch = useDispatch();
   const axiosPrivate = useAxiosPrivate();
 
-  const handleAddToCart = () => {
-    const courseItem = {
-      email: user?.email,
-      courseName: course.courseTitle,
-      image: course.courseBannerImage,
-      courseId: course.courseId,
-      courseFee: course.courseFee,
-      category: course.category,
-      instructors: course.instructors,
-      status: "Unpaid",
-    };
+  const handleAddToCart = async () => {
+    {
+      user;
+    }
+    {
+      const courseItem = {
+        email: user?.email,
+        courseName: course.courseTitle,
+        image: course.courseBannerImage,
+        courseId: course.courseId,
+        courseFee: course.courseFee,
+        category: course.category,
+        instructors: course.instructors,
+        status: "Unpaid",
+      };
 
-    dispatch(addToCart({ courseItem, axiosPrivate }));
-    toast.success("Added to cart!");
-    navigate("/dashboard/carts");
+      const result = await dispatch(addToCart({ courseItem, axiosPrivate }));
+      console.log(result);
+      if (result.payload.insertedId) {
+        navigate("/dashboard/carts");
+        toast.success("Added to cart!");
+      }
+    }
   };
+
   console.log(course);
   return (
     <div className="bg-[#0000000b] p-5 w-1/2 h-[200px] rounded-md place-items-center ml-auto">

@@ -1,7 +1,7 @@
 export default function NewCourseCard({ course }) {
   const { courseTitle, courseBannerImage } = course;
   return (
-    <div className="flex gap-5 items-center shadow">
+    <div className="flex gap-5 items-center border border-dashed border-slate-300">
       <img src={courseBannerImage} alt="" className="w-46" />
       <div className="py-3">
         <h3 className="text-primary font-semibold text-xl">{courseTitle}</h3>

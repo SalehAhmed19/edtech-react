@@ -10,11 +10,11 @@ export default function HighLights() {
       className="p-16"
     >
       <SectionTitle title={"Why EdTech is best for you?"} />
-      <div className="grid grid-cols-2 gap-6 w-1/2 mx-auto">
+      <div className="grid grid-cols-2 gap-6 w-1/2 mx-auto mt-5">
         {data.map((d) => (
           <div
             key={d}
-            className="border-l-8 border-slate-300 px-5 py-6 rounded-l-md shadow bg-white"
+            className="border-l-8 px-5 py-6 rounded-l-md border border-dashed border-slate-300 bg-white"
           >
             <h3 className="text-primary font-semibold text-xl flex gap-3 items-center">
               <PiVideoFill className="text-black text-3xl" /> Recoded Video

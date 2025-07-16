@@ -112,7 +112,7 @@ async function run() {
     });
 
     // add to carts
-    app.post("/api/carts", async (req, res) => {
+    app.post("/api/carts", verifyToken, async (req, res) => {
       const carts = req.body;
 
       const result = await cartsCollection.insertOne(carts);
