@@ -16,7 +16,7 @@ export default function Dashboard() {
       {/* <div className="pt-10">{isAdmin && <StudentsNavigation />}</div> */}
       <div className="col-span-2 p-10">
         <Outlet />
-        <button
+        {/* <button
           onClick={() => {
             role === "student" ? setRole("teacher") : setRole("student");
           }}
@@ -25,7 +25,7 @@ export default function Dashboard() {
           {role === "student"
             ? "Toggle to Teacher's Menu"
             : "Toogle to Student's Menu"}
-        </button>
+        </button> */}
       </div>
       <Toaster />
     </div>

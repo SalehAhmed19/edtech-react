@@ -18,11 +18,17 @@ export default function StudentsNavigation() {
           {isLoading ? (
             <div className="w-20 h-20 rounded-full bg-slate-300 animate-pulse"></div>
           ) : (
-            <img
-              src={`${students?.photo}`}
-              alt=""
-              className="rounded-full w-20 border-2 border-slate-300 border-dashed"
-            />
+            <>
+              {students.photo === "" ? (
+                <div className="w-20 h-20 rounded-full bg-slate-300 animate-pulse"></div>
+              ) : (
+                <img
+                  src={`${students?.photo}`}
+                  alt=""
+                  className="rounded-full w-20 border-2 border-slate-300 border-dashed"
+                />
+              )}
+            </>
           )}
 
           <p className="font-semibold text-xl">{students?.name}</p>
