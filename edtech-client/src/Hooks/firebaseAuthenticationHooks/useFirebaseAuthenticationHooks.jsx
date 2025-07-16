@@ -28,7 +28,6 @@ export default function useFirebaseAuthenticationHooks() {
     try {
       const result = await signInWithGoogle();
       if (result.user) {
-        setCurrentUser(result.user);
         navigate("/");
         toast.success("Google sign in success!");
 
@@ -56,7 +55,6 @@ export default function useFirebaseAuthenticationHooks() {
     const { email, password } = data;
     const result = await signInWithEmailAndPassword(email, password);
     if (result && result.user) {
-      setCurrentUser(result.user);
       navigate("/");
       toast.success("Logged in successful!");
     }
@@ -69,7 +67,6 @@ export default function useFirebaseAuthenticationHooks() {
 
     try {
       if (result && result.user) {
-        setCurrentUser(result.user);
         const { email, photoURL } = result.user;
         console.log(result.user);
         const studentId = Math.random().toString(36).substring(2, 11);
@@ -97,7 +94,6 @@ export default function useFirebaseAuthenticationHooks() {
   const handleSignOut = async () => {
     const signout = await signOut();
     if (signout) {
-      setCurrentUser(null);
       toast.success("You're signed out!");
     }
   };
