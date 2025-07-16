@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 
+import useAxiosPrivate from "../../../Hooks/Axios/useAxiosPrivate";
 const initialState = {
   isLoading: false,
   carts: [],
@@ -9,16 +9,17 @@ const initialState = {
 
 // add to cart
 export const addToCart = createAsyncThunk("carts", async (data) => {
-  const response = await axios.post("http://localhost:4000/api/carts", data);
+  const axiosPrivate = useAxiosPrivate();
+  const response = await axiosPrivate.post("/carts", data);
 
   return response.data;
 });
 
 // get cart
 export const getCarts = createAsyncThunk("getCarts", async (data) => {
-  const response = await axios.get(
-    `http://localhost:4000/api/carts?email=${data}`
-  );
+  const axiosPrivate = useAxiosPrivate();
+
+  const response = await axiosPrivate.get(`/carts?email=${data}`);
 
   return response.data;
 });

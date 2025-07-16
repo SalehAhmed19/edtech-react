@@ -3,16 +3,18 @@ import { Link } from "react-router-dom";
 import { auth } from "../../../firebase/firebase.config";
 import toast, { Toaster } from "react-hot-toast";
 import logo from "../../../assets/images/logo-transparent.png";
+import useFirebaseAuthenticationHooks from "../../../Hooks/firebaseAuthenticationHooks/useFirebaseAuthenticationHooks";
 
 export default function Navbar() {
-  const [user] = useAuthState(auth);
-  const [signOut] = useSignOut(auth);
-  const handleSignOut = async () => {
-    const signout = await signOut();
-    if (signout) {
-      toast.success("You're signed out!");
-    }
-  };
+  // const [user] = useAuthState(auth);
+  // const [signOut] = useSignOut(auth);
+  // const handleSignOut = async () => {
+  //   const signout = await signOut();
+  //   if (signout) {
+  //     toast.success("You're signed out!");
+  //   }
+  // };
+  const { handleSignOut, user } = useFirebaseAuthenticationHooks();
   return (
     <div className="bg-[#33333310] p-5 text-[#333] sticky top-0 z-50 backdrop-blur-3xl">
       {" "}

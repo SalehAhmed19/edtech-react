@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 require("dotenv").config();
+const jwt = require("jsonwebtoken");
 
 const port = process.env.PORT || 4000 || 5000;
 
@@ -39,6 +40,39 @@ async function run() {
       .collection("studentsCollection");
 
     const cartsCollection = client.db("edTech").collection("cartsCollection");
+
+    // Authorization: jwt
+    app.post("/api/authorization/jwt", async (req, res) => {
+      const user = req.body;
+      // const payload = { email: user.email };
+      const token = jwt.sign(user, process.env.SECRET_TOKEN, {
+        expiresIn: "1h",
+      });
+      console.log(token);
+      res.send({ token });
+    });
+
+    // jwt middleware
+    const verifyToken = (req, res, next) => {
+      // console.log({ fromMiddleWare: req.headers });
+      const token = req.headers.authorization.split(" ")[1];
+      console.log(token);
+      if (!req.headers.authorization) {
+        return res.status(401).send({ message: "Forbiddent access!" });
+      }
+      if (!token) {
+        return res.status(401).send({ message: "Forbiddent access!" });
+      }
+
+      jwt.verify(token, process.env.SECRET_TOKEN, (error, decoded) => {
+        if (error) {
+          return res.status(401).send({ message: "Forbiddent access!" });
+        } else {
+          req.decoded = decoded;
+          next();
+        }
+      });
+    };
 
     // get courses
     app.get("/api/courses", async (req, res) => {
@@ -87,7 +121,7 @@ async function run() {
     });
 
     // get carts by email
-    app.get("/api/carts", async (req, res) => {
+    app.get("/api/carts", verifyToken, async (req, res) => {
       const email = req.query.email;
       const query = { email: email };
 

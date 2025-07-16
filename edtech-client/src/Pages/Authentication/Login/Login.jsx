@@ -1,26 +1,23 @@
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import bg from "../../../assets/images/whyBg.jpg";
 import Divider from "../../../Components/UI/Divider";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import SocialLogin from "../SocialLogin/SocialLogin";
-import { auth } from "../../../firebase/firebase.config";
-import toast from "react-hot-toast";
+
+import useFirebaseAuthenticationHooks from "../../../Hooks/firebaseAuthenticationHooks/useFirebaseAuthenticationHooks";
 
 export default function Login() {
   const { register, handleSubmit } = useForm();
-  const [signInWithEmailAndPassword, loading, error] =
-    useSignInWithEmailAndPassword(auth);
-  const navigate = useNavigate();
 
-  const handleEmailLogin = async (data) => {
-    const { email, password } = data;
-    const result = await signInWithEmailAndPassword(email, password);
-    if (result && result.user) {
-      navigate("/");
-      toast.success("Logged in successful!");
-    }
-  };
+  // const handleEmailLogin = async (data) => {
+  //   const { email, password } = data;
+  //   const result = await signInWithEmailAndPassword(email, password);
+  //   if (result && result.user) {
+  //     navigate("/");
+  //     toast.success("Logged in successful!");
+  //   }
+  // };
+  const { handleEmailLogin } = useFirebaseAuthenticationHooks();
   return (
     <div
       style={{ backgroundImage: `url(${bg})`, backgroundSize: "cover" }}
@@ -56,10 +53,10 @@ export default function Login() {
         </form>
 
         <Divider />
-        {loading && "Signing In..."}
+        {/* {loading && "Signing In..."}
         {error && (
           <span className="text-red-500 text-sm ml-2">({error.message})</span>
-        )}
+        )} */}
 
         <SocialLogin />
 

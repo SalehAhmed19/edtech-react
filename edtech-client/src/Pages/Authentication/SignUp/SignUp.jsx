@@ -1,48 +1,14 @@
 import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
 import bg from "../../../assets/images/whyBg.jpg";
 import Divider from "../../../Components/UI/Divider";
-import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { auth } from "../../../firebase/firebase.config";
+import { Link } from "react-router-dom";
+
 import SocialLogin from "../SocialLogin/SocialLogin";
-import { postStudent } from "../../../RTK/Features/UsersSlice/StudentsSlice";
+import useFirebaseAuthenticationHooks from "../../../Hooks/firebaseAuthenticationHooks/useFirebaseAuthenticationHooks";
 
 export default function SignUp() {
-  const navigate = useNavigate();
-  const [createUserWithEmailAndPassword, error] =
-    useCreateUserWithEmailAndPassword(auth);
-  const dispatch = useDispatch();
-  const { register, handleSubmit, reset } = useForm();
-  const handleSignInEmailPassword = async (data) => {
-    const { email, password } = data;
-    const result = await createUserWithEmailAndPassword(email, password);
-
-    try {
-      if (result && result.user) {
-        const { email, photoURL } = result.user;
-        const studentId = Math.random().toString(36).substring(2, 11);
-        const userInfo = {
-          studentId: "ET_" + studentId,
-          name: data.name,
-          email: email,
-          photo: photoURL,
-          role: "student",
-        };
-
-        const response = await dispatch(postStudent(userInfo)).unwrap();
-        console.log("User data successfully posted to DB:", response);
-        reset();
-        navigate("/");
-        toast.success("Sign up success!");
-      } else {
-        console.error("User creation by email and pass Error:", error);
-      }
-    } catch (reduxError) {
-      console.error("Error posting user data to Redux store:", reduxError);
-    }
-  };
+  const { register, handleSubmit } = useForm();
+  const { handleSignInEmailPassword } = useFirebaseAuthenticationHooks();
 
   return (
     <div
