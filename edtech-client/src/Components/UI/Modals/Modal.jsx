@@ -54,7 +54,7 @@ const Modal = ({ isOpen, onClose, children, title, className = "" }) => {
       {/* Modal Content Container (centered, styled, prevents click propagation) */}
       <div
         ref={modalRef}
-        className={`bg-white rounded-lg shadow-xl p-6 relative
+        className={`bg-white rounded-lg border border-dashed border-slate-300 p-6 relative
                     transform transition-all duration-300 ease-out
                     scale-100 opacity-100
                     w-11/12 md:max-w-md lg:max-w-lg ${className}`}
@@ -62,7 +62,7 @@ const Modal = ({ isOpen, onClose, children, title, className = "" }) => {
         tabIndex="0" // Make modal content focusable
       >
         {/* Modal Header (optional title and close button) */}
-        <div className="flex justify-between items-center pb-4 border-b border-gray-200 mb-4">
+        <div className="flex justify-between items-center pb-4 border-b border-slate-300 border-dashed mb-4">
           {title && (
             <h3
               id="modal-title"

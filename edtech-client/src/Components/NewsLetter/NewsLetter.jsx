@@ -16,7 +16,7 @@ export default function NewsLetter() {
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="border border-[#0000002e] rounded-full p-2 w-1/3 mx-auto flex items-center mt-5"
+        className="border border-slate-300 border-dashed rounded-full p-2 w-1/3 mx-auto flex items-center mt-5"
       >
         <input
           {...register("email")}

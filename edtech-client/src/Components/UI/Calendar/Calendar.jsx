@@ -103,7 +103,7 @@ const Calendar = () => {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-xl p-6 sm:p-8">
+    <div className="bg-white rounded-lg border border-dashed border-slate-300 p-6 sm:p-8">
       {/* Calendar Header: Month, Year, and Navigation */}
       <div className="flex justify-between items-center mb-6">
         <button

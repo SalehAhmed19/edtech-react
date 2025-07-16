@@ -16,7 +16,7 @@ export default function FreeClassForm() {
           {...register("name")}
           type="text"
           placeholder="Your Name"
-          className="border border-[#00000020] w-full rounded-md px-5 py-2 mt-2 bg-white"
+          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2 bg-white"
         />
       </div>
       {/*  */}
@@ -26,7 +26,7 @@ export default function FreeClassForm() {
           {...register("email")}
           type="email"
           placeholder="Your Email"
-          className="border border-[#00000020] w-full rounded-md px-5 py-2 mt-2 bg-white"
+          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2 bg-white"
         />
       </div>
       {/*  */}
@@ -36,7 +36,7 @@ export default function FreeClassForm() {
           {...register("phone")}
           type="text"
           placeholder="Your Phone"
-          className="border border-[#00000020] w-full rounded-md px-5 py-2 mt-2 bg-white"
+          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2 bg-white"
         />
       </div>
       {/*  */}

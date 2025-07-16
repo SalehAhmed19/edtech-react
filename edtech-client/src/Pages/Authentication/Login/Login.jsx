@@ -38,13 +38,13 @@ export default function Login() {
             {...register("email")}
             type="email"
             placeholder="Write your email here"
-            className="border border-[#333] px-5 py-2 rounded-md w-full bg-white"
+            className="border border-slate-300 border-dashed px-5 py-2 rounded-md w-full bg-white"
           />
           <input
             {...register("password")}
             type="password"
             placeholder="Write your password here"
-            className="border border-[#333] px-5 py-2 rounded-md w-full bg-white"
+            className="border border-slate-300 border-dashed px-5 py-2 rounded-md w-full bg-white"
           />
 
           <button className="bg-[#333] px-5 py-2 rounded-md text-white font-semibold cursor-pointer">

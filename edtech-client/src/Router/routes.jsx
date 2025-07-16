@@ -15,6 +15,7 @@ import Certificates from "../Pages/Dashboard/Students/Certificates";
 import StudentCourses from "../Pages/Dashboard/Students/StudentCourses";
 import StudentsProfile from "../Pages/Dashboard/Students/StudentsProfile/StudentsProfile";
 import Carts from "../Pages/Dashboard/Students/Carts";
+import ProtectedRoute from "./Routes/ProtectedRoute";
 
 const routes = createBrowserRouter([
   {
@@ -32,7 +33,11 @@ const routes = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: (
+      <ProtectedRoute>
+        <Dashboard />
+      </ProtectedRoute>
+    ),
     children: [
       { path: "/dashboard", element: <StudentsHome /> },
       { path: "student-profile", element: <StudentsProfile /> },

@@ -30,7 +30,7 @@ const CoursesTabs = ({
     <div className={`w-full ${className} mt-5`}>
       {/* Tab Headers */}
       <div
-        className={`flex border-b border-gray-200 mb-5 ${headerClassName} overflow-scroll`}
+        className={`flex border-b border-slate-300 border-dashed mb-5 ${headerClassName} overflow-scroll`}
       >
         {data.map((tab, index) => (
           <button

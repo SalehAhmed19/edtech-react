@@ -1,6 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
-import useAxiosPrivate from "../../../Hooks/Axios/useAxiosPrivate";
 const initialState = {
   isLoading: false,
   carts: [],
@@ -8,21 +6,32 @@ const initialState = {
 };
 
 // add to cart
-export const addToCart = createAsyncThunk("carts", async (data) => {
-  const axiosPrivate = useAxiosPrivate();
-  const response = await axiosPrivate.post("/carts", data);
+export const addToCart = createAsyncThunk(
+  "carts",
+  async ({ courseItem, axiosPrivate }, { rejectWithValue }) => {
+    try {
+      const response = await axiosPrivate.post("/carts", courseItem);
 
-  return response.data;
-});
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.response?.data?.message || err.message);
+    }
+  }
+);
 
 // get cart
-export const getCarts = createAsyncThunk("getCarts", async (data) => {
-  const axiosPrivate = useAxiosPrivate();
+export const getCarts = createAsyncThunk(
+  "getCarts",
+  async ({ email, axiosPrivate }, { rejectWithValue }) => {
+    try {
+      const response = await axiosPrivate.get(`/carts?email=${email}`);
 
-  const response = await axiosPrivate.get(`/carts?email=${data}`);
-
-  return response.data;
-});
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.response?.data?.message || err.message);
+    }
+  }
+);
 
 const CartsSlice = createSlice({
   name: "carts",

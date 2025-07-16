@@ -14,7 +14,7 @@ export default function HighLights() {
         {data.map((d) => (
           <div
             key={d}
-            className="border-l-8 border-[#333] px-5 py-6 rounded-l-md shadow bg-white"
+            className="border-l-8 border-slate-300 px-5 py-6 rounded-l-md shadow bg-white"
           >
             <h3 className="text-primary font-semibold text-xl flex gap-3 items-center">
               <PiVideoFill className="text-black text-3xl" /> Recoded Video

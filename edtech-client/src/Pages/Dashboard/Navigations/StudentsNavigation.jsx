@@ -14,14 +14,14 @@ export default function StudentsNavigation() {
       </Link>
 
       <Link to="/dashboard">
-        <div className="border-t border-b border-[#0000001b] p-3 flex flex-col gap-1 items-center">
+        <div className="border-t border-b border-slate-300 p-3 flex flex-col gap-1 items-center">
           {isLoading ? (
             <div className="w-20 h-20 rounded-full bg-slate-300 animate-pulse"></div>
           ) : (
             <img
               src={`${students?.photo}`}
               alt=""
-              className="rounded-full w-20 border-3 border-slate-300"
+              className="rounded-full w-20 border-2 border-slate-300 border-dashed"
             />
           )}
 

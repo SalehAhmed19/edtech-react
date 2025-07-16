@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function CourseCard({ avatar, title, lesson, level, id }) {
   return (
-    <div className="p-5 border border-[#00000017] rounded-md bg-white">
+    <div className="p-5 border border-slate-300 border-dashed rounded-md bg-white">
       <img className="rounded-md w-full" src={avatar} alt="" />
       <div className="mt-5 flex flex-col gap-3">
         <h4 className="text-primary font-semibold text-xl">

@@ -5,11 +5,14 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../firebase/firebase.config";
 import { addToCart } from "../../../RTK/Features/StudentsSlices/cartsSlice";
 import { useNavigate } from "react-router-dom";
+import useAxiosPrivate from "../../../Hooks/Axios/useAxiosPrivate";
 
 export default function CourseFee({ course }) {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const axiosPrivate = useAxiosPrivate();
+
   const handleAddToCart = () => {
     const courseItem = {
       email: user?.email,
@@ -22,14 +25,14 @@ export default function CourseFee({ course }) {
       status: "Unpaid",
     };
 
-    dispatch(addToCart(courseItem));
+    dispatch(addToCart({ courseItem, axiosPrivate }));
     toast.success("Added to cart!");
     navigate("/dashboard/carts");
   };
   console.log(course);
   return (
     <div className="bg-[#0000000b] p-5 w-1/2 h-[200px] rounded-md place-items-center ml-auto">
-      <div className="my-5 flex gap-5 border-b">
+      <div className="my-5 flex gap-5 border-b border-slate-300 border-dashed">
         <p className="font-bold">10 Day Left</p>
         <p className="font-bold">10 Seats Available</p>
       </div>

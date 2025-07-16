@@ -12,10 +12,8 @@ import {
 import { auth } from "../../firebase/firebase.config";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
 
 export default function useFirebaseAuthenticationHooks() {
-  const [currentUser, setCurrentUser] = useState(null);
   const [user] = useAuthState(auth);
   const [signOut] = useSignOut(auth);
   const { reset } = useForm();
@@ -104,7 +102,7 @@ export default function useFirebaseAuthenticationHooks() {
     }
   };
 
-  if (currentUser) {
+  if (user) {
     const userInfo = user.email;
     axios
       .post("http://localhost:4000/api/authorization/jwt", userInfo)

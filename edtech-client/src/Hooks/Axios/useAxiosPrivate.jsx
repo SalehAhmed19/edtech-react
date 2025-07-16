@@ -1,10 +1,12 @@
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const axiosPrivate = axios.create({
   baseURL: "http://localhost:4000/api",
 });
 
 export default function useAxiosPrivate() {
+  const navigate = useNavigate();
   axiosPrivate.interceptors.request.use(
     function (config) {
       const token = localStorage.getItem("access-token-secret");
@@ -14,6 +16,23 @@ export default function useAxiosPrivate() {
       return config;
     },
     function (error) {
+      return Promise.reject(error);
+    }
+  );
+
+  axiosPrivate.interceptors.response.use(
+    function (response) {
+      return response;
+    },
+    function (error) {
+      console.log({ error: error.response.status });
+      const status = error.response?.status;
+      if (status === 401 || status === 403) {
+        navigate("/authentication/login");
+        console.warn(
+          "Unauthorized or Forbidden detected, but redirection is disabled for debugging."
+        );
+      }
       return Promise.reject(error);
     }
   );

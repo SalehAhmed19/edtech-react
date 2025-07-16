@@ -40,7 +40,7 @@ export default function Courses() {
         <div ref={sliderRef} className="keen-slider">
           {urls.map((url, idx) => (
             <div key={idx} className="keen-slider__slide ">
-              <div className="p-5 rounded-md border-[#33353] border-2 flex items-center gap-5">
+              <div className="p-5 rounded-md border-slate-300 border-dashed border-2 flex items-center gap-5">
                 <div className="bg-[#33353] p-3 rounded-full">
                   <FaBook />
                 </div>

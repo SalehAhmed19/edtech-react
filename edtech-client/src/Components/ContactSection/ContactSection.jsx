@@ -20,7 +20,7 @@ export default function ContactSection() {
           </div>
         </div>
         <div>
-          <div className="p-5 shadow-lg rounded-xl -mb-10 bg-white">
+          <div className="p-5 border border-dashed border-slate-300 rounded-xl -mb-10 bg-white">
             <h4 className="font-semibold text-xl">Wanna say something?</h4>
             <ContactSectionForm />
           </div>
