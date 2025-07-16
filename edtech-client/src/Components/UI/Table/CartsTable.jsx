@@ -25,7 +25,7 @@ const CartsTable = ({ headers, data, className = "", handleDelete }) => {
   console.log(data);
   return (
     <div
-      className={`overflow-x-auto bg-white rounded-lg border border-dashed border-slate-300 ${className} overflow-y-scroll h-[82vh]`}
+      className={`overflow-x-auto bg-white rounded-lg border border-dashed border-slate-300 ${className} overflow-y-scroll h-[70vh]`}
     >
       <table className="min-w-full divide-y divide-dashed divide-gray-300">
         {/* Table Header */}

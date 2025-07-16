@@ -13,7 +13,7 @@ import toast from "react-hot-toast";
 
 export default function Carts() {
   const axiosPrivate = useAxiosPrivate();
-  const { carts, isLoading } = useGetCarts();
+  const { carts, isLoading, totalPrice } = useGetCarts();
 
   const dispatch = useDispatch();
   const handleDelete = async (id) => {
@@ -61,17 +61,21 @@ export default function Carts() {
     <>
       <div className="mb-5 flex justify-between items-center">
         <DashboardSectionTitle title={"My Cart"} />
-        <Link to="/courses">
-          <button className="text-white bg-[#333] px-5 py-2 rounded-md mt-5 mx-auto block">
-            Explore Courses
-          </button>
-        </Link>
+        <h5 className="text-xl text-slate-500">
+          You have to pay:
+          <span className="text-black font-semibold"> {totalPrice} BDT</span>
+        </h5>
       </div>
       <CartsTable
         headers={tableHeaders}
         data={carts}
         handleDelete={handleDelete}
       />
+      <Link to="/courses">
+        <button className="text-white bg-[#333] px-5 py-2 rounded-md mt-5 mx-auto block">
+          Explore Courses
+        </button>
+      </Link>
     </>
   );
 }

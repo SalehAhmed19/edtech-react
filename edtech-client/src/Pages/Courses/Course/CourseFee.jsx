@@ -35,6 +35,9 @@ export default function CourseFee({ course }) {
         navigate("/dashboard/carts");
         toast.success("Added to cart!");
       }
+      if (result.payload.message) {
+        toast.error("Items already in cart!");
+      }
     }
   };
 

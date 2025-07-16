@@ -3,6 +3,7 @@ const initialState = {
   isLoading: false,
   carts: [],
   isError: true,
+  totalPrice: null,
 };
 
 // add to cart
@@ -68,6 +69,15 @@ const CartsSlice = createSlice({
     builder.addCase(getCarts.fulfilled, (state, action) => {
       state.isLoading = false;
       state.carts = action.payload;
+      const carts = action.payload;
+      const totalPrice = carts.reduce((sum, cart) => {
+        const price = parseFloat(cart.courseFee) || 0;
+
+        return (sum = sum + price);
+      }, 0);
+      const finalTotal = totalPrice.toFixed(2);
+      console.log(totalPrice.toFixed(2));
+      state.totalPrice = finalTotal;
     });
     builder.addCase(getCarts.pending, (state) => {
       state.isLoading = true;
@@ -81,8 +91,17 @@ const CartsSlice = createSlice({
     builder.addCase(deleteCartItem.fulfilled, (state, action) => {
       const id = action.meta.arg.id;
       if (id) {
-        state.carts = state.carts.filter((cart) => cart.courseId !== id);
+        const carts = state.carts.filter((cart) => cart.courseId !== id);
+        state.carts = carts;
         state.isLoading = false;
+        const totalPrice = carts.reduce((sum, cart) => {
+          const price = parseFloat(cart.courseFee) || 0;
+
+          return (sum = sum + price);
+        }, 0);
+        const finalTotal = totalPrice.toFixed(2);
+        console.log(totalPrice.toFixed(2));
+        state.totalPrice = finalTotal;
       }
       console.log(action.meta.arg.id);
     });

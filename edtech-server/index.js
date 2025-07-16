@@ -113,11 +113,26 @@ async function run() {
 
     // add to carts
     app.post("/api/post/carts", verifyToken, async (req, res) => {
-      const carts = req.body;
+      // const carts = req.body;
 
-      const result = await cartsCollection.insertOne(carts);
+      // const result = await cartsCollection.insertOne(carts);
 
-      res.send(result);
+      // res.send(result);
+      const newCartItem = req.body;
+      const courseId = newCartItem.courseId;
+      const filter = { courseId: courseId };
+      try {
+        const existing = await cartsCollection.findOne(filter);
+
+        if (!existing) {
+          const result = await cartsCollection.insertOne(newCartItem);
+          res.send(result);
+        } else {
+          res.send({ message: "Items already in cart" });
+        }
+      } catch (err) {
+        console.log(err);
+      }
     });
 
     // get carts by email

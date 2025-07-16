@@ -16,6 +16,8 @@ export default function useGetCarts() {
     }
   }, [email, dispatch, axiosPrivate]);
 
-  const { carts, isLoading } = useSelector((state) => state.CartsSlice);
-  return { carts: carts, isLoading: isLoading };
+  const { carts, isLoading, totalPrice } = useSelector(
+    (state) => state.CartsSlice
+  );
+  return { carts: carts, isLoading: isLoading, totalPrice: totalPrice };
 }
