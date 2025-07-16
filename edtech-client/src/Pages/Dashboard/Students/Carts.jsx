@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Loader from "../../../Components/Loader/Loader";
 import DashboardSectionTitle from "../../../Components/SectionTitle/DashboardSectionTitle";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { deleteCartItem } from "../../../RTK/Features/StudentsSlices/cartsSlice";
 import useAxiosPrivate from "../../../Hooks/Axios/useAxiosPrivate";
 import toast from "react-hot-toast";
+import PaymentButton from "../../../Components/UI/PaymentButton/PaymentButton";
 
 export default function Carts() {
   const axiosPrivate = useAxiosPrivate();
@@ -71,11 +72,16 @@ export default function Carts() {
         data={carts}
         handleDelete={handleDelete}
       />
-      <Link to="/courses">
-        <button className="text-white bg-[#333] px-5 py-2 rounded-md mt-5 mx-auto block">
-          Explore Courses
-        </button>
-      </Link>
+      <div className="flex items-center justify-between mt-5">
+        <Link to="/courses">
+          <button className="text-white bg-[#333] px-5 py-2 rounded-md">
+            Explore Courses
+          </button>
+        </Link>
+        <Link to="/dashboard/payments/stripe">
+          <PaymentButton />
+        </Link>
+      </div>
     </>
   );
 }
