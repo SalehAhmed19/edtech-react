@@ -53,6 +53,7 @@ export default function useFirebaseAuthenticationHooks() {
   // Email Login
   const handleEmailLogin = async (data) => {
     const { email, password } = data;
+    console.log(data);
     const result = await signInWithEmailAndPassword(email, password);
     if (result && result.user) {
       navigate("/");

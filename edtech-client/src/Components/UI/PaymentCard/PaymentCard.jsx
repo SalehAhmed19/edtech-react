@@ -4,18 +4,21 @@ import { auth } from "../../../firebase/firebase.config";
 
 const PaymentCard = () => {
   const [user] = useAuthState(auth);
-  const date = new Date().toLocaleString().split(",")[0].split("/")[2];
-  const month = new Date().toLocaleString().split(",")[0].split("/")[1];
+  const date = new Date()
+    .toLocaleString()
+    .split(",")[0]
+    .split("/")[2]
+    .split("");
+  const month = new Date().toLocaleString().split(",")[0].split("/")[0];
+  console.log(month);
 
-  const firstString = date.split("")[2];
-  const secondString = date.split("")[3];
-  const validYear = firstString + secondString;
+  const validYear = date[2] + date[3];
   console.log(validYear);
 
   console.log(date);
   return (
     <StyledWrapper>
-      <div className="flip-card">
+      <div className="flip-card cursor-pointer">
         <div className="flip-card-inner">
           <div className="flip-card-front">
             <p className="heading_8264">MASTERCARD</p>

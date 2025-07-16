@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../firebase/firebase.config";
 import { addToCart } from "../../../RTK/Features/StudentsSlices/cartsSlice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAxiosPrivate from "../../../Hooks/Axios/useAxiosPrivate";
 
 export default function CourseFee({ course }) {
@@ -52,9 +52,11 @@ export default function CourseFee({ course }) {
         <span className="font-bold">Course Fee:</span> {course?.courseFee} BDT
       </h5>
       <div className="my-5 flex gap-5">
-        <button className="bg-[#333] text-white px-5 py-2 rounded-md cursor-pointer">
-          Enroll Now
-        </button>
+        <Link to="/dashboard/payments/stripe">
+          <button className="bg-[#333] text-white px-5 py-2 rounded-md cursor-pointer">
+            Enroll Now
+          </button>
+        </Link>
         <button
           onClick={handleAddToCart}
           className="px-5 py-2 rounded-md cursor-pointer border border-dashed"

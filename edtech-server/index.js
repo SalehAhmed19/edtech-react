@@ -113,14 +113,10 @@ async function run() {
 
     // add to carts
     app.post("/api/post/carts", verifyToken, async (req, res) => {
-      // const carts = req.body;
-
-      // const result = await cartsCollection.insertOne(carts);
-
-      // res.send(result);
       const newCartItem = req.body;
       const courseId = newCartItem.courseId;
-      const filter = { courseId: courseId };
+      const email = newCartItem.email;
+      const filter = { courseId: courseId, email: email };
       try {
         const existing = await cartsCollection.findOne(filter);
 
