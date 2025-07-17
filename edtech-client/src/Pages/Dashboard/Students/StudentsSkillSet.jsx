@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import skills from "../../../assets/images/skills.svg";
 import DashboardSectionTitle from "../../../Components/SectionTitle/DashboardSectionTitle";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
@@ -13,9 +14,11 @@ export default function StudentsSkillSet() {
         <SectionTitle title={"You haven't added any skills yet :("} />
 
         <p>Add skills now to make your profile stand out from the rest.</p>
-        <button className="text-white bg-[#333] px-5 py-2 rounded-md mt-5">
-          Add Skills
-        </button>
+        <Link to="/dashboard/add-skillset">
+          <button className="text-white bg-[#333] px-5 py-2 rounded-md mt-5">
+            Add Skills
+          </button>
+        </Link>
       </div>
       <HelpBanner />
     </div>

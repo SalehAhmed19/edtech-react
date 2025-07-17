@@ -5,7 +5,7 @@ export default function StudentsDetails() {
   const { students, isLoading } = useGetStudent();
   const username = students?.email?.split("@")[0];
   return (
-    <div className="bg-black py-10 rounded-b-2xl text-white flex flex-col gap-3">
+    <div className="bg-black py-10 rounded-b-2xl text-white flex flex-col gap-3 -mt-10">
       <div className="relative mb-5">
         <h2 className="text-right px-10 text-[17px] custom-font z-30">
           {students.role}

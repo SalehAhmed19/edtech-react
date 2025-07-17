@@ -17,6 +17,7 @@ import StudentsProfile from "../Pages/Dashboard/Students/StudentsProfile/Student
 import Carts from "../Pages/Dashboard/Students/Carts";
 import ProtectedRoute from "./Routes/ProtectedRoute";
 import StripePayments from "../Pages/Payments/StripePayments";
+import AddSkills from "../Pages/AddSkills/AddSkills";
 
 const routes = createBrowserRouter([
   {
@@ -44,6 +45,7 @@ const routes = createBrowserRouter([
       { path: "student-profile", element: <StudentsProfile /> },
       { path: "student-courses", element: <StudentCourses /> },
       { path: "student-skillset", element: <StudentsSkillSet /> },
+      { path: "add-skillset", element: <AddSkills /> },
       { path: "carts", element: <Carts /> },
       { path: "order-history", element: <OrderHistory /> },
       { path: "certificates", element: <Certificates /> },

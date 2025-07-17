@@ -1,11 +1,12 @@
 import { Outlet } from "react-router-dom";
 import StudentsNavigation from "../Pages/Dashboard/Navigations/StudentsNavigation";
-import { useState } from "react";
+// import { useState } from "react";
 import TeachersNavigation from "../Pages/Dashboard/Navigations/TeachersNavigation";
 import { Toaster } from "react-hot-toast";
 
 export default function Dashboard() {
-  const [role, setRole] = useState("student");
+  // const [role, setRole] = useState("student");
+  const role = "student";
 
   return (
     <div className="grid grid-cols-3 gap-5">
@@ -14,7 +15,7 @@ export default function Dashboard() {
         {role === "teacher" && <TeachersNavigation />}
       </div>
       {/* <div className="pt-10">{isAdmin && <StudentsNavigation />}</div> */}
-      <div className="col-span-2 px-10">
+      <div className="col-span-2 p-10">
         <Outlet />
         {/* <button
           onClick={() => {
