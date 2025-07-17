@@ -1,6 +1,9 @@
 import DashboardSectionTitle from "../../../Components/SectionTitle/DashboardSectionTitle";
 import Calendar from "../../../Components/UI/Calendar/Calendar";
-import course from "../../../assets/images/course.svg";
+import course from "../../../assets/images/online-learning.png";
+import cart from "../../../assets/images/shopping-cart.png";
+import order from "../../../assets/images/order-now.png";
+import certificate from "../../../assets/images/certificate.png";
 import DashboardHighlightCard from "../../../Components/UI/DashboardHighlightCard/DashboardHighlightCard";
 import useGetCarts from "../../../Hooks/Students/useGetCarts";
 
@@ -19,19 +22,19 @@ export default function StudentsHome() {
           />
 
           <DashboardHighlightCard
-            icon={course}
+            icon={cart}
             endpoint={"carts"}
             title={"Carts"}
             length={carts.length}
           />
           <DashboardHighlightCard
-            icon={course}
+            icon={order}
             endpoint={"order-history"}
             title={"Orders"}
             length={0}
           />
           <DashboardHighlightCard
-            icon={course}
+            icon={certificate}
             endpoint={"certificates"}
             title={"Certificates"}
             length={0}

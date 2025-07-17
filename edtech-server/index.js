@@ -74,6 +74,12 @@ async function run() {
       });
     };
 
+    // Verify Google Recaptcha
+    app.post("/api/verify-recaptcha", async (req, res) => {
+      const recaptchaResponse = req.body;
+      console.log(recaptchaResponse);
+    });
+
     // get courses
     app.get("/api/courses", async (req, res) => {
       const result = await coursesCollection.find().toArray();

@@ -12,8 +12,11 @@ import {
 import { auth } from "../../firebase/firebase.config";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
+import useAxiosPublic from "../Axios/useAxiosPublic";
 
 export default function useFirebaseAuthenticationHooks() {
+  const axiosPublic = useAxiosPublic();
   const [user] = useAuthState(auth);
   const [signOut] = useSignOut(auth);
   const { reset } = useForm();
@@ -23,6 +26,12 @@ export default function useFirebaseAuthenticationHooks() {
   const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
   const [createUserWithEmailAndPassword] =
     useCreateUserWithEmailAndPassword(auth);
+  const [recaptchaResponse, setRecaptchaResponse] = useState("");
+
+  const handleGoogleRecaptcha = async (data) => {
+    await setRecaptchaResponse(data);
+    console.log(data);
+  };
 
   const handleGoogleSignin = async () => {
     try {
@@ -77,6 +86,7 @@ export default function useFirebaseAuthenticationHooks() {
           email: email,
           photo: photoURL,
           role: "student",
+          captchaKey: recaptchaResponse,
         };
 
         const response = await dispatch(postStudent(userInfo)).unwrap();
@@ -119,5 +129,6 @@ export default function useFirebaseAuthenticationHooks() {
     handleSignInEmailPassword,
     handleSignOut,
     user,
+    handleGoogleRecaptcha,
   };
 }

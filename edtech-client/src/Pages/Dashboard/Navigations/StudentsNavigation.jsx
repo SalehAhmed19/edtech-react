@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import useGetStudent from "../../../Hooks/Users/useGetStudent";
 import logo from "../../../assets/images/logo-transparent.png";
+import course from "../../../assets/images/online-learning.png";
+import cart from "../../../assets/images/shopping-cart.png";
+import order from "../../../assets/images/order-now.png";
+import skill from "../../../assets/images/skills.png";
+import certificate from "../../../assets/images/certificate.png";
 
 export default function StudentsNavigation() {
   const { students, isLoading } = useGetStudent();
@@ -46,28 +51,28 @@ export default function StudentsNavigation() {
           </li>
         </Link>
         <Link to="/dashboard/student-courses">
-          <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer">
-            My Courses
+          <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer flex items-center gap-5">
+            <img className="w-6" src={course} alt="" /> My Courses
           </li>
         </Link>
         <Link to="/dashboard/student-skillset">
-          <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer">
-            My Skillset
+          <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer flex items-center gap-5">
+            <img className="w-6" src={skill} alt="" /> My Skillset
           </li>
         </Link>
         <Link to="/dashboard/carts">
-          <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer">
-            Carts
+          <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer flex items-center gap-5">
+            <img className="w-6" src={cart} alt="" /> Carts
           </li>
         </Link>
         <Link to="/dashboard/order-history">
-          <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer">
-            Order History
+          <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer flex items-center gap-5">
+            <img className="w-6" src={order} alt="" /> Order History
           </li>
         </Link>
         <Link to="/dashboard/certificates">
-          <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer">
-            My Certificet
+          <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer flex items-center gap-5">
+            <img className="w-6" src={certificate} alt="" /> My Certificet
           </li>
         </Link>
       </ul>
