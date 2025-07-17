@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import useGetStudent from "../../../Hooks/Users/useGetStudent";
-import logo from "../../../assets/images/logo.png";
+import logo from "../../../assets/images/logo-transparent.png";
 
 export default function StudentsNavigation() {
   const { students, isLoading } = useGetStudent();
   // console.log(students);
   return (
-    <div className="rounded-md shadow h-[90vh] bg-slate-100">
+    <div className="rounded-md">
       <Link to="/">
         <div className="py-5">
           <img src={logo} className="w-20 mx-auto" alt="" />
@@ -14,7 +14,7 @@ export default function StudentsNavigation() {
       </Link>
 
       <Link to="/dashboard">
-        <div className="border-t border-b border-slate-300 p-3 flex flex-col gap-1 items-center">
+        <div className="border-t border-b border-slate-300 p-3 flex gap-4 items-center">
           {isLoading ? (
             <div className="w-20 h-20 rounded-full bg-slate-300 animate-pulse"></div>
           ) : (
@@ -32,14 +32,14 @@ export default function StudentsNavigation() {
           )}
 
           <p className="font-semibold text-xl">{students?.name}</p>
-          <p className="text-[#787878]">{students?.studentId}</p>
+          {/* <p className="text-[#787878]">{students?.studentId}</p>
           <p className="text-[#787878]">{students?.email}</p>
           <p className="text-[#787878]">
             {students?.phone ? students.phone : "N/A"}
-          </p>
+          </p> */}
         </div>
       </Link>
-      <ul className="my-5 flex flex-col gap-2 px-10 h-[30vh] overflow-y-auto scroll-smooth border-b border-dashed border-slate-300">
+      <ul className="my-5 flex flex-col gap-2 px-10 h-[50vh] overflow-y-auto scroll-smooth">
         <Link to="/dashboard/student-profile">
           <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer">
             Profile

@@ -14,7 +14,7 @@ export default function Dashboard() {
         {role === "teacher" && <TeachersNavigation />}
       </div>
       {/* <div className="pt-10">{isAdmin && <StudentsNavigation />}</div> */}
-      <div className="col-span-2 p-10">
+      <div className="col-span-2 px-10">
         <Outlet />
         {/* <button
           onClick={() => {

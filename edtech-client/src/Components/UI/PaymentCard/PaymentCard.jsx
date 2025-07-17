@@ -9,7 +9,7 @@ const PaymentCard = () => {
     .split(",")[0]
     .split("/")[2]
     .split("");
-  const month = new Date().toLocaleString().split(",")[0].split("/")[0];
+  const month = new Date().toLocaleString().split(",")[0].split("/")[1];
   console.log(month);
 
   const validYear = date[2] + date[3];
