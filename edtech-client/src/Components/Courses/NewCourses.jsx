@@ -2,6 +2,7 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 import NewCourseCard from "../Cards/NewCourseCard";
 import useGetCourses from "../../Hooks/Courses/useGetCourses";
 import { useState } from "react";
+import { FaArrowTurnDown } from "react-icons/fa6";
 
 export default function NewCourses() {
   const [show, setShow] = useState();
@@ -31,9 +32,9 @@ export default function NewCourses() {
       {!show && (
         <button
           onClick={showMore}
-          className="mx-auto block bg-[#333] text-white my-5 px-5 py-2 rounded-md cursor-pointer"
+          className="mx-auto flex items-center gap-2 my-5 px-5 py-2 rounded-md cursor-pointer"
         >
-          See More
+          See More <FaArrowTurnDown />
         </button>
       )}
     </div>

@@ -5,9 +5,13 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 
 import CourseCard from "../Cards/CourseCard";
 import useGetCourses from "../../Hooks/Courses/useGetCourses";
+import { useState } from "react";
+import { FaArrowTurnDown } from "react-icons/fa6";
+import Show from "../Show/Show";
 
 export default function PopularCourses() {
   const { courses } = useGetCourses();
+  const [show, setShow] = useState(4);
   // console.log(courses.length);
   const popularCourses = courses.filter(
     (course) => course.coursesPopularityStatus === "Popular"
@@ -19,7 +23,10 @@ export default function PopularCourses() {
     <div>
       <SectionTitle title={"Popular Courses"} />
       <div className="mt-10 grid grid-cols-4 gap-5">
-        {popularCourses.map((course) => (
+        {/* {newCourses.slice(0, show ? show : 6).map((course) => (
+          <NewCourseCard key={course.courseId} course={course} />
+        ))} */}
+        {popularCourses.slice(0, show ? show : 4).map((course) => (
           <CourseCard
             key={course.courseId}
             avatar={course.courseBannerImage}
@@ -31,6 +38,7 @@ export default function PopularCourses() {
           />
         ))}
       </div>
+      <Show course={popularCourses} show={show} setShow={setShow} />
     </div>
   );
 }

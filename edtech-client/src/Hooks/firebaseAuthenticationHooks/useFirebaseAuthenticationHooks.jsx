@@ -13,10 +13,8 @@ import { auth } from "../../firebase/firebase.config";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import useAxiosPublic from "../Axios/useAxiosPublic";
 
 export default function useFirebaseAuthenticationHooks() {
-  const axiosPublic = useAxiosPublic();
   const [user] = useAuthState(auth);
   const [signOut] = useSignOut(auth);
   const { reset } = useForm();
