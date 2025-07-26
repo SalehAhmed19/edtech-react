@@ -3,7 +3,7 @@ import styled from "styled-components";
 const PaymentButton = () => {
   return (
     <StyledWrapper>
-      <button className="pay-btn">
+      <button className="pay-btn mx-auto my-5">
         <span className="btn-text">Pay Now</span>
         <div className="icon-container">
           <svg viewBox="0 0 24 24" className="icon card-icon">

@@ -40,6 +40,7 @@ async function run() {
       .collection("studentsCollection");
 
     const cartsCollection = client.db("edTech").collection("cartsCollection");
+    const skillsCollection = client.db("edTech").collection("skillsCollection");
 
     // Authorization: jwt
     app.post("/api/authorization/jwt", async (req, res) => {
@@ -73,12 +74,6 @@ async function run() {
         }
       });
     };
-
-    // Verify Google Recaptcha
-    app.post("/api/verify-recaptcha", async (req, res) => {
-      const recaptchaResponse = req.body;
-      console.log(recaptchaResponse);
-    });
 
     // get courses
     app.get("/api/courses", async (req, res) => {
@@ -151,6 +146,25 @@ async function run() {
       const id = req.params.id;
       const query = { courseId: id };
       const result = await cartsCollection.deleteOne(query);
+
+      res.send(result);
+    });
+
+    // skills
+    app.post("/api/post/skills", async (req, res) => {
+      const skills = req.body;
+      console.log(skills);
+
+      const result = await skillsCollection.insertOne(skills);
+
+      res.send(result);
+    });
+
+    app.get("/api/get/skills", async (req, res) => {
+      const email = req.query.email;
+      const query = { email: email };
+
+      const result = await skillsCollection.find(query).toArray();
 
       res.send(result);
     });

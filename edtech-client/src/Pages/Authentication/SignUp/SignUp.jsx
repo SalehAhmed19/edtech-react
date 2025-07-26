@@ -5,12 +5,10 @@ import { Link } from "react-router-dom";
 
 import SocialLogin from "../SocialLogin/SocialLogin";
 import useFirebaseAuthenticationHooks from "../../../Hooks/firebaseAuthenticationHooks/useFirebaseAuthenticationHooks";
-import ReCAPTCHA from "react-google-recaptcha";
 
 export default function SignUp() {
   const { register, handleSubmit } = useForm();
-  const { handleSignInEmailPassword, handleGoogleRecaptcha } =
-    useFirebaseAuthenticationHooks();
+  const { handleSignInEmailPassword } = useFirebaseAuthenticationHooks();
 
   return (
     <div
@@ -43,14 +41,6 @@ export default function SignUp() {
             placeholder="Write your password here"
             className="border border-slate-300 border-dashed px-5 py-2 rounded-md w-full bg-white"
           />
-
-          <div className="flex justify-center">
-            {" "}
-            <ReCAPTCHA
-              sitekey={`${import.meta.env.VITE_GOOGLE_CAPTCHA_CLIENT}`}
-              onChange={handleGoogleRecaptcha}
-            />
-          </div>
 
           <button className="bg-[#333] px-5 py-2 rounded-md text-white font-semibold cursor-pointer">
             Sign in
