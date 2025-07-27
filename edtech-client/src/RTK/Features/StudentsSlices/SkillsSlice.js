@@ -46,12 +46,12 @@ const SkillsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     // post
+    builder.addCase(addSkills.pending, (state) => {
+      state.isLoading = true;
+    });
     builder.addCase(addSkills.fulfilled, (state, action) => {
       state.isLoading = false;
       state.skills.push(action.payload);
-    });
-    builder.addCase(addSkills.pending, (state) => {
-      state.isLoading = true;
     });
     builder.addCase(addSkills.rejected, (state, action) => {
       state.isLoading = true;
@@ -60,12 +60,12 @@ const SkillsSlice = createSlice({
     });
 
     // get
+    builder.addCase(getSkills.pending, (state) => {
+      state.isLoading = true;
+    });
     builder.addCase(getSkills.fulfilled, (state, action) => {
       state.isLoading = false;
       state.skills = action.payload;
-    });
-    builder.addCase(getSkills.pending, (state) => {
-      state.isLoading = true;
     });
     builder.addCase(getSkills.rejected, (state, action) => {
       state.isLoading = true;

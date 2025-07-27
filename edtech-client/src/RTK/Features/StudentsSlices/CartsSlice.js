@@ -53,12 +53,12 @@ const CartsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
+    builder.addCase(addToCart.pending, (state) => {
+      state.isLoading = true;
+    });
     builder.addCase(addToCart.fulfilled, (state, action) => {
       state.isLoading = false;
       state.carts.push(action.payload);
-    });
-    builder.addCase(addToCart.pending, (state) => {
-      state.isLoading = true;
     });
     builder.addCase(addToCart.rejected, (state, action) => {
       state.isError = true;
@@ -66,6 +66,9 @@ const CartsSlice = createSlice({
     });
 
     // get cart
+    builder.addCase(getCarts.pending, (state) => {
+      state.isLoading = true;
+    });
     builder.addCase(getCarts.fulfilled, (state, action) => {
       state.isLoading = false;
       state.carts = action.payload;
@@ -79,15 +82,15 @@ const CartsSlice = createSlice({
       console.log(totalPrice.toFixed(2));
       state.totalPrice = finalTotal;
     });
-    builder.addCase(getCarts.pending, (state) => {
-      state.isLoading = true;
-    });
     builder.addCase(getCarts.rejected, (state, action) => {
       state.isError = true;
       console.log(action.payload);
     });
 
     // delete carts items
+    builder.addCase(deleteCartItem.pending, (state) => {
+      state.isLoading = true;
+    });
     builder.addCase(deleteCartItem.fulfilled, (state, action) => {
       const id = action.meta.arg.id;
       if (id) {
@@ -104,9 +107,6 @@ const CartsSlice = createSlice({
         state.totalPrice = finalTotal;
       }
       console.log(action.meta.arg.id);
-    });
-    builder.addCase(deleteCartItem.pending, (state) => {
-      state.isLoading = true;
     });
     builder.addCase(deleteCartItem.rejected, (state, action) => {
       state.isError = true;

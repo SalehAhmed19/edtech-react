@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
+const stripe = require("stripe")(process.env.STRIPE);
 
 const port = process.env.PORT || 4000 || 5000;
 
@@ -41,6 +42,14 @@ async function run() {
 
     const cartsCollection = client.db("edTech").collection("cartsCollection");
     const skillsCollection = client.db("edTech").collection("skillsCollection");
+    const paymentsCollection = client
+      .db("edTech")
+      .collection("paymentsCollection");
+
+    const ordersCollection = client.db("edTech").collection("ordersCollection");
+    const enrolledCoursesCollection = client
+      .db("edTech")
+      .collection("enrolledCoursesCollection");
 
     // Authorization: jwt
     app.post("/api/authorization/jwt", async (req, res) => {
@@ -165,6 +174,76 @@ async function run() {
       const query = { email: email };
 
       const result = await skillsCollection.find(query).toArray();
+
+      res.send(result);
+    });
+
+    // Payments
+    app.post("/api/payment/stripe/create-payment-intent", async (req, res) => {
+      const payment = req.body.price;
+      console.log(payment);
+      const amount = payment * 100;
+      console.log(amount);
+
+      const paymentIntent = await stripe.paymentIntents.create({
+        amount: amount,
+        currency: "bdt",
+        payment_method_types: ["card"],
+      });
+
+      res.send({
+        clientSecret: paymentIntent.client_secret,
+      });
+    });
+
+    app.post("/api/payment/stripe/payment-success", async (req, res) => {
+      const payment = req.body;
+      const email = req.body.email;
+      const query = { email: email };
+      const carts = req.body.carts;
+      const oId = Math.random().toString(20);
+      const orderId = "ET_O_" + oId.split(".")[1];
+      const orders = { orderId: orderId, email: email, carts: carts };
+      const enrolledCourses = {
+        email: email,
+        courses: carts,
+      };
+
+      const result = await paymentsCollection.insertOne(payment);
+      if (res) {
+        await cartsCollection.deleteMany(query);
+        await ordersCollection.insertOne(orders);
+        await enrolledCoursesCollection.insertOne(enrolledCourses);
+      }
+
+      res.send(result);
+    });
+
+    app.get("/api/get/payments", async (req, res) => {
+      const email = req.query.email;
+      const query = { email: email };
+
+      const result = await paymentsCollection.find(query).toArray();
+
+      res.send(result);
+    });
+
+    // get orders for students
+    app.get("/api/get/orders", async (req, res) => {
+      const email = req.query.email;
+      const query = { email: email };
+
+      const result = await ordersCollection.find(query).toArray();
+
+      res.send(result);
+    });
+
+    // enrolled courses
+    app.get("/api/enrolled-courses", async (req, res) => {
+      const email = req.query.email;
+      const query = { email: email };
+
+      const result = await enrolledCoursesCollection.find(query).toArray();
 
       res.send(result);
     });

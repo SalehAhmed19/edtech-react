@@ -41,7 +41,7 @@ export default function Carts() {
       <div className="flex flex-col justify-center gap-10">
         <DashboardSectionTitle title={"My Carts"} />
 
-        <div className="shadow p-5 rounded-md text-center place-content-center py-20">
+        <div className="border border-dashed border-slate-300 p-5 rounded-md text-center place-content-center py-20">
           <img src={course} alt="" className="mx-auto my-2" />
           <SectionTitle title={"You haven't added any course in cart yet :("} />
 

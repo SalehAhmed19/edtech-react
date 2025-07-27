@@ -6,9 +6,11 @@ import order from "../../../assets/images/order-now.png";
 import certificate from "../../../assets/images/certificate.png";
 import DashboardHighlightCard from "../../../Components/UI/DashboardHighlightCard/DashboardHighlightCard";
 import useGetCarts from "../../../Hooks/Students/useGetCarts";
+import useGetOrders from "../../../Hooks/Students/useGetOrders";
 
 export default function StudentsHome() {
-  const { carts, isLoading } = useGetCarts();
+  const { carts } = useGetCarts();
+  const { orders } = useGetOrders();
   return (
     <div>
       <DashboardSectionTitle title={"Welcome to dashboard!"} />
@@ -31,7 +33,7 @@ export default function StudentsHome() {
             icon={order}
             endpoint={"order-history"}
             title={"Orders"}
-            length={0}
+            length={orders.length}
           />
           <DashboardHighlightCard
             icon={certificate}
