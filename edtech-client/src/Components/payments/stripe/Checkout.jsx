@@ -84,7 +84,7 @@ const CheckoutForm = () => {
           staus: "Succeed",
           trxId: trxId,
         };
-        dispatch(postPayment(payment));
+        await dispatch(postPayment(payment));
         reset();
         navigate("/dashboard/order-history");
         toast.success(`Payment successful: BDT ${totalPrice} !`);
