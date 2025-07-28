@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import useGetStudent from "../../../Hooks/Users/useGetStudent";
+import useGetStudents from "../../../Hooks/Users/useGetStudent";
 import logo from "../../../assets/images/logo-transparent.png";
 import course from "../../../assets/images/online-learning.png";
 import cart from "../../../assets/images/shopping-cart.png";
@@ -7,9 +7,9 @@ import order from "../../../assets/images/order-now.png";
 import skill from "../../../assets/images/skills.png";
 import certificate from "../../../assets/images/certificate.png";
 
-export default function StudentsNavigation() {
-  const { students, isLoading } = useGetStudent();
-  // console.log(students);
+export default function studentNavigation() {
+  const { student, isLoading } = useGetStudents();
+
   return (
     <div className="rounded-md">
       <Link to="/">
@@ -24,11 +24,11 @@ export default function StudentsNavigation() {
             <div className="w-20 h-20 rounded-full bg-slate-300 animate-pulse"></div>
           ) : (
             <>
-              {students.photo === "" ? (
+              {student.photo === "" ? (
                 <div className="w-20 h-20 rounded-full bg-slate-300 animate-pulse"></div>
               ) : (
                 <img
-                  src={`${students?.photo}`}
+                  src={`${student?.photo}`}
                   alt=""
                   className="rounded-full w-20 border-2 border-slate-300 border-dashed"
                 />
@@ -36,11 +36,11 @@ export default function StudentsNavigation() {
             </>
           )}
 
-          <p className="font-semibold text-xl">{students?.name}</p>
-          {/* <p className="text-[#787878]">{students?.studentId}</p>
-          <p className="text-[#787878]">{students?.email}</p>
+          <p className="font-semibold text-xl">{student?.name}</p>
+          {/* <p className="text-[#787878]">{student?.studentId}</p>
+          <p className="text-[#787878]">{student?.email}</p>
           <p className="text-[#787878]">
-            {students?.phone ? students.phone : "N/A"}
+            {student?.phone ? student.phone : "N/A"}
           </p> */}
         </div>
       </Link>

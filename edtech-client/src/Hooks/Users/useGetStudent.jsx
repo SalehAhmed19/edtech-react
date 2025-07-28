@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getStudent } from "../../RTK/Features/UsersSlice/StudentsSlice";
+import { getStudent } from "../../RTK/Features/UsersSlice/UsersSlice";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase/firebase.config";
 
@@ -12,7 +12,7 @@ export default function useGetStudent() {
     dispatch(getStudent(user?.email));
   }, [user, dispatch]);
 
-  const { students, isLoading } = useSelector((state) => state.StudentSlice);
+  const { student, isLoading } = useSelector((state) => state.UsersSlice);
 
-  return { students: students, isLoading: isLoading };
+  return { student: student, isLoading: isLoading };
 }

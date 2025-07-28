@@ -1,20 +1,26 @@
-import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
-import { auth } from "../../../firebase/firebase.config";
-import toast, { Toaster } from "react-hot-toast";
+
+import { Toaster } from "react-hot-toast";
 import logo from "../../../assets/images/logo-transparent.png";
 import useFirebaseAuthenticationHooks from "../../../Hooks/firebaseAuthenticationHooks/useFirebaseAuthenticationHooks";
+import useGetTeacher from "../../../Hooks/Users/useGetTeacher";
+import Loader from "../../Loader/Loader";
 
 export default function Navbar() {
-  // const [user] = useAuthState(auth);
-  // const [signOut] = useSignOut(auth);
-  // const handleSignOut = async () => {
-  //   const signout = await signOut();
-  //   if (signout) {
-  //     toast.success("You're signed out!");
-  //   }
-  // };
   const { handleSignOut, user } = useFirebaseAuthenticationHooks();
+  const { teacher, isLoading: teacherLoading } = useGetTeacher();
+
+  console.log(teacher);
+
+  if (teacherLoading) {
+    <div className="h-[80vh] flex justify-center items-center">
+      <Loader />
+    </div>;
+  }
+
+  // console.log(teachers.role);
+  // console.log(students.role);
+
   return (
     <div className="bg-[#33333310] p-5 text-[#333] sticky top-0 z-50 backdrop-blur-3xl">
       {" "}
@@ -34,9 +40,19 @@ export default function Navbar() {
               <Link to="/contact">Contact</Link>
             </li>
             {user && (
-              <li className="font-semibold">
-                <Link to="/dashboard/">Dashboard</Link>
-              </li>
+              <>
+                <li
+                  className={`font-semibold ${
+                    teacher.role === "teacher" && "hidden"
+                  }`}
+                >
+                  <Link to="/become-instructor/">Become Instructor</Link>
+                </li>
+
+                <li className="font-semibold">
+                  <Link to="/dashboard/">Dashboard</Link>
+                </li>
+              </>
             )}
           </ul>
         </div>

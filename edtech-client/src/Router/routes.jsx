@@ -18,6 +18,8 @@ import Carts from "../Pages/Dashboard/Students/Carts";
 import ProtectedRoute from "./Routes/ProtectedRoute";
 import StripePayments from "../Pages/Payments/StripePayments";
 import AddSkills from "../Pages/AddSkills/AddSkills";
+import GetStarted from "../Pages/BecomeInstructorPage/GetStarted";
+import BecomeInstructorLayout from "../Layout/BecomeInstructorLayout";
 
 const routes = createBrowserRouter([
   {
@@ -27,7 +29,14 @@ const routes = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/courses", element: <Courses /> },
       { path: "/contact", element: <Contact /> },
-      { path: "/become-instructor", element: <BecomeInstructorPage /> },
+      {
+        path: "/become-instructor",
+        element: <BecomeInstructorLayout />,
+        children: [
+          { path: "/become-instructor", element: <BecomeInstructorPage /> },
+          { path: "get-started", element: <GetStarted /> },
+        ],
+      },
       { path: "/courses/:id", element: <Course /> },
       { path: "/authentication/login", element: <Login /> },
       { path: "/authentication/signup", element: <SignUp /> },

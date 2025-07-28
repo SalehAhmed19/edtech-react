@@ -36,9 +36,13 @@ async function run() {
       .db("edTech")
       .collection("coursesCollection");
 
+    const usersCollection = client.db("edTech").collection("usersCollection");
     const studentsCollection = client
       .db("edTech")
       .collection("studentsCollection");
+    const teachersCollection = client
+      .db("edTech")
+      .collection("teachersCollection");
 
     const cartsCollection = client.db("edTech").collection("cartsCollection");
     const skillsCollection = client.db("edTech").collection("skillsCollection");
@@ -119,6 +123,33 @@ async function run() {
       const student = await studentsCollection.findOne(query);
 
       res.send(student);
+    });
+
+    // become teacher
+    app.post("/api/post/teacher", async (req, res) => {
+      const teacher = req.body;
+      const email = teacher.email;
+      const query = { email: email };
+
+      const existingTecaher = await teachersCollection.findOne(query);
+      if (existingTecaher) return; // user exists, do nothing
+
+      const result = await teachersCollection.insertOne(teacher);
+      if (result) {
+        await studentsCollection.deleteOne(query);
+      }
+
+      res.send(result);
+    });
+
+    app.get("/api/users/teacher/:email", async (req, res) => {
+      const email = req.params.email;
+      const query = { email: email };
+      console.log(query);
+      const teacher = await teachersCollection.findOne(query);
+      console.log(teacher);
+
+      res.send(teacher);
     });
 
     // add to carts

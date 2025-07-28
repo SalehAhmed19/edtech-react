@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SectionTitleTwo from "../../Components/SectionTitle/SectionTitleTwo";
 import Stats from "../../Components/Stats/Stats";
 import man from "../../assets/images/man.png";
@@ -16,9 +17,11 @@ export default function BecomeInstructorPage() {
               to put your teaching skills to good use? Then join Skilofy as an
               instructor now!
             </p>
-            <button className="bg-[#333] px-5 py-2 rounded-md text-white mt-5">
-              Start Now
-            </button>
+            <Link to="/become-instructor/get-started">
+              <button className="bg-[#333] px-5 py-2 rounded-md text-white mt-5">
+                Start Now
+              </button>
+            </Link>
           </div>
           <div>
             <img src={man} alt="" />

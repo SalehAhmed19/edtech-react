@@ -1,0 +1,131 @@
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import Divider from "../UI/Divider";
+import { useDispatch } from "react-redux";
+import {
+  getTeacher,
+  postTeacher,
+} from "../../RTK/Features/UsersSlice/TeacherSlice";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase/firebase.config";
+import { useNavigate } from "react-router-dom";
+
+export default function TeacherForm() {
+  const [user] = useAuthState(auth);
+  const email = user?.email;
+  const navigate = useNavigate();
+  const { register, handleSubmit, reset } = useForm();
+  const dispatch = useDispatch();
+  const teacherId = Math.random().toString(36).substring(2, 11);
+  const onSubmit = async (data) => {
+    const teacher = {
+      name: data.name,
+      email: email,
+      phone: data.phone,
+      address: {
+        street: data.address,
+        city: data.city,
+        postal: data.postal,
+      },
+      resume: data.resume,
+      role: data.role,
+      teacherId: "ET_" + teacherId,
+    };
+
+    console.log(teacher);
+    const response = await dispatch(postTeacher(teacher));
+    console.log({ response });
+    navigate("/");
+    toast.success("You're teacher now!");
+    reset();
+  };
+  return (
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="flex flex-col gap-4 mt-3 "
+    >
+      <div>
+        <label className="font-semibold">
+          Full Name{" "}
+          <span className="text-[#787878] text-xs font-normal">
+            (As per NID)
+          </span>
+        </label>
+        <input
+          {...register("name")}
+          type="text"
+          placeholder="Your Name"
+          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2"
+        />
+      </div>
+      {/*  */}
+      <div>
+        <label className="font-semibold">Phone</label>
+        <input
+          {...register("phone")}
+          type="phone"
+          placeholder="Your Phone"
+          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2"
+        />
+      </div>
+      {/*  */}
+      <div>
+        <Divider text={"Address"} />
+        <label className="font-semibold text-center">Address</label>
+        <input
+          {...register("address")}
+          type="address"
+          placeholder="Your Address"
+          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2"
+        />
+      </div>
+      {/*  */}
+      <div className="grid grid-cols-2 gap-5 w-full">
+        <div>
+          <label className="font-semibold text-center">City</label>
+          <input
+            {...register("city")}
+            type="address"
+            placeholder="City"
+            className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2"
+          />
+        </div>
+        {/*  */}
+        <div>
+          <label className="font-semibold text-center">Postal Code</label>
+          <input
+            {...register("postal")}
+            type="address"
+            placeholder="Postal Code (Ex: 5840)"
+            className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2"
+          />
+        </div>
+      </div>
+      {/*  */}
+      <div>
+        <label className="font-semibold text-center">
+          Your Resume{" "}
+          <span className="text-[#787878] text-xs font-normal">
+            (Google Drive Link)
+          </span>
+        </label>
+        <input
+          {...register("resume")}
+          type="address"
+          placeholder="Drive Link (Ex: https://drive.google.com/file/d/FILE_ID/view)"
+          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2"
+        />
+      </div>
+      <input
+        {...register("role")}
+        type="text"
+        value={"teacher"}
+        className="hidden"
+      />
+
+      <button className="bg-[#333] px-5 py-2 rounded-md text-white">
+        Submit
+      </button>
+    </form>
+  );
+}
