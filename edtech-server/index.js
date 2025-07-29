@@ -105,6 +105,9 @@ async function run() {
       if (existingUser) return; // user exists, do nothing
 
       const result = await studentsCollection.insertOne(student);
+      if (result) {
+        await usersCollection.insertOne(student);
+      }
 
       res.send(result);
     });
@@ -134,9 +137,16 @@ async function run() {
       const existingTecaher = await teachersCollection.findOne(query);
       if (existingTecaher) return; // user exists, do nothing
 
+      const updateRole = {
+        $set: {
+          role: "teacher",
+        },
+      };
+
       const result = await teachersCollection.insertOne(teacher);
       if (result) {
         await studentsCollection.deleteOne(query);
+        await usersCollection.updateOne(query, updateRole);
       }
 
       res.send(result);
