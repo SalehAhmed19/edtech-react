@@ -34,6 +34,9 @@ export default function TeacherForm() {
 
     console.log(teacher);
     const response = await dispatch(postTeacher(teacher));
+    if (response) {
+      dispatch(getTeacher(email));
+    }
     console.log({ response });
     navigate("/");
     toast.success("You're teacher now!");

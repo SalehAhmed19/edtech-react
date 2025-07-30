@@ -62,15 +62,15 @@ async function run() {
       const token = jwt.sign(user, process.env.SECRET_TOKEN, {
         expiresIn: "1h",
       });
-      // console.log(token);
+      // // console.log(token);
       res.send({ token });
     });
 
     // jwt middleware
     const verifyToken = (req, res, next) => {
-      // console.log({ fromMiddleWare: req.headers });
+      // // console.log({ fromMiddleWare: req.headers });
       const token = req.headers.authorization.split(" ")[1];
-      // console.log(token);
+      // // console.log(token);
       if (!req.headers.authorization) {
         return res.status(401).send({ message: "Forbiddent access!" });
       }
@@ -155,11 +155,29 @@ async function run() {
     app.get("/api/users/teacher/:email", async (req, res) => {
       const email = req.params.email;
       const query = { email: email };
-      console.log(query);
+      // console.log(query);
       const teacher = await teachersCollection.findOne(query);
-      console.log(teacher);
+      // console.log(teacher);
 
       res.send(teacher);
+    });
+
+    // all users
+    app.get("/api/get/users", async (req, res) => {
+      const users = await usersCollection.find().toArray();
+
+      res.send(users);
+    });
+
+    // user
+    app.get("/api/get/user", async (req, res) => {
+      const email = req.query.email;
+      const query = { email: email };
+      const user = await usersCollection.findOne(query);
+      console.log(email);
+      console.log(user);
+
+      res.send(user);
     });
 
     // add to carts
@@ -178,7 +196,7 @@ async function run() {
           res.send({ message: "Items already in cart" });
         }
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     });
 
@@ -203,7 +221,7 @@ async function run() {
     // skills
     app.post("/api/post/skills", async (req, res) => {
       const skills = req.body;
-      console.log(skills);
+      // console.log(skills);
 
       const result = await skillsCollection.insertOne(skills);
 
@@ -222,9 +240,9 @@ async function run() {
     // Payments
     app.post("/api/payment/stripe/create-payment-intent", async (req, res) => {
       const payment = req.body.price;
-      console.log(payment);
+      // console.log(payment);
       const amount = payment * 100;
-      console.log(amount);
+      // console.log(amount);
 
       const paymentIntent = await stripe.paymentIntents.create({
         amount: amount,

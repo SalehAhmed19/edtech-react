@@ -3,16 +3,17 @@ import { Link } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import logo from "../../../assets/images/logo-transparent.png";
 import useFirebaseAuthenticationHooks from "../../../Hooks/firebaseAuthenticationHooks/useFirebaseAuthenticationHooks";
-import useGetTeacher from "../../../Hooks/Users/useGetTeacher";
 import Loader from "../../Loader/Loader";
+// import useGetAllUsers from "../../../Hooks/Users/useGetAllUsers";
+import useGetTeacher from "../../../Hooks/Users/useGetTeacher";
 
 export default function Navbar() {
   const { handleSignOut, user } = useFirebaseAuthenticationHooks();
-  const { teacher, isLoading: teacherLoading } = useGetTeacher();
+  // const { isLoading, users, singleUser } = useGetAllUsers();
+  const { isLoading, teacher } = useGetTeacher();
+  console.log({ teacher: teacher });
 
-  console.log(teacher);
-
-  if (teacherLoading) {
+  if (isLoading) {
     <div className="h-[80vh] flex justify-center items-center">
       <Loader />
     </div>;
@@ -41,11 +42,7 @@ export default function Navbar() {
             </li>
             {user && (
               <>
-                <li
-                  className={`font-semibold ${
-                    teacher.role === "teacher" && "hidden"
-                  }`}
-                >
+                <li className={`font-semibold ${teacher && "hidden"}`}>
                   <Link to="/become-instructor/">Become Instructor</Link>
                 </li>
 

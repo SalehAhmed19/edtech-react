@@ -1,5 +1,5 @@
 import toast from "react-hot-toast";
-import { postStudent } from "../../RTK/Features/UsersSlice/UsersSlice";
+import { postStudent } from "../../RTK/Features/UsersSlice/StudentsSlice";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import {

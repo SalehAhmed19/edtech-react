@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import CoursesReducer from "../Features/CoursesSlice/CoursesSlice";
-import UsersReducer from "../Features/UsersSlice/UsersSlice";
+import StudentsReducer from "../Features/UsersSlice/StudentsSlice";
+import AllUsersReducer from "../Features/UsersSlice/AllUsersSlice";
 import TeacherReducer from "../Features/UsersSlice/TeacherSlice";
 import CartsReducer from "../Features/StudentsSlices/CartsSlice";
 import SkillsReducer from "../Features/StudentsSlices/SkillsSlice";
@@ -10,7 +11,8 @@ import OrderReducer from "../Features/StudentsSlices/OrderSlice";
 export const store = configureStore({
   reducer: {
     CoursesSlice: CoursesReducer,
-    UsersSlice: UsersReducer,
+    AllUsersSlice: AllUsersReducer,
+    StudentsSlice: StudentsReducer,
     TeacherSlice: TeacherReducer,
     CartsSlice: CartsReducer,
     SkillsSlice: SkillsReducer,
