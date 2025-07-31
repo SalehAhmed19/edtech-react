@@ -1,7 +1,5 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import PaymentButton from "../../UI/PaymentButton/PaymentButton";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../../../firebase/firebase.config";
 import { useForm } from "react-hook-form";
 import useGetCarts from "../../../Hooks/Students/useGetCarts";
 import { useEffect } from "react";
@@ -13,10 +11,12 @@ import {
 } from "../../../RTK/Features/StudentsSlices/PaymentSlice";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import useGetUser from "../../../Hooks/Users/useGetUser";
 
 const CheckoutForm = () => {
   const { totalPrice, carts } = useGetCarts();
-  const [user] = useAuthState(auth);
+  // const [user] = useAuthState(auth);
+  const { singleUser } = useGetUser();
   const navigate = useNavigate();
 
   const { register, handleSubmit, reset } = useForm();
@@ -61,8 +61,8 @@ const CheckoutForm = () => {
         payment_method: {
           card: card,
           billing_details: {
-            name: user?.displayName || "annonymous",
-            email: user?.email || "annonymous",
+            name: singleUser?.name || "annonymous",
+            email: singleUser?.email || "annonymous",
           },
         },
       });
@@ -76,8 +76,8 @@ const CheckoutForm = () => {
         const trxId = "EDTECH_" + paymentIntent.id.split("_")[1];
         console.log(trxId);
         const payment = {
-          name: user?.displayName || "annonymous",
-          email: user?.email || "annonymous",
+          name: singleUser?.name || "annonymous",
+          email: singleUser?.email || "annonymous",
           phone: data.phone,
           carts: carts,
           price: totalPrice,
@@ -99,8 +99,8 @@ const CheckoutForm = () => {
         <input
           {...register("name")}
           type="text"
-          value={user.displayName}
-          readOnly
+          value={singleUser.name}
+          readOnly={singleUser.name === "" ? false : true}
           className="border text-[#787878] cursor-not-allowed border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2 bg-white"
         />
       </div>
@@ -110,7 +110,7 @@ const CheckoutForm = () => {
         <input
           {...register("email")}
           type="email"
-          value={user.email}
+          value={singleUser.email}
           readOnly
           className="border text-[#787878] cursor-not-allowed border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2 bg-white"
         />

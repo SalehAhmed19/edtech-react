@@ -24,6 +24,7 @@ import StudentReview from "../Pages/Dashboard/Teachers/StudentReview";
 import Assignments from "../Pages/Dashboard/Teachers/Assignments";
 import Resources from "../Pages/Dashboard/Teachers/Resources";
 import Support from "../Pages/Dashboard/Teachers/Support";
+import TeachersHome from "../Pages/Dashboard/Teachers/TeachersHome";
 
 const routes = createBrowserRouter([
   {
@@ -64,6 +65,7 @@ const routes = createBrowserRouter([
       { path: "certificates", element: <Certificates /> },
       { path: "payments/stripe", element: <StripePayments /> },
       { path: "student-review", element: <StudentReview /> },
+      { path: "teacher-profile", element: <TeachersHome /> },
       { path: "assignments", element: <Assignments /> },
       { path: "resources", element: <Resources /> },
       { path: "support", element: <Support /> },
