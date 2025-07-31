@@ -4,15 +4,18 @@ import StudentsNavigation from "../Pages/Dashboard/Navigations/StudentsNavigatio
 import TeachersNavigation from "../Pages/Dashboard/Navigations/TeachersNavigation";
 import { Toaster } from "react-hot-toast";
 
+import useGetUser from "../Hooks/Users/useGetUser";
+import useGetAllUsers from "../Hooks/Users/useGetAllUsers";
+
 export default function Dashboard() {
-  // const [role, setRole] = useState("student");
-  const role = "student";
+  const { singleUser } = useGetAllUsers();
+  console.log(singleUser);
 
   return (
     <div className="grid grid-cols-3 gap-5">
       <div className="pt-10">
-        {role === "student" && <StudentsNavigation />}
-        {role === "teacher" && <TeachersNavigation />}
+        {singleUser.role === "student" && <StudentsNavigation />}
+        {singleUser.role === "teacher" && <TeachersNavigation />}
       </div>
       {/* <div className="pt-10">{isAdmin && <StudentsNavigation />}</div> */}
       <div className="col-span-2 p-10">

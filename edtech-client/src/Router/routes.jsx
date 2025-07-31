@@ -20,6 +20,10 @@ import StripePayments from "../Pages/Payments/StripePayments";
 import AddSkills from "../Pages/AddSkills/AddSkills";
 import GetStarted from "../Pages/BecomeInstructorPage/GetStarted";
 import BecomeInstructorLayout from "../Layout/BecomeInstructorLayout";
+import StudentReview from "../Pages/Dashboard/Teachers/StudentReview";
+import Assignments from "../Pages/Dashboard/Teachers/Assignments";
+import Resources from "../Pages/Dashboard/Teachers/Resources";
+import Support from "../Pages/Dashboard/Teachers/Support";
 
 const routes = createBrowserRouter([
   {
@@ -59,6 +63,10 @@ const routes = createBrowserRouter([
       { path: "order-history", element: <OrderHistory /> },
       { path: "certificates", element: <Certificates /> },
       { path: "payments/stripe", element: <StripePayments /> },
+      { path: "student-review", element: <StudentReview /> },
+      { path: "assignments", element: <Assignments /> },
+      { path: "resources", element: <Resources /> },
+      { path: "support", element: <Support /> },
     ],
   },
 ]);
