@@ -8,6 +8,7 @@ const stripe = require("stripe")(process.env.STRIPE);
 // controllers
 const coursesController = require("./RouterControllers/coursesController");
 const cartsController = require("./RouterControllers/cartsControlller");
+const skillsController = require("./RouterControllers/skillsController");
 
 const PORT = process.env.PORT || 4000;
 
@@ -30,6 +31,7 @@ mongoose
 //   routes
 app.use("/api/courses", coursesController);
 app.use("/api/carts", cartsController);
+app.use("/api/skills", skillsController);
 
 app.get("/", (req, res) => {
   res.send("Welcome to EduDB API");
