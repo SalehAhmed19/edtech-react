@@ -1,0 +1,1874 @@
+[
+  {
+    "courseId": "CS101",
+    "courseTitle": "Introduction to Programming with Python",
+    "courseSubtitle": "Learn the fundamentals of Python programming for beginners.",
+    "whatYouLearn": [
+      "Basic Python syntax and data types",
+      "Control flow (if/else, loops)",
+      "Functions and modules",
+      "Object-Oriented Programming (OOP) concepts",
+      "File I/O and error handling"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Python Basics",
+        "content": "Variables, data types, operators"
+      },
+      {
+        "title": "Module 2: Control Flow",
+        "content": "Conditionals and loops"
+      },
+      {
+        "title": "Module 3: Functions",
+        "content": "Defining and calling functions"
+      },
+      {
+        "title": "Module 4: OOP",
+        "content": "Classes, objects, inheritance"
+      },
+      {
+        "title": "Module 5: File Handling",
+        "content": "Reading and writing files"
+      }
+    ],
+    "courseDesignedFor": "Absolute beginners with no prior programming experience.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/A020F0/FFFFFF?text=Instructor1",
+        "name": "Dr. Aisha Khan",
+        "designation": "Senior Python Developer"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/87CEEB/FFFFFF?text=Python+Intro",
+    "lessionsNumber": 25,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Popular",
+    "category": "Programming",
+    "courseFee": 1500
+  },
+  {
+    "courseId": "ML400",
+    "courseTitle": "Machine Learning with TensorFlow",
+    "courseSubtitle": "Dive deep into building and deploying machine learning models.",
+    "whatYouLearn": [
+      "TensorFlow fundamentals and Keras API",
+      "Building neural networks (CNNs, RNNs)",
+      "Model training, evaluation, and optimization",
+      "Transfer learning and fine-tuning",
+      "Introduction to deployment strategies"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: TF Basics",
+        "content": "Tensors, operations, Keras"
+      },
+      {
+        "title": "Module 2: Neural Networks",
+        "content": "Architectures and training"
+      },
+      {
+        "title": "Module 3: CNNs",
+        "content": "Image recognition"
+      },
+      {
+        "title": "Module 4: RNNs",
+        "content": "Sequence data"
+      },
+      {
+        "title": "Module 5: Deployment",
+        "content": "Serving models"
+      }
+    ],
+    "courseDesignedFor": "Data scientists and engineers with Python and basic ML knowledge.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/FF33A1/FFFFFF?text=Instructor5",
+        "name": "Dr. Alex Kim",
+        "designation": "Machine Learning Engineer"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/FF6347/FFFFFF?text=TensorFlow+ML",
+    "lessionsNumber": 35,
+    "lessionLevel": "Expert",
+    "coursesPopularityStatus": "Trending",
+    "category": "Machine Learning",
+    "courseFee": 4500
+  },
+  {
+    "courseId": "IOT201",
+    "courseTitle": "Introduction to IoT Development",
+    "courseSubtitle": "Learn to build and connect IoT devices and applications.",
+    "whatYouLearn": [
+      "IoT ecosystem and architecture",
+      "Microcontroller programming (e.g., Arduino, ESP32)",
+      "Sensor integration and data collection",
+      "Cloud platforms for IoT (e.g., AWS IoT, Azure IoT)",
+      "Basic IoT security considerations"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: IoT Overview",
+        "content": "Concepts, components"
+      },
+      {
+        "title": "Module 2: Microcontrollers",
+        "content": "Arduino/ESP32 basics"
+      },
+      {
+        "title": "Module 3: Sensors",
+        "content": "Reading data"
+      },
+      {
+        "title": "Module 4: Cloud Integration",
+        "content": "MQTT, AWS IoT"
+      },
+      {
+        "title": "Module 5: IoT Security",
+        "content": "Basic principles"
+      }
+    ],
+    "courseDesignedFor": "Electronics enthusiasts, embedded developers, and smart home hobbyists.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/6A5ACD/FFFFFF?text=Instructor16",
+        "name": "Mr. Noah Kim",
+        "designation": "IoT Engineer"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/6A5ACD/FFFFFF?text=IoT+Dev",
+    "lessionsNumber": 20,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "New",
+    "category": "IoT",
+    "courseFee": 1700
+  },
+  {
+    "courseId": "SEC405",
+    "courseTitle": "Ethical Hacking & Penetration Testing",
+    "courseSubtitle": "Learn to identify and mitigate security vulnerabilities ethically.",
+    "whatYouLearn": [
+      "Phases of ethical hacking",
+      "Network scanning and enumeration",
+      "Vulnerability assessment tools (e.g., Nessus, OpenVAS)",
+      "Web application penetration testing (OWASP Top 10)",
+      "Reporting and remediation strategies"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Hacking Intro",
+        "content": "Ethics, phases"
+      },
+      {
+        "title": "Module 2: Reconnaissance",
+        "content": "Scanning, enumeration"
+      },
+      {
+        "title": "Module 3: Vulnerability Analysis",
+        "content": "Tools, techniques"
+      },
+      {
+        "title": "Module 4: Web App PT",
+        "content": "OWASP Top 10"
+      },
+      {
+        "title": "Module 5: Reporting",
+        "content": "Findings, recommendations"
+      }
+    ],
+    "courseDesignedFor": "Cybersecurity professionals, IT auditors, and security enthusiasts.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/B22222/FFFFFF?text=Instructor18",
+        "name": "Mr. Peter Jones",
+        "designation": "Penetration Tester"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/B22222/FFFFFF?text=Ethical+Hacking",
+    "lessionsNumber": 35,
+    "lessionLevel": "Advanced",
+    "coursesPopularityStatus": "Popular",
+    "category": "Cybersecurity",
+    "courseFee": 4000
+  },
+  {
+    "courseId": "BLOCK300",
+    "courseTitle": "Blockchain Development with Solidity",
+    "courseSubtitle": "Build decentralized applications (dApps) on Ethereum using Solidity.",
+    "whatYouLearn": [
+      "Blockchain fundamentals and Ethereum ecosystem",
+      "Solidity programming language for smart contracts",
+      "Developing and deploying smart contracts",
+      "Interacting with dApps using Web3.js/Ethers.js",
+      "Security considerations for smart contracts"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Blockchain Intro",
+        "content": "Concepts, Ethereum"
+      },
+      {
+        "title": "Module 2: Solidity Basics",
+        "content": "Syntax, data types"
+      },
+      {
+        "title": "Module 3: Smart Contracts",
+        "content": "Development, deployment"
+      },
+      {
+        "title": "Module 4: dApp Interaction",
+        "content": "Web3.js, Ethers.js"
+      },
+      {
+        "title": "Module 5: Security",
+        "content": "Common vulnerabilities"
+      }
+    ],
+    "courseDesignedFor": "Developers interested in blockchain technology and decentralized applications.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/4169E1/FFFFFF?text=Instructor20",
+        "name": "Mr. Ryan Scott",
+        "designation": "Blockchain Developer"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/4169E1/FFFFFF?text=Blockchain+Solidity",
+    "lessionsNumber": 28,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Trending",
+    "category": "Blockchain",
+    "courseFee": 3300
+  },
+  {
+    "courseId": "BIGD400",
+    "courseTitle": "Big Data Analytics with Spark",
+    "courseSubtitle": "Process and analyze large datasets using Apache Spark.",
+    "whatYouLearn": [
+      "Introduction to Big Data concepts and ecosystem",
+      "Apache Spark architecture and RDDs",
+      "Spark SQL for structured data processing",
+      "Spark Streaming for real-time data",
+      "Building data pipelines with Spark"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Big Data Intro",
+        "content": "Concepts, challenges"
+      },
+      {
+        "title": "Module 2: Spark Core",
+        "content": "RDDs, transformations"
+      },
+      {
+        "title": "Module 3: Spark SQL",
+        "content": "DataFrames, queries"
+      },
+      {
+        "title": "Module 4: Spark Streaming",
+        "content": "Real-time processing"
+      },
+      {
+        "title": "Module 5: Data Pipelines",
+        "content": "Integration, deployment"
+      }
+    ],
+    "courseDesignedFor": "Data engineers, data scientists, and big data analysts.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/DAA520/FFFFFF?text=Instructor21",
+        "name": "Dr. Sophia Lee",
+        "designation": "Big Data Engineer"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/DAA520/FFFFFF?text=BigData+Spark",
+    "lessionsNumber": 33,
+    "lessionLevel": "Expert",
+    "coursesPopularityStatus": "Popular",
+    "category": "Big Data",
+    "courseFee": 4800
+  },
+  {
+    "courseId": "GD200",
+    "courseTitle": "Advanced Typography & Layout",
+    "courseSubtitle": "Master the art of typography and advanced layout techniques.",
+    "whatYouLearn": [
+      "Advanced typographic principles",
+      "Grid systems and modular design",
+      "Responsive layout strategies",
+      "Creating engaging visual narratives",
+      "Print vs. digital layout considerations"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Advanced Typography",
+        "content": "Pairing, hierarchy"
+      },
+      {
+        "title": "Module 2: Grid Systems",
+        "content": "Modular, responsive"
+      },
+      {
+        "title": "Module 3: Layout Strategies",
+        "content": "Composition, flow"
+      },
+      {
+        "title": "Module 4: Visual Storytelling",
+        "content": "Narrative design"
+      },
+      {
+        "title": "Module 5: Print vs. Digital",
+        "content": "Considerations"
+      }
+    ],
+    "courseDesignedFor": "Graphic designers, UI/UX designers, and print media professionals.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/FF69B4/FFFFFF?text=Instructor30",
+        "name": "Ms. Bella Thompson",
+        "designation": "Senior Graphic Designer"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/FF69B4/FFFFFF?text=Typography+Layout",
+    "lessionsNumber": 20,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "New",
+    "category": "Graphic Design",
+    "courseFee": 1400
+  },
+  {
+    "courseId": "FREE105",
+    "courseTitle": "Public Speaking Fundamentals",
+    "courseSubtitle": "Develop confidence and skills for effective public speaking.",
+    "whatYouLearn": [
+      "Overcoming stage fright",
+      "Structuring a compelling speech",
+      "Vocal delivery and body language",
+      "Engaging your audience",
+      "Practice and feedback techniques"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Fear Factor",
+        "content": "Managing anxiety"
+      },
+      {
+        "title": "Module 2: Speech Structure",
+        "content": "Intro, body, conclusion"
+      },
+      {
+        "title": "Module 3: Delivery",
+        "content": "Voice, posture, gestures"
+      },
+      {
+        "title": "Module 4: Audience Engagement",
+        "content": "Q&A, storytelling"
+      },
+      {
+        "title": "Module 5: Practice",
+        "content": "Rehearsal, feedback"
+      }
+    ],
+    "courseDesignedFor": "Anyone looking to improve their communication and presentation skills.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/20B2AA/FFFFFF?text=Instructor35",
+        "name": "Mr. George Clooney",
+        "designation": "Communication Coach"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/20B2AA/FFFFFF?text=Public+Speaking+Free",
+    "lessionsNumber": 10,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Free",
+    "category": "Soft Skills",
+    "courseFee": 0
+  },
+  {
+    "courseId": "FREE106",
+    "courseTitle": "Basic Financial Literacy",
+    "courseSubtitle": "Understand essential personal finance concepts.",
+    "whatYouLearn": [
+      "Budgeting and saving strategies",
+      "Understanding debt and credit",
+      "Introduction to investing basics",
+      "Financial planning for goals",
+      "Avoiding common financial pitfalls"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Budgeting",
+        "content": "Income, expenses"
+      },
+      {
+        "title": "Module 2: Debt & Credit",
+        "content": "Good vs bad debt"
+      },
+      {
+        "title": "Module 3: Investing Intro",
+        "content": "Stocks, bonds"
+      },
+      {
+        "title": "Module 4: Financial Goals",
+        "content": "Planning, saving"
+      },
+      {
+        "title": "Module 5: Pitfalls",
+        "content": "Common mistakes"
+      }
+    ],
+    "courseDesignedFor": "Individuals seeking to improve their personal finance knowledge.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/F0E68C/000000?text=Instructor36",
+        "name": "Ms. Helen Smith",
+        "designation": "Financial Advisor"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/F0E68C/000000?text=Financial+Literacy+Free",
+    "lessionsNumber": 8,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Free",
+    "category": "Finance",
+    "courseFee": 0
+  },
+  {
+    "courseId": "WEB201",
+    "courseTitle": "Modern Web Development with React & Tailwind CSS",
+    "courseSubtitle": "Build responsive and modern web applications.",
+    "whatYouLearn": [
+      "React fundamentals (components, props, state)",
+      "Hooks (useState, useEffect, useContext)",
+      "Routing with React Router",
+      "Tailwind CSS for rapid UI development",
+      "API integration and data fetching"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: React Core",
+        "content": "Components, JSX, Virtual DOM"
+      },
+      {
+        "title": "Module 2: React Hooks",
+        "content": "Managing state and side effects"
+      },
+      {
+        "title": "Module 3: Styling with Tailwind",
+        "content": "Utility-first CSS"
+      },
+      {
+        "title": "Module 4: Data Fetching",
+        "content": "Working with APIs"
+      },
+      {
+        "title": "Module 5: Advanced React",
+        "content": "Context API, custom hooks"
+      }
+    ],
+    "courseDesignedFor": "Developers familiar with HTML, CSS, and JavaScript basics.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/FF5733/FFFFFF?text=Instructor2",
+        "name": "Mr. David Lee",
+        "designation": "Full-Stack Developer"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/98FB98/FFFFFF?text=React+WebDev",
+    "lessionsNumber": 40,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Trending",
+    "category": "Web Development",
+    "courseFee": 2500
+  },
+  {
+    "courseId": "DB301",
+    "courseTitle": "Advanced SQL and Database Design",
+    "courseSubtitle": "Master complex SQL queries and relational database design.",
+    "whatYouLearn": [
+      "Advanced SQL queries (joins, subqueries, window functions)",
+      "Database normalization and denormalization",
+      "Indexing and performance optimization",
+      "Transactions and concurrency control",
+      "NoSQL database concepts (brief overview)"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Advanced SQL",
+        "content": "Complex queries"
+      },
+      {
+        "title": "Module 2: DB Design",
+        "content": "Normalization, ERD"
+      },
+      {
+        "title": "Module 3: Performance",
+        "content": "Indexing, optimization"
+      },
+      {
+        "title": "Module 4: Transactions",
+        "content": "ACID properties"
+      },
+      {
+        "title": "Module 5: NoSQL Intro",
+        "content": "Key-value, document DBs"
+      }
+    ],
+    "courseDesignedFor": "Developers, data analysts, and database administrators.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/A133FF/FFFFFF?text=Instructor7",
+        "name": "Ms. Chloe Green",
+        "designation": "Database Architect"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/8A2BE2/FFFFFF?text=SQL+Databases",
+    "lessionsNumber": 28,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Popular",
+    "category": "Databases",
+    "courseFee": 2800
+  },
+  {
+    "courseId": "CLD401",
+    "courseTitle": "Cloud Computing with AWS",
+    "courseSubtitle": "Master Amazon Web Services (AWS) for cloud infrastructure and services.",
+    "whatYouLearn": [
+      "AWS core services (EC2, S3, RDS, Lambda)",
+      "Networking in AWS (VPC)",
+      "Security best practices in AWS",
+      "Cost optimization strategies",
+      "Serverless computing with AWS Lambda"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: AWS Intro",
+        "content": "Core services overview"
+      },
+      {
+        "title": "Module 2: EC2 & S3",
+        "content": "Compute and storage"
+      },
+      {
+        "title": "Module 3: Networking",
+        "content": "VPC, Route 53"
+      },
+      {
+        "title": "Module 4: Serverless",
+        "content": "Lambda, API Gateway"
+      },
+      {
+        "title": "Module 5: Security & Cost",
+        "content": "IAM, budgeting"
+      }
+    ],
+    "courseDesignedFor": "Cloud engineers, DevOps professionals, and solution architects.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/FF8C00/FFFFFF?text=Instructor10",
+        "name": "Mr. Henry Davis",
+        "designation": "Cloud Solutions Architect"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/FF8C00/FFFFFF?text=AWS+Cloud",
+    "lessionsNumber": 38,
+    "lessionLevel": "Advanced",
+    "coursesPopularityStatus": "Popular",
+    "category": "Cloud Computing",
+    "courseFee": 3800
+  },
+  {
+    "courseId": "GAM101",
+    "courseTitle": "Game Development with Unity",
+    "courseSubtitle": "Create interactive 2D and 3D games using the Unity engine.",
+    "whatYouLearn": [
+      "Unity interface and basic scripting (C#)",
+      "Game physics and collision detection",
+      "Animation and visual effects",
+      "UI design for games",
+      "Building and deploying games"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Unity Basics",
+        "content": "Interface, GameObjects"
+      },
+      {
+        "title": "Module 2: C# Scripting",
+        "content": "Input, movement"
+      },
+      {
+        "title": "Module 3: Physics",
+        "content": "Collisions, rigidbodies"
+      },
+      {
+        "title": "Module 4: Animation",
+        "content": "Animator, particles"
+      },
+      {
+        "title": "Module 5: Deployment",
+        "content": "Build settings"
+      }
+    ],
+    "courseDesignedFor": "Aspiring game developers and enthusiasts.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/B0E0E6/FFFFFF?text=Instructor11",
+        "name": "Ms. Ivy Chen",
+        "designation": "Game Developer"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/B0E0E6/FFFFFF?text=Unity+GameDev",
+    "lessionsNumber": 32,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Trending",
+    "category": "Game Development",
+    "courseFee": 2900
+  },
+  {
+    "courseId": "BIO205",
+    "courseTitle": "Bioinformatics for Beginners",
+    "courseSubtitle": "Explore the intersection of biology and computational science.",
+    "whatYouLearn": [
+      "Introduction to bioinformatics concepts",
+      "Biological databases and data retrieval",
+      "Sequence alignment (BLAST, Clustal Omega)",
+      "Phylogenetic analysis",
+      "Basic scripting for bioinformatics (Python/R)"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Bioinfo Intro",
+        "content": "Concepts, applications"
+      },
+      {
+        "title": "Module 2: Databases",
+        "content": "NCBI, UniProt"
+      },
+      {
+        "title": "Module 3: Sequence Analysis",
+        "content": "BLAST, alignment"
+      },
+      {
+        "title": "Module 4: Phylogenetics",
+        "content": "Evolutionary trees"
+      },
+      {
+        "title": "Module 5: Scripting",
+        "content": "Python/R for bioinfo"
+      }
+    ],
+    "courseDesignedFor": "Biology students, researchers, and aspiring computational biologists.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/9370DB/FFFFFF?text=Instructor12",
+        "name": "Dr. James Wilson",
+        "designation": "Bioinformatics Scientist"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/9370DB/FFFFFF?text=Bioinformatics",
+    "lessionsNumber": 20,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "New",
+    "category": "Bioinformatics",
+    "courseFee": 1900
+  },
+  {
+    "courseId": "MOB301",
+    "courseTitle": "Mobile App Development with Flutter",
+    "courseSubtitle": "Build cross-platform mobile applications for iOS and Android.",
+    "whatYouLearn": [
+      "Flutter framework and Dart programming language",
+      "Building responsive UIs with widgets",
+      "State management in Flutter",
+      "API integration and local storage",
+      "Firebase integration for backend services"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Flutter & Dart",
+        "content": "Basics, widgets"
+      },
+      {
+        "title": "Module 2: UI Layouts",
+        "content": "Responsive design"
+      },
+      {
+        "title": "Module 3: State Management",
+        "content": "Provider, BLoC"
+      },
+      {
+        "title": "Module 4: Data Handling",
+        "content": "APIs, local DB"
+      },
+      {
+        "title": "Module 5: Firebase",
+        "content": "Auth, Firestore"
+      }
+    ],
+    "courseDesignedFor": "Web developers, designers, and aspiring mobile app developers.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/8B008B/FFFFFF?text=Instructor23",
+        "name": "Ms. Uma Sharma",
+        "designation": "Mobile App Developer"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/8B008B/FFFFFF?text=Flutter+Mobile",
+    "lessionsNumber": 38,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Trending",
+    "category": "Mobile Development",
+    "courseFee": 3600
+  },
+  {
+    "courseId": "SOFTENG400",
+    "courseTitle": "Software Architecture Design",
+    "courseSubtitle": "Design scalable, robust, and maintainable software systems.",
+    "whatYouLearn": [
+      "Architectural patterns (e.g., microservices, monolithic)",
+      "Design principles (SOLID, DRY)",
+      "System qualities (scalability, reliability, security)",
+      "Cloud-native architecture",
+      "Documenting and communicating architecture"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Intro to Architecture",
+        "content": "Concepts, roles"
+      },
+      {
+        "title": "Module 2: Patterns",
+        "content": "Monolith, microservices"
+      },
+      {
+        "title": "Module 3: Qualities",
+        "content": "Scalability, security"
+      },
+      {
+        "title": "Module 4: Cloud Native",
+        "content": "Serverless, containers"
+      },
+      {
+        "title": "Module 5: Documentation",
+        "content": "ADRs, diagrams"
+      }
+    ],
+    "courseDesignedFor": "Senior developers, tech leads, and aspiring software architects.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/778899/FFFFFF?text=Instructor26",
+        "name": "Dr. Xavier Davis",
+        "designation": "Software Architect"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/778899/FFFFFF?text=Software+Arch",
+    "lessionsNumber": 30,
+    "lessionLevel": "Expert",
+    "coursesPopularityStatus": "Popular",
+    "category": "Software Engineering",
+    "courseFee": 4200
+  },
+  {
+    "courseId": "WEB301",
+    "courseTitle": "Backend Development with Node.js & Express",
+    "courseSubtitle": "Build robust and scalable RESTful APIs using Node.js and Express.",
+    "whatYouLearn": [
+      "Node.js fundamentals and asynchronous programming",
+      "Express.js framework for API development",
+      "Database integration (MongoDB/Mongoose)",
+      "Authentication and authorization (JWT)",
+      "Deployment strategies for Node.js apps"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Node.js Basics",
+        "content": "Event loop, modules"
+      },
+      {
+        "title": "Module 2: Express.js",
+        "content": "Routing, middleware"
+      },
+      {
+        "title": "Module 3: Databases",
+        "content": "MongoDB, Mongoose"
+      },
+      {
+        "title": "Module 4: Authentication",
+        "content": "JWT, Passport.js"
+      },
+      {
+        "title": "Module 5: Deployment",
+        "content": "Heroku, AWS EC2"
+      }
+    ],
+    "courseDesignedFor": "Frontend developers looking to learn backend, and aspiring backend developers.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/008080/FFFFFF?text=Instructor28",
+        "name": "Ms. Zara Ali",
+        "designation": "Backend Developer"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/008080/FFFFFF?text=Node.js+Backend",
+    "lessionsNumber": 35,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Trending",
+    "category": "Web Development",
+    "courseFee": 2600
+  },
+  {
+    "courseId": "FREE101",
+    "courseTitle": "Introduction to HTML & CSS",
+    "courseSubtitle": "Learn the foundational languages for building web pages.",
+    "whatYouLearn": [
+      "HTML structure and elements",
+      "CSS styling and selectors",
+      "Box model and layout techniques",
+      "Responsive design basics",
+      "Creating simple web pages"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: HTML Basics",
+        "content": "Structure, tags"
+      },
+      {
+        "title": "Module 2: CSS Styling",
+        "content": "Selectors, properties"
+      },
+      {
+        "title": "Module 3: Layout",
+        "content": "Box model, flexbox intro"
+      },
+      {
+        "title": "Module 4: Responsiveness",
+        "content": "Media queries"
+      },
+      {
+        "title": "Module 5: Project",
+        "content": "Simple static page"
+      }
+    ],
+    "courseDesignedFor": "Absolute beginners interested in web development.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/E0BBE4/FFFFFF?text=Instructor31",
+        "name": "Mr. Chris Evans",
+        "designation": "Web Development Instructor"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/E0BBE4/FFFFFF?text=HTML+CSS+Free",
+    "lessionsNumber": 10,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Free",
+    "category": "Web Development",
+    "courseFee": 0
+  },
+  {
+    "courseId": "FREE103",
+    "courseTitle": "Understanding Digital Photography",
+    "courseSubtitle": "Learn the basics of digital photography and camera settings.",
+    "whatYouLearn": [
+      "Camera modes (Manual, Aperture Priority, Shutter Priority)",
+      "Exposure triangle (ISO, Aperture, Shutter Speed)",
+      "Composition rules (Rule of Thirds, Leading Lines)",
+      "Basic lighting techniques",
+      "Editing concepts (brief overview)"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Camera Basics",
+        "content": "Modes, settings"
+      },
+      {
+        "title": "Module 2: Exposure",
+        "content": "ISO, Aperture, Shutter"
+      },
+      {
+        "title": "Module 3: Composition",
+        "content": "Rules, framing"
+      },
+      {
+        "title": "Module 4: Lighting",
+        "content": "Natural, artificial"
+      },
+      {
+        "title": "Module 5: Editing Intro",
+        "content": "Post-processing concepts"
+      }
+    ],
+    "courseDesignedFor": "Photography enthusiasts and beginners with a digital camera.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/D291BC/FFFFFF?text=Instructor33",
+        "name": "Mr. Ethan Hunt",
+        "designation": "Professional Photographer"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/D291BC/FFFFFF?text=Digital+Photo+Free",
+    "lessionsNumber": 12,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Free",
+    "category": "Photography",
+    "courseFee": 0
+  },
+  {
+    "courseId": "FREE108",
+    "courseTitle": "Healthy Habits for a Better Life",
+    "courseSubtitle": "Discover simple habits for improving physical and mental well-being.",
+    "whatYouLearn": [
+      "Importance of balanced nutrition",
+      "Benefits of regular physical activity",
+      "Stress management techniques",
+      "Quality sleep habits",
+      "Mindfulness and positive thinking"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Nutrition",
+        "content": "Balanced diet"
+      },
+      {
+        "title": "Module 2: Physical Activity",
+        "content": "Exercise benefits"
+      },
+      {
+        "title": "Module 3: Stress Management",
+        "content": "Techniques"
+      },
+      {
+        "title": "Module 4: Sleep",
+        "content": "Importance, hygiene"
+      },
+      {
+        "title": "Module 5: Mindset",
+        "content": "Positive thinking"
+      }
+    ],
+    "courseDesignedFor": "Anyone looking to adopt healthier lifestyle choices.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/90EE90/000000?text=Instructor38",
+        "name": "Dr. Jane Foster",
+        "designation": "Wellness Coach"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/90EE90/000000?text=Healthy+Habits+Free",
+    "lessionsNumber": 7,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Free",
+    "category": "Health & Wellness",
+    "courseFee": 0
+  },
+  {
+    "courseId": "GD150",
+    "courseTitle": "Graphic Design Principles for Beginners",
+    "courseSubtitle": "Learn the core principles of graphic design and visual communication.",
+    "whatYouLearn": [
+      "Elements and principles of design",
+      "Color theory and typography",
+      "Layout and composition techniques",
+      "Introduction to design software (e.g., Figma, Canva)",
+      "Creating basic visual assets"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Design Basics",
+        "content": "Elements and principles"
+      },
+      {
+        "title": "Module 2: Color & Type",
+        "content": "Theory and application"
+      },
+      {
+        "title": "Module 3: Layout",
+        "content": "Grids and composition"
+      },
+      {
+        "title": "Module 4: Tools Intro",
+        "content": "Figma/Canva basics"
+      },
+      {
+        "title": "Module 5: Project",
+        "content": "Design a simple poster"
+      }
+    ],
+    "courseDesignedFor": "Anyone interested in starting a career in graphic design or improving visual skills.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/5733FF/FFFFFF?text=Instructor4",
+        "name": "Ms. Emily White",
+        "designation": "Graphic Designer"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/DDA0DD/FFFFFF?text=Graphic+Design",
+    "lessionsNumber": 18,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "New",
+    "category": "Graphic Design",
+    "courseFee": 1200
+  },
+  {
+    "courseId": "PM200",
+    "courseTitle": "Agile Project Management",
+    "courseSubtitle": "Learn Agile methodologies to manage projects effectively.",
+    "whatYouLearn": [
+      "Agile principles and values",
+      "Scrum framework (roles, events, artifacts)",
+      "Kanban basics",
+      "User stories and backlog management",
+      "Facilitating Agile ceremonies"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Agile Intro",
+        "content": "Principles and mindset"
+      },
+      {
+        "title": "Module 2: Scrum Deep Dive",
+        "content": "Roles, ceremonies"
+      },
+      {
+        "title": "Module 3: Kanban",
+        "content": "Flow and visualization"
+      },
+      {
+        "title": "Module 4: Backlog",
+        "content": "User stories, estimation"
+      },
+      {
+        "title": "Module 5: Agile Tools",
+        "content": "Jira, Trello overview"
+      }
+    ],
+    "courseDesignedFor": "Project managers, team leads, and anyone involved in project delivery.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/FF3333/FFFFFF?text=Instructor8",
+        "name": "Mr. Frank Miller",
+        "designation": "Agile Coach"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/3CB371/FFFFFF?text=Agile+PM",
+    "lessionsNumber": 15,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "New",
+    "category": "Project Management",
+    "courseFee": 1600
+  },
+  {
+    "courseId": "UX250",
+    "courseTitle": "User Experience (UX) Design Principles",
+    "courseSubtitle": "Design user-centered products and experiences.",
+    "whatYouLearn": [
+      "UX research methodologies",
+      "Information architecture and wireframing",
+      "Prototyping and user testing",
+      "Usability principles",
+      "Design thinking process"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: UX Research",
+        "content": "User interviews, surveys"
+      },
+      {
+        "title": "Module 2: IA & Wireframing",
+        "content": "Sitemaps, low-fidelity"
+      },
+      {
+        "title": "Module 3: Prototyping",
+        "content": "High-fidelity, interactions"
+      },
+      {
+        "title": "Module 4: Usability",
+        "content": "Heuristics, testing"
+      },
+      {
+        "title": "Module 5: Design Thinking",
+        "content": "Empathize, define, ideate"
+      }
+    ],
+    "courseDesignedFor": "Aspiring UX designers, product managers, and developers.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/33FF57/FFFFFF?text=Instructor9",
+        "name": "Ms. Grace Hall",
+        "designation": "UX Lead Designer"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/FFB6C1/FFFFFF?text=UX+Design",
+    "lessionsNumber": 20,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Trending",
+    "category": "UX/UI Design",
+    "courseFee": 2200
+  },
+  {
+    "courseId": "FIN310",
+    "courseTitle": "Financial Modeling & Analysis",
+    "courseSubtitle": "Build robust financial models and perform in-depth analysis.",
+    "whatYouLearn": [
+      "Excel for financial modeling",
+      "Building 3-statement models (Income, Balance, Cash Flow)",
+      "Valuation techniques (DCF, multiples)",
+      "Sensitivity and scenario analysis",
+      "Financial statement analysis"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Excel for Finance",
+        "content": "Functions, shortcuts"
+      },
+      {
+        "title": "Module 2: 3-Statement Model",
+        "content": "Integration"
+      },
+      {
+        "title": "Module 3: Valuation",
+        "content": "DCF, comps"
+      },
+      {
+        "title": "Module 4: Analysis",
+        "content": "Sensitivity, scenarios"
+      },
+      {
+        "title": "Module 5: Case Studies",
+        "content": "Real-world examples"
+      }
+    ],
+    "courseDesignedFor": "Finance professionals, business analysts, and investment bankers.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/D2B48C/FFFFFF?text=Instructor13",
+        "name": "Mr. Kevin Brown",
+        "designation": "Investment Analyst"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/D2B48C/FFFFFF?text=Financial+Analysis",
+    "lessionsNumber": 25,
+    "lessionLevel": "Advanced",
+    "coursesPopularityStatus": "Popular",
+    "category": "Finance",
+    "courseFee": 3500
+  },
+  {
+    "courseId": "AI500",
+    "courseTitle": "Deep Learning with PyTorch",
+    "courseSubtitle": "Build advanced deep learning models using the PyTorch framework.",
+    "whatYouLearn": [
+      "PyTorch basics (tensors, autograd)",
+      "Building and training custom neural networks",
+      "Convolutional Neural Networks (CNNs) for image tasks",
+      "Recurrent Neural Networks (RNNs) for sequence tasks",
+      "Generative Adversarial Networks (GANs) and Transformers"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: PyTorch Fundamentals",
+        "content": "Tensors, Autograd"
+      },
+      {
+        "title": "Module 2: Neural Net Building",
+        "content": "Layers, optimizers"
+      },
+      {
+        "title": "Module 3: CNNs",
+        "content": "Image classification"
+      },
+      {
+        "title": "Module 4: RNNs",
+        "content": "NLP, time series"
+      },
+      {
+        "title": "Module 5: Advanced Topics",
+        "content": "GANs, Transformers"
+      }
+    ],
+    "courseDesignedFor": "AI/ML researchers and engineers with strong Python and calculus skills.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/4682B4/FFFFFF?text=Instructor15",
+        "name": "Dr. Michael Lee",
+        "designation": "AI Research Scientist"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/4682B4/FFFFFF?text=PyTorch+DL",
+    "lessionsNumber": 45,
+    "lessionLevel": "Expert",
+    "coursesPopularityStatus": "Popular",
+    "category": "Artificial Intelligence",
+    "courseFee": 5000
+  },
+  {
+    "courseId": "ARVR300",
+    "courseTitle": "Augmented & Virtual Reality Development",
+    "courseSubtitle": "Develop immersive AR/VR experiences for various platforms.",
+    "whatYouLearn": [
+      "AR/VR fundamentals and use cases",
+      "Unity for AR/VR development",
+      "Working with AR Foundation (ARCore/ARKit)",
+      "Building VR scenes and interactions",
+      "Optimization for performance in AR/VR"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: AR/VR Intro",
+        "content": "Concepts, history"
+      },
+      {
+        "title": "Module 2: Unity for AR/VR",
+        "content": "Setup, basics"
+      },
+      {
+        "title": "Module 3: AR Development",
+        "content": "AR Foundation, tracking"
+      },
+      {
+        "title": "Module 4: VR Development",
+        "content": "Interaction, locomotion"
+      },
+      {
+        "title": "Module 5: Optimization",
+        "content": "Performance tips"
+      }
+    ],
+    "courseDesignedFor": "Game developers, 3D artists, and creative technologists.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/00CED1/FFFFFF?text=Instructor17",
+        "name": "Ms. Olivia Green",
+        "designation": "AR/VR Developer"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/00CED1/FFFFFF?text=ARVR+Dev",
+    "lessionsNumber": 30,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Trending",
+    "category": "AR/VR Development",
+    "courseFee": 3000
+  },
+  {
+    "courseId": "NET101",
+    "courseTitle": "Networking Fundamentals",
+    "courseSubtitle": "Understand the basics of computer networking and protocols.",
+    "whatYouLearn": [
+      "OSI and TCP/IP models",
+      "Network devices (routers, switches, hubs)",
+      "IP addressing and subnetting",
+      "Common network protocols (HTTP, DNS, DHCP)",
+      "Basic network troubleshooting"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Network Models",
+        "content": "OSI, TCP/IP"
+      },
+      {
+        "title": "Module 2: Network Devices",
+        "content": "Routers, switches"
+      },
+      {
+        "title": "Module 3: IP Addressing",
+        "content": "IPv4, IPv6, subnetting"
+      },
+      {
+        "title": "Module 4: Protocols",
+        "content": "HTTP, DNS, DHCP"
+      },
+      {
+        "title": "Module 5: Troubleshooting",
+        "content": "Common issues"
+      }
+    ],
+    "courseDesignedFor": "IT support, system administrators, and anyone new to networking.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/F0F8FF/000000?text=Instructor22",
+        "name": "Mr. Tom White",
+        "designation": "Network Administrator"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/F0F8FF/000000?text=Networking",
+    "lessionsNumber": 20,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "New",
+    "category": "Networking",
+    "courseFee": 1300
+  },
+  {
+    "courseId": "DEVOPS200",
+    "courseTitle": "DevOps Principles & Practices",
+    "courseSubtitle": "Implement DevOps methodologies for continuous delivery and automation.",
+    "whatYouLearn": [
+      "DevOps culture and principles",
+      "CI/CD pipelines (e.g., Jenkins, GitLab CI)",
+      "Containerization with Docker",
+      "Orchestration with Kubernetes",
+      "Monitoring and logging tools"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: DevOps Intro",
+        "content": "Culture, principles"
+      },
+      {
+        "title": "Module 2: CI/CD",
+        "content": "Pipelines, automation"
+      },
+      {
+        "title": "Module 3: Docker",
+        "content": "Containers, images"
+      },
+      {
+        "title": "Module 4: Kubernetes",
+        "content": "Orchestration, deployments"
+      },
+      {
+        "title": "Module 5: Monitoring",
+        "content": "Prometheus, Grafana"
+      }
+    ],
+    "courseDesignedFor": "Software engineers, system administrators, and IT operations professionals.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/6B8E23/FFFFFF?text=Instructor24",
+        "name": "Mr. Victor Khan",
+        "designation": "DevOps Engineer"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/6B8E23/FFFFFF?text=DevOps",
+    "lessionsNumber": 25,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Popular",
+    "category": "DevOps",
+    "courseFee": 2700
+  },
+  {
+    "courseId": "PM350",
+    "courseTitle": "Product Management Masterclass",
+    "courseSubtitle": "Become a skilled product manager and drive product success.",
+    "whatYouLearn": [
+      "Product lifecycle and strategy",
+      "Market research and user empathy",
+      "Roadmapping and backlog prioritization",
+      "Product launch and iteration",
+      "Metrics and product growth"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Product Strategy",
+        "content": "Vision, market"
+      },
+      {
+        "title": "Module 2: Discovery",
+        "content": "Research, user needs"
+      },
+      {
+        "title": "Module 3: Planning",
+        "content": "Roadmap, backlog"
+      },
+      {
+        "title": "Module 4: Execution",
+        "content": "Launch, iteration"
+      },
+      {
+        "title": "Module 5: Growth",
+        "content": "Metrics, optimization"
+      }
+    ],
+    "courseDesignedFor": "Aspiring product managers, business analysts, and entrepreneurs.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/FF4500/FFFFFF?text=Instructor25",
+        "name": "Ms. Wendy Lee",
+        "designation": "Product Manager"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/FF4500/FFFFFF?text=Product+Mgmt",
+    "lessionsNumber": 20,
+    "lessionLevel": "Advanced",
+    "coursesPopularityStatus": "Trending",
+    "category": "Product Management",
+    "courseFee": 3100
+  },
+  {
+    "courseId": "CYB200",
+    "courseTitle": "Network Security & Cryptography",
+    "courseSubtitle": "Deep dive into securing networks and understanding cryptographic algorithms.",
+    "whatYouLearn": [
+      "Network security protocols (IPsec, SSL/TLS)",
+      "Firewall and IDS/IPS configurations",
+      "Symmetric and asymmetric encryption",
+      "Hashing and digital signatures",
+      "Public Key Infrastructure (PKI)"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Network Protocols",
+        "content": "IPsec, SSL/TLS"
+      },
+      {
+        "title": "Module 2: Security Devices",
+        "content": "Firewalls, IDS/IPS"
+      },
+      {
+        "title": "Module 3: Symmetric Crypto",
+        "content": "AES, DES"
+      },
+      {
+        "title": "Module 4: Asymmetric Crypto",
+        "content": "RSA, ECC"
+      },
+      {
+        "title": "Module 5: PKI",
+        "content": "Certificates, CAs"
+      }
+    ],
+    "courseDesignedFor": "Cybersecurity students, network administrators, and security analysts.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/483D8B/FFFFFF?text=Instructor27",
+        "name": "Mr. Yuri Volkov",
+        "designation": "Network Security Engineer"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/483D8B/FFFFFF?text=Network+Security",
+    "lessionsNumber": 28,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Popular",
+    "category": "Cybersecurity",
+    "courseFee": 2900
+  },
+  {
+    "courseId": "DS400",
+    "courseTitle": "Machine Learning Engineering",
+    "courseSubtitle": "Transition from ML models to production-ready systems.",
+    "whatYouLearn": [
+      "MLOps principles and tools",
+      "Model deployment and serving (e.g., Flask, FastAPI)",
+      "Monitoring and retraining ML models",
+      "Data versioning and experiment tracking",
+      "Scalable ML pipelines"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: MLOps Intro",
+        "content": "Concepts, lifecycle"
+      },
+      {
+        "title": "Module 2: Deployment",
+        "content": "APIs, Docker"
+      },
+      {
+        "title": "Module 3: Monitoring",
+        "content": "Drift, performance"
+      },
+      {
+        "title": "Module 4: Data Versioning",
+        "content": "DVC, MLflow"
+      },
+      {
+        "title": "Module 5: Pipelines",
+        "content": "Airflow, Kubeflow"
+      }
+    ],
+    "courseDesignedFor": "Data scientists and machine learning engineers aiming for production ML.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/BDB76B/FFFFFF?text=Instructor29",
+        "name": "Dr. Adam Smith",
+        "designation": "MLOps Engineer"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/BDB76B/FFFFFF?text=MLEngineering",
+    "lessionsNumber": 42,
+    "lessionLevel": "Expert",
+    "coursesPopularityStatus": "Popular",
+    "category": "Data Science",
+    "courseFee": 4700
+  },
+  {
+    "courseId": "FREE102",
+    "courseTitle": "Basics of Microsoft Excel",
+    "courseSubtitle": "Get started with essential Excel functions for data management.",
+    "whatYouLearn": [
+      "Excel interface and basic navigation",
+      "Data entry and formatting",
+      "Basic formulas (SUM, AVERAGE, COUNT)",
+      "Sorting and filtering data",
+      "Creating simple charts"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Excel Interface",
+        "content": "Ribbon, cells, sheets"
+      },
+      {
+        "title": "Module 2: Data Entry",
+        "content": "Text, numbers, dates"
+      },
+      {
+        "title": "Module 3: Basic Formulas",
+        "content": "Sum, average, count"
+      },
+      {
+        "title": "Module 4: Data Management",
+        "content": "Sort, filter"
+      },
+      {
+        "title": "Module 5: Charts",
+        "content": "Column, bar, pie charts"
+      }
+    ],
+    "courseDesignedFor": "Students, office professionals, and anyone needing basic spreadsheet skills.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/957DAD/FFFFFF?text=Instructor32",
+        "name": "Ms. Diana Prince",
+        "designation": "Data Analyst"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/957DAD/FFFFFF?text=Excel+Basics+Free",
+    "lessionsNumber": 8,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Free",
+    "category": "Software Skills",
+    "courseFee": 0
+  },
+  {
+    "courseId": "FREE104",
+    "courseTitle": "Introduction to Graphic Design Tools",
+    "courseSubtitle": "Familiarize yourself with popular graphic design software.",
+    "whatYouLearn": [
+      "Overview of design tools (Figma, Canva, Adobe Express)",
+      "Basic interface navigation",
+      "Creating simple shapes and text",
+      "Using templates and assets",
+      "Exporting designs"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Tool Overview",
+        "content": "Figma, Canva, Adobe Express"
+      },
+      {
+        "title": "Module 2: Interface",
+        "content": "Workspace, panels"
+      },
+      {
+        "title": "Module 3: Basic Elements",
+        "content": "Shapes, text"
+      },
+      {
+        "title": "Module 4: Templates",
+        "content": "Using pre-built designs"
+      },
+      {
+        "title": "Module 5: Export",
+        "content": "Saving for web/print"
+      }
+    ],
+    "courseDesignedFor": "Beginners curious about graphic design software.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/FFC107/000000?text=Instructor34",
+        "name": "Ms. Fiona Green",
+        "designation": "Design Educator"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/FFC107/000000?text=Design+Tools+Free",
+    "lessionsNumber": 15,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Free",
+    "category": "Graphic Design",
+    "courseFee": 0
+  },
+  {
+    "courseId": "FREE107",
+    "courseTitle": "Introduction to Data Analytics Concepts",
+    "courseSubtitle": "Explore the foundational concepts of data analysis.",
+    "whatYouLearn": [
+      "What is data analytics?",
+      "Types of data and data sources",
+      "Data collection methods",
+      "Basic statistical concepts",
+      "Introduction to data visualization"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Data Analytics Intro",
+        "content": "Definitions, roles"
+      },
+      {
+        "title": "Module 2: Data Types",
+        "content": "Qualitative, quantitative"
+      },
+      {
+        "title": "Module 3: Collection",
+        "content": "Surveys, APIs"
+      },
+      {
+        "title": "Module 4: Statistics Basics",
+        "content": "Mean, median, mode"
+      },
+      {
+        "title": "Module 5: Visualization Intro",
+        "content": "Charts, graphs"
+      }
+    ],
+    "courseDesignedFor": "Anyone curious about data and its role in decision-making.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/C0C0C0/000000?text=Instructor37",
+        "name": "Mr. Ian Clark",
+        "designation": "Data Analyst"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/C0C0C0/000000?text=Data+Analytics+Free",
+    "lessionsNumber": 12,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Free",
+    "category": "Data Analytics",
+    "courseFee": 0
+  },
+  {
+    "courseId": "FREE109",
+    "courseTitle": "Mindfulness and Meditation for Stress Relief",
+    "courseSubtitle": "Learn practical mindfulness and meditation techniques to reduce stress.",
+    "whatYouLearn": [
+      "Introduction to mindfulness",
+      "Basic meditation techniques (breathing, body scan)",
+      "Mindful eating and walking",
+      "Integrating mindfulness into daily life",
+      "Benefits of regular practice"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Mindfulness Intro",
+        "content": "Concepts, benefits"
+      },
+      {
+        "title": "Module 2: Basic Meditation",
+        "content": "Breathing, body scan"
+      },
+      {
+        "title": "Module 3: Mindful Living",
+        "content": "Eating, walking"
+      },
+      {
+        "title": "Module 4: Daily Practice",
+        "content": "Integration"
+      },
+      {
+        "title": "Module 5: Advanced Tips",
+        "content": "Sustaining practice"
+      }
+    ],
+    "courseDesignedFor": "Anyone seeking techniques for stress reduction and mental clarity.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/B0E0E6/000000?text=Instructor39",
+        "name": "Mr. Kyle Ren",
+        "designation": "Meditation Instructor"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/B0E0E6/000000?text=Mindfulness+Free",
+    "lessionsNumber": 5,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Free",
+    "category": "Health & Wellness",
+    "courseFee": 0
+  },
+  {
+    "courseId": "DS305",
+    "courseTitle": "Data Science Fundamentals with R",
+    "courseSubtitle": "Master data analysis, visualization, and statistical modeling using R.",
+    "whatYouLearn": [
+      "R programming basics for data science",
+      "Data manipulation with dplyr",
+      "Data visualization with ggplot2",
+      "Statistical inference and regression models",
+      "Introduction to machine learning in R"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: R Basics",
+        "content": "Syntax, data structures, functions"
+      },
+      {
+        "title": "Module 2: Data Wrangling",
+        "content": "Cleaning and transforming data"
+      },
+      {
+        "title": "Module 3: Data Visualization",
+        "content": "Creating plots with ggplot2"
+      },
+      {
+        "title": "Module 4: Statistics",
+        "content": "Hypothesis testing, regression"
+      },
+      {
+        "title": "Module 5: Machine Learning",
+        "content": "Basic ML algorithms in R"
+      }
+    ],
+    "courseDesignedFor": "Students and professionals interested in data analysis.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/33FF57/FFFFFF?text=Instructor3",
+        "name": "Dr. Sarah Chen",
+        "designation": "Data Scientist"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/FFD700/FFFFFF?text=Data+Science+R",
+    "lessionsNumber": 30,
+    "lessionLevel": "Advanced",
+    "coursesPopularityStatus": "Popular",
+    "category": "Data Science",
+    "courseFee": 3200
+  },
+  {
+    "courseId": "CYB101",
+    "courseTitle": "Cybersecurity Essentials",
+    "courseSubtitle": "Understand fundamental cybersecurity concepts and best practices.",
+    "whatYouLearn": [
+      "Threats, vulnerabilities, and attacks",
+      "Network security principles",
+      "Cryptography basics",
+      "Incident response and disaster recovery",
+      "Security awareness and best practices"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Intro to Cyber",
+        "content": "Threat landscape"
+      },
+      {
+        "title": "Module 2: Network Security",
+        "content": "Firewalls, IDS/IPS"
+      },
+      {
+        "title": "Module 3: Cryptography",
+        "content": "Encryption, hashing"
+      },
+      {
+        "title": "Module 4: Incident Response",
+        "content": "Handling breaches"
+      },
+      {
+        "title": "Module 5: Best Practices",
+        "content": "User security"
+      }
+    ],
+    "courseDesignedFor": "Anyone interested in cybersecurity, IT professionals, and general users.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/33A1FF/FFFFFF?text=Instructor6",
+        "name": "Mr. Ben Carter",
+        "designation": "Cybersecurity Analyst"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/ADD8E6/FFFFFF?text=Cybersecurity",
+    "lessionsNumber": 22,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "Popular",
+    "category": "Cybersecurity",
+    "courseFee": 1800
+  },
+  {
+    "courseId": "MRK200",
+    "courseTitle": "Digital Marketing Strategies",
+    "courseSubtitle": "Develop effective digital marketing campaigns and strategies.",
+    "whatYouLearn": [
+      "SEO (Search Engine Optimization) basics",
+      "SEM (Search Engine Marketing) with Google Ads",
+      "Social media marketing strategies",
+      "Content marketing and email marketing",
+      "Analytics and campaign measurement"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: Digital Marketing Intro",
+        "content": "Overview"
+      },
+      {
+        "title": "Module 2: SEO & SEM",
+        "content": "Organic and paid search"
+      },
+      {
+        "title": "Module 3: Social Media",
+        "content": "Platforms, strategies"
+      },
+      {
+        "title": "Module 4: Content & Email",
+        "content": "Creation, campaigns"
+      },
+      {
+        "title": "Module 5: Analytics",
+        "content": "Measuring success"
+      }
+    ],
+    "courseDesignedFor": "Marketing professionals, business owners, and aspiring digital marketers.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/F08080/FFFFFF?text=Instructor14",
+        "name": "Ms. Laura Davis",
+        "designation": "Digital Marketing Specialist"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/F08080/FFFFFF?text=Digital+Marketing",
+    "lessionsNumber": 17,
+    "lessionLevel": "Intermediate",
+    "coursesPopularityStatus": "Trending",
+    "category": "Marketing",
+    "courseFee": 2100
+  },
+  {
+    "courseId": "DES100",
+    "courseTitle": "Introduction to UI Design",
+    "courseSubtitle": "Learn the fundamentals of user interface design for digital products.",
+    "whatYouLearn": [
+      "UI principles and best practices",
+      "Visual hierarchy and typography in UI",
+      "Color palettes and iconography",
+      "Designing for responsiveness and accessibility",
+      "Using UI design tools (e.g., Figma, Sketch)"
+    ],
+    "courseOutline": [
+      {
+        "title": "Module 1: UI Basics",
+        "content": "Principles, elements"
+      },
+      {
+        "title": "Module 2: Visual Design",
+        "content": "Hierarchy, typography"
+      },
+      {
+        "title": "Module 3: Color & Icons",
+        "content": "Palettes, systems"
+      },
+      {
+        "title": "Module 4: Responsive Design",
+        "content": "Mobile-first, breakpoints"
+      },
+      {
+        "title": "Module 5: Tools",
+        "content": "Figma/Sketch workflow"
+      }
+    ],
+    "courseDesignedFor": "Aspiring UI designers, web developers, and graphic designers.",
+    "instructors": [
+      {
+        "image": "https://placehold.co/100x100/FFC0CB/FFFFFF?text=Instructor19",
+        "name": "Ms. Quinn Taylor",
+        "designation": "UI Designer"
+      }
+    ],
+    "courseBannerImage": "https://placehold.co/600x400/FFC0CB/FFFFFF?text=UI+Design",
+    "lessionsNumber": 15,
+    "lessionLevel": "Beginner",
+    "coursesPopularityStatus": "New",
+    "category": "UX/UI Design",
+    "courseFee": 1100
+  }
+]
