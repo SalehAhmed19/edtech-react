@@ -2,6 +2,7 @@ const express = require("express");
 const Cart = require("../Schema/cartsSchema");
 const router = express.Router();
 
+// get all carts for a specific user
 router.get("/", async (req, res) => {
   const email = req.query.email;
   const result = await Cart.find({ email: email });
@@ -13,17 +14,27 @@ router.get("/", async (req, res) => {
   }
 });
 
+// post a new cart item
 router.post("/add-to-cart", async (req, res) => {
   const cartItem = new Cart(req.body);
-  const result = await cartItem.save();
+  const existingItem = await Cart.findOne({
+    email: cartItem.email,
+    courseId: cartItem.courseId,
+  });
 
-  if (result) {
-    res.status(200).send({ message: "Item added to cart!" });
+  if (existingItem) {
+    return res.status(400).send({ message: "Item already exists in cart!" });
   } else {
-    res.status(404).send({ message: "Failed to add item to cart!" });
+    const result = await cartItem.save();
+    if (result) {
+      res.status(200).send({ message: "Item added to cart!" });
+    } else {
+      res.status(404).send({ message: "Failed to add item to cart!" });
+    }
   }
 });
 
+// delete an item from the cart
 router.delete("/remove-from-cart/:id", async (req, res) => {
   const id = req.params.id;
   const result = await Cart.findByIdAndDelete(id);
