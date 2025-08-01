@@ -10,6 +10,7 @@ const coursesController = require("./RouterControllers/coursesController");
 const cartsController = require("./RouterControllers/cartsControlller");
 const skillsController = require("./RouterControllers/skillsController");
 const studentsController = require("./RouterControllers/studentsController");
+const ordersController = require("./RouterControllers/ordersController");
 
 const PORT = process.env.PORT || 4000;
 
@@ -34,6 +35,7 @@ app.use("/api/courses", coursesController);
 app.use("/api/carts", cartsController);
 app.use("/api/skills", skillsController);
 app.use("/api/students", studentsController);
+app.use("/api/orders", ordersController);
 
 app.get("/", (req, res) => {
   res.send("Welcome to EduDB API");
