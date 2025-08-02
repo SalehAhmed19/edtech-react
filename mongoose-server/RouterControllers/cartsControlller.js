@@ -1,5 +1,6 @@
 const express = require("express");
 const Cart = require("../Schema/cartsSchema");
+const verifyToken = require("../Middlewer/VerifyToken");
 const router = express.Router();
 
 // get all carts for a specific user

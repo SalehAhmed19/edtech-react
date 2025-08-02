@@ -2,8 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
-const jwt = require("jsonwebtoken");
-const stripe = require("stripe")(process.env.STRIPE);
 
 // controllers
 const coursesController = require("./RouterControllers/coursesController");
@@ -14,6 +12,9 @@ const teachersController = require("./RouterControllers/teachersController");
 const usersController = require("./RouterControllers/usersControllers");
 const ordersController = require("./RouterControllers/ordersController");
 const enrolledCoursesController = require("./RouterControllers/enrolledCoursesController");
+const paymentsControllers = require("./RouterControllers/paymentsControllers");
+// AUTH
+const JWT = require("./Authorization/JWT");
 
 const PORT = process.env.PORT || 4000;
 
@@ -42,6 +43,8 @@ app.use("/api/teachers", teachersController);
 app.use("/api/users", usersController);
 app.use("/api/orders", ordersController);
 app.use("/api/enrolled-courses", enrolledCoursesController);
+app.use("/api/payments", paymentsControllers);
+app.use("/api/authorization", JWT);
 
 app.get("/", (req, res) => {
   res.send("Welcome to EduDB API");
