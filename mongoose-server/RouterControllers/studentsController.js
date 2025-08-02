@@ -1,5 +1,6 @@
 const express = require("express");
 const Student = require("../Schema/studentsSchema");
+const User = require("../Schema/usersSchema");
 const router = express.Router();
 
 // get all students
@@ -30,10 +31,17 @@ router.post("/post-student", async (req, res) => {
   const newStudent = new Student(req.body);
   const exsistingStudent = await Student.findOne({ email: newStudent.email });
   if (exsistingStudent) return; // do nothing if student already exists
+  const user = new User({
+    name: newStudent.name,
+    email: newStudent.email,
+    photo: newStudent.photo,
+    role: newStudent.role,
+  });
 
   const result = await newStudent.save();
 
   if (result) {
+    await user.save(); // Save the user details
     res.status(200).send({ message: "Student added successfully!" });
   } else {
     res.status(400).send({ message: "Failed to add student!" });

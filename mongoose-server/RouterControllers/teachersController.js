@@ -1,5 +1,7 @@
 const express = require("express");
 const Teacher = require("../Schema/teachersSchema");
+const Student = require("../Schema/studentsSchema");
+const User = require("../Schema/usersSchema");
 const router = express.Router();
 
 // get all teacher
@@ -32,6 +34,11 @@ router.post("/post-teacher", async (req, res) => {
   if (exsistingStudent) return; // do nothing if teacher already exists
 
   const result = await newTeacher.save();
+  await Student.deleteOne({ email: newTeacher.email });
+  await User.updateOne(
+    { email: newTeacher.email },
+    { $set: { role: "teacher" } }
+  );
 
   if (result) {
     res.status(200).send({ message: "Teacher added successfully!" });

@@ -11,6 +11,7 @@ const cartsController = require("./RouterControllers/cartsControlller");
 const skillsController = require("./RouterControllers/skillsController");
 const studentsController = require("./RouterControllers/studentsController");
 const teachersController = require("./RouterControllers/teachersController");
+const usersController = require("./RouterControllers/usersControllers");
 const ordersController = require("./RouterControllers/ordersController");
 const enrolledCoursesController = require("./RouterControllers/enrolledCoursesController");
 
@@ -38,6 +39,7 @@ app.use("/api/carts", cartsController);
 app.use("/api/skills", skillsController);
 app.use("/api/students", studentsController);
 app.use("/api/teachers", teachersController);
+app.use("/api/users", usersController);
 app.use("/api/orders", ordersController);
 app.use("/api/enrolled-courses", enrolledCoursesController);
 
