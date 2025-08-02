@@ -12,7 +12,6 @@ import {
 import { auth } from "../../firebase/firebase.config";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
 
 export default function useFirebaseAuthenticationHooks() {
   const [user] = useAuthState(auth);
@@ -24,10 +23,8 @@ export default function useFirebaseAuthenticationHooks() {
   const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
   const [createUserWithEmailAndPassword] =
     useCreateUserWithEmailAndPassword(auth);
-  const [recaptchaResponse, setRecaptchaResponse] = useState("");
 
   const handleGoogleRecaptcha = async (data) => {
-    await setRecaptchaResponse(data);
     console.log(data);
   };
 
@@ -84,7 +81,6 @@ export default function useFirebaseAuthenticationHooks() {
           email: email,
           photo: photoURL,
           role: "student",
-          captchaKey: recaptchaResponse,
         };
 
         const response = await dispatch(postStudent(userInfo)).unwrap();

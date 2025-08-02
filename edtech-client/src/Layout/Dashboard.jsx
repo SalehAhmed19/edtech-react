@@ -4,7 +4,6 @@ import StudentsNavigation from "../Pages/Dashboard/Navigations/StudentsNavigatio
 import TeachersNavigation from "../Pages/Dashboard/Navigations/TeachersNavigation";
 import { Toaster } from "react-hot-toast";
 
-import useGetUser from "../Hooks/Users/useGetUser";
 import useGetAllUsers from "../Hooks/Users/useGetAllUsers";
 import StudentsDetails from "../Pages/Dashboard/Students/StudentsProfile/StudentsDetails";
 import TeacherDetails from "../Pages/Dashboard/Teachers/TeacherProfile/TeacherDetails";
