@@ -6,10 +6,11 @@ import useFirebaseAuthenticationHooks from "../../../Hooks/firebaseAuthenticatio
 import Loader from "../../Loader/Loader";
 // import useGetAllUsers from "../../../Hooks/Users/useGetAllUsers";
 import useGetTeacher from "../../../Hooks/Users/useGetTeacher";
+import useGetAllUsers from "../../../Hooks/Users/useGetAllUsers";
 
 export default function Navbar() {
   const { handleSignOut, user } = useFirebaseAuthenticationHooks();
-  // const { isLoading, users, singleUser } = useGetAllUsers();
+  const { singleUser } = useGetAllUsers();
   const { isLoading, teacher } = useGetTeacher();
   console.log({ teacher: teacher });
 
@@ -46,9 +47,16 @@ export default function Navbar() {
                   <Link to="/become-instructor/">Become Instructor</Link>
                 </li>
 
-                <li className="font-semibold">
-                  <Link to="/dashboard/">Dashboard</Link>
-                </li>
+                {singleUser.role === "student" && (
+                  <li className="font-semibold">
+                    <Link to="/dashboard/student-home">Dashboard</Link>
+                  </li>
+                )}
+                {singleUser.role === "teacher" && (
+                  <li className="font-semibold">
+                    <Link to="/dashboard/teacher-home">Dashboard</Link>
+                  </li>
+                )}
               </>
             )}
           </ul>

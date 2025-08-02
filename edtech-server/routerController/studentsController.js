@@ -1,10 +1,16 @@
 const express = require("express");
 const router = express.Router();
 
-module.exports = (studentsCollection) => {
+module.exports = (studentsCollection, usersCollection) => {
   // post users to db: student
   router.post("/post-student", async (req, res) => {
     const student = req.body;
+    const user = {
+      name: student.name,
+      email: student.email,
+      photo: student.photo,
+      role: student.role,
+    };
 
     const query = { email: student.email };
     const existingUser = await studentsCollection.findOne(query);
@@ -12,7 +18,7 @@ module.exports = (studentsCollection) => {
 
     const result = await studentsCollection.insertOne(student);
     if (result) {
-      await usersCollection.insertOne(student);
+      await usersCollection.insertOne(user);
     }
 
     res.send(result);

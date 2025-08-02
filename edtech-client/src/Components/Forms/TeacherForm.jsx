@@ -19,6 +19,7 @@ export default function TeacherForm() {
   const teacherId = Math.random().toString(36).substring(2, 11);
   const onSubmit = async (data) => {
     const teacher = {
+      teacherId: "ET.T_" + teacherId,
       name: data.name,
       email: email,
       phone: data.phone,
@@ -29,7 +30,6 @@ export default function TeacherForm() {
       },
       resume: data.resume,
       role: data.role,
-      teacherId: "ET_" + teacherId,
     };
 
     console.log(teacher);

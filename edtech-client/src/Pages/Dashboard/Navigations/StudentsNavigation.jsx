@@ -18,7 +18,7 @@ export default function studentNavigation() {
         </div>
       </Link>
 
-      <Link to="/dashboard">
+      <Link to="/dashboard/student-home">
         <div className="border-t border-b border-slate-300 p-3 flex gap-4 items-center">
           {isLoading ? (
             <div className="w-20 h-20 rounded-full bg-slate-300 animate-pulse"></div>

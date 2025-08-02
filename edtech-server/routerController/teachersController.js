@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-module.exports = (teachersCollection) => {
+module.exports = (teachersCollection, studentsCollection, usersCollection) => {
   // become teacher
   router.post("/post-teacher", async (req, res) => {
     const teacher = req.body;

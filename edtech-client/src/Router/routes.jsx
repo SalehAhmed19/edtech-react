@@ -25,7 +25,6 @@ import Assignments from "../Pages/Dashboard/Teachers/Assignments";
 import Resources from "../Pages/Dashboard/Teachers/Resources";
 import Support from "../Pages/Dashboard/Teachers/Support";
 import TeachersHome from "../Pages/Dashboard/Teachers/TeachersHome";
-
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -55,7 +54,8 @@ const routes = createBrowserRouter([
       </ProtectedRoute>
     ),
     children: [
-      { path: "/dashboard", element: <StudentsHome /> },
+      { path: "student-home", element: <StudentsHome /> },
+      { path: "teacher-home", element: <TeachersHome /> },
       { path: "student-profile", element: <StudentsProfile /> },
       { path: "student-courses", element: <StudentCourses /> },
       { path: "student-skillset", element: <StudentsSkillSet /> },

@@ -6,6 +6,8 @@ import { Toaster } from "react-hot-toast";
 
 import useGetUser from "../Hooks/Users/useGetUser";
 import useGetAllUsers from "../Hooks/Users/useGetAllUsers";
+import StudentsDetails from "../Pages/Dashboard/Students/StudentsProfile/StudentsDetails";
+import TeacherDetails from "../Pages/Dashboard/Teachers/TeacherProfile/TeacherDetails";
 
 export default function Dashboard() {
   const { singleUser } = useGetAllUsers();
@@ -19,6 +21,8 @@ export default function Dashboard() {
       </div>
       {/* <div className="pt-10">{isAdmin && <StudentsNavigation />}</div> */}
       <div className="col-span-2 p-10">
+        {/* {singleUser.role === "student" && <StudentsDetails />}
+        {singleUser.role === "teacher" && <TeacherDetails />} */}
         <Outlet />
         {/* <button
           onClick={() => {

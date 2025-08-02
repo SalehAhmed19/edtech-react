@@ -17,7 +17,7 @@ export default function TeachersNavigation() {
         </div>
       </Link>
 
-      <Link to="/dashboard">
+      <Link to="/dashboard/teacher-home">
         <div className="border-t border-b border-slate-300 p-3 flex gap-4 items-center">
           {isLoading ? (
             <div className="w-20 h-20 rounded-full bg-slate-300 animate-pulse"></div>
@@ -27,11 +27,11 @@ export default function TeachersNavigation() {
                 <div className="w-20 h-20 rounded-full bg-slate-300 animate-pulse"></div>
               ) : (
                 <img
-                  src={`${
-                    teacher?.photo === null
-                      ? "https://i.ibb.co/ynG5yN4H/man-beard-vector-35281418.png"
-                      : teacher?.photo
-                  }`}
+                  src={
+                    teacher.photo
+                      ? teacher.photo
+                      : "https://i.ibb.co/ynG5yN4H/man-beard-vector-35281418.png"
+                  }
                   alt=""
                   className="rounded-full w-20 border-2 border-slate-300 border-dashed"
                 />

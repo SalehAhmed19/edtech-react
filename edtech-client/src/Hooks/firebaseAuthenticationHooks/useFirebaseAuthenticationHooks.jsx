@@ -41,7 +41,7 @@ export default function useFirebaseAuthenticationHooks() {
         const { displayName, email, photoURL } = result.user;
         const studentId = Math.random().toString(36).substring(2, 11);
         const userInfo = {
-          studentId: "ET_" + studentId,
+          studentId: "ET.S_" + studentId,
           name: displayName,
           email: email,
           photo: photoURL,
@@ -79,7 +79,7 @@ export default function useFirebaseAuthenticationHooks() {
         console.log(result.user);
         const studentId = Math.random().toString(36).substring(2, 11);
         const userInfo = {
-          studentId: "ET_" + studentId,
+          studentId: "ET.S_" + studentId,
           name: data.name,
           email: email,
           photo: photoURL,
