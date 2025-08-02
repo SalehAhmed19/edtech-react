@@ -14,7 +14,7 @@ export const postTeacher = createAsyncThunk(
   async (teacher, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/post/teacher",
+        "http://localhost:4000/api/teachers/post-teacher",
         teacher
       );
 
@@ -31,7 +31,7 @@ export const getTeacher = createAsyncThunk(
   async (email, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/api/users/teacher/${email}`
+        `http://localhost:4000/api/teachers/${email}`
       );
 
       return response.data;

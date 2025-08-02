@@ -15,7 +15,7 @@ export const postStudent = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/users/students",
+        "http://localhost:4000/api/students/post-student",
         data
       );
 
@@ -29,9 +29,7 @@ export const postStudent = createAsyncThunk(
 // get students
 export const getAllStudents = createAsyncThunk("students", async () => {
   try {
-    const response = await axios.get(
-      "http://localhost:4000/api/users/students"
-    );
+    const response = await axios.get("http://localhost:4000/api/students");
 
     return response.data;
   } catch (err) {
@@ -42,10 +40,10 @@ export const getAllStudents = createAsyncThunk("students", async () => {
 // get students
 export const getStudent = createAsyncThunk(
   "students",
-  async (data, { rejectWithValue }) => {
+  async (email, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/api/users/students/${data}`
+        `http://localhost:4000/api/students/${email}`
       );
 
       return response.data;

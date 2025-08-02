@@ -128,72 +128,17 @@ async function run() {
       require("./routerController/coursesController")(coursesCollection)
     );
 
-    // TODO:USERS
-    // post users to db: student
-    app.post("/api/users/students", async (req, res) => {
-      const student = req.body;
+    // students
+    app.use(
+      "/api/students",
+      require("./routerController/studentsController")(studentsCollection)
+    );
 
-      const query = { email: student.email };
-      const existingUser = await studentsCollection.findOne(query);
-      if (existingUser) return; // user exists, do nothing
-
-      const result = await studentsCollection.insertOne(student);
-      if (result) {
-        await usersCollection.insertOne(student);
-      }
-
-      res.send(result);
-    });
-
-    // get users from db: students
-    app.get("/api/users/students", async (req, res) => {
-      const students = await studentsCollection.find().toArray();
-
-      res.send(students);
-    });
-
-    // get users from db: students
-    app.get("/api/users/students/:email", async (req, res) => {
-      const email = req.params.email;
-      const query = { email: email };
-      const student = await studentsCollection.findOne(query);
-
-      res.send(student);
-    });
-
-    // become teacher
-    app.post("/api/post/teacher", async (req, res) => {
-      const teacher = req.body;
-      const email = teacher.email;
-      const query = { email: email };
-
-      const existingTecaher = await teachersCollection.findOne(query);
-      if (existingTecaher) return; // user exists, do nothing
-
-      const updateRole = {
-        $set: {
-          role: "teacher",
-        },
-      };
-
-      const result = await teachersCollection.insertOne(teacher);
-      if (result) {
-        await studentsCollection.deleteOne(query);
-        await usersCollection.updateOne(query, updateRole);
-      }
-
-      res.send(result);
-    });
-
-    app.get("/api/users/teacher/:email", async (req, res) => {
-      const email = req.params.email;
-      const query = { email: email };
-      // console.log(query);
-      const teacher = await teachersCollection.findOne(query);
-      // console.log(teacher);
-
-      res.send(teacher);
-    });
+    // teachers
+    app.use(
+      "/api/teachers",
+      require("./routerController/teachersController")(teachersCollection)
+    );
 
     // enrolled courses
     app.get("/api/enrolled-courses", async (req, res) => {
