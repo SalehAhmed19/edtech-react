@@ -1,8 +1,9 @@
 const express = require("express");
+const verifyToken = require("../middlewares/verifyToken");
 const router = express.Router();
 module.exports = (cartsCollection) => {
   // add to carts
-  router.post("/post-cart", async (req, res) => {
+  router.post("/post-cart", verifyToken, async (req, res) => {
     const newCartItem = req.body;
     const courseId = newCartItem.courseId;
     const email = newCartItem.email;
@@ -22,7 +23,7 @@ module.exports = (cartsCollection) => {
   });
 
   // get carts by email
-  router.get("/", async (req, res) => {
+  router.get("/", verifyToken, async (req, res) => {
     const email = req.query.email;
     const query = { email: email };
 
@@ -31,7 +32,7 @@ module.exports = (cartsCollection) => {
     res.send(result);
   });
 
-  router.delete("/remove-carts/:id", async (req, res) => {
+  router.delete("/remove-carts/:id", verifyToken, async (req, res) => {
     const id = req.params.id;
     const query = { courseId: id };
     const result = await cartsCollection.deleteOne(query);

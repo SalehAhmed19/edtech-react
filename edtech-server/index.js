@@ -54,43 +54,25 @@ async function run() {
       .db("edTech")
       .collection("enrolledCoursesCollection");
 
-    // Authorization: jwt
-    app.post("/api/authorization/jwt", async (req, res) => {
-      const user = req.body;
-      // const payload = { email: user.email };
-      const token = jwt.sign(user, process.env.SECRET_TOKEN, {
-        expiresIn: "1h",
-      });
-      // // console.log(token);
-      res.send({ token });
-    });
-
-    // jwt middleware
-    const verifyToken = (req, res, next) => {
-      // // console.log({ fromMiddleWare: req.headers });
-      const token = req.headers.authorization.split(" ")[1];
-      // // console.log(token);
-      if (!req.headers.authorization) {
-        return res.status(401).send({ message: "Forbiddent access!" });
-      }
-      if (!token) {
-        return res.status(401).send({ message: "Forbiddent access!" });
-      }
-
-      jwt.verify(token, process.env.SECRET_TOKEN, (error, decoded) => {
-        if (error) {
-          return res.status(401).send({ message: "Forbiddent access!" });
-        } else {
-          req.decoded = decoded;
-          next();
-        }
-      });
-    };
+    // Authorization
+    app.use("/api/authorization/", require("./Authorization/JWT"));
 
     // users
     app.use(
       "/api/users",
       require("./routerController/usersController")(usersCollection)
+    );
+
+    // students
+    app.use(
+      "/api/students",
+      require("./routerController/studentsController")(studentsCollection)
+    );
+
+    // teachers
+    app.use(
+      "/api/teachers",
+      require("./routerController/teachersController")(teachersCollection)
     );
 
     // carts
@@ -128,27 +110,13 @@ async function run() {
       require("./routerController/coursesController")(coursesCollection)
     );
 
-    // students
-    app.use(
-      "/api/students",
-      require("./routerController/studentsController")(studentsCollection)
-    );
-
-    // teachers
-    app.use(
-      "/api/teachers",
-      require("./routerController/teachersController")(teachersCollection)
-    );
-
     // enrolled courses
-    app.get("/api/enrolled-courses", async (req, res) => {
-      const email = req.query.email;
-      const query = { email: email };
-
-      const result = await enrolledCoursesCollection.find(query).toArray();
-
-      res.send(result);
-    });
+    app.use(
+      "/api/enrolled-courses",
+      require("./routerController/enrolledCoursesController")(
+        enrolledCoursesCollection
+      )
+    );
 
     // Send a ping to confirm a successful connection
     // TODO: For locally - uncomment this

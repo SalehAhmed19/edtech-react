@@ -23,11 +23,15 @@ export default function TeachersNavigation() {
             <div className="w-20 h-20 rounded-full bg-slate-300 animate-pulse"></div>
           ) : (
             <>
-              {teacher.photo === "" ? (
+              {teacher.photo === null ? (
                 <div className="w-20 h-20 rounded-full bg-slate-300 animate-pulse"></div>
               ) : (
                 <img
-                  src={`${teacher?.photo}`}
+                  src={`${
+                    teacher?.photo === null
+                      ? "https://i.ibb.co/ynG5yN4H/man-beard-vector-35281418.png"
+                      : teacher?.photo
+                  }`}
                   alt=""
                   className="rounded-full w-20 border-2 border-slate-300 border-dashed"
                 />
