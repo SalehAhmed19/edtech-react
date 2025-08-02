@@ -3,7 +3,6 @@ const app = express();
 const cors = require("cors");
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
-const stripe = require("stripe")(process.env.STRIPE);
 
 const port = process.env.PORT || 4000 || 5000;
 
@@ -88,12 +87,46 @@ async function run() {
       });
     };
 
-    // get courses
-    app.get("/api/courses", async (req, res) => {
-      const result = await coursesCollection.find().toArray();
+    // users
+    app.use(
+      "/api/users",
+      require("./routerController/usersController")(usersCollection)
+    );
 
-      res.send(result);
-    });
+    // carts
+    app.use(
+      "/api/carts",
+      require("./routerController/cartsController")(cartsCollection)
+    );
+
+    // skills
+    app.use(
+      "/api/skills",
+      require("./routerController/skillsController")(skillsCollection)
+    );
+
+    // payments
+    app.use(
+      "/api/payments",
+      require("./routerController/paymentsController")(
+        paymentsCollection,
+        cartsCollection,
+        ordersCollection,
+        enrolledCoursesCollection
+      )
+    );
+
+    // orders
+    app.use(
+      "/api/orders",
+      require("./routerController/ordersContoller")(ordersCollection)
+    );
+
+    // courses
+    app.use(
+      "/api/courses",
+      require("./routerController/coursesController")(coursesCollection)
+    );
 
     // TODO:USERS
     // post users to db: student
@@ -160,142 +193,6 @@ async function run() {
       // console.log(teacher);
 
       res.send(teacher);
-    });
-
-    // all users
-    app.get("/api/get/users", async (req, res) => {
-      const users = await usersCollection.find().toArray();
-
-      res.send(users);
-    });
-
-    // user
-    app.get("/api/get/user", async (req, res) => {
-      const email = req.query.email;
-      const query = { email: email };
-      const user = await usersCollection.findOne(query);
-      console.log(email);
-      console.log(user);
-
-      res.send(user);
-    });
-
-    // add to carts
-    app.post("/api/post/carts", verifyToken, async (req, res) => {
-      const newCartItem = req.body;
-      const courseId = newCartItem.courseId;
-      const email = newCartItem.email;
-      const filter = { courseId: courseId, email: email };
-      try {
-        const existing = await cartsCollection.findOne(filter);
-
-        if (!existing) {
-          const result = await cartsCollection.insertOne(newCartItem);
-          res.send(result);
-        } else {
-          res.send({ message: "Items already in cart" });
-        }
-      } catch (err) {
-        // console.log(err);
-      }
-    });
-
-    // get carts by email
-    app.get("/api/get/carts", verifyToken, async (req, res) => {
-      const email = req.query.email;
-      const query = { email: email };
-
-      const result = await cartsCollection.find(query).toArray();
-
-      res.send(result);
-    });
-
-    app.delete("/api/delete/carts/:id", verifyToken, async (req, res) => {
-      const id = req.params.id;
-      const query = { courseId: id };
-      const result = await cartsCollection.deleteOne(query);
-
-      res.send(result);
-    });
-
-    // skills
-    app.post("/api/post/skills", async (req, res) => {
-      const skills = req.body;
-      // console.log(skills);
-
-      const result = await skillsCollection.insertOne(skills);
-
-      res.send(result);
-    });
-
-    app.get("/api/get/skills", async (req, res) => {
-      const email = req.query.email;
-      const query = { email: email };
-
-      const result = await skillsCollection.find(query).toArray();
-
-      res.send(result);
-    });
-
-    // Payments
-    app.post("/api/payment/stripe/create-payment-intent", async (req, res) => {
-      const payment = req.body.price;
-      // console.log(payment);
-      const amount = payment * 100;
-
-      // console.log(amount);
-
-      const paymentIntent = await stripe.paymentIntents.create({
-        amount: amount,
-        currency: "bdt",
-        payment_method_types: ["card"],
-      });
-
-      res.send({
-        clientSecret: paymentIntent.client_secret,
-      });
-    });
-
-    app.post("/api/payment/stripe/payment-success", async (req, res) => {
-      const payment = req.body;
-      const email = req.body.email;
-      const query = { email: email };
-      const carts = req.body.carts;
-      const oId = Math.random().toString(20);
-      const orderId = "ET_O_" + oId.split(".")[1];
-      const orders = { orderId: orderId, email: email, carts: carts };
-      const enrolledCourses = {
-        email: email,
-        courses: carts,
-      };
-
-      const result = await paymentsCollection.insertOne(payment);
-      if (res) {
-        await cartsCollection.deleteMany(query);
-        await ordersCollection.insertOne(orders);
-        await enrolledCoursesCollection.insertOne(enrolledCourses);
-      }
-
-      res.send(result);
-    });
-
-    app.get("/api/get/payments", async (req, res) => {
-      const email = req.query.email;
-      const query = { email: email };
-
-      const result = await paymentsCollection.find(query).toArray();
-
-      res.send(result);
-    });
-
-    // get orders for students
-    app.get("/api/get/orders", async (req, res) => {
-      const email = req.query.email;
-      const query = { email: email };
-
-      const result = await ordersCollection.find(query).toArray();
-
-      res.send(result);
     });
 
     // enrolled courses

@@ -12,7 +12,7 @@ export const addSkills = createAsyncThunk(
   async (skills, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/post/skills",
+        "http://localhost:4000/api/skills/post-skills",
         skills
       );
       console.log(response.data);
@@ -29,7 +29,7 @@ export const getSkills = createAsyncThunk(
     console.log(email);
     try {
       const response = await axios.get(
-        `http://localhost:4000/api/get/skills?email=${email}`
+        `http://localhost:4000/api/skills?email=${email}`
       );
 
       console.log(response.data);

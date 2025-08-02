@@ -12,6 +12,6 @@ export default function useGetUser() {
     dispatch(getUser(email));
   }, [email, dispatch]);
 
-  const { isLoading, singleUser } = useSelector((state) => state.AllUsersSlice);
+  const { isLoading, singleUser } = useSelector((state) => state.UserSlice);
   return { isLoading, singleUser: singleUser };
 }

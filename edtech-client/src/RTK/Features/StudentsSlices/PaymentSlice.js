@@ -13,7 +13,7 @@ export const createPaymentIntent = createAsyncThunk(
   async (totalPrice, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/payment/stripe/create-payment-intent",
+        "http://localhost:4000/api/payments/stripe/create-payment-intent",
         {
           price: totalPrice,
         }
@@ -31,7 +31,7 @@ export const postPayment = createAsyncThunk(
   async (payment, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/payment/stripe/payment-success",
+        "http://localhost:4000/api/payments/stripe/payment-success",
         payment
       );
 
@@ -48,7 +48,7 @@ export const getPayments = createAsyncThunk(
   async (email, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/api/get/payments?email=${email}`
+        `http://localhost:4000/api/payments?email=${email}`
       );
 
       return response.data;

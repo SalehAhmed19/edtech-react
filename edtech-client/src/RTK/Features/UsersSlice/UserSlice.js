@@ -14,7 +14,7 @@ export const getUser = createAsyncThunk(
     console.log(email);
     try {
       const response = await axios.get(
-        `http://localhost:4000/api/get/user${email}`
+        `http://localhost:4000/api/users?email=${email}`
       );
 
       return response.data;

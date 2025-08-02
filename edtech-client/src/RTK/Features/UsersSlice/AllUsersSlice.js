@@ -10,7 +10,7 @@ const initialState = {
 
 export const getAllUsers = createAsyncThunk("getAllUsers", async () => {
   try {
-    const response = await axios.get("http://localhost:4000/api/get/users");
+    const response = await axios.get("http://localhost:4000/api/users");
 
     return response.data;
   } catch (err) {
@@ -24,7 +24,7 @@ export const getUser = createAsyncThunk(
     console.log(email);
     try {
       const response = await axios.get(
-        `http://localhost:4000/api/get/user?email=${email}`
+        `http://localhost:4000/api/users/single-user?email=${email}`
       );
 
       return response.data;

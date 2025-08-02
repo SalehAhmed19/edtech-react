@@ -11,12 +11,13 @@ import {
 } from "../../../RTK/Features/StudentsSlices/PaymentSlice";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import useGetUser from "../../../Hooks/Users/useGetUser";
+
+import useGetAllUsers from "../../../Hooks/Users/useGetAllUsers";
 
 const CheckoutForm = () => {
   const { totalPrice, carts } = useGetCarts();
   // const [user] = useAuthState(auth);
-  const { singleUser } = useGetUser();
+  const { singleUser } = useGetAllUsers();
   const navigate = useNavigate();
 
   const { register, handleSubmit, reset } = useForm();
