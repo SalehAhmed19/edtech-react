@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import useGetStudents from "../../../Hooks/Users/useGetStudent";
 import logo from "../../../assets/images/logo-transparent.png";
+import profile from "../../../assets/images/user.png";
 import course from "../../../assets/images/online-learning.png";
 import cart from "../../../assets/images/shopping-cart.png";
 import order from "../../../assets/images/order-now.png";
@@ -50,8 +51,8 @@ export default function studentNavigation() {
       </Link>
       <ul className="my-5 flex flex-col gap-2 px-10 h-[50vh] overflow-y-auto scroll-smooth">
         <Link to="/dashboard/student-profile">
-          <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer">
-            Profile
+          <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer flex items-center gap-5">
+            <img className="w-6" src={profile} alt="" /> Profile
           </li>
         </Link>
         <Link to="/dashboard/student-courses">

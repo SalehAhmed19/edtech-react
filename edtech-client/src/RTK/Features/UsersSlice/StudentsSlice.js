@@ -58,12 +58,13 @@ const StudentSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(postStudent.fulfilled, (state, action) => {
-      state.isLoading = false;
-      state.students.push(action.payload);
-    });
     builder.addCase(postStudent.pending, (state) => {
       state.isLoading = true;
+    });
+    builder.addCase(postStudent.fulfilled, (state, action) => {
+      state.isLoading = false;
+      console.log(action);
+      state.students.push(action.meta.arg);
     });
     builder.addCase(postStudent.rejected, (state) => {
       state.isLoading = true;

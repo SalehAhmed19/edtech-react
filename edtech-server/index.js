@@ -2,7 +2,17 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 require("dotenv").config();
-const jwt = require("jsonwebtoken");
+
+const client = require("./DB/Connect");
+const coursesCollection = require("./DB/Collections/courseCollection");
+const usersCollection = require("./DB/Collections/usersCollection");
+const studentsCollection = require("./DB/Collections/studentsCollection");
+const teachersCollection = require("./DB/Collections/teachersCollection");
+const cartsCollection = require("./DB/Collections/cartsCollection");
+const skillsCollection = require("./DB/Collections/skillsCollection");
+const paymentsCollection = require("./DB/Collections/paymentsCollection");
+const ordersCollection = require("./DB/Collections/ordersCollection");
+const enrolledCoursesCollection = require("./DB/Collections/enrolledCoursesCollection");
 
 const port = process.env.PORT || 4000 || 5000;
 
@@ -11,48 +21,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
 
-const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
-const { default: axios } = require("axios");
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@sam-cluster-01.sjti4dh.mongodb.net/?retryWrites=true&w=majority&appName=SAM-Cluster-01`;
-// const uri = "mongodb://localhost:27017/";
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
-});
-
 async function run() {
   try {
     // TODO: For locally - uncomment this
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
-
-    // collections
-    const coursesCollection = client
-      .db("edTech")
-      .collection("coursesCollection");
-
-    const usersCollection = client.db("edTech").collection("usersCollection");
-    const studentsCollection = client
-      .db("edTech")
-      .collection("studentsCollection");
-    const teachersCollection = client
-      .db("edTech")
-      .collection("teachersCollection");
-
-    const cartsCollection = client.db("edTech").collection("cartsCollection");
-    const skillsCollection = client.db("edTech").collection("skillsCollection");
-    const paymentsCollection = client
-      .db("edTech")
-      .collection("paymentsCollection");
-
-    const ordersCollection = client.db("edTech").collection("ordersCollection");
-    const enrolledCoursesCollection = client
-      .db("edTech")
-      .collection("enrolledCoursesCollection");
 
     // Authorization
     app.use("/api/authorization/", require("./Authorization/JWT"));

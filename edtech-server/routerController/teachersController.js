@@ -18,7 +18,7 @@ module.exports = (teachersCollection, studentsCollection, usersCollection) => {
     };
 
     const result = await teachersCollection.insertOne(teacher);
-    if (result) {
+    if (result.acknowledged === true) {
       await studentsCollection.deleteOne(query);
       await usersCollection.updateOne(query, updateRole);
     }

@@ -12,6 +12,10 @@ import {
 import { auth } from "../../firebase/firebase.config";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
+import {
+  getAllUsers,
+  getUser,
+} from "../../RTK/Features/UsersSlice/AllUsersSlice";
 
 export default function useFirebaseAuthenticationHooks() {
   const [user] = useAuthState(auth);
@@ -84,6 +88,10 @@ export default function useFirebaseAuthenticationHooks() {
         };
 
         const response = await dispatch(postStudent(userInfo)).unwrap();
+        if (response) {
+          dispatch(getUser(email));
+          dispatch(getAllUsers());
+        }
         console.log("User data successfully posted to DB:", response);
         reset();
         navigate("/");

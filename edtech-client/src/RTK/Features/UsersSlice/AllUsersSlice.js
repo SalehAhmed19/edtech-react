@@ -40,30 +40,30 @@ const AllUsersSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     // get users
+    builder.addCase(getAllUsers.pending, (state) => {
+      state.isLoading = true;
+    });
     builder.addCase(getAllUsers.fulfilled, (state, action) => {
       state.isLoading = false;
       state.users = action.payload;
     });
-    builder.addCase(getAllUsers.pending, (state) => {
-      state.isLoading = true;
-    });
     builder.addCase(getAllUsers.rejected, (state, action) => {
-      state.isLoading = true;
+      state.isLoading = false;
       state.isError = true;
       console.log(action.payload);
     });
 
     // get student
+    builder.addCase(getUser.pending, (state) => {
+      state.isLoading = true;
+    });
     builder.addCase(getUser.fulfilled, (state, action) => {
       console.log(action);
       state.isLoading = false;
       state.singleUser = action.payload;
     });
-    builder.addCase(getUser.pending, (state) => {
-      state.isLoading = true;
-    });
     builder.addCase(getUser.rejected, (state, action) => {
-      state.isLoading = true;
+      state.isLoading = false;
       console.log(action.payload);
     });
   },

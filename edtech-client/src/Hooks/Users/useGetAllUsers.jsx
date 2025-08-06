@@ -19,5 +19,7 @@ export default function useGetAllUsers() {
   const { isLoading, users, singleUser } = useSelector(
     (state) => state.AllUsersSlice
   );
+
+  console.log(singleUser);
   return { isLoading, users, singleUser: singleUser };
 }
