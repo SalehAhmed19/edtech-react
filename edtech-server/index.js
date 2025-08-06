@@ -4,15 +4,18 @@ const cors = require("cors");
 require("dotenv").config();
 
 const client = require("./DB/Connect");
-const coursesCollection = require("./DB/Collections/courseCollection");
-const usersCollection = require("./DB/Collections/usersCollection");
-const studentsCollection = require("./DB/Collections/studentsCollection");
-const teachersCollection = require("./DB/Collections/teachersCollection");
-const cartsCollection = require("./DB/Collections/cartsCollection");
-const skillsCollection = require("./DB/Collections/skillsCollection");
-const paymentsCollection = require("./DB/Collections/paymentsCollection");
-const ordersCollection = require("./DB/Collections/ordersCollection");
-const enrolledCoursesCollection = require("./DB/Collections/enrolledCoursesCollection");
+
+const {
+  coursesCollection,
+  usersCollection,
+  studentsCollection,
+  teachersCollection,
+  cartsCollection,
+  skillsCollection,
+  paymentsCollection,
+  ordersCollection,
+  enrolledCoursesCollection,
+} = require("./DB/Collections/services");
 
 const port = process.env.PORT || 4000 || 5000;
 
