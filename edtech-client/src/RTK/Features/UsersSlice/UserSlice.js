@@ -14,6 +14,7 @@ export const getUser = createAsyncThunk(
     console.log(email);
     try {
       const response = await axios.get(
+        // `https://edtech-react.vercel.app/api/users?email=${email}`
         `http://localhost:4000/api/users?email=${email}`
       );
 

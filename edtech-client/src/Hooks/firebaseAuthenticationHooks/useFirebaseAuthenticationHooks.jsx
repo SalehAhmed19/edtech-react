@@ -114,6 +114,7 @@ export default function useFirebaseAuthenticationHooks() {
   if (user) {
     const userInfo = user.email;
     axios
+      // .post("https://edtech-react.vercel.app/api/authorization/jwt", userInfo)
       .post("http://localhost:4000/api/authorization/jwt", userInfo)
       .then((res) => {
         if (res.data.token) {

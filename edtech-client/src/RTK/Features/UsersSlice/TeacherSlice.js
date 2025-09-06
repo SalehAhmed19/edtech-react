@@ -14,6 +14,7 @@ export const postTeacher = createAsyncThunk(
   async (teacher, { rejectWithValue }) => {
     try {
       const response = await axios.post(
+        // "https://edtech-react.vercel.app/api/teachers/post-teacher",
         "http://localhost:4000/api/teachers/post-teacher",
         teacher
       );
@@ -31,6 +32,7 @@ export const getTeacher = createAsyncThunk(
   async (email, { rejectWithValue }) => {
     try {
       const response = await axios.get(
+        // `https://edtech-react.vercel.app/api/teachers/${email}`
         `http://localhost:4000/api/teachers/${email}`
       );
 

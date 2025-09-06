@@ -10,7 +10,10 @@ const initialState = {
 
 // get action
 export const getCourses = createAsyncThunk("courses", async () => {
-  const response = await axios.get("http://localhost:4000/api/courses");
+  const response = await axios.get(
+    // "https://edtech-react.vercel.app/api/courses"
+    "http://localhost:4000/api/courses"
+  );
 
   return response.data;
 });

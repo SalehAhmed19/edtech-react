@@ -12,6 +12,7 @@ export const getOrders = createAsyncThunk(
   async (email, { rejectWithValue }) => {
     try {
       const response = await axios.get(
+        // `https://edtech-react.vercel.app/api/orders?email=${email}`
         `http://localhost:4000/api/orders?email=${email}`
       );
       console.log(response.data);

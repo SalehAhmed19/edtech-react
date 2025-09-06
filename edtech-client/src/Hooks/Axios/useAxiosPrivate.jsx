@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase/firebase.config";
 
 const axiosPrivate = axios.create({
+  // baseURL: "https://edtech-react.vercel.app/api",
   baseURL: "http://localhost:4000/api",
 });
 

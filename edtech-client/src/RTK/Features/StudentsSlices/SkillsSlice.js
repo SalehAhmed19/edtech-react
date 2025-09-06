@@ -12,6 +12,7 @@ export const addSkills = createAsyncThunk(
   async (skills, { rejectWithValue }) => {
     try {
       const response = await axios.post(
+        // "https://edtech-react.vercel.app/api/skills/post-skills",
         "http://localhost:4000/api/skills/post-skills",
         skills
       );
@@ -29,6 +30,7 @@ export const getSkills = createAsyncThunk(
     console.log(email);
     try {
       const response = await axios.get(
+        // `https://edtech-react.vercel.app/api/skills?email=${email}`
         `http://localhost:4000/api/skills?email=${email}`
       );
 

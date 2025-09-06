@@ -15,6 +15,7 @@ export const postStudent = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const response = await axios.post(
+        // "https://edtech-react.vercel.app/api/students/post-student",
         "http://localhost:4000/api/students/post-student",
         data
       );
@@ -29,7 +30,10 @@ export const postStudent = createAsyncThunk(
 // get students
 export const getAllStudents = createAsyncThunk("students", async () => {
   try {
-    const response = await axios.get("http://localhost:4000/api/students");
+    const response = await axios.get(
+      // "https://edtech-react.vercel.app/api/students"
+      "http://localhost:4000/api/students"
+    );
 
     return response.data;
   } catch (err) {
@@ -43,6 +47,7 @@ export const getStudent = createAsyncThunk(
   async (email, { rejectWithValue }) => {
     try {
       const response = await axios.get(
+        // `https://edtech-react.vercel.app/api/students/${email}`
         `http://localhost:4000/api/students/${email}`
       );
 
