@@ -26,7 +26,18 @@ export default function Course() {
         </div>
       ) : (
         <div className="my-10 md:max-w-[920px] lg:max-w-[1280px] mx-auto flex flex-col gap-10">
-          <img className="w-full" src={course?.courseBannerImage} alt="" />
+          {/* <img className="w-full" src={course?.courseBannerImage} alt="" /> */}
+          <iframe
+            // width="560"
+            // height="315"
+            className="w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-3xl shadow-2xl"
+            src="https://www.youtube.com/embed/UrsmFxEIp5k?si=4GJjoCz4C-KwBLDP"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
           <div className="grid grid-cols-2 gap-5">
             <div className="flex flex-col gap-10">
               <CourseTitle course={course} />

@@ -1,5 +1,4 @@
 import ScrollToTop from "react-scroll-to-top";
-
 import Banner from "../../../Components/Banner/Banner";
 import BecomeInstructor from "../../../Components/BecomeInstructor/BecomeInstructor";
 import ContactSection from "../../../Components/ContactSection/ContactSection";
@@ -23,7 +22,7 @@ export default function Home() {
     <>
       <div className="md:max-w-[920px] lg:max-w-[1280px] mx-auto flex flex-col gap-22">
         <Banner />
-        <Courses />
+        {/* <Courses /> */}
         <PopularCourses />
         <TrendyCourses />
         <NewCourses />
