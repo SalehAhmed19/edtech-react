@@ -32,12 +32,12 @@ export default function StudentsDetails() {
           </h2>
         </div>
       </div>
-      <h3 className="pl-10">
+      <h3 className="">
         Welcome,{" "}
         <span className="text-xl font-bold text-primary">{student?.name}</span>
       </h3>
       <div className="grid grid-cols-4">
-        <div className="col-span-3 pl-10 grid grid-cols-2 gap-5">
+        <div className="col-span-3 grid grid-cols-2 gap-5">
           {isLoading ? (
             <DataSkeleton />
           ) : (

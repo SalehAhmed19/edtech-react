@@ -13,10 +13,10 @@ export default function StudentsProfile() {
   const { singleUser } = useGetAllUsers();
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="grid grid-cols-2 place-content-center h-screen gap-10">
       {singleUser.role === "student" && <StudentsDetails />}
-      <DividerTwo text={"Update Information"} />
-      <div className="mb-10">
+      {/* <DividerTwo text={"Update Information"} /> */}
+      <div className="p-5 bg-gray-50 rounded-xl">
         <StudentsDetailsForm />
       </div>
     </div>
