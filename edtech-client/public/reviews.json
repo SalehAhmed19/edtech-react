@@ -1,0 +1,47 @@
+[
+  {
+    "reviewId": "R001",
+    "reviewerName": "Anya Sharma",
+    "reviewDate": "September 1, 2025",
+    "courseTitle": "Introduction to Programming with Python",
+    "rating": 5,
+    "reviewText": "I came into this course with zero coding experience, and the instructors made everything so clear and easy to understand. The hands-on projects were the best part and really solidified my knowledge. Highly recommend for any beginner!",
+    "reviewerImage": "https://www.google.com/search?q=https://placehold.co/100x100/A0B4B5/FFFFFF%3Ftext%3DA.S."
+  },
+  {
+    "reviewId": "R002",
+    "reviewerName": "Javier Garcia",
+    "reviewDate": "August 28, 2025",
+    "courseTitle": "Modern Web Development with React & Tailwind CSS",
+    "rating": 4.5,
+    "reviewText": "The course content was incredibly up-to-date and practical. The instructor's teaching style was engaging, and I loved the focus on building a real-world project. I now feel confident enough to build my own portfolio site!",
+    "reviewerImage": "https://www.google.com/search?q=https://placehold.co/100x100/5E5478/FFFFFF%3Ftext%3DJ.G."
+  },
+  {
+    "reviewId": "R003",
+    "reviewerName": "Sarah Chen",
+    "reviewDate": "September 5, 2025",
+    "courseTitle": "Data Science Fundamentals with R",
+    "rating": 5,
+    "reviewText": "This course was exactly what I needed to get started in data science. The way complex topics were broken down into simple steps was amazing. I appreciate how thorough and well-organized the lessons were.",
+    "reviewerImage": "https://www.google.com/search?q=https://placehold.co/100x100/7F8C78/FFFFFF%3Ftext%3DS.C."
+  },
+  {
+    "reviewId": "R004",
+    "reviewerName": "Marcus Bell",
+    "reviewDate": "August 15, 2025",
+    "courseTitle": "Agile Project Management",
+    "rating": 5,
+    "reviewText": "A fantastic course that demystifies Agile methodologies. The examples provided were relevant to my job, and I've already started applying the principles I learned. My team's productivity has significantly improved!",
+    "reviewerImage": "https://www.google.com/search?q=https://placehold.co/100x100/CD797C/FFFFFF%3Ftext%3DM.B."
+  },
+  {
+    "reviewId": "R005",
+    "reviewerName": "Olivia Rodriguez",
+    "reviewDate": "September 3, 2025",
+    "courseTitle": "Machine Learning with TensorFlow",
+    "rating": 5,
+    "reviewText": "This course is a masterpiece. The depth of the content on neural networks and model training is unmatched. I feel like I'm a machine learning expert after completing it. A must-take for anyone serious about the field.",
+    "reviewerImage": "https://www.google.com/search?q=https://placehold.co/100x100/E8D629/FFFFFF%3Ftext%3DO.R."
+  }
+]

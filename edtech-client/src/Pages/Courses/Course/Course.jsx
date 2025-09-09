@@ -8,7 +8,7 @@ import CourseFee from "./CourseFee";
 import CourseTitle from "./CourseTitle";
 import Instructors from "./Instructors";
 import Help from "./Help";
-import Loader from "../../../Components/Loader/Loader";
+import LoadingSpinner from "../../../Components/UI/LoadingSpinner";
 
 export default function Course() {
   const { id } = useParams();
@@ -22,7 +22,7 @@ export default function Course() {
     <>
       {isLoading ? (
         <div className="h-[80vh] flex justify-center items-center">
-          <Loader />
+          <LoadingSpinner />
         </div>
       ) : (
         <div className="my-10 md:max-w-[920px] lg:max-w-[1280px] mx-auto flex flex-col gap-10">

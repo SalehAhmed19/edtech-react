@@ -40,8 +40,12 @@ import { Link } from "react-router-dom";
 
 export default function CourseCard({ avatar, title, lesson, level, id, fee }) {
   return (
-    <div className="shadow-lg rounded-xl">
-      <img src={avatar} alt="course-thumbnail" className="rounded-t-xl" />
+    <div className="shadow-lg rounded-xl bg-white">
+      <img
+        src={avatar}
+        alt="course-thumbnail"
+        className="rounded-t-xl w-full"
+      />
       <div className="p-5">
         <h4 className="font-bold h-14">{title.slice(0, 40) + "..."}</h4>
         <div className="flex justify-between items-center">

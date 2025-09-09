@@ -11,16 +11,18 @@ export default function FreeCourses() {
 
   return (
     <div className="relative my-20">
-      <div className="flex items-center justify-between md:max-w-[920px] lg:max-w-[1280px] mx-auto">
-        <div>
-          <h2 className="text-[40px] font-semibold text-[#333]">
-            Free Courses
-          </h2>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <button className="bg-[#333] px-5 py-2 text-center rounded-md text-white mt-5 cursor-pointer">
-            Enroll Now
-          </button>
-        </div>
+      <div>
+        <h2 className="text-[45px] font-bold text-center">
+          <span className="text-primary">Free</span> Courses
+        </h2>
+        <p className="text-center text-secondary">
+          Elevate your skills without the cost.
+        </p>
+        <button className="bg-[#333] px-5 py-2 text-center rounded-md text-white mt-5 cursor-pointer">
+          Enroll Now
+        </button>
+      </div>
+      <div className="flex items-center justify-center md:max-w-[920px] lg:max-w-[1280px] mx-auto">
         <div className="my-10 z-10 grid grid-cols-3 gap-5">
           {freeCourses.slice(0, 6).map((course) => (
             <CourseCard

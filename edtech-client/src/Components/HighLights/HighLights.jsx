@@ -52,7 +52,7 @@ export default function HighLights() {
             key={d.id}
             className="p-10 bg-white flex flex-col items-center hover:scale-105 duration-300 cursor-pointer"
           >
-            <span className="bg-[#CE2823] text-white rounded-full p-3 flex justify-center items-center mb-3">
+            <span className="bg-[#CE2823] text-white rounded-full p-3 flex justify-center items-center mb-3 shadow-2xl">
               {d.icon}
             </span>
             <h3 className="font-semibold text-xl">

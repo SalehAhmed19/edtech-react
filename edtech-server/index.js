@@ -15,6 +15,7 @@ const {
   paymentsCollection,
   ordersCollection,
   enrolledCoursesCollection,
+  reviewsCollection,
 } = require("./DB/Collections/services");
 
 const port = process.env.PORT || 4000 || 5000;
@@ -99,6 +100,12 @@ async function run() {
       require("./routerController/enrolledCoursesController")(
         enrolledCoursesCollection
       )
+    );
+
+    // reviews
+    app.use(
+      "/api/reviews",
+      require("./routerController/reviewsController")(reviewsCollection)
     );
 
     // Send a ping to confirm a successful connection

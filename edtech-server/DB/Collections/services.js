@@ -10,6 +10,7 @@ const collectionNames = [
   "studentsCollection",
   "teachersCollection",
   "usersCollection",
+  "reviewsCollection",
 ];
 
 const collections = collectionNames.map((name) =>
@@ -26,6 +27,7 @@ const [
   studentsCollection,
   teachersCollection,
   usersCollection,
+  reviewsCollection,
 ] = collections;
 
 module.exports = {
@@ -38,4 +40,5 @@ module.exports = {
   studentsCollection,
   teachersCollection,
   usersCollection,
+  reviewsCollection,
 };

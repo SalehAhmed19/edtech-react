@@ -4,24 +4,18 @@ import { useState } from "react";
 import "./Review.css";
 import { FaBook, FaQuoteLeft } from "react-icons/fa";
 import SectionTitle from "../SectionTitle/SectionTitle";
-
-const urls = [
-  "https://plus.unsplash.com/premium_photo-1682787494765-44d02d12f5be?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://plus.unsplash.com/premium_photo-1682787494765-44d02d12f5be?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://plus.unsplash.com/premium_photo-1682787494765-44d02d12f5be?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://plus.unsplash.com/premium_photo-1682787494765-44d02d12f5be?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://plus.unsplash.com/premium_photo-1682787494765-44d02d12f5be?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://plus.unsplash.com/premium_photo-1682787494765-44d02d12f5be?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://plus.unsplash.com/premium_photo-1682787494765-44d02d12f5be?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://plus.unsplash.com/premium_photo-1682787494765-44d02d12f5be?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-];
+import { QuotesIcon } from "@phosphor-icons/react";
+import useGetReviews from "../../Hooks/Reviews/useGetReviews";
+import LoadingSpinner from "../UI/LoadingSpinner";
 
 export default function Review() {
+  const { isLoading, reviews } = useGetReviews();
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider({
     slides: {
-      perView: 3,
+      perView: 2,
       spacing: 15,
     },
     initial: 0,
@@ -33,26 +27,47 @@ export default function Review() {
     },
   });
 
+  if (isLoading) {
+    return (
+      <div className="h-[80vh] flex justify-center items-center">
+        <LoadingSpinner />
+      </div>
+    );
+  }
+
   return (
     <div className="mb-10">
-      <SectionTitle title={"Why everyone trust us?"} />
-      <div className="navigation-wrapper">
+      {/* <SectionTitle title={"Why everyone trust us?"} /> */}
+      <h2 className="text-[45px] font-bold text-center">
+        <span className="text-primary">Reviews</span> of Students
+      </h2>
+      <p className="text-center text-secondary">
+        Hear what our students have to say.
+      </p>
+
+      <div className="navigation-wrapper mt-5">
         <div ref={sliderRef} className="keen-slider">
-          {urls.map((url, idx) => (
+          {reviews.map((review, idx) => (
             <div key={idx} className="keen-slider__slide relative">
-              <div className="p-2 bg-[#333] h-10 w-10 flex justify-center items-center text-white rounded-full ml-5 -mb-5">
-                <FaQuoteLeft />
-              </div>
-              <div className="border border-slate-300 border-dashed px-5 py-10 rounded-md">
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex
-                  unde sit nostrum? Expedita quod, laudantium quo ducimus, quasi
-                  illum voluptatum doloribus in excepturi voluptatem sequi
-                  possimus! Odio possimus illum saepe?
-                </p>
-                <h5 className="mt-5 text-xl">Jobaida Hatun</h5>
-                <p className="text-[#787878]">
-                  Teaching Assistant, BRAC University
+              <QuotesIcon
+                size={62}
+                className="ml-auto text-primary mb-[-15px]"
+              />
+              <div className="px-5 pb-10 rounded-md">
+                <p>{review.reviewText}</p>
+
+                <div className="flex items-center gap-2 mt-5">
+                  <img
+                    src="https://avatar.iran.liara.run/public/35"
+                    alt="reviewe-image"
+                    className="w-12 rounded-full"
+                  />
+                  <h5 className="text-xl text-primary">
+                    {review.reviewerName}
+                  </h5>
+                </div>
+                <p className="text-secondary" style={{ fontSize: "14px" }}>
+                  {review.reviewDate}
                 </p>
               </div>
             </div>
