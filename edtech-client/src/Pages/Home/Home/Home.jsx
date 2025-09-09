@@ -40,17 +40,6 @@ export default function Home() {
         <NewsLetter />
         <ContactSection />
       </div>
-      <ScrollToTop
-        smooth
-        style={{
-          backgroundColor: "#CE2823",
-          borderRadius: "100px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-        component={<IoIosArrowUp className="text-white" />}
-      />
     </>
   );
 }

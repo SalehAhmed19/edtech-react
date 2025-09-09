@@ -5,8 +5,10 @@ import {
   YoutubeLogoIcon,
 } from "@phosphor-icons/react";
 import logo from "../../../assets/images/logo-ligth.png";
+import logoDark from "../../../assets/images/logo.png";
 
 export default function Footer() {
+  const date = new Date().getFullYear();
   return (
     <>
       <div className="bg-[#1e1e1e] text-white grid grid-cols-4 gap-5 px-10 py-20">
@@ -52,7 +54,11 @@ export default function Footer() {
         </div>
       </div>
       <div className="bg-[#fff] p-5 text-center">
-        <p className="font-bold">Edtech</p>
+        <img src={logoDark} alt="logo" className="w-10 mx-auto" />
+        <p>
+          &copy; All rights reserved{" "}
+          <span className="text-primary">{date}</span>.
+        </p>
       </div>
     </>
   );
