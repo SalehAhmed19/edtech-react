@@ -1,12 +1,14 @@
 import { Fade } from "react-awesome-reveal";
-import contact from "../../assets/images/contact.svg";
+import contact from "../../assets/images/contact.png";
 
 import ContactSectionForm from "../Forms/ContactSectionForm";
 
 export default function ContactSection() {
   return (
     <div>
-      <img src={contact} alt="" className="mx-auto" />
+      <Fade direction="up" cascade={true} duration={800}>
+        <img src={contact} alt="" className="mx-auto" />
+      </Fade>
       <div className="grid grid-cols-2 gap-5">
         <div>
           <Fade direction="left" cascade={true} duration={800}>
