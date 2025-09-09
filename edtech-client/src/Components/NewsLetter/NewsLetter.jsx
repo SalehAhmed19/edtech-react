@@ -10,13 +10,17 @@ export default function NewsLetter() {
   };
   return (
     <div className="text-center">
-      <h2 className="font-semibold text-[40px]">
-        Subscribe for Offer and <br /> Course Update
+      <h2 className="text-[45px] font-bold text-center">
+        Subscribe for <span className="text-primary">Offer</span> and <br />
+        <span className="text-primary">Course Update</span>
       </h2>
+      <p className="text-center text-secondary">
+        Expert Tips, Industry Trends, and Exclusive Offers.
+      </p>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="border border-slate-300 border-dashed rounded-full p-2 w-1/3 mx-auto flex items-center mt-5"
+        className="border border-gray-200 rounded-full p-2 w-1/3 mx-auto flex items-center mt-5"
       >
         <input
           {...register("email")}
@@ -24,7 +28,7 @@ export default function NewsLetter() {
           className="rounded-full px-5 py-2 w-full outline-0"
           placeholder="Write your email"
         />
-        <button className="bg-[#333] px-5 py-2 rounded-full text-white">
+        <button className="bg-primary px-5 py-2 rounded-full text-white">
           Subscribe
         </button>
       </form>

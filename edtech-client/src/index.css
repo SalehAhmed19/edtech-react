@@ -18,6 +18,10 @@ body {
   color: #1e1e1e;
 }
 
+.bg-primary {
+  background-color: #ce2823;
+}
+
 .text-primary {
   color: #ce2823;
 }

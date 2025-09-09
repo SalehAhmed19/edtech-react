@@ -1,8 +1,3 @@
-import SectionTitle from "../SectionTitle/SectionTitle";
-// import avatar from "../../assets/images/avtar.jpg";
-
-// import PopularCourseCard from "../Cards/CourseCard";
-
 import CourseCard from "../Cards/CourseCard";
 import useGetCourses from "../../Hooks/Courses/useGetCourses";
 import { useState } from "react";

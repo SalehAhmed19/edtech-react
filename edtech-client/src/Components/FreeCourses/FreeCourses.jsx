@@ -18,9 +18,6 @@ export default function FreeCourses() {
         <p className="text-center text-secondary">
           Elevate your skills without the cost.
         </p>
-        <button className="bg-[#333] px-5 py-2 text-center rounded-md text-white mt-5 cursor-pointer">
-          Enroll Now
-        </button>
       </div>
       <div className="flex items-center justify-center md:max-w-[920px] lg:max-w-[1280px] mx-auto">
         <div className="my-10 z-10 grid grid-cols-3 gap-5">
