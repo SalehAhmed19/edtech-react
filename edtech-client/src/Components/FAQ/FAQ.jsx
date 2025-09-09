@@ -1,4 +1,5 @@
-import faq from "../../assets/images/faq1.svg";
+// import faq from "../../assets/images/faq1.svg";
+import faq from "../../assets/images/faq.png";
 import { useState } from "react";
 import Accordant from "../Accordant/Accordant";
 
@@ -47,18 +48,14 @@ export default function FAQ() {
 
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
+      <div className="mt-10">
         <div>
-          <img src={faq} alt="" className="w-56" />
-          <h3 className="text-[40px] font-semibold">
-            Frequently Ask <br />
-            <span className="text-primary">Question</span>
-          </h3>
-          <p className="pt-10">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-            soluta vitae laboriosam sed hic alias delectus sapiente qui, sunt,
-            cumque unde eius labore necessitatibus corporis. Enim hic provident
-            unde quidem!
+          <img src={faq} alt="" className="mx-auto" />
+          <h2 className="text-[45px] font-bold text-center">
+            <span className="text-primary">FAQ</span>s
+          </h2>
+          <p className="text-center text-secondary">
+            Everything You Need to Know.
           </p>
         </div>
         <div className="order-2 md:order-1">
