@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 
 import { Toaster } from "react-hot-toast";
-import logo from "../../../assets/images/logo-transparent.png";
+import logo from "../../../assets/images/logo.png";
 import useFirebaseAuthenticationHooks from "../../../Hooks/firebaseAuthenticationHooks/useFirebaseAuthenticationHooks";
 import Loader from "../../Loader/Loader";
 // import useGetAllUsers from "../../../Hooks/Users/useGetAllUsers";
 import useGetTeacher from "../../../Hooks/Users/useGetTeacher";
 import useGetAllUsers from "../../../Hooks/Users/useGetAllUsers";
+import { SignInIcon } from "@phosphor-icons/react";
 
 export default function Navbar() {
   const { handleSignOut, user } = useFirebaseAuthenticationHooks();
@@ -25,21 +26,23 @@ export default function Navbar() {
   // console.log(students.role);
 
   return (
-    <div className="bg-[#33333310] p-5 text-[#333] sticky top-0 z-50 backdrop-blur-3xl">
+    <div className="bg-[#fff] p-2 text-[#333] sticky top-0 z-50 backdrop-blur-3xl border-b-2 border-b-gray-200">
       {" "}
       <div className="md:max-w-[1180px] lg:max-w-[1280px] mx-auto flex items-center justify-between">
         {" "}
         <Link to="/">
           {/* <h3 className="font-semibold text-xl">EdTech</h3> */}
-          <img src={logo} alt="" className="w-16" />
+          <img src={logo} alt="" className="w-20" />
         </Link>
         <div>
           <ul className="flex items-center gap-5">
-            <li>
-              <Link to="/courses">Course</Link>
+            <li className="hover:bg-[#CE2823] hover:shadow-lg hover:text-white duration-300 px-5 py-2 rounded-full cursor-pointer">
+              <Link to="/courses">Courses</Link>
             </li>
-            <li>About Us</li>
-            <li>
+            <li className="hover:bg-[#CE2823] hover:shadow-lg hover:text-white duration-300 px-5 py-2 rounded-full cursor-pointer">
+              About Us
+            </li>
+            <li className="hover:bg-[#CE2823] hover:shadow-lg hover:text-white duration-300 px-5 py-2 rounded-full cursor-pointer">
               <Link to="/contact">Contact</Link>
             </li>
             {user && (
@@ -70,8 +73,12 @@ export default function Navbar() {
             Sign out
           </button>
         ) : (
-          <Link to="/authentication/login">
-            <button className="bg-white text-black px-5 py-2 rounded-md cursor-pointer">
+          <Link
+            to="/authentication/login"
+            className="bg-[#CE2823] text-white hover:border hover:border-gray-200 hover:bg-[#fff] hover:text-[#333] duration-300 px-5 py-2 rounded-full cursor-pointer"
+          >
+            <button className="flex items-center gap-2">
+              <SignInIcon size={32} />
               Login
             </button>
           </Link>
