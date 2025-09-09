@@ -21,7 +21,14 @@ export default function PopularCourses() {
 
   return (
     <div>
-      <SectionTitle title={"Popular Courses"} />
+      {/* <SectionTitle title={"Popular Courses"} /> */}
+      <h2 className="text-[45px] font-bold text-center">
+        <span className="text-primary">Popular</span> Courses
+      </h2>
+      <p className="text-center text-secondary">
+        Highly rated and recommended by our learning community.
+      </p>
+
       <div className="mt-10 grid grid-cols-4 gap-5">
         {/* {newCourses.slice(0, show ? show : 6).map((course) => (
           <NewCourseCard key={course.courseId} course={course} />

@@ -18,7 +18,13 @@ export default function TrendyCourses() {
 
   return (
     <div>
-      <SectionTitle title={"Trending Courses"} />
+      {/* <SectionTitle title={"Trending Courses"} /> */}
+      <h2 className="text-[45px] font-bold text-center">
+        <span className="text-primary">Trendy</span> Courses
+      </h2>
+      <p className="text-center text-secondary">
+        Master the Skills Shaping Tomorrow.
+      </p>
       <div className="mt-10 grid grid-cols-4 gap-5">
         {trendingCourses.slice(0, show ? show : 4).map((course) => (
           <CourseCard

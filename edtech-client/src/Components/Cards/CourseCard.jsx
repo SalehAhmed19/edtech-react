@@ -49,13 +49,13 @@ export default function CourseCard({ avatar, title, lesson, level, id, fee }) {
             className="flex items-center gap-2 text-secondary"
             style={{ fontSize: "14px" }}
           >
-            <BookOpenIcon size={18} /> Lesson: {lesson}
+            <BookOpenIcon size={18} className="text-primary" /> Lesson: {lesson}
           </p>
           <p
             className="flex items-center gap-2 text-secondary"
             style={{ fontSize: "14px" }}
           >
-            <RankingIcon size={18} /> Level: {level}
+            <RankingIcon size={18} className="text-primary" /> Level: {level}
           </p>
         </div>
 
