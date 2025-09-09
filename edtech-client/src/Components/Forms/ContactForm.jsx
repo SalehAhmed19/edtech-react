@@ -16,7 +16,7 @@ export default function ContactForm() {
           {...register("name")}
           type="text"
           placeholder="Your Name"
-          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-3 mt-2 bg-white"
+          className="border border-gray-200 w-full rounded-full px-5 py-3 mt-2 bg-white"
         />
       </div>
       {/*  */}
@@ -26,7 +26,7 @@ export default function ContactForm() {
           {...register("email")}
           type="email"
           placeholder="Your Email"
-          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-3 mt-2 bg-white"
+          className="border border-gray-200 w-full rounded-full px-5 py-3 mt-2 bg-white"
         />
       </div>
       {/*  */}
@@ -36,7 +36,7 @@ export default function ContactForm() {
           {...register("phone")}
           type="text"
           placeholder="Your Phone"
-          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-3 mt-2 bg-white"
+          className="border border-gray-200 w-full rounded-full px-5 py-3 mt-2 bg-white"
         />
       </div>
       {/*  */}
@@ -46,7 +46,7 @@ export default function ContactForm() {
           {...register("subject")}
           type="text"
           placeholder="Your Subject"
-          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-3 mt-2 bg-white"
+          className="border border-gray-200 w-full rounded-full px-5 py-3 mt-2 bg-white"
         />
       </div>
       {/*  */}
@@ -56,7 +56,7 @@ export default function ContactForm() {
           {...register("message")}
           type="text"
           placeholder="Your Message"
-          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-3 mt-2 h-48 bg-white"
+          className="border border-gray-200 w-full rounded-xl px-5 py-3 mt-2 h-48 bg-white"
         />
       </div>
 

@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import PhotoUpload from "../../../../Components/UI/PhotoUpload";
 import toast from "react-hot-toast";
 
-export default function StudentsDetailsForm({ onClose }) {
+export default function StudentsDetailsForm() {
   const { register, handleSubmit, reset } = useForm();
+
+  const [imagePreview, setImagePreview] = useState(null);
+
   const onSubmit = (data) => {
-    // console.log(data);
+    console.log(data);
+    console.log(data.photo[0]);
+
     toast.success("Profile updated!");
     reset();
-    onClose();
+    setImagePreview(null);
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
@@ -19,7 +24,7 @@ export default function StudentsDetailsForm({ onClose }) {
           {...register("phone")}
           type="text"
           placeholder="Phone number"
-          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-3 mt-2 bg-white"
+          className="border border-gray-200 w-full rounded-full px-5 py-3 mt-2 bg-white"
         />
       </div>
 
@@ -28,7 +33,7 @@ export default function StudentsDetailsForm({ onClose }) {
         <select
           {...register("ageRange")}
           defaultValue={"Age Range"}
-          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-3 mt-2 bg-white outline-0"
+          className="border border-gray-200 w-full rounded-full px-5 py-3 mt-2 bg-white outline-0"
         >
           <option value="Age Range" disabled>
             Age Range
@@ -47,7 +52,7 @@ export default function StudentsDetailsForm({ onClose }) {
           {...register("address")}
           type="address"
           placeholder="Address"
-          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-3 mt-2 bg-white"
+          className="border border-gray-200 w-full rounded-full px-5 py-3 mt-2 bg-white"
         />
       </div>
 
@@ -56,7 +61,7 @@ export default function StudentsDetailsForm({ onClose }) {
         <select
           {...register("experience")}
           defaultValue={"Experience"}
-          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-3 mt-2 bg-white outline-0"
+          className="border border-gray-200 w-full rounded-full px-5 py-3 mt-2 bg-white outline-0"
         >
           <option value="Experience" disabled>
             Experience
@@ -71,12 +76,11 @@ export default function StudentsDetailsForm({ onClose }) {
 
       <div>
         <label className="font-semibold">Photo</label>
-        <input
-          {...register("photo")}
-          type="file"
-          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-3 mt-2 bg-white"
+        <PhotoUpload
+          register={register}
+          imagePreview={imagePreview}
+          setImagePreview={setImagePreview}
         />
-        {/* <PhotoUpload register={register} /> */}
       </div>
 
       <button className="bg-[#333] px-5 py-3 rounded-md text-white cursor-pointer">

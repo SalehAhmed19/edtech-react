@@ -1,3 +1,4 @@
+import { Fade } from "react-awesome-reveal";
 import DashboardSectionTitle from "../../../../Components/SectionTitle/DashboardSectionTitle";
 import DataSkeleton from "../../../../Components/UI/AvatarSkeleton/DataSkeleton";
 import useGetStudent from "../../../../Hooks/Users/useGetStudent";
@@ -7,19 +8,21 @@ export default function StudentsDetails() {
   const username = student?.email?.split("@")[0];
   // console.log(student);
   return (
-    <div className="bg-black py-10 rounded-b-2xl text-white flex flex-col gap-3 -mt-10">
+    <div className="py-10 rounded-b-2xl flex flex-col gap-3 -mt-10">
       <div className="mx-10"></div>
       <div className="relative mb-5 flex items-center">
-        <h2 className="text-[26px] font-semibold text-[#fff] mx-10">
-          Dahsboard
-        </h2>
+        <Fade direction="up" cascade={true} duration={800}>
+          <h2 className="text-[45px] font-bold">
+            <span className="text-primary">Profile</span>
+          </h2>
+        </Fade>
         <div className="relative w-full">
           <h2 className="text-right px-10 text-[17px] custom-font z-30">
             {student.role}
           </h2>
           <h2
             style={{
-              WebkitTextStroke: "1px #fff",
+              WebkitTextStroke: "1px #000",
               WebkitTextFillColor: "transparent",
               color: "transparent",
             }}
@@ -30,7 +33,8 @@ export default function StudentsDetails() {
         </div>
       </div>
       <h3 className="pl-10">
-        Welcome, <span className="text-xl font-semibold">{student?.name}</span>
+        Welcome,{" "}
+        <span className="text-xl font-bold text-primary">{student?.name}</span>
       </h3>
       <div className="grid grid-cols-4">
         <div className="col-span-3 pl-10 grid grid-cols-2 gap-5">

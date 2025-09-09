@@ -8,26 +8,31 @@ import useGetCarts from "../../../Hooks/Students/useGetCarts";
 import useGetOrders from "../../../Hooks/Students/useGetOrders";
 import useGetAllUsers from "../../../Hooks/Users/useGetAllUsers";
 import StudentsDetails from "./StudentsProfile/StudentsDetails";
+import { Fade } from "react-awesome-reveal";
 
 export default function StudentsHome() {
   const { carts } = useGetCarts();
   const { orders } = useGetOrders();
-  const { singleUser } = useGetAllUsers();
   console.log(orders);
   return (
     <div>
-      {singleUser.role === "student" && (
+      {/* {singleUser.role === "student" && (
         <div className="mb-10">
           <StudentsDetails />
         </div>
-      )}
+      )} */}
+      <Fade direction="up" cascade={true} duration={800}>
+        <h2 className="text-[45px] font-bold">
+          <span className="text-primary">Dashboard</span>
+        </h2>
+      </Fade>
       <div className="grid grid-cols-2 gap-5 mt-5">
         <div className="flex flex-col gap-5">
           <DashboardHighlightCard
             icon={course}
             endpoint={"student-courses"}
             title={"Course"}
-            length={orders[0].carts.length}
+            length={orders[0]?.carts.length}
           />
 
           <DashboardHighlightCard

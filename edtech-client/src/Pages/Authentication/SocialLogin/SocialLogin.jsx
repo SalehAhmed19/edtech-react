@@ -8,7 +8,7 @@ export default function SocialLogin() {
   return (
     <button
       onClick={handleGoogleSignin}
-      className="bg-white px-5 py-2 flex items-center gap-5 justify-center w-full border border-slate-300 border-dashed rounded-md cursor-pointer"
+      className="bg-white px-5 py-3 flex items-center gap-5 justify-center border border-gray-200 rounded-full cursor-pointer mx-auto"
       // disabled={loading}
     >
       <img src={google} alt="Google logo" className="w-6" />
