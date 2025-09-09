@@ -2,6 +2,7 @@
 import faq from "../../assets/images/faq.png";
 import { useState } from "react";
 import Accordant from "../Accordant/Accordant";
+import { Fade } from "react-awesome-reveal";
 
 export default function FAQ() {
   // State to manage which accordion item is currently open.
@@ -50,24 +51,29 @@ export default function FAQ() {
     <div>
       <div className="mt-10">
         <div>
-          <img src={faq} alt="" className="mx-auto" />
-          <h2 className="text-[45px] font-bold text-center">
-            <span className="text-primary">FAQ</span>s
-          </h2>
-          <p className="text-center text-secondary">
-            Everything You Need to Know.
-          </p>
+          <Fade direction="up" cascade={true} duration={800}>
+            <img src={faq} alt="" className="mx-auto" />
+            <h2 className="text-[45px] font-bold text-center">
+              <span className="text-primary">FAQ</span>s
+            </h2>
+            <p className="text-center text-secondary">
+              Everything You Need to Know.
+            </p>
+          </Fade>
         </div>
+
         <div className="order-2 md:order-1">
           {accordionData.map((item, index) => (
-            <Accordant
-              key={index} // Using index as key is generally fine for static lists without reordering
-              title={item.title}
-              content={item.content}
-              index={index}
-              activeIndex={activeIndex}
-              onToggle={handleToggle}
-            />
+            <Fade direction="up" cascade={true} duration={800}>
+              <Accordant
+                key={index} // Using index as key is generally fine for static lists without reordering
+                title={item.title}
+                content={item.content}
+                index={index}
+                activeIndex={activeIndex}
+                onToggle={handleToggle}
+              />
+            </Fade>
           ))}
         </div>
       </div>

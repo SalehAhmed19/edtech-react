@@ -7,6 +7,7 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 import { QuotesIcon } from "@phosphor-icons/react";
 import useGetReviews from "../../Hooks/Reviews/useGetReviews";
 import LoadingSpinner from "../UI/LoadingSpinner";
+import { Fade, Zoom } from "react-awesome-reveal";
 
 export default function Review() {
   const { isLoading, reviews } = useGetReviews();
@@ -37,40 +38,44 @@ export default function Review() {
 
   return (
     <div className="mb-10">
-      {/* <SectionTitle title={"Why everyone trust us?"} /> */}
-      <h2 className="text-[45px] font-bold text-center">
-        <span className="text-primary">Reviews</span> of Students
-      </h2>
-      <p className="text-center text-secondary">
-        Hear what our students have to say.
-      </p>
+      <Fade direction="up" cascade={true} duration={800}>
+        {" "}
+        <h2 className="text-[45px] font-bold text-center">
+          <span className="text-primary">Reviews</span> of Students
+        </h2>
+        <p className="text-center text-secondary">
+          Hear what our students have to say.
+        </p>
+      </Fade>
 
       <div className="navigation-wrapper mt-5">
         <div ref={sliderRef} className="keen-slider">
           {reviews.map((review, idx) => (
-            <div key={idx} className="keen-slider__slide relative">
-              <QuotesIcon
-                size={62}
-                className="ml-auto text-primary mb-[-15px]"
-              />
-              <div className="px-5 pb-10 rounded-md">
-                <p>{review.reviewText}</p>
+            <Zoom cascade={true} duration={800}>
+              <div key={idx} className="keen-slider__slide relative">
+                <QuotesIcon
+                  size={62}
+                  className="ml-auto text-primary mb-[-15px]"
+                />
+                <div className="px-5 pb-10 rounded-md">
+                  <p>{review.reviewText}</p>
 
-                <div className="flex items-center gap-2 mt-5">
-                  <img
-                    src="https://avatar.iran.liara.run/public/35"
-                    alt="reviewe-image"
-                    className="w-12 rounded-full"
-                  />
-                  <h5 className="text-xl text-primary">
-                    {review.reviewerName}
-                  </h5>
+                  <div className="flex items-center gap-2 mt-5">
+                    <img
+                      src="https://avatar.iran.liara.run/public/35"
+                      alt="reviewe-image"
+                      className="w-12 rounded-full"
+                    />
+                    <h5 className="text-xl text-primary">
+                      {review.reviewerName}
+                    </h5>
+                  </div>
+                  <p className="text-secondary" style={{ fontSize: "14px" }}>
+                    {review.reviewDate}
+                  </p>
                 </div>
-                <p className="text-secondary" style={{ fontSize: "14px" }}>
-                  {review.reviewDate}
-                </p>
               </div>
-            </div>
+            </Zoom>
           ))}
         </div>
 

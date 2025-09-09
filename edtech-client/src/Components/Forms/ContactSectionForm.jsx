@@ -20,7 +20,7 @@ export default function ContactSectionForm() {
           {...register("name")}
           type="text"
           placeholder="Your Name"
-          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2"
+          className="border border-gray-200 w-full rounded-full px-5 py-2 mt-2"
         />
       </div>
       {/*  */}
@@ -30,7 +30,7 @@ export default function ContactSectionForm() {
           {...register("email")}
           type="email"
           placeholder="Your Email"
-          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2"
+          className="border border-gray-200 w-full rounded-full px-5 py-2 mt-2"
         />
       </div>
       {/*  */}
@@ -40,11 +40,11 @@ export default function ContactSectionForm() {
           {...register("message")}
           type="text"
           placeholder="Your Message"
-          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2"
+          className="border border-gray-200 w-full rounded-xl px-5 py-2 mt-2"
         />
       </div>
 
-      <button className="bg-[#333] px-5 py-2 rounded-md text-white">
+      <button className="bg-primary px-5 py-3 rounded-full text-white">
         Send Message
       </button>
     </form>

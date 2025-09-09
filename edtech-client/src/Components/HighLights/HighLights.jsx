@@ -10,6 +10,7 @@ import {
   HeadsetIcon,
   MicrosoftPowerpointLogoIcon,
 } from "@phosphor-icons/react";
+import { Fade, Zoom } from "react-awesome-reveal";
 
 export default function HighLights() {
   const data = [
@@ -37,28 +38,32 @@ export default function HighLights() {
       style={{ backgroundImage: `url(${bg})`, backgroundSize: "cover" }}
       className="p-16"
     >
-      {/* <SectionTitle title={"Why EdTech is best for you?"} /> */}
-      <h2 className="text-[45px] font-bold text-center">
-        Why
-        <span className="text-primary"> Smart Education Center</span> is best
-        for you?
-      </h2>
-      <p className="text-center text-secondary">
-        A personalized learning experience designed to help you succeed.
-      </p>
+      <Fade direction="up" cascade={true} duration={800}>
+        <h2 className="text-[45px] font-bold text-center">
+          Why
+          <span className="text-primary"> Smart Education Center</span> is best
+          for you?
+        </h2>
+        <p className="text-center text-secondary">
+          A personalized learning experience designed to help you succeed.
+        </p>
+      </Fade>
+
       <div className="grid grid-cols-3 gap-6 mt-10">
         {data.map((d) => (
-          <div
-            key={d.id}
-            className="p-10 bg-white flex flex-col items-center hover:scale-105 duration-300 cursor-pointer"
-          >
-            <span className="bg-[#CE2823] text-white rounded-full p-3 flex justify-center items-center mb-3 shadow-2xl">
-              {d.icon}
-            </span>
-            <h3 className="font-semibold text-xl">
-              <span className="text-primary">{d.title}</span>
-            </h3>
-          </div>
+          <Zoom cascade={true} duration={800}>
+            <div
+              key={d.id}
+              className="p-10 bg-white flex flex-col items-center hover:scale-105 duration-300 cursor-pointer"
+            >
+              <span className="bg-[#CE2823] text-white rounded-full p-3 flex justify-center items-center mb-3 shadow-2xl">
+                {d.icon}
+              </span>
+              <h3 className="font-semibold text-xl">
+                <span className="text-primary">{d.title}</span>
+              </h3>
+            </div>
+          </Zoom>
         ))}
       </div>
     </div>
