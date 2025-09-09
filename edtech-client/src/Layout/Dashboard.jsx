@@ -10,7 +10,7 @@ import TeacherDetails from "../Pages/Dashboard/Teachers/TeacherProfile/TeacherDe
 
 export default function Dashboard() {
   const { singleUser } = useGetAllUsers();
-  console.log(singleUser);
+  // console.log(singleUser);
 
   return (
     <div className="grid grid-cols-3 gap-5">

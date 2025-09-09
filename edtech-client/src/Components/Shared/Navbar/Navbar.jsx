@@ -13,8 +13,8 @@ export default function Navbar() {
   const { handleSignOut, user } = useFirebaseAuthenticationHooks();
   const { singleUser } = useGetAllUsers();
   const { isLoading, teacher } = useGetTeacher();
-  console.log({ teacher: teacher });
-  console.log({ singleUser });
+  // console.log({ teacher: teacher });
+  // console.log({ singleUser });
 
   if (isLoading) {
     <div className="h-[80vh] flex justify-center items-center">

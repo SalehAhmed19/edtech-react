@@ -5,7 +5,7 @@ import useGetStudent from "../../../../Hooks/Users/useGetStudent";
 export default function StudentsDetails() {
   const { student, isLoading } = useGetStudent();
   const username = student?.email?.split("@")[0];
-  console.log(student);
+  // console.log(student);
   return (
     <div className="bg-black py-10 rounded-b-2xl text-white flex flex-col gap-3 -mt-10">
       <div className="mx-10"></div>

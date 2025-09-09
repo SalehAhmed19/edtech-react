@@ -33,7 +33,7 @@ const CheckoutForm = () => {
 
   const onSubmit = async (data) => {
     // Block native form submission.
-    console.log(data);
+    // console.log(data);
 
     if (!stripe || !elements) {
       return;
@@ -75,7 +75,7 @@ const CheckoutForm = () => {
       if (paymentIntent.status === "succeeded") {
         console.log(paymentIntent);
         const trxId = "EDTECH_" + paymentIntent.id.split("_")[1];
-        console.log(trxId);
+        // console.log(trxId);
         const payment = {
           name: singleUser?.name || "annonymous",
           email: singleUser?.email || "annonymous",

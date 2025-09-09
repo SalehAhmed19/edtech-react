@@ -15,7 +15,7 @@ export const getOrders = createAsyncThunk(
         // `https://edtech-react.vercel.app/api/orders?email=${email}`
         `http://localhost:4000/api/orders?email=${email}`
       );
-      console.log(response.data);
+      // console.log(response.data);
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message);

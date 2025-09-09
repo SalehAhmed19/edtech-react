@@ -14,7 +14,7 @@ export default function useGetTeacher() {
   }, [email, dispatch]);
 
   const { teacher, isLoading } = useSelector((state) => state.TeacherSlice);
-  console.log(teacher);
+  // console.log(teacher);
 
   return { teacher: teacher, isLoading: isLoading };
 }

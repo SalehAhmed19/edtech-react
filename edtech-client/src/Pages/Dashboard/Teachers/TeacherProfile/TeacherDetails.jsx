@@ -4,9 +4,9 @@ import useGetTeacher from "../../../../Hooks/Users/useGetTeacher";
 
 export default function TeacherDetails() {
   const { teacher, isLoading } = useGetTeacher();
-  console.log(teacher);
+  // console.log(teacher);
   const username = teacher?.email?.split("@")[0];
-  console.log(teacher);
+  // console.log(teacher);
   return (
     <div className="bg-black py-10 rounded-b-2xl text-white flex flex-col gap-3 -mt-10 mb-10">
       <div className="mx-10"></div>

@@ -50,7 +50,7 @@ export default function OrderHistory() {
     );
   }
 
-  console.log(orders);
+  // console.log(orders);
   return (
     <div>
       <OrdersTable

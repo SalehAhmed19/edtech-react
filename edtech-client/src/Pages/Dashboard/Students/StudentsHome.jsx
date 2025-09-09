@@ -13,6 +13,7 @@ export default function StudentsHome() {
   const { carts } = useGetCarts();
   const { orders } = useGetOrders();
   const { singleUser } = useGetAllUsers();
+  console.log(orders);
   return (
     <div>
       {singleUser.role === "student" && (
@@ -26,7 +27,7 @@ export default function StudentsHome() {
             icon={course}
             endpoint={"student-courses"}
             title={"Course"}
-            length={0}
+            length={orders[0].carts.length}
           />
 
           <DashboardHighlightCard

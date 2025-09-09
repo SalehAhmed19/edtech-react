@@ -49,7 +49,7 @@ export default function useFirebaseAuthenticationHooks() {
           role: "student",
         };
         const response = await dispatch(postStudent(userInfo)).unwrap();
-        console.log("User data successfully posted to DB:", response);
+        // console.log("User data successfully posted to DB:", response);
       } else if (error) {
         console.error("Firebase Google Sign-In Error:", error.message);
       }
@@ -61,7 +61,7 @@ export default function useFirebaseAuthenticationHooks() {
   // Email Login
   const handleEmailLogin = async (data) => {
     const { email, password } = data;
-    console.log(data);
+    // console.log(data);
     const result = await signInWithEmailAndPassword(email, password);
     if (result && result.user) {
       navigate("/");
@@ -77,7 +77,7 @@ export default function useFirebaseAuthenticationHooks() {
     try {
       if (result && result.user) {
         const { email, photoURL } = result.user;
-        console.log(result.user);
+        // console.log(result.user);
         const studentId = Math.random().toString(36).substring(2, 11);
         const userInfo = {
           studentId: "ET.S_" + studentId,
@@ -92,7 +92,7 @@ export default function useFirebaseAuthenticationHooks() {
           dispatch(getUser(email));
           dispatch(getAllUsers());
         }
-        console.log("User data successfully posted to DB:", response);
+        // console.log("User data successfully posted to DB:", response);
         reset();
         navigate("/");
         toast.success("Sign up success!");
@@ -122,7 +122,7 @@ export default function useFirebaseAuthenticationHooks() {
         }
       });
   } else if (user === null) {
-    console.log(user);
+    // console.log(user);
     localStorage.removeItem("access-token-secret");
   }
 

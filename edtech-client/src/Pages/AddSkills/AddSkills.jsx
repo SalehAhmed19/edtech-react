@@ -14,7 +14,7 @@ export default function AddSkills() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     const skill = {
       email: user.email,
       name: data.skill,

@@ -24,7 +24,7 @@ export const getAllUsers = createAsyncThunk("getAllUsers", async () => {
 export const getUser = createAsyncThunk(
   "getUser",
   async (email, { rejectWithValue }) => {
-    console.log(email);
+    // console.log(email);
     try {
       const response = await axios.get(
         // `https://edtech-react.vercel.app/api/users/single-user?email=${email}`
@@ -62,7 +62,7 @@ const AllUsersSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(getUser.fulfilled, (state, action) => {
-      console.log(action);
+      // console.log(action);
       state.isLoading = false;
       state.singleUser = action.payload;
     });

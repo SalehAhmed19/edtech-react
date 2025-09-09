@@ -16,7 +16,7 @@ export const addSkills = createAsyncThunk(
         "http://localhost:4000/api/skills/post-skills",
         skills
       );
-      console.log(response.data);
+      // console.log(response.data);
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message);
@@ -27,14 +27,14 @@ export const addSkills = createAsyncThunk(
 export const getSkills = createAsyncThunk(
   "getSkills",
   async (email, { rejectWithValue }) => {
-    console.log(email);
+    // console.log(email);
     try {
       const response = await axios.get(
         // `https://edtech-react.vercel.app/api/skills?email=${email}`
         `http://localhost:4000/api/skills?email=${email}`
       );
 
-      console.log(response.data);
+      // console.log(response.data);
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message);

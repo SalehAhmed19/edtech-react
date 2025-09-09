@@ -39,7 +39,7 @@ export const postPayment = createAsyncThunk(
 
       return response.data;
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       return rejectWithValue(err.response?.data?.message || err.message);
     }
   }
@@ -85,7 +85,7 @@ const PaymentSlice = createSlice({
     builder.addCase(postPayment.fulfilled, (state, action) => {
       state.isLoading = false;
       const payment = action.meta.arg;
-      console.log({ payment });
+      // console.log({ payment });
       state.payments.push(payment);
     });
     builder.addCase(postPayment.rejected, (state, action) => {

@@ -1,7 +1,7 @@
 import CartsTable from "../../../Components/UI/Table/CartsTable";
 
 export default function CartsItems({ carts }) {
-  console.log(carts);
+  // console.log(carts);
   const tableHeaders = ["Name", "Email", "Role", "Status"];
   const tableData = [
     [

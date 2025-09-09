@@ -79,7 +79,7 @@ const CartsSlice = createSlice({
         return (sum = sum + price);
       }, 0);
       const finalTotal = totalPrice.toFixed(2);
-      console.log(totalPrice.toFixed(2));
+      // console.log(totalPrice.toFixed(2));
       state.totalPrice = finalTotal;
     });
     builder.addCase(getCarts.rejected, (state, action) => {
@@ -103,10 +103,10 @@ const CartsSlice = createSlice({
           return (sum = sum + price);
         }, 0);
         const finalTotal = totalPrice.toFixed(2);
-        console.log(totalPrice.toFixed(2));
+        // console.log(totalPrice.toFixed(2));
         state.totalPrice = finalTotal;
       }
-      console.log(action.meta.arg.id);
+      // console.log(action.meta.arg.id);
     });
     builder.addCase(deleteCartItem.rejected, (state, action) => {
       state.isError = true;
