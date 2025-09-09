@@ -29,7 +29,7 @@ export default function FreeClass() {
       </div>
       <button
         onClick={handleOpenModal}
-        className="bg-[#333] px-5 py-2 rounded-md text-white cursor-pointer"
+        className="bg-primary px-5 py-3 rounded-full text-white cursor-pointer"
       >
         Free Booking Now
       </button>

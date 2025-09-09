@@ -6,6 +6,7 @@ import { auth } from "../../../firebase/firebase.config";
 import { addToCart } from "../../../RTK/Features/StudentsSlices/cartsSlice";
 import { Link, useNavigate } from "react-router-dom";
 import useAxiosPrivate from "../../../Hooks/Axios/useAxiosPrivate";
+import { BasketIcon } from "@phosphor-icons/react";
 
 export default function CourseFee({ course }) {
   const [user] = useAuthState(auth);
@@ -43,24 +44,19 @@ export default function CourseFee({ course }) {
 
   console.log(course);
   return (
-    <div className="bg-[#0000000b] p-5 w-1/2 h-[200px] rounded-md place-items-center ml-auto">
-      <div className="my-5 flex gap-5 border-b border-slate-300 border-dashed">
-        <p className="font-bold">10 Day Left</p>
-        <p className="font-bold">10 Seats Available</p>
-      </div>
+    <div className="bg-gray-50 p-5 w-1/2 h-[150px] rounded-md place-items-center ml-auto">
       <h5 className="text-2xl">
-        <span className="font-bold">Course Fee:</span> {course?.courseFee} BDT
+        Course Fee:{" "}
+        <span className="font-bold">
+          {course?.courseFee} <span className="text-primary">BDT</span>
+        </span>
       </h5>
       <div className="my-5 flex gap-5">
-        <Link to="/dashboard/payments/stripe">
-          <button className="bg-[#333] text-white px-5 py-2 rounded-md cursor-pointer">
-            Enroll Now
-          </button>
-        </Link>
         <button
           onClick={handleAddToCart}
-          className="px-5 py-2 rounded-md cursor-pointer border border-dashed"
+          className="bg-primary text-white px-5 py-3 rounded-full cursor-pointer flex items-center gap-2 animate-bounce"
         >
+          <BasketIcon size={32} />
           Add to cart
         </button>
       </div>

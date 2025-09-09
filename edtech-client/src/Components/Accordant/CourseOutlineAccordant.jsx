@@ -10,8 +10,8 @@ export default function CourseOutlineAccordant({
       {/* Accordion Header */}
       <button
         className={`flex justify-between items-center w-full px-6 py-3 ${
-          isOpen ? "bg-[#333] text-[#fff]" : "bg-white text-black"
-        } hover:bg-[#e0025b0e] hover:text-[#333] focus:outline-none transition duration-300 ease-in-out cursor-pointer my-2 rounded-lg border-b-2 border-[#333] border-dashed`}
+          isOpen ? "bg-primary text-[#fff]" : "bg-white text-black"
+        } hover:bg-[#e0025b0e] hover:text-secondary focus:outline-none transition duration-300 ease-in-out cursor-pointer my-2 rounded-lg`}
         onClick={() => onToggle(index)}
         aria-expanded={isOpen}
         aria-controls={`panel-content-${index}`}
