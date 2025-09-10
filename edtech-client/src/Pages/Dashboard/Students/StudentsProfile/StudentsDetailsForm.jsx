@@ -2,19 +2,32 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import PhotoUpload from "../../../../Components/UI/PhotoUpload";
 import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { updateStudentDetails } from "../../../../RTK/Features/UsersSlice/StudentsSlice";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../../../firebase/firebase.config";
 
 export default function StudentsDetailsForm() {
   const { register, handleSubmit, reset } = useForm();
+  const [user] = useAuthState(auth);
+  const email = user?.email;
+  const dispatch = useDispatch();
 
   const [imagePreview, setImagePreview] = useState(null);
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log(data);
+    const response = dispatch(
+      updateStudentDetails({ email: email, updatedDetails: data })
+    );
+
     console.log(data.photo[0]);
 
-    toast.success("Profile updated!");
-    reset();
-    setImagePreview(null);
+    if (response) {
+      toast.success("Profile updated!");
+      reset();
+      setImagePreview(null);
+    }
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
@@ -43,6 +56,21 @@ export default function StudentsDetailsForm() {
           <option value="20-30">20-30</option>
           <option value="30-40">30-40</option>
           <option value="40-50">40-50</option>
+        </select>
+      </div>
+
+      <div>
+        <label className="font-semibold">Gender</label>
+        <select
+          {...register("gender")}
+          defaultValue={"Gender"}
+          className="border border-gray-200 w-full rounded-full px-5 py-3 mt-2 bg-white outline-0"
+        >
+          <option value="Gender" disabled>
+            Gender
+          </option>
+          <option value="Male">Male</option>
+          <option value="Femal">Male</option>
         </select>
       </div>
 

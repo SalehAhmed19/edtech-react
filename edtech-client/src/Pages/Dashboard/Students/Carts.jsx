@@ -10,8 +10,13 @@ import toast from "react-hot-toast";
 import PaymentButton from "../../../Components/UI/PaymentButton/PaymentButton";
 import LoadingSpinner from "../../../Components/UI/LoadingSpinner";
 import { Fade } from "react-awesome-reveal";
-import { ArrowBendDownRightIcon, BasketIcon } from "@phosphor-icons/react";
+import {
+  ArrowBendDownRightIcon,
+  BasketIcon,
+  CreditCardIcon,
+} from "@phosphor-icons/react";
 import DashboardPlaceholder from "../../../Components/UI/DashboardHomeCourseCard/DashboardPlaceholder";
+import VerticalCard from "../../../Components/UI/OrderHistoryCard/OrderHistoryCard";
 
 export default function Carts() {
   const axiosPrivate = useAxiosPrivate();
@@ -62,27 +67,38 @@ export default function Carts() {
 
   return (
     <>
-      <div className="mb-5 flex justify-between items-center">
-        <DashboardSectionTitle title={"My Cart"} />
-        <h5 className="text-xl text-slate-500">
-          You have to pay:
-          <span className="text-black font-semibold"> {totalPrice} BDT</span>
-        </h5>
-      </div>
-      <CartsTable
-        headers={tableHeaders}
-        data={carts}
-        handleDelete={handleDelete}
-      />
-      <div className="flex items-center justify-between mt-5">
-        <Link to="/courses">
-          <button className="text-white bg-[#333] px-5 py-2 rounded-md">
-            Explore Courses
-          </button>
-        </Link>
-        <Link to="/dashboard/payments/stripe">
-          <PaymentButton />
-        </Link>
+      <div className="flex flex-col gap-10">
+        <div className="flex items-center justify-between">
+          <Fade direction="up" cascade={true} duration={800}>
+            <h2 className="text-[45px] font-bold text-primary">Carts</h2>
+          </Fade>
+          <h5 className="text-xl text-secondary">
+            You have to pay:
+            <span className="text-primary font-bold"> {totalPrice} BDT</span>
+          </h5>
+        </div>
+        <div className="h-[55vh] overflow-y-scroll p-5">
+          <div className="grid grid-cols-4 gap-5">
+            {carts.map((cart, idx) => (
+              <VerticalCard key={idx} course={cart} />
+            ))}
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between mt-5">
+          <Link to="/courses">
+            <button className="bg-[#1e1e1e] text-white px-5 py-3 rounded-full flex items-center gap-2">
+              Explore Courses <ArrowBendDownRightIcon size={32} />
+            </button>
+          </Link>
+          <Link to="/dashboard/payments/stripe">
+            {/* <PaymentButton /> */}
+            <button className="bg-primary px-5 py-3 rounded-full text-white flex items-center gap-2 animate-bounce">
+              Pay Now: {totalPrice} BDT <CreditCardIcon size={32} />
+            </button>
+          </Link>
+        </div>
+        <HelpBanner />
       </div>
     </>
   );

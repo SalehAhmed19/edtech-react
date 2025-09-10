@@ -4,7 +4,7 @@ import axios from "axios";
 const initialState = {
   isLoading: false,
   students: [],
-  student: {},
+  student: null,
   isError: false,
   searchItem: "",
 };
@@ -41,16 +41,33 @@ export const getAllStudents = createAsyncThunk("students", async () => {
   }
 });
 
-// get students
+// get student
 export const getStudent = createAsyncThunk(
-  "students",
+  "student",
   async (email, { rejectWithValue }) => {
     try {
       const response = await axios.get(
         // `https://edtech-react.vercel.app/api/students/${email}`
-        `http://localhost:4000/api/students/${email}`
+        `http://localhost:4000/api/students?email=${email}`
       );
 
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.response?.data?.message || err.message);
+    }
+  }
+);
+
+export const updateStudentDetails = createAsyncThunk(
+  "updateStudentDetails",
+  async ({ email, updatedDetails }, { rejectWithValue }) => {
+    try {
+      const response = await axios.patch(
+        `http://localhost:4000/api/students/update-student-details?email=${email}`,
+        updatedDetails
+      );
+
+      console.log(response.data);
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message);
@@ -76,16 +93,29 @@ const StudentSlice = createSlice({
       // console.log(action.payload);
     });
 
-    // get students
-    builder.addCase(getStudent.fulfilled, (state, action) => {
-      state.isLoading = false;
-      state.student = action.payload;
-    });
     builder.addCase(getStudent.pending, (state) => {
       state.isLoading = true;
     });
+    // get students
+    builder.addCase(getStudent.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.student = action.payload[0];
+    });
     builder.addCase(getStudent.rejected, (state, action) => {
+      state.isError = true;
+      console.log(action.payload);
+    });
+
+    // update student info
+    builder.addCase(updateStudentDetails.pending, (state) => {
       state.isLoading = true;
+    });
+    builder.addCase(updateStudentDetails.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.student = action.meta.arg.updatedDetails;
+    });
+    builder.addCase(updateStudentDetails.rejected, (state, action) => {
+      state.isError = true;
       console.log(action.payload);
     });
   },

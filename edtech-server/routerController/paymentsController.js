@@ -32,13 +32,7 @@ module.exports = (
     const email = req.body.email;
     const query = { email: email };
     const carts = req.body.carts;
-    const oId = Math.random().toString(20);
-    const orderId = "ET_O_" + oId.split(".")[1];
-    const orders = { orderId: orderId, email: email, carts: carts };
-    const enrolledCourses = {
-      email: email,
-      courses: carts,
-    };
+
     const newItems = carts.map((cart) => cart);
     console.log(newItems);
     const isExist = ordersCollection.findOne(query);
@@ -60,8 +54,8 @@ module.exports = (
       await cartsCollection.deleteMany(query);
       if (isExist) {
         await ordersCollection.updateOne(query, updatedCart, options);
+        await enrolledCoursesCollection.updateOne(query, updatedCart, options);
       }
-      await enrolledCoursesCollection.insertOne(enrolledCourses);
     }
 
     res.send(result);

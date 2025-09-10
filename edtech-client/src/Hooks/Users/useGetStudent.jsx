@@ -6,13 +6,15 @@ import { auth } from "../../firebase/firebase.config";
 
 export default function useGetStudent() {
   const [user] = useAuthState(auth);
-
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getStudent(user?.email));
-  }, [user, dispatch]);
 
   const { student, isLoading } = useSelector((state) => state.StudentsSlice);
 
-  return { student: student, isLoading: isLoading };
+  useEffect(() => {
+    if (user && user.email) {
+      dispatch(getStudent(user.email));
+    }
+  }, [user, dispatch]);
+
+  return { student, isLoading };
 }

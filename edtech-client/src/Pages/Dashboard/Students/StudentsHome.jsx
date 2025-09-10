@@ -17,7 +17,7 @@ export default function StudentsHome() {
 
   console.log(orders.map((order) => console.log(order.carts)));
   return (
-    <div className="grid grid-cols-2 place-content-center h-screen">
+    <div className="grid grid-cols-2 place-content-center">
       <div>
         <Fade direction="up" cascade={true} duration={800}>
           <h2 className="text-[45px] font-bold">

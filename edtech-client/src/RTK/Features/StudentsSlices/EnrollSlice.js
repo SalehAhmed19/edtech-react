@@ -14,6 +14,7 @@ export const getEnrolledCourses = createAsyncThunk(
         `/enrolled-courses?email=${email}`
       );
 
+      // console.log(response.data);
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message);
@@ -31,6 +32,7 @@ const EnrollSlice = createSlice({
     });
     builder.addCase(getEnrolledCourses.fulfilled, (state, action) => {
       state.isLoading = false;
+      // console.log(action);
       state.enrolled = action.payload;
     });
     builder.addCase(getEnrolledCourses.rejected, (state, action) => {

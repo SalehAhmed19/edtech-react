@@ -31,13 +31,30 @@ module.exports = (studentsCollection, usersCollection) => {
     res.send(students);
   });
 
-  // get users from db: students
-  router.get("/:email", async (req, res) => {
-    const email = req.params.email;
+  // get single users from db: students
+  router.get("/", async (req, res) => {
+    const email = req.query.email;
     const query = { email: email };
     const student = await studentsCollection.findOne(query);
 
     res.send(student);
+  });
+
+  router.patch("/update-student-details", async (req, res) => {
+    const email = req.query.email;
+    const updateDetails = req.body;
+    const query = { email: email };
+    const updatedDoc = {
+      $set: updateDetails,
+    };
+
+    // const options = {
+    //   upsert: true, // Set to true to enable the "update or insert" behavior
+    // };
+
+    const result = await studentsCollection.updateOne(query, updatedDoc);
+    console.log(result);
+    res.send(result);
   });
 
   return router;

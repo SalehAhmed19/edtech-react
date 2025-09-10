@@ -6,12 +6,13 @@ import useGetOrders from "../../../Hooks/Students/useGetOrders";
 import order from "../../../assets/images/order-now.png";
 import HelpBanner from "../HelpBanner";
 import useGetCarts from "../../../Hooks/Students/useGetCarts";
-import OrdersTable from "../../../Components/UI/Table/OrdersTable";
+
+import { Fade } from "react-awesome-reveal";
+import VerticalCard from "../../../Components/UI/OrderHistoryCard/OrderHistoryCard";
 
 export default function OrderHistory() {
   const { isLoading, orders } = useGetOrders();
   const { carts } = useGetCarts();
-  const tableHeaders = ["", "Order ID", "Courses", "Status"];
 
   if (isLoading) {
     return (
@@ -52,12 +53,20 @@ export default function OrderHistory() {
 
   // console.log(orders);
   return (
-    <div>
-      <OrdersTable
-        headers={tableHeaders}
-        data={orders}
-        // handleDelete={handleDelete}
-      />
+    <div className="flex flex-col gap-10">
+      <Fade direction="up" cascade={true} duration={800}>
+        <h2 className="text-[45px] font-bold text-primary">Order History</h2>
+      </Fade>
+      <div className="h-[55vh] overflow-y-scroll p-5">
+        <div className="grid grid-cols-4 gap-5">
+          {orders.map((order) =>
+            order.carts.map((course, idx) => (
+              <VerticalCard key={idx} course={course} />
+            ))
+          )}
+        </div>
+      </div>
+      <HelpBanner />
     </div>
   );
 }

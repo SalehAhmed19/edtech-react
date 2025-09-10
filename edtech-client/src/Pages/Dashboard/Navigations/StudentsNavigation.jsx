@@ -20,13 +20,23 @@ import useGetOrders from "../../../Hooks/Students/useGetOrders";
 import useGetCarts from "../../../Hooks/Students/useGetCarts";
 import useGetSkills from "../../../Hooks/Students/useGetSkills";
 import useEnrolledCourses from "../../../Hooks/Students/useEnrolledCourses";
+import LoadingSpinner from "../../../Components/UI/LoadingSpinner";
 
 export default function studentNavigation() {
   const { orders } = useGetOrders();
   const { carts } = useGetCarts();
   const { skills } = useGetSkills();
-  const { enrolled } = useEnrolledCourses();
-  enrolled.map((enroll) => console.log(enroll.courses));
+  const { enrolled, isLoading } = useEnrolledCourses();
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-[80vh]">
+        <LoadingSpinner />
+      </div>
+    );
+  }
+  const enrolledCourse = enrolled[0]?.carts;
+
   return (
     <div className="rounded-md">
       <Link to="/">
@@ -52,10 +62,10 @@ export default function studentNavigation() {
             <BooksIcon size={32} className="text-primary" /> Courses
             <span
               className={`bg-primary h-5 w-5 p-3 flex justify-center items-center text-white rounded-full text-sm ${
-                !enrolled.length && "hidden"
+                !enrolledCourse?.length && "hidden"
               }`}
             >
-              {orders[0]?.carts.length}
+              {enrolledCourse?.length}
             </span>
           </li>
         </Link>

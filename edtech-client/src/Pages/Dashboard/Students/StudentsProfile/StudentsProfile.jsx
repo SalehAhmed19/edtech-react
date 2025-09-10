@@ -3,6 +3,7 @@
 // import DashboardSectionTitle from "../../../../Components/SectionTitle/DashboardSectionTitle";
 import DividerTwo from "../../../../Components/UI/DividerTwo";
 import useGetAllUsers from "../../../../Hooks/Users/useGetAllUsers";
+import HelpBanner from "../../HelpBanner";
 import StudentsDetails from "./StudentsDetails";
 
 import StudentsDetailsForm from "./StudentsDetailsForm";
@@ -13,12 +14,13 @@ export default function StudentsProfile() {
   const { singleUser } = useGetAllUsers();
 
   return (
-    <div className="grid grid-cols-2 place-content-center h-screen gap-10">
+    <div className="flex flex-col gap-10">
       {singleUser.role === "student" && <StudentsDetails />}
       {/* <DividerTwo text={"Update Information"} /> */}
       <div className="p-5 bg-gray-50 rounded-xl">
         <StudentsDetailsForm />
       </div>
+      <HelpBanner />
     </div>
   );
 }

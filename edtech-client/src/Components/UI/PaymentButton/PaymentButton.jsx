@@ -94,7 +94,7 @@ const StyledWrapper = styled.div`
   .pay-btn {
     position: relative;
     padding: 8px 20px;
-    background: #333;
+    background: #ce2823;
     color: white;
     border: none;
     border-radius: 8px;
@@ -117,7 +117,7 @@ const StyledWrapper = styled.div`
     left: 0;
     width: 24px;
     height: 24px;
-    color: #22c55e;
+    color: #fff;
     opacity: 0;
     visibility: hidden;
   }

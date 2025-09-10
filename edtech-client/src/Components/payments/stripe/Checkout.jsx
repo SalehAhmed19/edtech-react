@@ -13,6 +13,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 import useGetAllUsers from "../../../Hooks/Users/useGetAllUsers";
+import { CreditCardIcon } from "@phosphor-icons/react";
 
 const CheckoutForm = () => {
   const { totalPrice, carts } = useGetCarts();
@@ -94,7 +95,7 @@ const CheckoutForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
       <div>
         <label className="font-semibold">Name</label>
         <input
@@ -102,7 +103,7 @@ const CheckoutForm = () => {
           type="text"
           value={singleUser.name}
           readOnly={singleUser.name === "" ? false : true}
-          className="border text-[#787878] cursor-not-allowed border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2 bg-white"
+          className="border border-gray-200 text-primary cursor-not-allowed w-full rounded-full px-5 py-3 mt-2 bg-white"
         />
       </div>
       {/*  */}
@@ -113,7 +114,7 @@ const CheckoutForm = () => {
           type="email"
           value={singleUser.email}
           readOnly
-          className="border text-[#787878] cursor-not-allowed border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2 bg-white"
+          className="border border-gray-200 text-primary cursor-not-allowed w-full rounded-full px-5 py-3 mt-2 bg-white"
         />
       </div>
       {/*  */}
@@ -123,14 +124,14 @@ const CheckoutForm = () => {
           {...register("phone")}
           type="text"
           placeholder="Your Phone"
-          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2 bg-white"
+          className="border border-gray-200 text-primary w-full rounded-full px-5 py-3 mt-2 bg-white"
         />
       </div>
       <div className="flex flex-col gap-2">
         <label className="font-semibold">Card Details</label>
         {clientSecret && (
           <CardElement
-            className="border border-dashed border-slate-300 rounded-md px-5 py-3"
+            className="border border-gray-200 text-primary w-full rounded-full px-5 py-4 mt-2 bg-white"
             options={{
               style: {
                 base: {
@@ -149,9 +150,12 @@ const CheckoutForm = () => {
         )}
       </div>
 
-      <button type="submit" className="mx-auto block" disabled={!stripe}>
-        <PaymentButton totalPrice={totalPrice} />
-        {/* Pay Now */}
+      <button
+        type="submit"
+        disabled={!stripe}
+        className="bg-primary px-5 py-3 rounded-full text-white flex items-center gap-2 animate-bounce mx-auto mt-10"
+      >
+        Pay Now: {totalPrice} BDT <CreditCardIcon size={32} />
       </button>
     </form>
   );
