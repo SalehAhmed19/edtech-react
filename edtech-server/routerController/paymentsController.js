@@ -39,11 +39,28 @@ module.exports = (
       email: email,
       courses: carts,
     };
+    const newItems = carts.map((cart) => cart);
+    console.log(newItems);
+    const isExist = ordersCollection.findOne(query);
+
+    const updatedCart = {
+      $push: {
+        carts: {
+          $each: newItems,
+        },
+      },
+    };
+
+    const options = {
+      upsert: true, // Set to true to enable the "update or insert" behavior
+    };
 
     const result = await paymentsCollection.insertOne(payment);
     if (res) {
       await cartsCollection.deleteMany(query);
-      await ordersCollection.insertOne(orders);
+      if (isExist) {
+        await ordersCollection.updateOne(query, updatedCart, options);
+      }
       await enrolledCoursesCollection.insertOne(enrolledCourses);
     }
 
