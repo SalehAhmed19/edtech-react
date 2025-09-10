@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
-import Loader from "../../../Components/Loader/Loader";
 import DashboardSectionTitle from "../../../Components/SectionTitle/DashboardSectionTitle";
-import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import CartsTable from "../../../Components/UI/Table/CartsTable";
 import useGetCarts from "../../../Hooks/Students/useGetCarts";
-import course from "../../../assets/images/course.svg";
 import HelpBanner from "../HelpBanner";
 import { useDispatch } from "react-redux";
 import { deleteCartItem } from "../../../RTK/Features/StudentsSlices/cartsSlice";
 import useAxiosPrivate from "../../../Hooks/Axios/useAxiosPrivate";
 import toast from "react-hot-toast";
 import PaymentButton from "../../../Components/UI/PaymentButton/PaymentButton";
+import LoadingSpinner from "../../../Components/UI/LoadingSpinner";
+import { Fade } from "react-awesome-reveal";
+import { ArrowBendDownRightIcon, BasketIcon } from "@phosphor-icons/react";
+import DashboardPlaceholder from "../../../Components/UI/DashboardHomeCourseCard/DashboardPlaceholder";
 
 export default function Carts() {
   const axiosPrivate = useAxiosPrivate();
@@ -32,26 +33,27 @@ export default function Carts() {
   if (isLoading) {
     return (
       <div className="h-[80vh] flex justify-center items-center">
-        <Loader />
+        <LoadingSpinner />
       </div>
     );
   }
   if (!carts || carts.length === 0) {
     return (
       <div className="flex flex-col justify-center gap-10">
-        <DashboardSectionTitle title={"My Carts"} />
+        <Fade direction="up" cascade={true} duration={800}>
+          <h2 className="text-[45px] font-bold text-primary">Carts</h2>
+        </Fade>
 
-        <div className="border border-dashed border-slate-300 p-5 rounded-md text-center place-content-center py-20">
-          <img src={course} alt="" className="mx-auto my-2" />
-          <SectionTitle title={"You haven't added any course in cart yet :("} />
-
-          <p>Add skills now to make your profile stand out from the rest.</p>
-          <Link to="/courses">
-            <button className="text-white bg-[#333] px-5 py-2 rounded-md mt-5">
-              Explore Courses
-            </button>
-          </Link>
-        </div>
+        <DashboardPlaceholder
+          element={<BasketIcon size={52} className="mx-auto text-primary" />}
+          icon={<ArrowBendDownRightIcon size={32} />}
+          title={"You haven't added any cart yet :("}
+          subtitle={
+            "Add skills now to make your profile stand out from the rest."
+          }
+          btn={"Explore Courses"}
+          link={"/courses"}
+        />
         <HelpBanner />
       </div>
     );

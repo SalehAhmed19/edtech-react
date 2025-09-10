@@ -1,3 +1,4 @@
+import { PenIcon, TrashIcon } from "@phosphor-icons/react";
 import { FaGithub, FaLink, FaPen, FaTrash } from "react-icons/fa";
 
 export default function SkillListItem({ skill, idx }) {
@@ -6,20 +7,20 @@ export default function SkillListItem({ skill, idx }) {
     <li className="bg-slate-50 rounded-md p-5">
       <div>
         <div className="flex justify-between items-center">
-          <span className="py-1 px-3 border border-dashed border-slate-300 rounded-md">
+          <span className="py-1 px-3 bg-primary text-white rounded-full">
             Skill {idx + 1}
           </span>
           <div className="flex gap-2 items-center">
             <button className="p-3 bg-slate-100 rounded-full">
-              <FaPen />
+              <PenIcon size={32} />
             </button>
-            <button className="p-3 bg-slate-100 rounded-full">
-              <FaTrash className="text-red-500" />
+            <button className="p-3 bg-primary text-white rounded-full">
+              <TrashIcon size={32} />
             </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 mt-5">
+        <div className="flex justify-between gap-3 mt-5">
           <p>
             <span className="block text-[#787878]">Skill Name:</span>{" "}
             <span className="font-semibold text-xl">{skill.name}</span>
@@ -31,18 +32,17 @@ export default function SkillListItem({ skill, idx }) {
             </span>
           </p>
           <div>
-            <span className="block text-[#787878]">Project Link:</span>{" "}
             <div className="flex items-center gap-2 mt-3">
               <a
                 target="_blank"
-                className="border border-dashed hover:bg-white hover:border-0 duration-500 border-slate-300 rounded-md px-2 py-1 flex items-center gap-2"
+                className="bg-primary text-white hover:border-0 duration-500 rounded-full px-5 py-3 flex items-center gap-2"
                 href={skill.project}
               >
                 Live Demo <FaLink />
               </a>
               <a
                 target="_blank"
-                className="border border-dashed bg-[#333] hover:bg-black duration-500 text-white border-slate-300 rounded-md px-2 py-1 flex items-center gap-2"
+                className="bg-[#1e1e1e] duration-500 text-white rounded-full px-5 py-3 flex items-center gap-2"
                 href={skill.gitHub}
               >
                 GitHub <FaGithub />

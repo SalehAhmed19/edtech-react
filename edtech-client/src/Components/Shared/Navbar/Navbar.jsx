@@ -63,9 +63,12 @@ export default function Navbar() {
                   </li>
 
                   {singleUser.role === "student" && (
-                    <li className="font-semibold hover:bg-[#CE2823] hover:shadow-lg hover:text-white duration-300 px-5 py-2 rounded-full cursor-pointer">
-                      <Link to="/dashboard/student-home">Dashboard</Link>
-                    </li>
+                    <Link to="/dashboard/student-home">
+                      <li className="font-semibold hover:bg-[#CE2823] hover:shadow-lg hover:text-white duration-300 px-5 py-2 rounded-full cursor-pointer flex items-center gap-2">
+                        <PresentationChartIcon size={32} />
+                        Dashboard
+                      </li>
+                    </Link>
                   )}
                   {singleUser.role === "teacher" && (
                     <Link to="/dashboard/teacher-home">

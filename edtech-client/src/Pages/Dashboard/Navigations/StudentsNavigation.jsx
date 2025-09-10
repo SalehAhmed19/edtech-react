@@ -18,10 +18,15 @@ import {
 } from "@phosphor-icons/react";
 import useGetOrders from "../../../Hooks/Students/useGetOrders";
 import useGetCarts from "../../../Hooks/Students/useGetCarts";
+import useGetSkills from "../../../Hooks/Students/useGetSkills";
+import useEnrolledCourses from "../../../Hooks/Students/useEnrolledCourses";
 
 export default function studentNavigation() {
   const { orders } = useGetOrders();
   const { carts } = useGetCarts();
+  const { skills } = useGetSkills();
+  const { enrolled } = useEnrolledCourses();
+  enrolled.map((enroll) => console.log(enroll.courses));
   return (
     <div className="rounded-md">
       <Link to="/">
@@ -47,7 +52,7 @@ export default function studentNavigation() {
             <BooksIcon size={32} className="text-primary" /> Courses
             <span
               className={`bg-primary h-5 w-5 p-3 flex justify-center items-center text-white rounded-full text-sm ${
-                !orders[0]?.carts.length && "hidden"
+                !enrolled.length && "hidden"
               }`}
             >
               {orders[0]?.carts.length}
@@ -57,7 +62,14 @@ export default function studentNavigation() {
         <Link to="/dashboard/student-skillset">
           <li className="hover:bg-gray-50 duration-300 p-2 rounded-md cursor-pointer flex items-center gap-5">
             <PersonSimpleHikeIcon size={32} className="text-primary" />
-            Skillset
+            Skillset{" "}
+            <span
+              className={`bg-primary h-5 w-5 p-3 flex justify-center items-center text-white rounded-full text-sm ${
+                !skills?.length && "hidden"
+              }`}
+            >
+              {skills?.length}
+            </span>
           </li>
         </Link>
         <Link to="/dashboard/carts">

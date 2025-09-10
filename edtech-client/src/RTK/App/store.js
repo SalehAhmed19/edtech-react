@@ -8,6 +8,7 @@ import SkillsReducer from "../Features/StudentsSlices/SkillsSlice";
 import PaymentReducer from "../Features/StudentsSlices/PaymentSlice";
 import OrderReducer from "../Features/StudentsSlices/OrderSlice";
 import ReviewReducer from "../Features/ReviewsSlices/ReviewSlice";
+import EnrollReducer from "../Features/StudentsSlices/EnrollSlice";
 
 export const store = configureStore({
   reducer: {
@@ -20,5 +21,6 @@ export const store = configureStore({
     PaymentSlice: PaymentReducer,
     OrderSlice: OrderReducer,
     ReviewSlice: ReviewReducer,
+    EnrollSlice: EnrollReducer,
   },
 });

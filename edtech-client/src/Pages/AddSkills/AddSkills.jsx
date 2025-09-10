@@ -7,6 +7,8 @@ import { useDispatch } from "react-redux";
 import { addSkills } from "../../RTK/Features/StudentsSlices/SkillsSlice";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase/firebase.config";
+import { Fade } from "react-awesome-reveal";
+import { PlusIcon } from "@phosphor-icons/react";
 
 export default function AddSkills() {
   const { register, handleSubmit } = useForm();
@@ -28,9 +30,11 @@ export default function AddSkills() {
   };
 
   return (
-    <div>
-      <DashboardSectionTitle title={"Add Skills"} />
-      <div>
+    <div className="grid grid-cols-2 place-content-center h-screen">
+      <Fade direction="up" cascade={true} duration={800}>
+        <h2 className="text-[45px] font-bold text-primary">Add Skills</h2>
+      </Fade>
+      <div className="p-5 bg-gray-50 rounded-xl">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col gap-3 my-5"
@@ -42,7 +46,7 @@ export default function AddSkills() {
                 {...register("skill")}
                 type="text"
                 placeholder="Skill"
-                className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2 bg-white"
+                className="border border-gray-200 rounded-full w-full px-5 py-3 mt-2 bg-white"
               />
             </div>
             {/*  */}
@@ -52,7 +56,7 @@ export default function AddSkills() {
                 {...register("experience")}
                 type="number"
                 placeholder="Years of experience"
-                className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2 bg-white"
+                className="border border-gray-200 rounded-full w-full px-5 py-3 mt-2 bg-white"
               />
             </div>
           </div>
@@ -65,7 +69,7 @@ export default function AddSkills() {
               {...register("projectUrl")}
               type="text"
               placeholder="Project URL"
-              className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2 bg-white"
+              className="border border-gray-200 rounded-full w-full px-5 py-3 mt-2 bg-white"
             />
           </div>
           {/*  */}
@@ -78,18 +82,15 @@ export default function AddSkills() {
               {...register("gitHub")}
               type="text"
               placeholder="Project URL"
-              className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2 bg-white"
+              className="border border-gray-200 rounded-full w-full px-5 py-3 mt-2 bg-white"
             />
           </div>
           {/*  */}
 
-          <button className="bg-[#333] px-5 py-2 rounded-md text-white cursor-pointer w-36">
-            Add Skill
+          <button className="bg-primary px-5 py-3 rounded-full text-white cursor-pointer flex items-center gap-2 mx-auto animate-bounce mt-5">
+            Add Skill <PlusIcon size={32} />
           </button>
         </form>
-      </div>
-      <div>
-        <img className="w-86 ml-auto" src={skill} alt="" />
       </div>
     </div>
   );

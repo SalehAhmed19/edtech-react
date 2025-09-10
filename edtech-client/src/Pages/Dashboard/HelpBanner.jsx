@@ -1,13 +1,16 @@
-import help from "../../assets/images/help-avatar.svg";
+import { PhoneCallIcon } from "@phosphor-icons/react";
+import help from "../../assets/images/support.png";
 
 export default function HelpBanner() {
   return (
-    <div className="bg-[#333] w-full flex justify-between items-center rounded-md mt-10 text-white px-10">
+    <div className="bg-[#1E1E1E] w-full flex justify-between items-center rounded-md mt-10 text-white px-10">
       <img src={help} alt="" className="w-36 mt-[-40px]" />
       <h5 className="text-xl font-semibold">Need help?</h5>
       <div>
-        <p className="font-semibold">Call Now</p>
-        <p>+880 9374 864 826</p>
+        <p className="flex items-center">
+          <PhoneCallIcon size={32} />
+          Call Now: +880 2983 393 829
+        </p>
       </div>
     </div>
   );
