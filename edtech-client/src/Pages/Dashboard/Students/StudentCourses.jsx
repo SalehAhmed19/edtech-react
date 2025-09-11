@@ -44,7 +44,7 @@ export default function StudentCourses() {
       </Fade>
       <div className="h-[55vh] overflow-y-scroll">
         <div className="grid grid-cols-4 gap-5">
-          {enrolledCourses.map((enrolledCourse, idx) => (
+          {enrolledCourses?.map((enrolledCourse, idx) => (
             <DashboardHomeCourseCard key={idx} cart={enrolledCourse} />
           ))}
         </div>

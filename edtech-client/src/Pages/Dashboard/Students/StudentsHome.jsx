@@ -25,12 +25,14 @@ export default function StudentsHome() {
             <h4 className="font-bold text-xl mb-5">
               <span className="text-primary">Enrolled</span> Courses
             </h4>
-            <div className="grid grid-cols-3 gap-5 overflow-y-scroll h-[65vh]">
-              {orders.map((order) =>
-                order.carts.map((cart, idx) => (
-                  <DashboardHomeCourseCard key={idx} cart={cart} />
-                ))
-              )}
+            <div className="overflow-y-scroll h-[65vh]">
+              <div className="grid grid-cols-3 gap-5">
+                {orders.map((order) =>
+                  order.carts.map((cart, idx) => (
+                    <DashboardHomeCourseCard key={idx} cart={cart} />
+                  ))
+                )}
+              </div>
             </div>
           </div>
         )}

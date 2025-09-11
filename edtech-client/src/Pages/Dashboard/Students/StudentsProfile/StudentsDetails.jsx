@@ -40,42 +40,8 @@ export default function StudentsDetails() {
           </h2>
         </div>
       </div>
-      <h3 className="">
-        Welcome,{" "}
-        <span className="text-xl font-bold text-primary">{student?.name}</span>
-      </h3>
-      <div className="grid grid-cols-4">
-        <div className="col-span-3 grid grid-cols-2 gap-5">
-          <div>
-            <label className="text-[#787878] text-sm">Email</label>
-            <p className="">{student?.email ? student.email : "N/A"}</p>
-          </div>
 
-          <div>
-            <label className="text-[#787878] text-sm">Student ID</label>
-            <p className=""> {student?.studentId}</p>
-          </div>
-          <div>
-            <label className="text-[#787878] text-sm">Phone</label>
-            <p className="">{student?.phone ? student.phone : "N/A"}</p>
-          </div>
-          <div>
-            <label className="text-[#787878] text-sm">Gender</label>
-            <p>{student?.gender ? student.gender : "N/A"}</p>
-          </div>
-          <div>
-            <label className="text-[#787878] text-sm">Age Range</label>
-            <p>{student?.ageRange ? student.ageRange : "N/A"}</p>
-          </div>
-          <div>
-            <label className="text-[#787878] text-sm">Address</label>
-            <p>{student?.address ? student.address : "N/A"}</p>
-          </div>
-          <div>
-            <label className="text-[#787878] text-sm">Experience</label>
-            <p>{student?.experience ? student.experience : "N/A"}</p>
-          </div>
-        </div>
+      <div className="flex flex-col gap-5">
         <div className="text-center overflow-hidden flex flex-col items-center gap-2">
           <img
             src={
@@ -87,8 +53,67 @@ export default function StudentsDetails() {
             alt=""
             className="rounded-full h-20 w-20"
           />
-          <h5 className="font-semibold">{student?.name}</h5>
-          <p className="text-[#787878] text-sm">@{username}</p>
+          <h5 className="font-bold text-xl text-primary">{student?.name}</h5>
+          <p className="text-[#787878] text-sm" style={{ fontSize: "14px" }}>
+            @{username}
+          </p>
+        </div>
+        <div className="grid grid-cols-2 gap-5">
+          <div>
+            <label className="text-secondary" style={{ fontSize: "14px" }}>
+              Email
+            </label>
+            <p style={{ fontSize: "14px" }}>
+              {student?.email ? student.email : "N/A"}
+            </p>
+          </div>
+
+          <div>
+            <label className="text-secondary" style={{ fontSize: "14px" }}>
+              Student ID
+            </label>
+            <p style={{ fontSize: "14px" }}> {student?.studentId}</p>
+          </div>
+          <div>
+            <label className="text-secondary" style={{ fontSize: "14px" }}>
+              Phone
+            </label>
+            <p style={{ fontSize: "14px" }}>
+              {student?.phone ? student.phone : "N/A"}
+            </p>
+          </div>
+          <div>
+            <label className="text-secondary" style={{ fontSize: "14px" }}>
+              Gender
+            </label>
+            <p style={{ fontSize: "14px" }}>
+              {student?.gender ? student.gender : "N/A"}
+            </p>
+          </div>
+          <div>
+            <label className="text-secondary" style={{ fontSize: "14px" }}>
+              Age Range
+            </label>
+            <p style={{ fontSize: "14px" }}>
+              {student?.ageRange ? student.ageRange : "N/A"}
+            </p>
+          </div>
+          <div>
+            <label className="text-secondary" style={{ fontSize: "14px" }}>
+              Address
+            </label>
+            <p style={{ fontSize: "14px" }}>
+              {student?.address ? student.address : "N/A"}
+            </p>
+          </div>
+          <div>
+            <label className="text-secondary" style={{ fontSize: "14px" }}>
+              Experience
+            </label>
+            <p style={{ fontSize: "14px" }}>
+              {student?.experience ? student.experience : "N/A"}
+            </p>
+          </div>
         </div>
       </div>
     </div>

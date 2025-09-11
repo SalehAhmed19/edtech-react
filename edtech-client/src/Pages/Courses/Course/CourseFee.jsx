@@ -6,10 +6,12 @@ import { auth } from "../../../firebase/firebase.config";
 import { addToCart } from "../../../RTK/Features/StudentsSlices/cartsSlice";
 import { Link, useNavigate } from "react-router-dom";
 import useAxiosPublic from "../../../Hooks/Axios/useAxiosPublic";
-import { BasketIcon } from "@phosphor-icons/react";
+import { BasketIcon, UserCircleCheckIcon } from "@phosphor-icons/react";
+import useGetCarts from "../../../Hooks/Students/useGetCarts";
 
 export default function CourseFee({ course }) {
   const [user] = useAuthState(auth);
+  const { carts } = useGetCarts();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const axiosPublic = useAxiosPublic();
@@ -30,15 +32,18 @@ export default function CourseFee({ course }) {
         status: "Unpaid",
       };
 
-      const result = await dispatch(addToCart({ courseItem, axiosPublic }));
-      // console.log(result);
-      console.log({ result });
-      if (result.payload.insertedId) {
-        navigate("/dashboard/carts");
-        toast.success("Added to cart!");
-      }
-      if (result.payload.message) {
-        toast.error("Items already in cart!");
+      if (carts.length < 1) {
+        const result = await dispatch(addToCart({ courseItem, axiosPublic }));
+        // console.log(result);
+        console.log({ result });
+        if (result.payload.insertedId) {
+          navigate("/dashboard/payments/stripe");
+          toast.success("Added to cart!");
+        }
+      } else {
+        toast.error(
+          "Youv'e already cart a course. Please pay to complete enrollment!"
+        );
       }
     }
   };
@@ -57,8 +62,8 @@ export default function CourseFee({ course }) {
           onClick={handleAddToCart}
           className="bg-primary text-white px-5 py-3 rounded-full cursor-pointer flex items-center gap-2 animate-bounce"
         >
-          <BasketIcon size={32} />
-          Add to cart
+          <UserCircleCheckIcon size={32} />
+          Enroll Course
         </button>
       </div>
     </div>

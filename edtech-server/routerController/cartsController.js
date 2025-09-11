@@ -8,6 +8,7 @@ module.exports = (cartsCollection) => {
     const courseId = newCartItem.courseId;
     const email = newCartItem.email;
     const filter = { courseId: courseId, email: email };
+
     try {
       const existing = await cartsCollection.findOne(filter);
 
