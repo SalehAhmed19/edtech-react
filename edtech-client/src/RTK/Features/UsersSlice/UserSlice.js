@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 
 const initialState = {
   isLoading: false,
@@ -10,12 +9,12 @@ const initialState = {
 
 export const getUser = createAsyncThunk(
   "getUser",
-  async (email, { rejectWithValue }) => {
+  async ({ email, axiosPublic }, { rejectWithValue }) => {
     console.log(email);
     try {
-      const response = await axios.get(
+      const response = await axiosPublic.get(
         // `https://edtech-react.vercel.app/api/users?email=${email}`
-        `http://localhost:4000/api/users?email=${email}`
+        `/users?email=${email}`
       );
 
       return response.data;

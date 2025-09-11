@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 
 const initialState = {
   isLoading: false,
@@ -7,11 +6,14 @@ const initialState = {
   isError: false,
 };
 
-export const getReviews = createAsyncThunk("getReviews", async () => {
-  const response = await axios.get("http://localhost:4000/api/reviews");
+export const getReviews = createAsyncThunk(
+  "getReviews",
+  async ({ axiosPublic }) => {
+    const response = await axiosPublic.get("/reviews");
 
-  return response.data;
-});
+    return response.data;
+  }
+);
 
 const ReviewsSlice = createSlice({
   name: "reviews",

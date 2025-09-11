@@ -1,11 +1,12 @@
 const express = require("express");
+const verifyToken = require("../middlewares/verifyToken");
 const router = express.Router();
 
 module.exports = (skillsCollection) => {
   // skills
   router.post("/post-skills", async (req, res) => {
     const skills = req.body;
-    // console.log(skills);
+    console.log(skills);
 
     const result = await skillsCollection.insertOne(skills);
 

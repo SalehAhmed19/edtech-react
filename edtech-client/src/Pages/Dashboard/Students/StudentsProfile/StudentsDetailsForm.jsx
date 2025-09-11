@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import PhotoUpload from "../../../../Components/UI/PhotoUpload";
 import toast from "react-hot-toast";
@@ -6,8 +6,10 @@ import { useDispatch } from "react-redux";
 import { updateStudentDetails } from "../../../../RTK/Features/UsersSlice/StudentsSlice";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../../firebase/firebase.config";
+import useAxiosPublic from "../../../../Hooks/Axios/useAxiosPublic";
 
 export default function StudentsDetailsForm() {
+  const axiosPublic = useAxiosPublic();
   const { register, handleSubmit, reset } = useForm();
   const [user] = useAuthState(auth);
   const email = user?.email;
@@ -17,8 +19,8 @@ export default function StudentsDetailsForm() {
 
   const onSubmit = async (data) => {
     console.log(data);
-    const response = dispatch(
-      updateStudentDetails({ email: email, updatedDetails: data })
+    const response = await dispatch(
+      updateStudentDetails({ email: email, updatedDetails: data, axiosPublic })
     );
 
     console.log(data.photo[0]);

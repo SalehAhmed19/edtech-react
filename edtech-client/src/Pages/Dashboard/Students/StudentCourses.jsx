@@ -12,7 +12,7 @@ import DashboardHomeCourseCard from "../../../Components/UI/DashboardHomeCourseC
 import useEnrolledCourses from "../../../Hooks/Students/useEnrolledCourses";
 
 export default function StudentCourses() {
-  const { enrolled, isLoading, isError } = useEnrolledCourses();
+  const { enrolled, isLoading } = useEnrolledCourses();
 
   const enrolledCourses = enrolled[0]?.carts;
 

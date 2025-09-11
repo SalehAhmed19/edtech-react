@@ -9,13 +9,15 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase/firebase.config";
 import { Fade } from "react-awesome-reveal";
 import { PlusIcon } from "@phosphor-icons/react";
+import useAxiosPublic from "../../Hooks/Axios/useAxiosPublic";
 
 export default function AddSkills() {
+  const axiosPublic = useAxiosPublic();
   const { register, handleSubmit } = useForm();
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     // console.log(data);
     const skill = {
       email: user.email,
@@ -24,7 +26,7 @@ export default function AddSkills() {
       project: data.projectUrl,
       gitHub: data.gitHub,
     };
-    dispatch(addSkills(skill));
+    dispatch(addSkills({ skill, axiosPublic }));
     toast.success("Skills Added!");
     navigate("/dashboard/student-skillset");
   };

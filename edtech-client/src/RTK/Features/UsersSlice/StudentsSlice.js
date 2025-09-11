@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 
 const initialState = {
   isLoading: false,
@@ -12,11 +11,11 @@ const initialState = {
 // add users
 export const postStudent = createAsyncThunk(
   "users",
-  async (data, { rejectWithValue }) => {
+  async ({ data, axiosPublic }, { rejectWithValue }) => {
     try {
-      const response = await axios.post(
+      const response = await axiosPublic.post(
         // "https://edtech-react.vercel.app/api/students/post-student",
-        "http://localhost:4000/api/students/post-student",
+        "/post-student",
         data
       );
 
@@ -28,27 +27,30 @@ export const postStudent = createAsyncThunk(
 );
 
 // get students
-export const getAllStudents = createAsyncThunk("students", async () => {
-  try {
-    const response = await axios.get(
-      // "https://edtech-react.vercel.app/api/students"
-      "http://localhost:4000/api/students"
-    );
+export const getAllStudents = createAsyncThunk(
+  "students",
+  async ({ axiosPublic }) => {
+    try {
+      const response = await axiosPublic.get(
+        // "https://edtech-react.vercel.app/api/students"
+        "/students"
+      );
 
-    return response.data;
-  } catch (err) {
-    return console.log(err);
+      return response.data;
+    } catch (err) {
+      return console.log(err);
+    }
   }
-});
+);
 
 // get student
 export const getStudent = createAsyncThunk(
   "student",
-  async (email, { rejectWithValue }) => {
+  async ({ email, axiosPublic }, { rejectWithValue }) => {
     try {
-      const response = await axios.get(
+      const response = await axiosPublic.get(
         // `https://edtech-react.vercel.app/api/students/${email}`
-        `http://localhost:4000/api/students?email=${email}`
+        `/students?email=${email}`
       );
 
       return response.data;
@@ -60,10 +62,10 @@ export const getStudent = createAsyncThunk(
 
 export const updateStudentDetails = createAsyncThunk(
   "updateStudentDetails",
-  async ({ email, updatedDetails }, { rejectWithValue }) => {
+  async ({ email, updatedDetails, axiosPublic }, { rejectWithValue }) => {
     try {
-      const response = await axios.patch(
-        `http://localhost:4000/api/students/update-student-details?email=${email}`,
+      const response = await axiosPublic.patch(
+        `/students/update-student-details?email=${email}`,
         updatedDetails
       );
 

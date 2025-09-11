@@ -14,8 +14,10 @@ import { useNavigate } from "react-router-dom";
 
 import useGetAllUsers from "../../../Hooks/Users/useGetAllUsers";
 import { CreditCardIcon } from "@phosphor-icons/react";
+import useAxiosPublic from "../../../Hooks/Axios/useAxiosPublic";
 
 const CheckoutForm = () => {
+  const axiosPublic = useAxiosPublic();
   const { totalPrice, carts } = useGetCarts();
   // const [user] = useAuthState(auth);
   const { singleUser } = useGetAllUsers();
@@ -27,10 +29,10 @@ const CheckoutForm = () => {
 
   const dispatch = useDispatch();
   const clientSecret = useSelector((state) => state.PaymentSlice.clientSecret);
-
+  const totalPriceInt = parseInt(totalPrice);
   useEffect(() => {
-    dispatch(createPaymentIntent(parseInt(totalPrice)));
-  }, [totalPrice, dispatch]);
+    dispatch(createPaymentIntent({ totalPrice: totalPriceInt, axiosPublic }));
+  }, [totalPriceInt, dispatch, axiosPublic]);
 
   const onSubmit = async (data) => {
     // Block native form submission.
@@ -86,7 +88,7 @@ const CheckoutForm = () => {
           staus: "Succeed",
           trxId: trxId,
         };
-        await dispatch(postPayment(payment));
+        await dispatch(postPayment({ payment, axiosPublic }));
         reset();
         navigate("/dashboard/order-history");
         toast.success(`Payment successful: BDT ${totalPrice} !`);

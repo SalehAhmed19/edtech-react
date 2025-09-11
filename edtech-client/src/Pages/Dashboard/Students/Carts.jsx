@@ -5,7 +5,7 @@ import useGetCarts from "../../../Hooks/Students/useGetCarts";
 import HelpBanner from "../HelpBanner";
 import { useDispatch } from "react-redux";
 import { deleteCartItem } from "../../../RTK/Features/StudentsSlices/cartsSlice";
-import useAxiosPrivate from "../../../Hooks/Axios/useAxiosPrivate";
+import useAxiosPublic from "../../../Hooks/Axios/useAxiosPublic";
 import toast from "react-hot-toast";
 import PaymentButton from "../../../Components/UI/PaymentButton/PaymentButton";
 import LoadingSpinner from "../../../Components/UI/LoadingSpinner";
@@ -14,25 +14,24 @@ import {
   ArrowBendDownRightIcon,
   BasketIcon,
   CreditCardIcon,
+  TrashIcon,
 } from "@phosphor-icons/react";
 import DashboardPlaceholder from "../../../Components/UI/DashboardHomeCourseCard/DashboardPlaceholder";
 import VerticalCard from "../../../Components/UI/OrderHistoryCard/OrderHistoryCard";
 
 export default function Carts() {
-  const axiosPrivate = useAxiosPrivate();
+  const axiosPublic = useAxiosPublic();
   const { carts, isLoading, totalPrice } = useGetCarts();
 
   const dispatch = useDispatch();
   const handleDelete = async (id) => {
     isLoading;
-    const response = await dispatch(deleteCartItem({ id, axiosPrivate }));
-    if (response.payload.deletedCount > 0) {
+    const response = await dispatch(deleteCartItem({ id, axiosPublic }));
+    if (response?.payload?.deletedCount > 0) {
       toast.success("Delete items!");
     }
     // console.log({ id, response });
   };
-
-  const tableHeaders = ["", "Course Name / ID", "Price", "Status", ""];
 
   // console.log(carts);
   if (isLoading) {
@@ -78,9 +77,17 @@ export default function Carts() {
           </h5>
         </div>
         <div className="h-[55vh] overflow-y-scroll p-5">
-          <div className="grid grid-cols-4 gap-5">
+          <div className="grid grid-cols-3 gap-5">
             {carts.map((cart, idx) => (
-              <VerticalCard key={idx} course={cart} />
+              <div className="flex items-center gap-3">
+                <VerticalCard key={idx} course={cart} />
+                <button
+                  className="bg-primary text-white p-3 rounded-full hover:scale-105 duration-300"
+                  onClick={() => handleDelete(cart.courseId)}
+                >
+                  <TrashIcon size={32} />
+                </button>
+              </div>
             ))}
           </div>
         </div>

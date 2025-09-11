@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+
 
 const initialState = {
   isLoading: false,
@@ -9,14 +9,14 @@ const initialState = {
 };
 
 // get action
-export const getCourses = createAsyncThunk("courses", async () => {
-  const response = await axios.get(
-    // "https://edtech-react.vercel.app/api/courses"
-    "http://localhost:4000/api/courses"
-  );
+export const getCourses = createAsyncThunk(
+  "courses",
+  async ({ axiosPublic }) => {
+    const response = await axiosPublic.get("/courses");
 
-  return response.data;
-});
+    return response.data;
+  }
+);
 
 const CoursesSlice = createSlice({
   name: "courses",

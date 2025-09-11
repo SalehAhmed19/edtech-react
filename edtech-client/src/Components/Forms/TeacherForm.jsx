@@ -9,8 +9,10 @@ import {
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase/firebase.config";
 import { useNavigate } from "react-router-dom";
+import useAxiosPublic from "../../Hooks/Axios/useAxiosPublic";
 
 export default function TeacherForm() {
+  const axiosPublic = useAxiosPublic();
   const [user] = useAuthState(auth);
   const email = user?.email;
   const navigate = useNavigate();
@@ -33,9 +35,9 @@ export default function TeacherForm() {
     };
 
     console.log(teacher);
-    const response = await dispatch(postTeacher(teacher));
+    const response = await dispatch(postTeacher({ teacher, axiosPublic }));
     if (response) {
-      dispatch(getTeacher(email));
+      await dispatch(getTeacher({ email, axiosPublic }));
     }
     console.log({ response });
     navigate("/");

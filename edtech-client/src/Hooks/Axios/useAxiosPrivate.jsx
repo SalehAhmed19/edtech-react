@@ -3,15 +3,15 @@ import { useSignOut } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase/firebase.config";
 
-const axiosPrivate = axios.create({
-  // baseURL: "https://edtech-react.vercel.app/api",
+const axiosPublic = axios.create({
   baseURL: "http://localhost:4000/api",
+  // baseURL: import.meta.env.VITE_url_production,
 });
 
-export default function useAxiosPrivate() {
+export default function useAxiosPublic() {
   const navigate = useNavigate();
   const [signOut] = useSignOut(auth);
-  axiosPrivate.interceptors.request.use(
+  axiosPublic.interceptors.request.use(
     function (config) {
       const token = localStorage.getItem("access-token-secret");
 
@@ -24,7 +24,7 @@ export default function useAxiosPrivate() {
     }
   );
 
-  axiosPrivate.interceptors.response.use(
+  axiosPublic.interceptors.response.use(
     function (response) {
       return response;
     },
@@ -41,5 +41,5 @@ export default function useAxiosPrivate() {
       return Promise.reject(error);
     }
   );
-  return axiosPrivate;
+  return axiosPublic;
 }

@@ -8,9 +8,9 @@ const initialState = {
 
 export const getEnrolledCourses = createAsyncThunk(
   "getEnrolledCourses",
-  async ({ email, axiosPrivate }, { rejectWithValue }) => {
+  async ({ email, axiosPublic }, { rejectWithValue }) => {
     try {
-      const response = await axiosPrivate.get(
+      const response = await axiosPublic.get(
         `/enrolled-courses?email=${email}`
       );
 

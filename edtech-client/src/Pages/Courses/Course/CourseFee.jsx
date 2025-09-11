@@ -5,14 +5,14 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../firebase/firebase.config";
 import { addToCart } from "../../../RTK/Features/StudentsSlices/cartsSlice";
 import { Link, useNavigate } from "react-router-dom";
-import useAxiosPrivate from "../../../Hooks/Axios/useAxiosPrivate";
+import useAxiosPublic from "../../../Hooks/Axios/useAxiosPublic";
 import { BasketIcon } from "@phosphor-icons/react";
 
 export default function CourseFee({ course }) {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const axiosPrivate = useAxiosPrivate();
+  const axiosPublic = useAxiosPublic();
 
   const handleAddToCart = async () => {
     {
@@ -30,8 +30,9 @@ export default function CourseFee({ course }) {
         status: "Unpaid",
       };
 
-      const result = await dispatch(addToCart({ courseItem, axiosPrivate }));
+      const result = await dispatch(addToCart({ courseItem, axiosPublic }));
       // console.log(result);
+      console.log({ result });
       if (result.payload.insertedId) {
         navigate("/dashboard/carts");
         toast.success("Added to cart!");

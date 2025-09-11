@@ -103,12 +103,12 @@ const Calendar = () => {
   }
 
   return (
-    <div className="bg-white rounded-lg border border-dashed border-slate-300 p-6 sm:p-8">
+    <div className="bg-white rounded-xl border border-gray-200 p-6 sm:p-8">
       {/* Calendar Header: Month, Year, and Navigation */}
       <div className="flex justify-between items-center mb-6">
         <button
           onClick={goToPrevMonth}
-          className="p-2 rounded-full hover:bg-gray-200 transition-colors duration-200 text-gray-700"
+          className="p-2 rounded-full hover:bg-gray-200 transition-colors duration-200 text-primary"
           aria-label="Previous month"
         >
           <svg
@@ -126,12 +126,12 @@ const Calendar = () => {
             ></path>
           </svg>
         </button>
-        <h2 className="text-2xl font-semibold text-gray-800">
+        <h2 className="text-2xl font-semibold text-primary">
           {getMonthName(currentMonth)} {currentYear}
         </h2>
         <button
           onClick={goToNextMonth}
-          className="p-2 rounded-full hover:bg-gray-200 transition-colors duration-200 text-gray-700"
+          className="p-2 rounded-full hover:bg-gray-200 transition-colors duration-200 text-primary"
           aria-label="Next month"
         >
           <svg
@@ -152,7 +152,7 @@ const Calendar = () => {
       </div>
 
       {/* Weekdays Row */}
-      <div className="grid grid-cols-7 gap-2 text-center text-sm font-medium text-gray-500 mb-4">
+      <div className="grid grid-cols-7 gap-2 text-center text-sm font-medium text-primary mb-4">
         {weekdays.map((day) => (
           <div key={day} className="py-2">
             {day}
@@ -171,7 +171,7 @@ const Calendar = () => {
                           day === today.getDate() &&
                           currentMonth === today.getMonth() &&
                           currentYear === today.getFullYear()
-                            ? "bg-[#333] text-white font-bold" // Highlight today
+                            ? "bg-primary text-white font-bold" // Highlight today
                             : "hover:bg-gray-100 transition-colors duration-150 cursor-pointer" // Default day style
                         }`}
           >

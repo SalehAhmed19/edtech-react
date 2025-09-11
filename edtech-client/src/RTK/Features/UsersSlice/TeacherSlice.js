@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 
 const initialState = {
   isLoading: false,
@@ -11,11 +10,11 @@ const initialState = {
 // post teacher
 export const postTeacher = createAsyncThunk(
   "postTeacher",
-  async (teacher, { rejectWithValue }) => {
+  async ({ teacher, axiosPublic }, { rejectWithValue }) => {
     try {
-      const response = await axios.post(
+      const response = await axiosPublic.post(
         // "https://edtech-react.vercel.app/api/teachers/post-teacher",
-        "http://localhost:4000/api/teachers/post-teacher",
+        "/teachers/post-teacher",
         teacher
       );
 
@@ -29,11 +28,11 @@ export const postTeacher = createAsyncThunk(
 // get teacher
 export const getTeacher = createAsyncThunk(
   "teachers",
-  async (email, { rejectWithValue }) => {
+  async ({ email, axiosPublic }, { rejectWithValue }) => {
     try {
-      const response = await axios.get(
+      const response = await axiosPublic.get(
         // `https://edtech-react.vercel.app/api/teachers/${email}`
-        `http://localhost:4000/api/teachers/${email}`
+        `/teachers/${email}`
       );
 
       return response.data;

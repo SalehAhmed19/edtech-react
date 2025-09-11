@@ -9,9 +9,9 @@ const initialState = {
 // add to cart
 export const addToCart = createAsyncThunk(
   "carts",
-  async ({ courseItem, axiosPrivate }, { rejectWithValue }) => {
+  async ({ courseItem, axiosPublic }, { rejectWithValue }) => {
     try {
-      const response = await axiosPrivate.post("/carts/post-cart", courseItem);
+      const response = await axiosPublic.post("/carts/post-cart", courseItem);
 
       return response.data;
     } catch (err) {
@@ -23,9 +23,9 @@ export const addToCart = createAsyncThunk(
 // get cart
 export const getCarts = createAsyncThunk(
   "getCarts",
-  async ({ email, axiosPrivate }, { rejectWithValue }) => {
+  async ({ email, axiosPublic }, { rejectWithValue }) => {
     try {
-      const response = await axiosPrivate.get(`/carts?email=${email}`);
+      const response = await axiosPublic.get(`/carts?email=${email}`);
 
       return response.data;
     } catch (err) {
@@ -37,9 +37,9 @@ export const getCarts = createAsyncThunk(
 // delete from cart
 export const deleteCartItem = createAsyncThunk(
   "deteleCartItem",
-  async ({ id, axiosPrivate }, { rejectWithValue }) => {
+  async ({ id, axiosPublic }, { rejectWithValue }) => {
     try {
-      const response = await axiosPrivate.delete(`/carts/remove-carts/${id}`);
+      const response = await axiosPublic.delete(`/carts/remove-carts/${id}`);
 
       return response.data;
     } catch (err) {

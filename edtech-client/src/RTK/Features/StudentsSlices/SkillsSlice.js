@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 
 const initialState = {
   isLoading: false,
@@ -9,12 +8,12 @@ const initialState = {
 
 export const addSkills = createAsyncThunk(
   "addSkills",
-  async (skills, { rejectWithValue }) => {
+  async ({ skill, axiosPublic }, { rejectWithValue }) => {
     try {
-      const response = await axios.post(
+      const response = await axiosPublic.post(
         // "https://edtech-react.vercel.app/api/skills/post-skills",
-        "http://localhost:4000/api/skills/post-skills",
-        skills
+        "/skills/post-skills",
+        skill
       );
       // console.log(response.data);
       return response.data;
@@ -26,12 +25,12 @@ export const addSkills = createAsyncThunk(
 
 export const getSkills = createAsyncThunk(
   "getSkills",
-  async (email, { rejectWithValue }) => {
+  async ({ email, axiosPublic }, { rejectWithValue }) => {
     // console.log(email);
     try {
-      const response = await axios.get(
+      const response = await axiosPublic.get(
         // `https://edtech-react.vercel.app/api/skills?email=${email}`
-        `http://localhost:4000/api/skills?email=${email}`
+        `/skills?email=${email}`
       );
 
       // console.log(response.data);
@@ -52,6 +51,7 @@ const SkillsSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(addSkills.fulfilled, (state, action) => {
+      console.log(action);
       state.isLoading = false;
       state.skills.push(action.payload);
     });

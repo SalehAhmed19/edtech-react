@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 
 const initialState = {
   isLoading: false,
@@ -10,11 +9,10 @@ const initialState = {
 
 export const createPaymentIntent = createAsyncThunk(
   "createPaymentIntent",
-  async (totalPrice, { rejectWithValue }) => {
+  async ({ totalPrice, axiosPublic }, { rejectWithValue }) => {
     try {
-      const response = await axios.post(
-        // "https://edtech-react.vercel.app/api/payments/stripe/create-payment-intent",
-        "http://localhost:4000/api/payments/stripe/create-payment-intent",
+      const response = await axiosPublic.post(
+        "/payments/stripe/create-payment-intent",
         {
           price: totalPrice,
         }
@@ -29,11 +27,11 @@ export const createPaymentIntent = createAsyncThunk(
 
 export const postPayment = createAsyncThunk(
   "postPayment",
-  async (payment, { rejectWithValue }) => {
+  async ({ payment, axiosPublic }, { rejectWithValue }) => {
     try {
-      const response = await axios.post(
+      const response = await axiosPublic.post(
         // "https://edtech-react.vercel.app/api/payments/stripe/payment-success",
-        "http://localhost:4000/api/payments/stripe/payment-success",
+        "/payments/stripe/payment-success",
         payment
       );
 
@@ -47,11 +45,11 @@ export const postPayment = createAsyncThunk(
 
 export const getPayments = createAsyncThunk(
   "getPayments",
-  async (email, { rejectWithValue }) => {
+  async ({ email, axiosPublic }, { rejectWithValue }) => {
     try {
-      const response = await axios.get(
+      const response = await axiosPublic.get(
         // `https://edtech-react.vercel.app/api/payments?email=${email}`
-        `http://localhost:4000/api/payments?email=${email}`
+        `/payments?email=${email}`
       );
 
       return response.data;

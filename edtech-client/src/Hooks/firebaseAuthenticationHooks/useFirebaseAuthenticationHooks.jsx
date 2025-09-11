@@ -16,8 +16,10 @@ import {
   getAllUsers,
   getUser,
 } from "../../RTK/Features/UsersSlice/AllUsersSlice";
+import useAxiosPublic from "../Axios/useAxiosPublic";
 
 export default function useFirebaseAuthenticationHooks() {
+  const axiosPublic = useAxiosPublic();
   const [user] = useAuthState(auth);
   const [signOut] = useSignOut(auth);
   const { reset } = useForm();
@@ -48,7 +50,9 @@ export default function useFirebaseAuthenticationHooks() {
           photo: photoURL,
           role: "student",
         };
-        const response = await dispatch(postStudent(userInfo)).unwrap();
+        const response = await dispatch(
+          postStudent({ userInfo, axiosPublic })
+        ).unwrap();
         // console.log("User data successfully posted to DB:", response);
       } else if (error) {
         console.error("Firebase Google Sign-In Error:", error.message);
@@ -87,10 +91,12 @@ export default function useFirebaseAuthenticationHooks() {
           role: "student",
         };
 
-        const response = await dispatch(postStudent(userInfo)).unwrap();
+        const response = await dispatch(
+          postStudent({ userInfo, axiosPublic })
+        ).unwrap();
         if (response) {
-          dispatch(getUser(email));
-          dispatch(getAllUsers());
+          await dispatch(getUser({ email, axiosPublic }));
+          await dispatch(getAllUsers({ axiosPublic }));
         }
         // console.log("User data successfully posted to DB:", response);
         reset();
