@@ -1,71 +1,67 @@
 import { Link } from "react-router-dom";
-import logo from "../../../assets/images/logo-transparent.png";
-import course from "../../../assets/images/online-learning.png";
-import cart from "../../../assets/images/shopping-cart.png";
-import order from "../../../assets/images/order-now.png";
-import skill from "../../../assets/images/skills.png";
+import logo from "../../../assets/images/logo.png";
 import useGetTeacher from "../../../Hooks/Users/useGetTeacher";
+import {
+  ArticleIcon,
+  HeadsetIcon,
+  NotebookIcon,
+  PencilSimpleLineIcon,
+  PresentationChartIcon,
+  UserIcon,
+} from "@phosphor-icons/react";
+import LoadingSpinner from "../../../Components/UI/LoadingSpinner";
 
 export default function TeachersNavigation() {
   const { teacher, isLoading } = useGetTeacher();
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-[80vh]">
+        <LoadingSpinner />
+      </div>
+    );
+  }
 
   return (
     <div className="rounded-md">
       <Link to="/">
         <div className="py-5">
-          <img src={logo} className="w-20 mx-auto" alt="" />
+          <img src={logo} className="w-36 mx-auto" alt="" />
         </div>
       </Link>
 
-      <Link to="/dashboard/teacher-home">
-        <div className="border-t border-b border-slate-300 p-3 flex gap-4 items-center">
-          {isLoading ? (
-            <div className="w-20 h-20 rounded-full bg-slate-300 animate-pulse"></div>
-          ) : (
-            <>
-              {teacher.photo === null ? (
-                <div className="w-20 h-20 rounded-full bg-slate-300 animate-pulse"></div>
-              ) : (
-                <img
-                  src={
-                    teacher.photo
-                      ? teacher.photo
-                      : "https://i.ibb.co/ynG5yN4H/man-beard-vector-35281418.png"
-                  }
-                  alt=""
-                  className="rounded-full w-20 border-2 border-slate-300 border-dashed"
-                />
-              )}
-            </>
-          )}
-
-          <p className="font-semibold text-xl">{teacher?.name}</p>
-        </div>
-      </Link>
       <ul className="my-5 flex flex-col gap-2 px-10 h-[50vh] overflow-y-auto scroll-smooth">
-        <Link to="/dashboard/teacher-profile">
-          <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer">
-            Profile
+        <Link to="/dashboard/teacher-home">
+          <li className="hover:bg-gray-50 duration-300 p-2 rounded-md cursor-pointer flex items-center gap-5">
+            <PresentationChartIcon size={32} className="text-primary" />{" "}
+            Dashboard
           </li>
         </Link>
+        <Link to="/dashboard/teacher-profile">
+          <li className="hover:bg-gray-50 duration-300 p-2 rounded-md cursor-pointer flex items-center gap-5">
+            <UserIcon size={32} className="text-primary" /> Profile
+          </li>
+        </Link>
+
         <Link to="/dashboard/student-review">
-          <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer flex items-center gap-5">
-            <img className="w-6" src={course} alt="" /> Students Review
+          <li className="hover:bg-gray-50 duration-300 p-2 rounded-md cursor-pointer flex items-center gap-5">
+            <PencilSimpleLineIcon size={32} className="text-primary" /> Students
+            Review
           </li>
         </Link>
         <Link to="/dashboard/assignments">
-          <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer flex items-center gap-5">
-            <img className="w-6" src={skill} alt="" /> Assignments
+          <li className="hover:bg-gray-50 duration-300 p-2 rounded-md cursor-pointer flex items-center gap-5">
+            <ArticleIcon size={32} className="text-primary" /> Assignments
           </li>
         </Link>
         <Link to="/dashboard/resources">
-          <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer flex items-center gap-5">
-            <img className="w-6" src={cart} alt="" /> Resourses
+          <li className="hover:bg-gray-50 duration-300 p-2 rounded-md cursor-pointer flex items-center gap-5">
+            <NotebookIcon size={32} className="text-primary" /> Resourses
           </li>
         </Link>
         <Link to="/dashboard/support">
-          <li className="hover:bg-slate-200 duration-500 p-2 rounded-md cursor-pointer flex items-center gap-5">
-            <img className="w-6" src={order} alt="" /> Support
+          <li className="hover:bg-gray-50 duration-300 p-2 rounded-md cursor-pointer flex items-center gap-5">
+            <HeadsetIcon size={32} className="text-primary" /> Support
           </li>
         </Link>
       </ul>
