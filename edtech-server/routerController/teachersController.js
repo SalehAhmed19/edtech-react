@@ -9,8 +9,8 @@ module.exports = (teachersCollection, studentsCollection, usersCollection) => {
     const email = teacher.email;
     const query = { email: email };
 
-    const existingTecaher = await teachersCollection.findOne(query);
-    if (existingTecaher) return; // user exists, do nothing
+    const existingTeacher = await teachersCollection.findOne(query);
+    if (existingTeacher) return; // user exists, do nothing
 
     const updateRole = {
       $set: {
@@ -35,6 +35,23 @@ module.exports = (teachersCollection, studentsCollection, usersCollection) => {
     // console.log(teacher);
 
     res.send(teacher);
+  });
+
+  router.patch("/update-teacher-details", async (req, res) => {
+    const email = req.query.email;
+    const updateDetails = req.body;
+    const query = { email: email };
+    const updatedDoc = {
+      $set: updateDetails,
+    };
+
+    // const options = {
+    //   upsert: true, // Set to true to enable the "update or insert" behavior
+    // };
+
+    const result = await teachersCollection.updateOne(query, updatedDoc);
+    console.log(result);
+    res.send(result);
   });
 
   return router;
