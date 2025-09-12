@@ -35,7 +35,7 @@ export default function Courses() {
       <ScrollToTop
         smooth
         style={{
-          backgroundColor: "#333",
+          backgroundColor: "#CE2823",
           borderRadius: "100px",
           display: "flex",
           justifyContent: "center",

@@ -102,6 +102,15 @@ const Calendar = () => {
     calendarDays.push(day);
   }
 
+  const events = {
+    courseName: "Introduction to Python",
+    startDate: "10 Aug 2025",
+    endDate: "25 Aug 2025",
+  };
+  const start = events.startDate.split(" ")[0];
+  const end = events.endDate.split(" ")[0];
+  console.log(calendarDays);
+
   return (
     <div className="bg-white rounded-xl border border-gray-200 p-6 sm:p-8">
       {/* Calendar Header: Month, Year, and Navigation */}
