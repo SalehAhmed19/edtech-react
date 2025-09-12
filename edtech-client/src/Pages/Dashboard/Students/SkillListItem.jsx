@@ -12,10 +12,10 @@ export default function SkillListItem({ skill, idx }) {
           </span>
           <div className="flex gap-2 items-center">
             <button className="p-3 bg-slate-100 rounded-full">
-              <PenIcon size={32} />
+              <PenIcon size={22} />
             </button>
             <button className="p-3 bg-primary text-white rounded-full">
-              <TrashIcon size={32} />
+              <TrashIcon size={22} />
             </button>
           </div>
         </div>

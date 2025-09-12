@@ -154,7 +154,8 @@ export default function SmoothTabs() {
     <div className="flex items-center justify-center mt-10">
       <div className="w-full bg-white">
         {/* Tab Headers with Horizontal Scroll */}
-        <div className="flex overflow-x-auto whitespace-nowrap space-x-2 sm:space-x-4 mb-6 pb-2">
+        {/* <div className="flex overflow-x-auto whitespace-nowrap space-x-2 sm:space-x-4 mb-6 pb-2"> */}
+        <div className="flex flex-wrap gap-2 whitespace-nowrap w-full mb-6 pb-2">
           {tabs.map((tab) => (
             <button
               key={tab.tab}

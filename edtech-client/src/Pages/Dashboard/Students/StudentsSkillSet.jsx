@@ -11,7 +11,7 @@ import { Fade } from "react-awesome-reveal";
 
 export default function StudentsSkillSet() {
   const { skills, isLoading } = useGetSkills();
-  // console.log(skills);
+  console.log(skills[0]);
 
   if (isLoading) {
     return (
@@ -21,15 +21,15 @@ export default function StudentsSkillSet() {
     );
   }
 
-  if (skills?.length > 0) {
+  if (skills[0]?.skills.length > 0) {
     return (
       <div className="flex flex-col gap-10">
         <Fade direction="up" cascade={true} duration={800}>
           <h2 className="text-[45px] font-bold text-primary">Skills</h2>
         </Fade>
-        <section className="h-[55vh] overflow-y-scroll">
-          <ul className="flex flex-col gap-5 max-h-[75vh] overflow-y-scroll">
-            {skills?.map((skill, idx) => (
+        <section className="h-[42vh] overflow-y-scroll">
+          <ul className="flex flex-col gap-5">
+            {skills[0]?.skills.map((skill, idx) => (
               <SkillListItem skill={skill} idx={idx} key={idx} />
             ))}
           </ul>

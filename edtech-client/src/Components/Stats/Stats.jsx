@@ -36,7 +36,7 @@ export default function Stats() {
     },
   ];
   return (
-    <div className="grid grid-cols-4 gap-5 my-20 py-5">
+    <div className="grid grid-cols-4 gap-5 my-20 py-5 bg-white">
       {data.map((d) => (
         <Zoom cascade={true} duration={800}>
           <div key={d} className="flex items-center justify-center gap-5 p-5">

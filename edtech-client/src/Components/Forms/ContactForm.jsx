@@ -60,7 +60,7 @@ export default function ContactForm() {
         />
       </div>
 
-      <button className="bg-[#333] px-5 py-3 rounded-md text-white cursor-pointer">
+      <button className="bg-primary px-5 py-3 rounded-full text-white cursor-pointer">
         Send Message
       </button>
     </form>

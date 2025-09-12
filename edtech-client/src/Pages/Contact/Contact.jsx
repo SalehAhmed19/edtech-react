@@ -10,7 +10,7 @@ import FeaturedTwo from "../../Components/FeaturedTwo/FeaturedTwo";
 import NewsLetter from "../../Components/NewsLetter/NewsLetter";
 import ContactSection from "../../Components/ContactSection/ContactSection";
 import ContactForm from "../../Components/Forms/ContactForm";
-import { Fade } from "react-awesome-reveal";
+import { Fade, Zoom } from "react-awesome-reveal";
 import {
   AtIcon,
   FacebookLogoIcon,
@@ -24,12 +24,14 @@ export default function Contact() {
   return (
     <>
       <div className="grid grid-cols-2 gap-5 h-96">
-        <div>
-          <img
-            src="https://static.vecteezy.com/system/resources/thumbnails/000/640/076/small_2x/Black_on_white_dotted_world_map_vector.jpg"
-            alt=""
-          />
-        </div>
+        <Zoom cascade={true} duration={800}>
+          <div>
+            <img
+              src="https://static.vecteezy.com/system/resources/thumbnails/000/640/076/small_2x/Black_on_white_dotted_world_map_vector.jpg"
+              alt=""
+            />
+          </div>
+        </Zoom>
         <div className="pr-20 text-right place-content-center">
           <Fade direction="up" cascade={true} duration={800}>
             <h2 className="text-[45px] font-bold text-center">
@@ -43,7 +45,7 @@ export default function Contact() {
       </div>
 
       <div className="md:max-w-[920px] lg:max-w-[1280px] mx-auto flex flex-col gap-20">
-        <Fade direction="up" cascade={true} duration={800}>
+        <Fade direction="down" cascade={true} duration={800}>
           <div className="grid grid-cols-2">
             <div className="bg-gray-50 p-10 rounded-l-xl">
               <h3 className="text-2xl font-bold mb-5 text-primary">

@@ -24,7 +24,7 @@ export default function Courses() {
       </Fade>
 
       <div className="flex flex-col gap-20">
-        <Fade direction="up" cascade={true} duration={800}>
+        <Fade direction="down" cascade={true} duration={800}>
           <SmoothTabs />
         </Fade>
         <PopularCourses />

@@ -9,6 +9,12 @@ import useGetCarts from "../../../Hooks/Students/useGetCarts";
 
 import { Fade } from "react-awesome-reveal";
 import VerticalCard from "../../../Components/UI/OrderHistoryCard/OrderHistoryCard";
+import DashboardPlaceholder from "../../../Components/UI/DashboardHomeCourseCard/DashboardPlaceholder";
+import {
+  ArrowBendDownRightIcon,
+  ClockCounterClockwiseIcon,
+  PlusIcon,
+} from "@phosphor-icons/react";
 
 export default function OrderHistory() {
   const { isLoading, orders } = useGetOrders();
@@ -25,27 +31,22 @@ export default function OrderHistory() {
   if (!orders || orders.length === 0) {
     return (
       <div className="flex flex-col justify-center gap-10">
-        <DashboardSectionTitle title={"My Orders"} />
-
-        <div className="border border-dashed border-slate-300 p-5 rounded-md text-center place-content-center py-20">
-          <img src={order} alt="" className="mx-auto my-2 w-20" />
-          <SectionTitle title={"You haven't placed any orders yet :("} />
-
-          <p>Make some order</p>
-          {carts.length > 0 ? (
-            <Link to="/dashboard/carts">
-              <button className="text-white bg-[#333] px-5 py-2 rounded-md mt-5">
-                Go to Carts
-              </button>
-            </Link>
-          ) : (
-            <Link to="/courses">
-              <button className="text-white bg-[#333] px-5 py-2 rounded-md mt-5">
-                Explore Courses
-              </button>
-            </Link>
-          )}
-        </div>
+        <Fade direction="up" cascade={true} duration={800}>
+          <h2 className="text-[45px] font-bold text-primary">Order History</h2>
+        </Fade>
+        <DashboardPlaceholder
+          element={
+            <ClockCounterClockwiseIcon
+              size={52}
+              className="mx-auto text-primary"
+            />
+          }
+          icon={<ArrowBendDownRightIcon size={32} />}
+          title={"You haven't purchase any course :("}
+          subtitle={"Enroll now for gain your skill"}
+          btn={"Enroll Now"}
+          link={"/courses"}
+        />
         <HelpBanner />
       </div>
     );

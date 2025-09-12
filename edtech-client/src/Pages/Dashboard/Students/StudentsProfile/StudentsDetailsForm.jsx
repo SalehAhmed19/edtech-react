@@ -72,7 +72,7 @@ export default function StudentsDetailsForm() {
             Gender
           </option>
           <option value="Male">Male</option>
-          <option value="Femal">Male</option>
+          <option value="Female">Female</option>
         </select>
       </div>
 

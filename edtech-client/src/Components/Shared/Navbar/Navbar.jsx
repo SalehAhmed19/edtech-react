@@ -13,6 +13,7 @@ import {
   PresentationChartIcon,
   SignInIcon,
   SignOutIcon,
+  UserGearIcon,
 } from "@phosphor-icons/react";
 
 export default function Navbar() {
@@ -43,9 +44,11 @@ export default function Navbar() {
           </Link>
           <div>
             <ul className="flex items-center gap-5">
-              <li className="hover:bg-[#CE2823] hover:shadow-lg hover:text-white duration-300 px-5 py-2 rounded-full cursor-pointer">
-                <Link to="/courses">Courses</Link>
-              </li>
+              <Link to="/courses">
+                <li className="hover:bg-[#CE2823] hover:shadow-lg hover:text-white duration-300 px-5 py-2 rounded-full cursor-pointer">
+                  Courses
+                </li>
+              </Link>
 
               <Link to="/contact">
                 <li className="hover:bg-[#CE2823] hover:shadow-lg hover:text-white duration-300 px-5 py-2 rounded-full cursor-pointer">
@@ -54,18 +57,20 @@ export default function Navbar() {
               </Link>
               {user && (
                 <>
-                  <li
-                    className={`font-semibold hover:bg-[#CE2823] hover:shadow-lg hover:text-white duration-300 px-5 py-2 rounded-full cursor-pointer ${
-                      teacher && "hidden"
-                    }`}
-                  >
-                    <Link to="/become-instructor/">Become Instructor</Link>
-                  </li>
+                  <Link to="/become-instructor/">
+                    <li
+                      className={`font-semibold hover:bg-[#CE2823] hover:shadow-lg hover:text-white duration-300 px-5 py-2 rounded-full cursor-pointer ${
+                        teacher && "hidden"
+                      }`}
+                    >
+                      Become Instructor
+                    </li>
+                  </Link>
 
                   {singleUser.role === "student" && (
                     <Link to="/dashboard/student-home">
-                      <li className="font-semibold hover:bg-[#CE2823] hover:shadow-lg hover:text-white duration-300 px-5 py-2 rounded-full cursor-pointer flex items-center gap-2">
-                        <PresentationChartIcon size={32} />
+                      <li className="font-semibold bg-[#CE2823] hover:shadow-lg text-white duration-300 px-5 py-2 rounded-full cursor-pointer flex items-center gap-2">
+                        <UserGearIcon size={32} />
                         Dashboard
                       </li>
                     </Link>
@@ -73,7 +78,7 @@ export default function Navbar() {
                   {singleUser.role === "teacher" && (
                     <Link to="/dashboard/teacher-home">
                       <li className="bg-[#CE2823] text-white font-semibold hover:bg-white hover:text-[#1e1e1e] hover:border border-gray-200 duration-300 px-5 py-2 rounded-full cursor-pointer flex items-center gap-2">
-                        <PresentationChartIcon size={32} /> Dashboard
+                        <UserGearIcon size={32} /> Dashboard
                       </li>
                     </Link>
                   )}

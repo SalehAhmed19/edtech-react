@@ -1,11 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
-import profile from "../../../assets/images/user.png";
-import course from "../../../assets/images/online-learning.png";
-import cart from "../../../assets/images/shopping-cart.png";
-import order from "../../../assets/images/order-now.png";
-import skill from "../../../assets/images/skills.png";
-import certificate from "../../../assets/images/certificate.png";
+
 import {
   BasketIcon,
   BooksIcon,
@@ -98,12 +93,10 @@ export default function studentNavigation() {
             <ClockCounterClockwiseIcon size={32} className="text-primary" />{" "}
             Order History
             <span
-              className={`bg-primary h-5 w-5 p-3 flex justify-center items-center text-white rounded-full text-sm ${
+              className={`bg-primary p-1 flex justify-center items-center text-white rounded-full text-sm ${
                 !orders?.length && "hidden"
               }`}
-            >
-              {orders?.length}
-            </span>
+            ></span>
           </li>
         </Link>
         <Link to="/dashboard/certificates">

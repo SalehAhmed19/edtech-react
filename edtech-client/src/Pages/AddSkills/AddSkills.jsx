@@ -21,10 +21,14 @@ export default function AddSkills() {
     // console.log(data);
     const skill = {
       email: user.email,
-      name: data.skill,
-      experience: data.experience,
-      project: data.projectUrl,
-      gitHub: data.gitHub,
+      skills: [
+        {
+          name: data.skill,
+          experience: data.experience,
+          project: data.projectUrl,
+          gitHub: data.gitHub,
+        },
+      ],
     };
     dispatch(addSkills({ skill, axiosPublic }));
     toast.success("Skills Added!");
