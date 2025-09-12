@@ -35,7 +35,7 @@ module.exports = (
     const carts = req.body.carts;
 
     const newItems = carts.map((cart) => cart);
-    console.log(newItems);
+    // console.log(newItems);
     const isExist = ordersCollection.findOne(query);
 
     const updatedCart = {

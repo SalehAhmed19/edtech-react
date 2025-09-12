@@ -10,7 +10,6 @@ import useGetAllUsers from "../../../Hooks/Users/useGetAllUsers";
 import {
   AtIcon,
   PhoneCallIcon,
-  PresentationChartIcon,
   SignInIcon,
   SignOutIcon,
   UserGearIcon,
@@ -18,10 +17,7 @@ import {
 
 export default function Navbar() {
   const { handleSignOut, user } = useFirebaseAuthenticationHooks();
-  const { singleUser } = useGetAllUsers();
-  const { isLoading, teacher } = useGetTeacher();
-  // console.log({ teacher: teacher });
-  // console.log({ singleUser });
+  const { singleUser, isLoading } = useGetAllUsers();
 
   if (isLoading) {
     <div className="h-[80vh] flex justify-center items-center">
@@ -29,8 +25,8 @@ export default function Navbar() {
     </div>;
   }
 
-  // console.log(teachers.role);
-  // console.log(students.role);
+  // // console.log(teachers.role);
+  // // console.log(students.role);
 
   return (
     <div className="sticky top-0 z-50">
@@ -60,25 +56,26 @@ export default function Navbar() {
                   <Link to="/become-instructor/">
                     <li
                       className={`font-semibold hover:bg-[#CE2823] hover:shadow-lg hover:text-white duration-300 px-5 py-2 rounded-full cursor-pointer ${
-                        teacher && "hidden"
+                        singleUser?.role === "teacher" && "hidden"
                       }`}
                     >
                       Become Instructor
                     </li>
                   </Link>
 
-                  {singleUser.role === "student" && (
+                  {singleUser?.role === "student" && (
                     <Link to="/dashboard/student-home">
                       <li className="font-semibold bg-[#CE2823] hover:shadow-lg text-white duration-300 px-5 py-2 rounded-full cursor-pointer flex items-center gap-2">
                         <UserGearIcon size={32} />
-                        Dashboard
+                        Student Dashboard
                       </li>
                     </Link>
                   )}
-                  {singleUser.role === "teacher" && (
+                  {singleUser?.role === "teacher" && (
                     <Link to="/dashboard/teacher-home">
-                      <li className="bg-[#CE2823] text-white font-semibold hover:bg-white hover:text-[#1e1e1e] hover:border border-gray-200 duration-300 px-5 py-2 rounded-full cursor-pointer flex items-center gap-2">
-                        <UserGearIcon size={32} /> Dashboard
+                      <li className="font-semibold bg-[#CE2823] hover:shadow-lg text-white duration-300 px-5 py-2 rounded-full cursor-pointer flex items-center gap-2">
+                        <UserGearIcon size={32} />
+                        Teacher Dashboard
                       </li>
                     </Link>
                   )}

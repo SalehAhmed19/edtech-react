@@ -15,7 +15,7 @@ export default function useAxiosPublic() {
     function (config) {
       const token = localStorage.getItem("access-token-secret");
 
-      console.log("Interceptors", token);
+      // console.log("Interceptors", token);
       config.headers.authorization = `Bearer ${token}`;
       return config;
     },
@@ -29,7 +29,7 @@ export default function useAxiosPublic() {
       return response;
     },
     async function (error) {
-      console.log({ error: error.response.status });
+      // console.log({ error: error.response.status });
       const status = error.response?.status;
       if (status === 401 || status === 403) {
         await signOut();

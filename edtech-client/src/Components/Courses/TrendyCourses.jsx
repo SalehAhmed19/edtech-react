@@ -10,12 +10,12 @@ import { Fade, Zoom } from "react-awesome-reveal";
 export default function TrendyCourses() {
   const { courses } = useGetCourses();
   const [show, setShow] = useState(4);
-  // console.log(courses.length);
+  // // console.log(courses.length);
   const trendingCourses = courses.filter(
     (course) => course.coursesPopularityStatus === "Trending"
   );
 
-  // console.log(trendingCourses);
+  // // console.log(trendingCourses);
 
   return (
     <div>

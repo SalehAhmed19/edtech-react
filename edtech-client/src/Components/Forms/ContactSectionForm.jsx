@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 export default function ContactSectionForm() {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    // console.log(data);
+    // // console.log(data);
     toast.success("Message sent!");
     reset();
   };

@@ -6,11 +6,14 @@ import useGetOrders from "../../../Hooks/Students/useGetOrders";
 
 import { Fade } from "react-awesome-reveal";
 import DashboardHomeCourseCard from "../../../Components/UI/DashboardHomeCourseCard/DashboardHomeCourseCard";
+import useEnrolledCourses from "../../../Hooks/Students/useEnrolledCourses";
 
 export default function StudentsHome() {
-  const { orders } = useGetOrders();
+  // const { orders } = useGetOrders();
+  const { enrolled } = useEnrolledCourses();
+  const enrolledCourses = enrolled[0]?.carts;
 
-  console.log(orders.map((order) => console.log(order.carts)));
+  // // console.log(enrolledCourses?.map((order) => // console.log(order.carts)));
   return (
     <div className="grid grid-cols-2 place-content-center gap-5">
       <div className="flex flex-col gap-10">
@@ -19,23 +22,25 @@ export default function StudentsHome() {
             <span className="text-primary">Dashboard</span>
           </h2>
         </Fade>
-
-        {order.length > 0 && (
+        {enrolledCourses?.length > 0 && (
           <div>
             <h4 className="font-bold text-xl mb-5">
               <span className="text-primary">Enrolled</span> Courses
             </h4>
-            <div className="overflow-y-scroll h-[65vh]">
+            <div className="overflow-y-scroll h-[30vh]">
               <div className="grid grid-cols-3 gap-5">
-                {orders.map((order) =>
-                  order.carts.map((cart, idx) => (
-                    <DashboardHomeCourseCard key={idx} cart={cart} />
-                  ))
-                )}
+                {enrolledCourses.map((cart, idx) => (
+                  <DashboardHomeCourseCard key={idx} cart={cart} />
+                ))}
               </div>
             </div>
           </div>
         )}
+        <ul>
+          <li>Marks</li>
+          <li>Assignment Submitted</li>
+          <li>Class Attendence</li>
+        </ul>
       </div>
 
       <div className="grid grid-cols-2 gap-5 mt-5">

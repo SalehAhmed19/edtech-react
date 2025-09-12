@@ -10,14 +10,14 @@ module.exports = (skillsCollection) => {
     const query = { email: email };
     const isExist = skillsCollection.findOne(query);
     // console.log(skills);
-    console.log(skills);
+    // console.log(skills);
     const newSkill = {
       name: skills.skills[0].name,
       experience: skills.skills[0].experience,
       project: skills.skills[0].project,
       gitHub: skills.skills[0].gitHub,
     };
-    console.log(newSkill);
+    // console.log(newSkill);
     const updatedSkills = {
       $push: {
         skills: newSkill,

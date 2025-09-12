@@ -22,7 +22,7 @@ const CartsTable = ({ headers, data, className = "", handleDelete }) => {
     return <p className="text-gray-500">No data to display in the table.</p>;
   }
 
-  console.log(data);
+  // console.log(data);
   return (
     <div
       className={`overflow-x-auto bg-white rounded-lg border border-dashed border-slate-300 ${className} overflow-y-scroll h-[70vh]`}

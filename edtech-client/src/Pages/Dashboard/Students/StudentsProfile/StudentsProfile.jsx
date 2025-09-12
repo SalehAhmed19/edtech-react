@@ -12,11 +12,13 @@ import StudentsDetailsForm from "./StudentsDetailsForm";
 
 export default function StudentsProfile() {
   const { singleUser } = useGetAllUsers();
+  console.log({ singleUser });
 
   return (
     <>
       <div className="grid grid-cols-2 gap-10">
-        {singleUser.role === "student" && <StudentsDetails />}
+        {singleUser?.role === "student" && <StudentsDetails />}
+        {singleUser?.role === "teacher" && "Hi"}
         {/* <DividerTwo text={"Update Information"} /> */}
         <div className="p-5 bg-gray-50 rounded-xl">
           <StudentsDetailsForm />

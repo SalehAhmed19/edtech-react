@@ -34,8 +34,8 @@ export default function CourseFee({ course }) {
 
       if (carts.length < 1) {
         const result = await dispatch(addToCart({ courseItem, axiosPublic }));
-        // console.log(result);
-        console.log({ result });
+        // // console.log(result);
+        // console.log({ result });
         if (result.payload.insertedId) {
           navigate("/dashboard/payments/stripe");
           toast.success("Added to cart!");
@@ -48,7 +48,7 @@ export default function CourseFee({ course }) {
     }
   };
 
-  // console.log(course);
+  // // console.log(course);
   return (
     <div className="bg-gray-50 p-5 w-1/2 h-[150px] rounded-md place-items-center ml-auto">
       <h5 className="text-2xl">

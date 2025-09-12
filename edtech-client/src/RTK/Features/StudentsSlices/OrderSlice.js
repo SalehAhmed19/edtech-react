@@ -34,7 +34,7 @@ const OrderSlice = createSlice({
     builder.addCase(getOrders.rejected, (state, action) => {
       state.isLoading = true;
       state.isError = true;
-      console.log(action.payload);
+      // console.log(action.payload);
     });
   },
 });

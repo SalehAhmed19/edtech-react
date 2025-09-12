@@ -7,23 +7,34 @@ import { updateStudentDetails } from "../../../../RTK/Features/UsersSlice/Studen
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../../firebase/firebase.config";
 import useAxiosPublic from "../../../../Hooks/Axios/useAxiosPublic";
+import useGetStudent from "../../../../Hooks/Users/useGetStudent";
 
 export default function StudentsDetailsForm() {
   const axiosPublic = useAxiosPublic();
   const { register, handleSubmit, reset } = useForm();
+  const { student } = useGetStudent();
   const [user] = useAuthState(auth);
   const email = user?.email;
   const dispatch = useDispatch();
+  // console.log(student);
 
   const [imagePreview, setImagePreview] = useState(null);
 
   const onSubmit = async (data) => {
-    console.log(data);
     const response = await dispatch(
-      updateStudentDetails({ email: email, updatedDetails: data, axiosPublic })
+      updateStudentDetails({
+        email: email,
+        updatedDetails: {
+          ...data,
+          name: student.name,
+          email: student.email,
+          studentId: student.studentId,
+        },
+        axiosPublic,
+      })
     );
 
-    console.log(data.photo[0]);
+    // console.log(data.photo[0]);
 
     if (response) {
       toast.success("Profile updated!");

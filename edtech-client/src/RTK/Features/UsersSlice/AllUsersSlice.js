@@ -18,7 +18,7 @@ export const getAllUsers = createAsyncThunk(
 
       return response.data;
     } catch (err) {
-      return console.log(err);
+      return; // console.log(err);
     }
   }
 );
@@ -26,7 +26,7 @@ export const getAllUsers = createAsyncThunk(
 export const getUser = createAsyncThunk(
   "getUser",
   async ({ email, axiosPublic }, { rejectWithValue }) => {
-    // console.log(email);
+    // // console.log(email);
     try {
       const response = await axiosPublic.get(
         // `https://edtech-react.vercel.app/api/users/single-user?email=${email}`
@@ -56,7 +56,7 @@ const AllUsersSlice = createSlice({
     builder.addCase(getAllUsers.rejected, (state, action) => {
       state.isLoading = false;
       state.isError = true;
-      console.log(action.payload);
+      // console.log(action.payload);
     });
 
     // get student
@@ -64,13 +64,13 @@ const AllUsersSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(getUser.fulfilled, (state, action) => {
-      // console.log(action);
+      // // console.log(action);
       state.isLoading = false;
       state.singleUser = action.payload;
     });
     builder.addCase(getUser.rejected, (state, action) => {
       state.isLoading = false;
-      console.log(action.payload);
+      // console.log(action.payload);
     });
   },
 });

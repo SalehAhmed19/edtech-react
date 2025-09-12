@@ -7,7 +7,7 @@ export default function TeachersHome() {
 
   return (
     <div>
-      {singleUser.role === "teacher" && <TeacherDetails />}
+      {singleUser?.role === "teacher" && <TeacherDetails />}
       <DashboardSectionTitle />
     </div>
   );

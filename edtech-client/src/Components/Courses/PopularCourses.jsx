@@ -8,12 +8,12 @@ import { Fade, Zoom } from "react-awesome-reveal";
 export default function PopularCourses() {
   const { courses } = useGetCourses();
   const [show, setShow] = useState(4);
-  // console.log(courses.length);
+  // // console.log(courses.length);
   const popularCourses = courses.filter(
     (course) => course.coursesPopularityStatus === "Popular"
   );
 
-  // console.log(popularCourses);
+  // // console.log(popularCourses);
 
   return (
     <div>

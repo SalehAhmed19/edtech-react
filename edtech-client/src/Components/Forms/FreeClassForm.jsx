@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 export default function FreeClassForm() {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    // console.log(data);
+    // // console.log(data);
     toast.success("Free class request submitted! You'll notify by email.");
     reset();
   };

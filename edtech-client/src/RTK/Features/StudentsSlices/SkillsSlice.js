@@ -15,7 +15,7 @@ export const addSkills = createAsyncThunk(
         "/skills/post-skills",
         skill
       );
-      // console.log(response.data);
+      // // console.log(response.data);
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message);
@@ -26,14 +26,14 @@ export const addSkills = createAsyncThunk(
 export const getSkills = createAsyncThunk(
   "getSkills",
   async ({ email, axiosPublic }, { rejectWithValue }) => {
-    // console.log(email);
+    // // console.log(email);
     try {
       const response = await axiosPublic.get(
         // `https://edtech-react.vercel.app/api/skills?email=${email}`
         `/skills?email=${email}`
       );
 
-      // console.log(response.data);
+      // // console.log(response.data);
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message);
@@ -51,14 +51,14 @@ const SkillsSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(addSkills.fulfilled, (state, action) => {
-      console.log(action);
+      // console.log(action);
       state.isLoading = false;
       state.skills.push(action.payload);
     });
     builder.addCase(addSkills.rejected, (state, action) => {
       state.isLoading = true;
       state.isError = true;
-      console.log(action.payload);
+      // console.log(action.payload);
     });
 
     // get
@@ -72,7 +72,7 @@ const SkillsSlice = createSlice({
     builder.addCase(getSkills.rejected, (state, action) => {
       state.isLoading = true;
       state.isError = true;
-      console.log(action.payload);
+      // console.log(action.payload);
     });
   },
 });

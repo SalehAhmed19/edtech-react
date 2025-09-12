@@ -10,12 +10,12 @@ const PaymentCard = () => {
     .split("/")[2]
     .split("");
   const month = new Date().toLocaleString().split(",")[0].split("/")[1];
-  // console.log(month);
+  // // console.log(month);
 
   const validYear = date[2] + date[3];
-  // console.log(validYear);
+  // // console.log(validYear);
 
-  // console.log(date);
+  // // console.log(date);
   return (
     <StyledWrapper>
       <div className="flip-card cursor-pointer">

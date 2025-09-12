@@ -30,10 +30,10 @@ export default function Carts() {
     if (response?.payload?.deletedCount > 0) {
       toast.success("Delete items!");
     }
-    // console.log({ id, response });
+    // // console.log({ id, response });
   };
 
-  // console.log(carts);
+  // // console.log(carts);
   if (isLoading) {
     return (
       <div className="h-[80vh] flex justify-center items-center">
@@ -62,7 +62,7 @@ export default function Carts() {
       </div>
     );
   }
-  // console.log(carts);
+  // // console.log(carts);
 
   return (
     <>

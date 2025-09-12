@@ -11,12 +11,13 @@ const initialState = {
 // add users
 export const postStudent = createAsyncThunk(
   "users",
-  async ({ data, axiosPublic }, { rejectWithValue }) => {
+  async ({ userInfo, axiosPublic }, { rejectWithValue }) => {
+    // console.log({ userInfo });
     try {
       const response = await axiosPublic.post(
         // "https://edtech-react.vercel.app/api/students/post-student",
-        "/post-student",
-        data
+        "/students/post-student",
+        userInfo
       );
 
       return response.data;
@@ -38,7 +39,7 @@ export const getAllStudents = createAsyncThunk(
 
       return response.data;
     } catch (err) {
-      return console.log(err);
+      return; // console.log(err);
     }
   }
 );
@@ -69,7 +70,7 @@ export const updateStudentDetails = createAsyncThunk(
         updatedDetails
       );
 
-      console.log(response.data);
+      // console.log(response.data);
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message);
@@ -87,12 +88,12 @@ const StudentSlice = createSlice({
     });
     builder.addCase(postStudent.fulfilled, (state, action) => {
       state.isLoading = false;
-      console.log(action);
+      // console.log(action);
       state.students.push(action.meta.arg);
     });
     builder.addCase(postStudent.rejected, (state) => {
       state.isLoading = true;
-      // console.log(action.payload);
+      // // console.log(action.payload);
     });
 
     builder.addCase(getStudent.pending, (state) => {
@@ -105,7 +106,7 @@ const StudentSlice = createSlice({
     });
     builder.addCase(getStudent.rejected, (state, action) => {
       state.isError = true;
-      console.log(action.payload);
+      // console.log(action.payload);
     });
 
     // update student info
@@ -118,7 +119,7 @@ const StudentSlice = createSlice({
     });
     builder.addCase(updateStudentDetails.rejected, (state, action) => {
       state.isError = true;
-      console.log(action.payload);
+      // console.log(action.payload);
     });
   },
 });

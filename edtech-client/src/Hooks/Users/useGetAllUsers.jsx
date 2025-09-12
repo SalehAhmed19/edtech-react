@@ -22,6 +22,5 @@ export default function useGetAllUsers() {
     (state) => state.AllUsersSlice
   );
 
-  // console.log(singleUser);
   return { isLoading, users, singleUser: singleUser };
 }

@@ -52,7 +52,7 @@ export default function OrderHistory() {
     );
   }
 
-  // console.log(orders);
+  // // console.log(orders);
   return (
     <div className="flex flex-col gap-10">
       <Fade direction="up" cascade={true} duration={800}>

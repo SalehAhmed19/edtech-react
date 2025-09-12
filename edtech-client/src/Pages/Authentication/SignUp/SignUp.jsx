@@ -53,7 +53,7 @@ export default function SignUp() {
               />
 
               <button className="bg-primary px-5 py-3 rounded-full text-white font-semibold cursor-pointer">
-                Sign in
+                Sign up
               </button>
             </form>
 

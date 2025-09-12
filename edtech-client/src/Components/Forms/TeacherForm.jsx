@@ -34,12 +34,12 @@ export default function TeacherForm() {
       role: data.role,
     };
 
-    console.log(teacher);
+    // console.log(teacher);
     const response = await dispatch(postTeacher({ teacher, axiosPublic }));
     if (response) {
       await dispatch(getTeacher({ email, axiosPublic }));
     }
-    console.log({ response });
+    // console.log({ response });
     navigate("/");
     toast.success("You're teacher now!");
     reset();
@@ -60,7 +60,7 @@ export default function TeacherForm() {
           {...register("name")}
           type="text"
           placeholder="Your Name"
-          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2"
+          className="border border-gray-200 w-full rounded-full px-5 py-3 mt-2"
         />
       </div>
       {/*  */}
@@ -70,7 +70,7 @@ export default function TeacherForm() {
           {...register("phone")}
           type="phone"
           placeholder="Your Phone"
-          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2"
+          className="border border-gray-200 w-full rounded-full px-5 py-3 mt-2"
         />
       </div>
       {/*  */}
@@ -81,7 +81,7 @@ export default function TeacherForm() {
           {...register("address")}
           type="address"
           placeholder="Your Address"
-          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2"
+          className="border border-gray-200 w-full rounded-full px-5 py-3 mt-2"
         />
       </div>
       {/*  */}
@@ -92,7 +92,7 @@ export default function TeacherForm() {
             {...register("city")}
             type="address"
             placeholder="City"
-            className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2"
+            className="border border-gray-200 w-full rounded-full px-5 py-3 mt-2"
           />
         </div>
         {/*  */}
@@ -102,7 +102,7 @@ export default function TeacherForm() {
             {...register("postal")}
             type="address"
             placeholder="Postal Code (Ex: 5840)"
-            className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2"
+            className="border border-gray-200 w-full rounded-full px-5 py-3 mt-2"
           />
         </div>
       </div>
@@ -118,7 +118,7 @@ export default function TeacherForm() {
           {...register("resume")}
           type="address"
           placeholder="Drive Link (Ex: https://drive.google.com/file/d/FILE_ID/view)"
-          className="border border-slate-300 border-dashed w-full rounded-md px-5 py-2 mt-2"
+          className="border border-gray-200 w-full rounded-full px-5 py-3 mt-2"
         />
       </div>
       <input
@@ -128,7 +128,7 @@ export default function TeacherForm() {
         className="hidden"
       />
 
-      <button className="bg-[#333] px-5 py-2 rounded-md text-white">
+      <button className="bg-primary px-5 py-3 rounded-full text-white">
         Submit
       </button>
     </form>

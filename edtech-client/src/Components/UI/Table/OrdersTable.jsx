@@ -23,7 +23,7 @@ const OrdersTable = ({ headers, data, className = "" }) => {
     return <p className="text-gray-500">No data to display in the table.</p>;
   }
 
-  console.log(data);
+  // console.log(data);
   return (
     <div className="flex flex-col gap-5">
       <div

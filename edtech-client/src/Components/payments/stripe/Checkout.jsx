@@ -36,7 +36,7 @@ const CheckoutForm = () => {
 
   const onSubmit = async (data) => {
     // Block native form submission.
-    // console.log(data);
+    // // console.log(data);
 
     if (!stripe || !elements) {
       return;
@@ -54,9 +54,9 @@ const CheckoutForm = () => {
     });
 
     if (error) {
-      console.log("[error]", error);
+      // console.log("[error]", error);
     } else {
-      console.log("[PaymentMethod]", paymentMethod);
+      // console.log("[PaymentMethod]", paymentMethod);
     }
 
     // confirm payment
@@ -72,13 +72,13 @@ const CheckoutForm = () => {
       });
 
     if (confirmPaymentError) {
-      console.log({ confirmPaymentError });
+      // console.log({ confirmPaymentError });
     } else {
-      console.log({ paymentIntent });
+      // console.log({ paymentIntent });
       if (paymentIntent.status === "succeeded") {
-        console.log(paymentIntent);
+        // console.log(paymentIntent);
         const trxId = "EDTECH_" + paymentIntent.id.split("_")[1];
-        // console.log(trxId);
+        // // console.log(trxId);
         const payment = {
           name: singleUser?.name || "annonymous",
           email: singleUser?.email || "annonymous",

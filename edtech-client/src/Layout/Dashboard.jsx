@@ -10,13 +10,13 @@ import TeacherDetails from "../Pages/Dashboard/Teachers/TeacherProfile/TeacherDe
 
 export default function Dashboard() {
   const { singleUser } = useGetAllUsers();
-  // console.log(singleUser);
+  // console.log({ singleUser });
 
   return (
     <div className="grid grid-cols-5 gap-5">
       <div className="pt-10">
-        {singleUser.role === "student" && <StudentsNavigation />}
-        {singleUser.role === "teacher" && <TeachersNavigation />}
+        {singleUser?.role === "student" && <StudentsNavigation />}
+        {singleUser?.role === "teacher" && <TeachersNavigation />}
       </div>
 
       <div className="col-span-4 p-10">

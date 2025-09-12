@@ -54,7 +54,7 @@ module.exports = (studentsCollection, usersCollection) => {
     // };
 
     const result = await studentsCollection.updateOne(query, updatedDoc);
-    console.log(result);
+    // console.log(result);
     res.send(result);
   });
 

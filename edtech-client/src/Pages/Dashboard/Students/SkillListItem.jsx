@@ -2,7 +2,7 @@ import { PenIcon, TrashIcon } from "@phosphor-icons/react";
 import { FaGithub, FaLink, FaPen, FaTrash } from "react-icons/fa";
 
 export default function SkillListItem({ skill, idx }) {
-  // console.log(skill);
+  // // console.log(skill);
   return (
     <li className="bg-slate-50 rounded-md p-5">
       <div>

@@ -15,8 +15,8 @@ module.exports = (usersCollection) => {
     const email = req.query.email;
     const query = { email: email };
     const user = await usersCollection.findOne(query);
-    console.log(email);
-    console.log(user);
+    // console.log({ email });
+    // console.log({ user });
 
     res.send(user);
   });

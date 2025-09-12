@@ -58,7 +58,7 @@ const TeacherSlice = createSlice({
     builder.addCase(postTeacher.rejected, (state, action) => {
       state.isError = true;
       state.isLoading = true;
-      console.log(action.payload);
+      // console.log(action.payload);
     });
 
     // get teacher
@@ -72,7 +72,7 @@ const TeacherSlice = createSlice({
     builder.addCase(getTeacher.rejected, (state, action) => {
       state.isLoading = true;
       state.isError = true;
-      console.log(action.payload);
+      // console.log(action.payload);
     });
   },
 });

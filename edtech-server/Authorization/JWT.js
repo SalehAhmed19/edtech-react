@@ -1,12 +1,13 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const router = express.Router();
+const crypto = require("crypto");
 
 // Authorization: jwt
 router.post("/jwt", async (req, res) => {
   const user = req.body;
   // const payload = { email: user.email };
-  const token = jwt.sign(user, process.env.SECRET_TOKEN, {
+  const token = jwt.sign(user, process.env.SECRET_JWT, {
     expiresIn: "1h",
   });
   // // console.log(token);

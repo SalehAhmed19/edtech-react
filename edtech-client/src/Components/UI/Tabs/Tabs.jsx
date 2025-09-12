@@ -162,7 +162,7 @@ export default function SmoothTabs() {
               onClick={() => setActiveTab(tab.tab)}
               className={`
                 px-4 py-3 text-sm sm:text-base font-medium rounded-full
-                transition-all duration-300
+                transition-all duration-300 w-48
                 ${
                   activeTab === tab.tab
                     ? "bg-primary text-white shadow-md"

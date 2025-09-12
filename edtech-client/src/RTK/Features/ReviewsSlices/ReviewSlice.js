@@ -29,7 +29,7 @@ const ReviewsSlice = createSlice({
     });
     builder.addCase(getReviews.rejected, (state, action) => {
       state.isError = true;
-      console.log(action.payload);
+      // console.log(action.payload);
     });
   },
 });

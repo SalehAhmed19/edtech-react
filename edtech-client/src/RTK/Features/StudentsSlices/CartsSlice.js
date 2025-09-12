@@ -62,7 +62,7 @@ const CartsSlice = createSlice({
     });
     builder.addCase(addToCart.rejected, (state, action) => {
       state.isError = true;
-      console.log(action.payload);
+      // console.log(action.payload);
     });
 
     // get cart
@@ -79,12 +79,12 @@ const CartsSlice = createSlice({
         return (sum = sum + price);
       }, 0);
       const finalTotal = totalPrice.toFixed(2);
-      // console.log(totalPrice.toFixed(2));
+      // // console.log(totalPrice.toFixed(2));
       state.totalPrice = finalTotal;
     });
     builder.addCase(getCarts.rejected, (state, action) => {
       state.isError = true;
-      console.log(action.payload);
+      // console.log(action.payload);
     });
 
     // delete carts items
@@ -103,14 +103,14 @@ const CartsSlice = createSlice({
           return (sum = sum + price);
         }, 0);
         const finalTotal = totalPrice.toFixed(2);
-        // console.log(totalPrice.toFixed(2));
+        // // console.log(totalPrice.toFixed(2));
         state.totalPrice = finalTotal;
       }
-      // console.log(action.meta.arg.id);
+      // // console.log(action.meta.arg.id);
     });
     builder.addCase(deleteCartItem.rejected, (state, action) => {
       state.isError = true;
-      console.log(action.payload);
+      // console.log(action.payload);
     });
   },
 });

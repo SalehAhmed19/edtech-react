@@ -28,7 +28,7 @@ export default function FreeCourses() {
             <Zoom cascade={true} duration={800}>
               <CourseCard
                 key={course.courseId}
-                avatar={avatar}
+                avatar={course.courseBannerImage}
                 title={course.courseTitle}
                 lesson={course.lessionsNumber}
                 level={course.lessionLevel}

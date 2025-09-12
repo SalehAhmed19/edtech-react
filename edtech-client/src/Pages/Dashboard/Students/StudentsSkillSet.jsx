@@ -11,7 +11,7 @@ import { Fade } from "react-awesome-reveal";
 
 export default function StudentsSkillSet() {
   const { skills, isLoading } = useGetSkills();
-  console.log(skills[0]);
+  // console.log(skills[0]);
 
   if (isLoading) {
     return (

@@ -72,7 +72,7 @@ export default function studentNavigation() {
                 !skills?.length && "hidden"
               }`}
             >
-              {skills?.length}
+              {skills[0]?.skills?.length}
             </span>
           </li>
         </Link>
