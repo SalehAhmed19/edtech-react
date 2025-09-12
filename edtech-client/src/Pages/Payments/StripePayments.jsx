@@ -23,8 +23,11 @@ export default function StripePayments() {
     <>
       <div className="grid grid-cols-2 gap-5">
         <div>
-          {carts.map((course) => (
-            <div className="border border-gray-200 rounded-xl p-2 flex flex-col gap-5 mb-5">
+          {carts.map((course, idx) => (
+            <div
+              key={idx}
+              className="border border-gray-200 rounded-xl p-2 flex flex-col gap-5 mb-5"
+            >
               <img
                 src={course.image}
                 alt="course-thumbnail"

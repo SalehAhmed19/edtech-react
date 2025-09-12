@@ -8,10 +8,15 @@ import { Link, useNavigate } from "react-router-dom";
 import useAxiosPublic from "../../../Hooks/Axios/useAxiosPublic";
 import { BasketIcon, UserCircleCheckIcon } from "@phosphor-icons/react";
 import useGetCarts from "../../../Hooks/Students/useGetCarts";
+import useEnrolledCourses from "../../../Hooks/Students/useEnrolledCourses";
+import { useState } from "react";
 
 export default function CourseFee({ course }) {
   const [user] = useAuthState(auth);
   const { carts } = useGetCarts();
+  const { enrolled } = useEnrolledCourses();
+  console.log(enrolled[0]?.carts);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const axiosPublic = useAxiosPublic();
@@ -31,24 +36,26 @@ export default function CourseFee({ course }) {
         instructors: course.instructors,
         status: "Unpaid",
       };
-
+      console.log({ enrolled });
       if (carts.length < 1) {
-        const result = await dispatch(addToCart({ courseItem, axiosPublic }));
-        // // console.log(result);
-        // console.log({ result });
-        if (result.payload.insertedId) {
-          navigate("/dashboard/payments/stripe");
-          toast.success("Added to cart!");
+        if (!enrolled.length) {
+          const result = await dispatch(addToCart({ courseItem, axiosPublic }));
+
+          if (result.payload.insertedId) {
+            navigate("/dashboard/payments/stripe");
+            toast.success("Added to cart!");
+          }
+        } else {
+          toast.error(
+            carts.length > 0
+              ? "A Course is already added in your cart. Please pay to complete enrollment!"
+              : "Youv'e already enrolled a course!"
+          );
         }
-      } else {
-        toast.error(
-          "Youv'e already cart a course. Please pay to complete enrollment!"
-        );
       }
     }
   };
 
-  // // console.log(course);
   return (
     <div className="bg-gray-50 p-5 w-1/2 h-[150px] rounded-md place-items-center ml-auto">
       <h5 className="text-2xl">
@@ -59,8 +66,9 @@ export default function CourseFee({ course }) {
       </h5>
       <div className="my-5 flex gap-5">
         <button
+          disabled={enrolled?.length}
           onClick={handleAddToCart}
-          className="bg-primary text-white px-5 py-3 rounded-full cursor-pointer flex items-center gap-2 animate-bounce"
+          className={`bg-[#CE2823] disabled:bg-gray-200 disabled:text-gray-400 disabled:animate-none disabled:cursor-none text-white px-5 py-3 rounded-full cursor-pointer flex items-center gap-2 animate-bounce`}
         >
           <UserCircleCheckIcon size={32} />
           Enroll Course
