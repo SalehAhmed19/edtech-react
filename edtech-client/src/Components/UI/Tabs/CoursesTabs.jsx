@@ -70,9 +70,9 @@ const CoursesTabs = ({
             className={`${activeIndex === index ? "block" : "hidden"}
                        transition-opacity duration-300 ease-in-out grid grid-cols-4 gap-5`}
           >
-            {tab.items.map((course) => (
+            {tab.items.map((course, idx) => (
               <CourseCard
-                key={course.courseId}
+                key={idx}
                 avatar={course.courseBannerImage}
                 title={course.courseTitle}
                 lesson={course.lessionsNumber}

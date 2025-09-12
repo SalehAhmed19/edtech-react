@@ -5,8 +5,11 @@ export default function Instructors({ course }) {
     <div className="flex flex-col gap-5">
       <SectionTitleTwo title={"Instuctors"} />
 
-      {course?.instructors.map((instructor) => (
-        <div className="flex items-center gap-3 p-2 border border-gray-200 slate-300 rounded-md">
+      {course?.instructors.map((instructor, idx) => (
+        <div
+          key={idx}
+          className="flex items-center gap-3 p-2 border border-gray-200 slate-300 rounded-md"
+        >
           <div>
             <img className="rounded-full w-16" src={instructor.image} alt="" />
           </div>

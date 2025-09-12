@@ -30,10 +30,10 @@ export default function QuickTutorial() {
           height="315"
           src="https://www.youtube.com/embed/X8BYu3dMKf0?si=XYRsthIyysjXI_bw"
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
           className="w-1/2 h-[500px] mx-auto mt-5 rounded-2xl shadow-lg"
         ></iframe>
       </Fade>
