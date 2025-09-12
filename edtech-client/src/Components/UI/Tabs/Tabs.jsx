@@ -156,9 +156,9 @@ export default function SmoothTabs() {
         {/* Tab Headers with Horizontal Scroll */}
         {/* <div className="flex overflow-x-auto whitespace-nowrap space-x-2 sm:space-x-4 mb-6 pb-2"> */}
         <div className="flex flex-wrap gap-2 whitespace-nowrap w-full mb-6 pb-2">
-          {tabs.map((tab) => (
+          {tabs.map((tab, idx) => (
             <button
-              key={tab.tab}
+              key={idx}
               onClick={() => setActiveTab(tab.tab)}
               className={`
                 px-4 py-3 text-sm sm:text-base font-medium rounded-full
@@ -179,9 +179,9 @@ export default function SmoothTabs() {
         <div className="relative overflow-hidden">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 transition-opacity duration-300 pb-5">
             {activeTabContent.length > 0 ? (
-              activeTabContent.map((course) => (
+              activeTabContent.map((course, idx) => (
                 <CourseCard
-                  key={course.courseId}
+                  key={idx}
                   avatar={course.courseBannerImage}
                   title={course.courseTitle}
                   lesson={course.lessionsNumber}

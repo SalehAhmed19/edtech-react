@@ -64,7 +64,7 @@ export default function FAQ() {
 
         <div className="order-2 md:order-1">
           {accordionData.map((item, index) => (
-            <Fade direction="up" cascade={true} duration={800}>
+            <Fade key={index} direction="up" cascade={true} duration={800}>
               <Accordant
                 key={index} // Using index as key is generally fine for static lists without reordering
                 title={item.title}

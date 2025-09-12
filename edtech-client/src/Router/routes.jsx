@@ -25,6 +25,8 @@ import Assignments from "../Pages/Dashboard/Teachers/Assignments";
 import Resources from "../Pages/Dashboard/Teachers/Resources";
 import Support from "../Pages/Dashboard/Teachers/Support";
 import TeachersHome from "../Pages/Dashboard/Teachers/TeachersHome";
+import TeacherDetails from "../Pages/Dashboard/Teachers/TeacherProfile/TeacherDetails";
+import TeachersProfile from "../Pages/Dashboard/Teachers/TeacherProfile/TeachersProfile";
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -55,7 +57,6 @@ const routes = createBrowserRouter([
     ),
     children: [
       { path: "student-home", element: <StudentsHome /> },
-      { path: "teacher-home", element: <TeachersHome /> },
       { path: "student-profile", element: <StudentsProfile /> },
       { path: "student-courses", element: <StudentCourses /> },
       { path: "student-skillset", element: <StudentsSkillSet /> },
@@ -64,10 +65,11 @@ const routes = createBrowserRouter([
       { path: "order-history", element: <OrderHistory /> },
       { path: "certificates", element: <Certificates /> },
       { path: "payments/stripe", element: <StripePayments /> },
-      { path: "student-review", element: <StudentReview /> },
-      { path: "teacher-profile", element: <TeachersHome /> },
+      { path: "teacher-home", element: <TeachersHome /> },
+      { path: "teacher-profile", element: <TeachersProfile /> },
       { path: "assignments", element: <Assignments /> },
       { path: "resources", element: <Resources /> },
+      { path: "student-review", element: <StudentReview /> },
       { path: "support", element: <Support /> },
     ],
   },

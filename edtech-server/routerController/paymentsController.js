@@ -36,7 +36,8 @@ module.exports = (
 
     const newItems = carts.map((cart) => cart);
     // console.log(newItems);
-    const isExist = ordersCollection.findOne(query);
+    const isExist = await ordersCollection.findOne(query);
+    console.log({ isExist });
 
     const updatedCart = {
       $push: {
@@ -53,7 +54,7 @@ module.exports = (
     const result = await paymentsCollection.insertOne(payment);
     if (res) {
       await cartsCollection.deleteMany(query);
-      if (isExist) {
+      if (!isExist && !isExist?.carts.length) {
         await ordersCollection.updateOne(query, updatedCart, options);
         await enrolledCoursesCollection.updateOne(query, updatedCart, options);
       }

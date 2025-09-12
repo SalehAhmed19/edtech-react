@@ -102,6 +102,15 @@ const Calendar = () => {
     calendarDays.push(day);
   }
 
+  const events = {
+    courseName: "Introduction to Python",
+    startDate: "10 Aug 2025",
+    endDate: "25 Aug 2025",
+  };
+  const start = events.startDate.split(" ")[0];
+  const end = events.endDate.split(" ")[0];
+  console.log(calendarDays);
+
   return (
     <div className="bg-white rounded-xl border border-gray-200 p-6 sm:p-8">
       {/* Calendar Header: Month, Year, and Navigation */}
@@ -153,8 +162,8 @@ const Calendar = () => {
 
       {/* Weekdays Row */}
       <div className="grid grid-cols-7 gap-2 text-center text-sm font-medium text-primary mb-4">
-        {weekdays.map((day) => (
-          <div key={day} className="py-2">
+        {weekdays.map((day, idx) => (
+          <div key={idx} className="py-2">
             {day}
           </div>
         ))}

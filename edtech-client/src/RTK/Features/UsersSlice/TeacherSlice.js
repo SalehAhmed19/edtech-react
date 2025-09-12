@@ -42,6 +42,22 @@ export const getTeacher = createAsyncThunk(
   }
 );
 
+export const updateTeacherDetails = createAsyncThunk(
+  "updateTeacherDetails",
+  async ({ email, updatedDetails, axiosPublic }, { rejectWithValue }) => {
+    try {
+      const response = await axiosPublic.patch(
+        `/teachers/update-teacher-details?email=${email}`,
+        updatedDetails
+      );
+
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.response?.data?.message || err.message);
+    }
+  }
+);
+
 const TeacherSlice = createSlice({
   name: "teachers",
   initialState,
@@ -71,6 +87,19 @@ const TeacherSlice = createSlice({
     });
     builder.addCase(getTeacher.rejected, (state, action) => {
       state.isLoading = true;
+      state.isError = true;
+      // console.log(action.payload);
+    });
+
+    // teacher info
+    builder.addCase(updateTeacherDetails.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(updateTeacherDetails.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.teacher = action.meta.arg.updatedDetails;
+    });
+    builder.addCase(updateTeacherDetails.rejected, (state, action) => {
       state.isError = true;
       // console.log(action.payload);
     });
