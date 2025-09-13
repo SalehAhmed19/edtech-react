@@ -1,15 +1,13 @@
 import { useDispatch } from "react-redux";
-
 import toast from "react-hot-toast";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../firebase/firebase.config";
 import { addToCart } from "../../../RTK/Features/StudentsSlices/cartsSlice";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useAxiosPublic from "../../../Hooks/Axios/useAxiosPublic";
-import { BasketIcon, UserCircleCheckIcon } from "@phosphor-icons/react";
+import { UserCircleCheckIcon } from "@phosphor-icons/react";
 import useGetCarts from "../../../Hooks/Students/useGetCarts";
 import useEnrolledCourses from "../../../Hooks/Students/useEnrolledCourses";
-import { useState } from "react";
 
 export default function CourseFee({ course }) {
   const [user] = useAuthState(auth);
