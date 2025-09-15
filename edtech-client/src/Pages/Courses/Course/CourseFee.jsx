@@ -9,7 +9,6 @@ import useAxiosPublic from "../../../Hooks/Axios/useAxiosPublic";
 import { BasketIcon, UserCircleCheckIcon } from "@phosphor-icons/react";
 import useGetCarts from "../../../Hooks/Students/useGetCarts";
 import useEnrolledCourses from "../../../Hooks/Students/useEnrolledCourses";
-import { useState } from "react";
 
 export default function CourseFee({ course }) {
   const [user] = useAuthState(auth);

@@ -1,19 +1,18 @@
 import { Link } from "react-router-dom";
-
 import { Toaster } from "react-hot-toast";
 import logo from "../../../assets/images/logo.png";
 import useFirebaseAuthenticationHooks from "../../../Hooks/firebaseAuthenticationHooks/useFirebaseAuthenticationHooks";
-import Loader from "../../Loader/Loader";
-// import useGetAllUsers from "../../../Hooks/Users/useGetAllUsers";
-import useGetTeacher from "../../../Hooks/Users/useGetTeacher";
 import useGetAllUsers from "../../../Hooks/Users/useGetAllUsers";
 import {
   AtIcon,
+  FingerprintSimpleIcon,
+  KeyholeIcon,
   PhoneCallIcon,
   SignInIcon,
   SignOutIcon,
   UserGearIcon,
 } from "@phosphor-icons/react";
+import LoadingSpinner from "../../UI/LoadingSpinner";
 
 export default function Navbar() {
   const { handleSignOut, user } = useFirebaseAuthenticationHooks();
@@ -21,12 +20,9 @@ export default function Navbar() {
 
   if (isLoading) {
     <div className="h-[80vh] flex justify-center items-center">
-      <Loader />
+      <LoadingSpinner />
     </div>;
   }
-
-  // // console.log(teachers.role);
-  // // console.log(students.role);
 
   return (
     <div className="sticky top-0 z-50">
@@ -51,7 +47,7 @@ export default function Navbar() {
                   Contact
                 </li>
               </Link>
-              {user && (
+              {user && singleUser?.role !== "admin" && (
                 <>
                   <Link to="/become-instructor/">
                     <li
@@ -79,6 +75,16 @@ export default function Navbar() {
                       </li>
                     </Link>
                   )}
+                </>
+              )}
+              {user && singleUser?.role === "admin" && (
+                <>
+                  <Link to="/control-panel/secure/admin">
+                    <li className="font-semibold bg-[#CE2823] hover:shadow-lg text-white duration-300 px-5 py-2 rounded-full cursor-pointer flex items-center gap-2">
+                      <KeyholeIcon size={32} />
+                      Admin Panel
+                    </li>
+                  </Link>
                 </>
               )}
             </ul>
