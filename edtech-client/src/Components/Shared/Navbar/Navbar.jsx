@@ -5,6 +5,8 @@ import useFirebaseAuthenticationHooks from "../../../Hooks/firebaseAuthenticatio
 import useGetAllUsers from "../../../Hooks/Users/useGetAllUsers";
 import {
   AtIcon,
+  FingerprintSimpleIcon,
+  KeyholeIcon,
   PhoneCallIcon,
   SignInIcon,
   SignOutIcon,
@@ -21,9 +23,6 @@ export default function Navbar() {
       <LoadingSpinner />
     </div>;
   }
-
-  // // console.log(teachers.role);
-  // // console.log(students.role);
 
   return (
     <div className="sticky top-0 z-50">
@@ -48,7 +47,7 @@ export default function Navbar() {
                   Contact
                 </li>
               </Link>
-              {user && (
+              {user && singleUser?.role !== "admin" && (
                 <>
                   <Link to="/become-instructor/">
                     <li
@@ -76,6 +75,16 @@ export default function Navbar() {
                       </li>
                     </Link>
                   )}
+                </>
+              )}
+              {user && singleUser?.role === "admin" && (
+                <>
+                  <Link to="/control-panel/secure/admin">
+                    <li className="font-semibold bg-[#CE2823] hover:shadow-lg text-white duration-300 px-5 py-2 rounded-full cursor-pointer flex items-center gap-2">
+                      <KeyholeIcon size={32} />
+                      Admin Panel
+                    </li>
+                  </Link>
                 </>
               )}
             </ul>
