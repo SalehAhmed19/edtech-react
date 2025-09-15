@@ -27,7 +27,7 @@ export default function ReasonToStart() {
         <h3 className="font-bold text-3xl text-primary mb-5">
           So many reasons to start
         </h3>
-        <div className="grid grid-cols-3">
+        <div className="grid md:grid-cols-3">
           {reasons.map((reason, idx) => (
             <Zoom key={idx} cascade={true} duration={800}>
               <div className="p-5 flex flex-col gap-3">

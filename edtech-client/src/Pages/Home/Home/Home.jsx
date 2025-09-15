@@ -42,6 +42,7 @@ export default function Home() {
       </div>
 
       <ScrollToTop
+        className="z-50"
         smooth
         style={{
           backgroundColor: "#CE2823",

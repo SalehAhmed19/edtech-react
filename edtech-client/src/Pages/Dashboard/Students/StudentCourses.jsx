@@ -39,12 +39,14 @@ export default function StudentCourses() {
   }
 
   return (
-    <div className="flex flex-col justify-center gap-10">
+    <div className="flex flex-col justify-center gap-10 p-5 md:p-5">
       <Fade direction="up" cascade={true} duration={800}>
-        <h2 className="text-[45px] font-bold text-primary">Courses</h2>
+        <h2 className="text-[35px] md:text-[45px] font-bold text-primary">
+          Courses
+        </h2>
       </Fade>
       <div className="h-[55vh] overflow-y-scroll">
-        <div className="grid grid-cols-4 gap-5">
+        <div className="grid md:grid-cols-4 gap-5">
           {enrolledCourses?.map((enrolledCourse, idx) => (
             <DashboardHomeCourseCard key={idx} cart={enrolledCourse} />
           ))}

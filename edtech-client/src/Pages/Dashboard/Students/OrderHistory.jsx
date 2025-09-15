@@ -27,7 +27,9 @@ export default function OrderHistory() {
     return (
       <div className="flex flex-col justify-center gap-10">
         <Fade direction="up" cascade={true} duration={800}>
-          <h2 className="text-[45px] font-bold text-primary">Order History</h2>
+          <h2 className="text-[35px] md:text-[45px] font-bold text-primary">
+            Order History
+          </h2>
         </Fade>
         <DashboardPlaceholder
           element={
@@ -49,12 +51,14 @@ export default function OrderHistory() {
 
   // // console.log(orders);
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-10 p-5 md:p-0">
       <Fade direction="up" cascade={true} duration={800}>
-        <h2 className="text-[45px] font-bold text-primary">Order History</h2>
+        <h2 className="text-[35px] md:text-[45px] font-bold text-primary">
+          Order History
+        </h2>
       </Fade>
       <div className="h-[55vh] overflow-y-scroll p-5">
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 gap-5">
           {orders.map((order) =>
             order.carts.map((course, idx) => (
               <VerticalCard key={idx} course={course} />

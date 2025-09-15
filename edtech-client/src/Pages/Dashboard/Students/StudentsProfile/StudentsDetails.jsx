@@ -20,7 +20,7 @@ export default function StudentsDetails() {
     <div className="py-10 rounded-b-2xl flex flex-col gap-3 -mt-10">
       <div className="relative mb-5 flex items-center">
         <Fade direction="up" cascade={true} duration={800}>
-          <h2 className="text-[45px] font-bold">
+          <h2 className="text-[35px] md:text-[45px] font-bold">
             <span className="text-primary">Profile</span>
           </h2>
         </Fade>

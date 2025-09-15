@@ -14,7 +14,9 @@ export default function DashboardPlaceholder({
     <div className="border border-gray-200 p-5 rounded-xl text-center place-content-center py-20 h-[55vh]">
       <Fade direction="up" cascade={true} duration={800}>
         {element}
-        <h2 className="text-[45px] font-bold text-[#dedede]">{title}</h2>
+        <h2 className="text-[35px] md:text-[45px] font-bold text-[#dedede]">
+          {title}
+        </h2>
         <p className="text-secondary">{subtitle}</p>
       </Fade>
 
