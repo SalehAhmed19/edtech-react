@@ -12,7 +12,7 @@ export default function ContactSectionForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col gap-2 mt-3"
+      className="flex flex-col gap-5 mt-3"
     >
       <div>
         <label className="font-semibold">Name</label>

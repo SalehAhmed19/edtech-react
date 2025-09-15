@@ -1,6 +1,8 @@
 import { useState } from "react";
 import useGetCourses from "../../../Hooks/Courses/useGetCourses";
 import CourseCard from "../../Cards/CourseCard";
+import Show from "../../Show/Show";
+import { Fade } from "react-awesome-reveal";
 
 export default function SmoothTabs() {
   const { courses } = useGetCourses();
@@ -115,6 +117,8 @@ export default function SmoothTabs() {
     (course) => course.category === "Health & Wellness"
   );
 
+  const [show, setShow] = useState(12);
+
   const tabs = [
     { tab: "Programming", items: programmingCourses },
     { tab: "Web Development", items: webDevelopmentCourses },
@@ -153,14 +157,13 @@ export default function SmoothTabs() {
   return (
     <div className="flex items-center justify-center mt-10">
       <div className="w-full bg-white">
-        {/* Tab Headers with Horizontal Scroll */}
-        {/* <div className="flex overflow-x-auto whitespace-nowrap space-x-2 sm:space-x-4 mb-6 pb-2"> */}
         <div className="flex flex-wrap gap-2 whitespace-nowrap w-full mb-6 pb-2">
-          {tabs.map((tab) => (
-            <button
-              key={tab.tab}
-              onClick={() => setActiveTab(tab.tab)}
-              className={`
+          {tabs.slice(0, show ? show : 12).map((tab) => (
+            <Fade direction="down" cascade={true} duration={800}>
+              <button
+                key={tab.tab}
+                onClick={() => setActiveTab(tab.tab)}
+                className={`
                 px-4 py-3 text-sm sm:text-base font-medium rounded-full
                 transition-all duration-300 w-48
                 ${
@@ -169,11 +172,15 @@ export default function SmoothTabs() {
                     : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                 }
               `}
-            >
-              {tab.tab}
-            </button>
+              >
+                {tab.tab}
+              </button>
+            </Fade>
           ))}
         </div>
+        <Fade direction="down" cascade={true} duration={800}>
+          <Show course={tabs} show={show} setShow={setShow} />
+        </Fade>
 
         {/* Tab Content */}
         <div className="relative overflow-hidden">

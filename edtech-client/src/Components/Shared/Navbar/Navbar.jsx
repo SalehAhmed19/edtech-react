@@ -29,7 +29,7 @@ export default function Navbar() {
   // // console.log(students.role);
 
   return (
-    <div className="sticky top-0 z-50">
+    <div className="sticky top-0 z-50 font-bold">
       <div className="bg-[#fff] p-2 text-[#333] sticky top-0 z-50 backdrop-blur-3xl border-b-2 border-b-gray-200">
         {" "}
         <div className="md:max-w-[1180px] lg:max-w-[1280px] mx-auto flex items-center justify-between">

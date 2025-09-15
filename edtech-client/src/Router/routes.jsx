@@ -27,6 +27,7 @@ import Support from "../Pages/Dashboard/Teachers/Support";
 import TeachersHome from "../Pages/Dashboard/Teachers/TeachersHome";
 import TeacherDetails from "../Pages/Dashboard/Teachers/TeacherProfile/TeacherDetails";
 import TeachersProfile from "../Pages/Dashboard/Teachers/TeacherProfile/TeachersProfile";
+import NotFound from "../Pages/NotFound/NotFound";
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -73,6 +74,7 @@ const routes = createBrowserRouter([
       { path: "support", element: <Support /> },
     ],
   },
+  { path: "*", element: <NotFound /> },
 ]);
 
 export default routes;

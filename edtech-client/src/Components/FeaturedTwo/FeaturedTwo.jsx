@@ -1,5 +1,5 @@
-import { Fade } from "react-awesome-reveal";
-import laptop from "../../assets/images/laptop.png";
+import { Fade, Zoom } from "react-awesome-reveal";
+import Laptop from "../Laptop/Laptop";
 
 export default function FeaturedTwo() {
   return (
@@ -18,9 +18,9 @@ export default function FeaturedTwo() {
           </button>
         </div>
       </Fade>
-      <Fade direction="right" cascade={true} duration={800}>
-        <img src={laptop} alt="" />
-      </Fade>
+      <Zoom cascade={true} duration={800}>
+        <Laptop />
+      </Zoom>
     </div>
   );
 }
