@@ -16,7 +16,7 @@ export default function Review() {
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider({
     slides: {
-      perView: 2,
+      perView: 3,
       spacing: 15,
     },
     initial: 0,
@@ -40,7 +40,7 @@ export default function Review() {
     <div className="mb-10">
       <Fade direction="up" cascade={true} duration={800}>
         {" "}
-        <h2 className="text-[45px] font-bold text-center">
+        <h2 className="text-[35px] md:text-[45px] font-bold text-center">
           <span className="text-primary">Reviews</span> of Students
         </h2>
         <p className="text-center text-secondary">

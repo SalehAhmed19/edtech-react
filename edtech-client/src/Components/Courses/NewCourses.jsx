@@ -19,15 +19,15 @@ export default function NewCourses() {
   return (
     <div>
       <Fade direction="up" cascade={true} duration={800}>
-        <h2 className="text-[45px] font-bold text-center">
-          <span className="text-primary">Trendy</span> Courses
+        <h2 className="text-[30px] md:text-[45px] font-bold text-center">
+          <span className="text-primary">New</span> Courses
         </h2>
         <p className="text-center text-secondary mb-10">
           Explore the latest trends in tech with our newest offering.
         </p>
       </Fade>
 
-      <div className="grid grid-cols-2 gap-10">
+      <div className="p-5 md:p-0 grid md:grid-cols-2 gap-10">
         {newCourses.slice(0, show ? show : 6).map((course, idx) => (
           <Fade key={idx} direction="up" cascade={true} duration={800}>
             <NewCourseCard key={course.courseId} course={course} />

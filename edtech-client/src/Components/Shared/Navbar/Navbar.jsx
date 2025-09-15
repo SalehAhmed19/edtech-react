@@ -115,11 +115,8 @@ export default function Navbar() {
                   Sign out
                 </button>
               ) : (
-                <Link
-                  to="/authentication/login"
-                  className="bg-[#CE2823] text-white hover:border hover:border-gray-200 hover:bg-[#fff] hover:text-[#333] duration-300 px-5 py-2 rounded-full cursor-pointer"
-                >
-                  <button className="flex items-center gap-2">
+                <Link to="/authentication/login" className="flex items-center">
+                  <button className="flex items-center gap-2 bg-[#CE2823] text-white hover:border hover:border-gray-200 hover:bg-[#fff] hover:text-[#333] duration-300 px-5 py-2 rounded-full cursor-pointer">
                     <SignInIcon size={32} />
                     Login
                   </button>

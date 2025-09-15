@@ -3,10 +3,10 @@ import Laptop from "../Laptop/Laptop";
 
 export default function FeaturedTwo() {
   return (
-    <div className="bg-white p-10 rounded-md flex justify-between items-center">
+    <div className="bg-white p-10 rounded-md flex flex-col md:flex-row justify-between items-center">
       <Fade direction="left" cascade={true} duration={800}>
         <div>
-          <h2 className="text-[40px] font-semibold text-primary">
+          <h2 className="text-[30px] md:text-[40px] font-semibold text-primary">
             Pioneering the Future of Technology
           </h2>
           <p className="text-xl mt-5">
@@ -19,7 +19,9 @@ export default function FeaturedTwo() {
         </div>
       </Fade>
       <Zoom cascade={true} duration={800}>
-        <Laptop />
+        <div className="hidden md:block">
+          <Laptop />
+        </div>
       </Zoom>
     </div>
   );

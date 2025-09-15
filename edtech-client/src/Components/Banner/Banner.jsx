@@ -7,7 +7,10 @@ export default function Banner() {
   return (
     <div className="pt-24 text-center">
       <Zoom cascade={true} duration={800}>
-        <h1 className="text-[65px] font-bold" style={{ lineHeight: "1" }}>
+        <h1
+          className="text-[35px] md:text-[65px] font-bold"
+          style={{ lineHeight: "1" }}
+        >
           <span className="text-primary">Learn</span> Without Limits: Your
           Digital
           <span className="text-primary"> Classroom</span>
@@ -19,12 +22,12 @@ export default function Banner() {
         <div className="flex justify-center gap-5 mt-10 mb-5">
           <Link
             to="/courses"
-            className="bg-[#CE2823] hover:bg-[#ad211c] duration-300 px-7 py-3 text-xl rounded-full text-white flex items-center gap-2 shadow"
+            className="bg-[#CE2823] hover:bg-[#ad211c] duration-300 px-5 py-2 md:px-7 md:py-3 md:text-xl rounded-full text-white flex items-center gap-2 shadow"
           >
             Enroll Now
             <ArrowBendDownRightIcon size={32} />
           </Link>
-          <button className="bg-[#fff] border-2 border-[#CE2823] px-7 py-3 text-xl rounded-full flex items-center gap-2 shadow">
+          <button className="bg-[#fff] border-2 border-[#CE2823] px-5 py-2 md:px-7 md:py-3 md:text-xl rounded-full flex items-center gap-2 shadow">
             Explore More
           </button>
         </div>
