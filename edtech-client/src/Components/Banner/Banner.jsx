@@ -1,6 +1,7 @@
 import { ArrowBendDownRightIcon } from "@phosphor-icons/react";
 import banner from "../../assets/images/banner.png";
 import { Zoom } from "react-awesome-reveal";
+import { Link } from "react-router-dom";
 
 export default function Banner() {
   return (
@@ -16,10 +17,13 @@ export default function Banner() {
         </p>
 
         <div className="flex justify-center gap-5 mt-10 mb-5">
-          <button className="bg-[#CE2823] hover:bg-[#ad211c] duration-300 px-7 py-3 text-xl rounded-full text-white flex items-center gap-2 shadow">
+          <Link
+            to="/courses"
+            className="bg-[#CE2823] hover:bg-[#ad211c] duration-300 px-7 py-3 text-xl rounded-full text-white flex items-center gap-2 shadow"
+          >
             Enroll Now
             <ArrowBendDownRightIcon size={32} />
-          </button>
+          </Link>
           <button className="bg-[#fff] border-2 border-[#CE2823] px-7 py-3 text-xl rounded-full flex items-center gap-2 shadow">
             Explore More
           </button>

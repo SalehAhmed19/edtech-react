@@ -28,8 +28,8 @@ export default function NewCourses() {
       </Fade>
 
       <div className="grid grid-cols-2 gap-10">
-        {newCourses.slice(0, show ? show : 6).map((course) => (
-          <Fade direction="up" cascade={true} duration={800}>
+        {newCourses.slice(0, show ? show : 6).map((course, idx) => (
+          <Fade key={idx} direction="up" cascade={true} duration={800}>
             <NewCourseCard key={course.courseId} course={course} />
           </Fade>
         ))}

@@ -1,6 +1,6 @@
 const PaymentLoader = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
+    <div className="flex items-center justify-center p-4">
       {/* Load Lexend Deca font from Google Fonts */}
       <link
         href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap"
@@ -66,11 +66,11 @@ const PaymentLoader = () => {
       </style>
 
       <div className="payment-container bg-white flex w-[270px] h-[120px] relative rounded-md transition-all duration-300 ease-in-out">
-        <div className="bg-[#5de2a3] w-[130px] h-[120px] rounded-sm relative flex justify-center items-center flex-shrink-0 overflow-hidden transition-all duration-300">
+        <div className="w-[130px] h-[120px] rounded-sm relative flex justify-center items-center flex-shrink-0 overflow-hidden transition-all duration-300 mx-auto">
           {/* Card element */}
           <div
-            className="w-[70px] h-[46px] bg-[#c7ffbc] rounded-md absolute flex flex-col items-center
-                       shadow-[9px_9px_9px_-2px_rgba(77,200,143,0.72)]"
+            className="w-[70px] h-[46px] bg-[#921914] rounded-md absolute flex flex-col items-center
+                       shadow-[9px_9px_9px_-2px_#b1201b]"
             style={{
               // Initial positioning to center the card within its parent
               top: "50%",
@@ -82,9 +82,9 @@ const PaymentLoader = () => {
                 "slide-top 1.2s cubic-bezier(0.645, 0.045, 0.355, 1) both",
             }}
           >
-            <div className="w-[65px] h-[13px] bg-[#80ea69] rounded-[2px] mt-[7px]" />
+            <div className="w-[65px] h-[13px] bg-[#e63a34] rounded-[2px] mt-[7px]" />
             <div
-              className="w-2 h-2 bg-[#379e1f] rounded-full mt-[5px] -ml-[30px]
+              className="w-2 h-2 bg-[#CE2823] rounded-full mt-[5px] -ml-[30px]
                          shadow-[0_-10px_0_0_#26850e,0_10px_0_0_#56be3e] transform rotate-90"
             />
           </div>
@@ -106,7 +106,7 @@ const PaymentLoader = () => {
             </div>
             <div className="w-[47px] h-[23px] bg-white absolute top-[22px] right-2 rounded-[3px]">
               <div
-                className="absolute w-full left-0 top-0 text-center text-[#4b953b]"
+                className="absolute w-full left-0 top-0 text-center text-[#CE2823]"
                 style={{
                   fontFamily: '"Lexend Deca", sans-serif',
                   fontSize: "16px",
@@ -129,12 +129,6 @@ const PaymentLoader = () => {
         </div>
 
         {/* This div represents the original right-side, without the 'Checkout' text */}
-        <div className="flex items-center overflow-hidden whitespace-nowrap transition-all duration-300 flex-grow justify-center">
-          {/* No content here, as per your request */}
-          <p className="text-slate-300 font-semibold animate-pulse">
-            Card Payments
-          </p>
-        </div>
       </div>
     </div>
   );

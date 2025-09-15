@@ -20,7 +20,7 @@ export default function CourseOutline({ course }) {
       <SectionTitleTwo title={"Course Outline"} />
       {course?.courseOutline.map((item, index) => (
         <CourseOutlineAccordant
-          key={index} // Using index as key is generally fine for static lists without reordering
+          key={index}
           item={item}
           index={index}
           activeIndex={activeIndex}

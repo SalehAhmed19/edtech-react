@@ -1,11 +1,7 @@
 import { Link } from "react-router-dom";
-
 import { Toaster } from "react-hot-toast";
 import logo from "../../../assets/images/logo.png";
 import useFirebaseAuthenticationHooks from "../../../Hooks/firebaseAuthenticationHooks/useFirebaseAuthenticationHooks";
-import Loader from "../../Loader/Loader";
-// import useGetAllUsers from "../../../Hooks/Users/useGetAllUsers";
-import useGetTeacher from "../../../Hooks/Users/useGetTeacher";
 import useGetAllUsers from "../../../Hooks/Users/useGetAllUsers";
 import {
   AtIcon,
@@ -14,6 +10,7 @@ import {
   SignOutIcon,
   UserGearIcon,
 } from "@phosphor-icons/react";
+import LoadingSpinner from "../../UI/LoadingSpinner";
 
 export default function Navbar() {
   const { handleSignOut, user } = useFirebaseAuthenticationHooks();
@@ -21,7 +18,7 @@ export default function Navbar() {
 
   if (isLoading) {
     <div className="h-[80vh] flex justify-center items-center">
-      <Loader />
+      <LoadingSpinner />
     </div>;
   }
 
