@@ -15,6 +15,7 @@ export default function StudentCourses() {
   const { enrolled, isLoading } = useEnrolledCourses();
 
   const enrolledCourses = enrolled[0]?.carts;
+  console.log(enrolledCourses);
 
   if (isLoading) {
     return (
