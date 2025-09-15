@@ -25,11 +25,8 @@ export default function PopularCourses() {
       </Fade>
 
       <div className="mt-10 grid grid-cols-4 gap-5">
-        {/* {newCourses.slice(0, show ? show : 6).map((course) => (
-          <NewCourseCard key={course.courseId} course={course} />
-          ))} */}
-        {popularCourses.slice(0, show ? show : 4).map((course) => (
-          <Zoom cascade={true} duration={800}>
+        {popularCourses.slice(0, show ? show : 4).map((course, idx) => (
+          <Zoom key={idx} cascade={true} duration={800}>
             <CourseCard
               key={course.courseId}
               avatar={course.courseBannerImage}

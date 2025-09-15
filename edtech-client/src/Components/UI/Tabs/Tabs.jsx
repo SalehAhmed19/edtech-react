@@ -186,9 +186,9 @@ export default function SmoothTabs() {
         <div className="relative overflow-hidden">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 transition-opacity duration-300 pb-5">
             {activeTabContent.length > 0 ? (
-              activeTabContent.map((course) => (
+              activeTabContent.map((course, idx) => (
                 <CourseCard
-                  key={course.courseId}
+                  key={idx}
                   avatar={course.courseBannerImage}
                   title={course.courseTitle}
                   lesson={course.lessionsNumber}

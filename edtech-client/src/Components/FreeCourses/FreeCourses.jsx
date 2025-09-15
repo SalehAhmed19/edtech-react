@@ -1,5 +1,4 @@
 import curve from "../../assets/images/curve.svg";
-import avatar from "../../assets/images/avtar.jpg";
 import useGetCourses from "../../Hooks/Courses/useGetCourses";
 import CourseCard from "../Cards/CourseCard";
 import { Fade, Zoom } from "react-awesome-reveal";
@@ -24,10 +23,9 @@ export default function FreeCourses() {
       </div>
       <div className="flex items-center justify-center md:max-w-[920px] lg:max-w-[1280px] mx-auto">
         <div className="my-10 z-10 grid grid-cols-3 gap-5">
-          {freeCourses.slice(0, 6).map((course) => (
-            <Zoom cascade={true} duration={800}>
+          {freeCourses.slice(0, 6).map((course, idx) => (
+            <Zoom key={idx} cascade={true} duration={800}>
               <CourseCard
-                key={course.courseId}
                 avatar={course.courseBannerImage}
                 title={course.courseTitle}
                 lesson={course.lessionsNumber}

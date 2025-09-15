@@ -50,8 +50,8 @@ export default function HighLights() {
       </Fade>
 
       <div className="grid grid-cols-3 gap-6 mt-10">
-        {data.map((d) => (
-          <Zoom cascade={true} duration={800}>
+        {data.map((d, idx) => (
+          <Zoom key={idx} cascade={true} duration={800}>
             <div
               key={d.id}
               className="p-10 bg-white flex flex-col items-center hover:scale-105 duration-300 cursor-pointer"

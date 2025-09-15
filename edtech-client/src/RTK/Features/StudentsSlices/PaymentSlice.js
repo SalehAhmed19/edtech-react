@@ -7,6 +7,22 @@ const initialState = {
   clientSecret: "",
 };
 
+export const createCheckoutSession = createAsyncThunk(
+  "createCheckoutSession",
+  async ({ course, axiosPublic }, { rejectWithValue }) => {
+    try {
+      const response = await axiosPublic.post(
+        "/payments/stripe/create-checkout-session",
+        course
+      );
+
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.response?.data?.message || err.message);
+    }
+  }
+);
+
 export const createPaymentIntent = createAsyncThunk(
   "createPaymentIntent",
   async ({ totalPrice, axiosPublic }, { rejectWithValue }) => {
@@ -22,6 +38,17 @@ export const createPaymentIntent = createAsyncThunk(
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message);
     }
+  }
+);
+
+export const getSessionStatus = createAsyncThunk(
+  "getSessionStatus",
+  async ({ session, axiosPublic }) => {
+    const response = await axiosPublic.get(
+      `/payments/stripe/session-status?session_id=${session}`
+    );
+
+    return response.data;
   }
 );
 
@@ -72,6 +99,19 @@ const PaymentSlice = createSlice({
       state.clientSecret = action.payload.clientSecret;
     });
     builder.addCase(createPaymentIntent.rejected, (state, action) => {
+      state.isError = true;
+      // console.log(action.payload);
+    });
+
+    builder.addCase(createCheckoutSession.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(createCheckoutSession.fulfilled, (state, action) => {
+      state.isLoading = false;
+      console.log(action);
+      state.clientSecret = action.payload.clientSecret;
+    });
+    builder.addCase(createCheckoutSession.rejected, (state, action) => {
       state.isError = true;
       // console.log(action.payload);
     });

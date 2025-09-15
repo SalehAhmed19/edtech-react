@@ -29,8 +29,8 @@ export default function ReasonToStart() {
         </h3>
         <div className="grid grid-cols-3">
           {reasons.map((reason, idx) => (
-            <Zoom cascade={true} duration={800}>
-              <div key={idx} className="p-5 flex flex-col gap-3">
+            <Zoom key={idx} cascade={true} duration={800}>
+              <div className="p-5 flex flex-col gap-3">
                 <div>
                   <img src={reason.icon} alt="" className="mx-auto" />
                 </div>

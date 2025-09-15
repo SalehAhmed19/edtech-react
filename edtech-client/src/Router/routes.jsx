@@ -28,6 +28,14 @@ import TeachersHome from "../Pages/Dashboard/Teachers/TeachersHome";
 import TeacherDetails from "../Pages/Dashboard/Teachers/TeacherProfile/TeacherDetails";
 import TeachersProfile from "../Pages/Dashboard/Teachers/TeacherProfile/TeachersProfile";
 import NotFound from "../Pages/NotFound/NotFound";
+import AdminLayout from "../Layout/AdminLayout";
+import AdminHome from "../Pages/Admin/AdminHome";
+import AllCourses from "../Pages/Admin/AllCourses";
+import AddCourses from "../Pages/Admin/AddCourses";
+import ViewAllOrders from "../Pages/Admin/ViewAllOrders";
+import AllUsers from "../Pages/Admin/AllUsers";
+import CheckoutStripeEmbeded from "../Pages/Payments/CheckoutStripeEmbeded";
+import CheckoutSessionCompletion from "../Pages/Payments/CheckoutSessionCompletion";
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -36,6 +44,7 @@ const routes = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/courses", element: <Courses /> },
       { path: "/contact", element: <Contact /> },
+      { path: "/checkout/return", element: <CheckoutSessionCompletion /> },
       {
         path: "/become-instructor",
         element: <BecomeInstructorLayout />,
@@ -65,13 +74,29 @@ const routes = createBrowserRouter([
       { path: "carts", element: <Carts /> },
       { path: "order-history", element: <OrderHistory /> },
       { path: "certificates", element: <Certificates /> },
-      { path: "payments/stripe", element: <StripePayments /> },
+      // { path: "payments/stripe", element: <StripePayments /> },
+      { path: "payments/stripe", element: <CheckoutStripeEmbeded /> },
       { path: "teacher-home", element: <TeachersHome /> },
       { path: "teacher-profile", element: <TeachersProfile /> },
       { path: "assignments", element: <Assignments /> },
       { path: "resources", element: <Resources /> },
       { path: "student-review", element: <StudentReview /> },
       { path: "support", element: <Support /> },
+    ],
+  },
+  {
+    path: "/control-panel/secure/admin",
+    element: (
+      <ProtectedRoute>
+        <AdminLayout />
+      </ProtectedRoute>
+    ),
+    children: [
+      { path: "/control-panel/secure/admin", element: <AdminHome /> },
+      { path: "view-all-courses", element: <AllCourses /> },
+      { path: "add-course", element: <AddCourses /> },
+      { path: "view-all-users", element: <AllUsers /> },
+      { path: "view-all-orders", element: <ViewAllOrders /> },
     ],
   },
   { path: "*", element: <NotFound /> },

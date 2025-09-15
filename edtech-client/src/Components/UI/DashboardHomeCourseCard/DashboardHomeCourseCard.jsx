@@ -4,7 +4,7 @@ export default function DashboardHomeCourseCard({ cart }) {
       <img src={cart.image} alt="course-thumbnail" className="rounded-lg" />
       <div>
         <h5 className="font-bold text-primary">
-          {cart.courseName.slice(0, 15) + "..."}
+          {cart.courseName.slice(0, 40) + "..."}
         </h5>
         <p className="text-secondary" style={{ fontSize: "14px" }}>
           {cart.category}

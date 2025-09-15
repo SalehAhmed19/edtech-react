@@ -162,8 +162,8 @@ const Calendar = () => {
 
       {/* Weekdays Row */}
       <div className="grid grid-cols-7 gap-2 text-center text-sm font-medium text-primary mb-4">
-        {weekdays.map((day) => (
-          <div key={day} className="py-2">
+        {weekdays.map((day, idx) => (
+          <div key={idx} className="py-2">
             {day}
           </div>
         ))}
