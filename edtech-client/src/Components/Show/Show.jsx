@@ -8,12 +8,12 @@ export default function Show({ course, show, setShow }) {
     setShow(course.length);
   };
   const showLess = () => {
-    setShow(4);
+    setShow(12);
   };
 
   return (
     <div className="my-10">
-      {show === 4 ? (
+      {show === 12 ? (
         <button
           onClick={showMore}
           className="mx-auto flex items-center gap-2 my-5 px-5 py-2 rounded-md cursor-pointer"

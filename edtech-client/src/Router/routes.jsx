@@ -27,6 +27,7 @@ import Support from "../Pages/Dashboard/Teachers/Support";
 import TeachersHome from "../Pages/Dashboard/Teachers/TeachersHome";
 import TeacherDetails from "../Pages/Dashboard/Teachers/TeacherProfile/TeacherDetails";
 import TeachersProfile from "../Pages/Dashboard/Teachers/TeacherProfile/TeachersProfile";
+import NotFound from "../Pages/NotFound/NotFound";
 import AdminLayout from "../Layout/AdminLayout";
 import AdminHome from "../Pages/Admin/AdminHome";
 import AllCourses from "../Pages/Admin/AllCourses";
@@ -98,6 +99,7 @@ const routes = createBrowserRouter([
       { path: "view-all-orders", element: <ViewAllOrders /> },
     ],
   },
+  { path: "*", element: <NotFound /> },
 ]);
 
 export default routes;

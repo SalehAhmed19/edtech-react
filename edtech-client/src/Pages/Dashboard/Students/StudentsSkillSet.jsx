@@ -34,10 +34,13 @@ export default function StudentsSkillSet() {
             ))}
           </ul>
         </section>
-        <Link to="/dashboard/add-skillset">
-          <button className="text-white bg-primary px-5 py-3 rounded-full flex items-center gap-2 animate-bounce mt-10">
+        <Link
+          to="/dashboard/add-skillset"
+          className="text-white bg-primary py-3 rounded-full animate-bounce mt-10 w-[150px]"
+        >
+          <span className="flex justify-center items-center gap-2">
             Add Skills <PlusIcon size={32} />
-          </button>
+          </span>
         </Link>
 
         <HelpBanner />
