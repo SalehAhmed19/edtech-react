@@ -51,8 +51,8 @@ export default function Review() {
       <div className="navigation-wrapper mt-5">
         <div ref={sliderRef} className="keen-slider">
           {reviews.map((review, idx) => (
-            <Zoom cascade={true} duration={800}>
-              <div key={idx} className="keen-slider__slide relative">
+            <Zoom key={idx} cascade={true} duration={800}>
+              <div className="keen-slider__slide relative">
                 <QuotesIcon
                   size={62}
                   className="ml-auto text-primary mb-[-15px]"

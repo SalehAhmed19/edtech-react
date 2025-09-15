@@ -33,6 +33,8 @@ import AllCourses from "../Pages/Admin/AllCourses";
 import AddCourses from "../Pages/Admin/AddCourses";
 import ViewAllOrders from "../Pages/Admin/ViewAllOrders";
 import AllUsers from "../Pages/Admin/AllUsers";
+import CheckoutStripeEmbeded from "../Pages/Payments/CheckoutStripeEmbeded";
+import CheckoutSessionCompletion from "../Pages/Payments/CheckoutSessionCompletion";
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -41,6 +43,7 @@ const routes = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/courses", element: <Courses /> },
       { path: "/contact", element: <Contact /> },
+      { path: "/checkout/return", element: <CheckoutSessionCompletion /> },
       {
         path: "/become-instructor",
         element: <BecomeInstructorLayout />,
@@ -70,7 +73,8 @@ const routes = createBrowserRouter([
       { path: "carts", element: <Carts /> },
       { path: "order-history", element: <OrderHistory /> },
       { path: "certificates", element: <Certificates /> },
-      { path: "payments/stripe", element: <StripePayments /> },
+      // { path: "payments/stripe", element: <StripePayments /> },
+      { path: "payments/stripe", element: <CheckoutStripeEmbeded /> },
       { path: "teacher-home", element: <TeachersHome /> },
       { path: "teacher-profile", element: <TeachersProfile /> },
       { path: "assignments", element: <Assignments /> },

@@ -30,8 +30,8 @@ export default function TrendyCourses() {
       </Fade>
 
       <div className="mt-10 grid grid-cols-4 gap-5">
-        {trendingCourses.slice(0, show ? show : 4).map((course) => (
-          <Zoom cascade={true} duration={800}>
+        {trendingCourses.slice(0, show ? show : 4).map((course, idx) => (
+          <Zoom key={idx} cascade={true} duration={800}>
             <CourseCard
               key={course.courseId}
               avatar={course.courseBannerImage}

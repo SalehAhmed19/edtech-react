@@ -33,10 +33,10 @@ export default function Course() {
             className="w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-3xl shadow-2xl"
             src="https://www.youtube.com/embed/UrsmFxEIp5k?si=4GJjoCz4C-KwBLDP"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           ></iframe>
           <div className="grid grid-cols-2 gap-5">
             <div className="flex flex-col gap-10">

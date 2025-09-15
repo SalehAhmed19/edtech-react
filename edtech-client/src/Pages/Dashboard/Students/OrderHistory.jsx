@@ -1,9 +1,4 @@
-import { Link } from "react-router-dom";
-import Loader from "../../../Components/Loader/Loader";
-import DashboardSectionTitle from "../../../Components/SectionTitle/DashboardSectionTitle";
-import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import useGetOrders from "../../../Hooks/Students/useGetOrders";
-import order from "../../../assets/images/order-now.png";
 import HelpBanner from "../HelpBanner";
 import useGetCarts from "../../../Hooks/Students/useGetCarts";
 
@@ -15,15 +10,15 @@ import {
   ClockCounterClockwiseIcon,
   PlusIcon,
 } from "@phosphor-icons/react";
+import LoadingSpinner from "../../../Components/UI/LoadingSpinner";
 
 export default function OrderHistory() {
   const { isLoading, orders } = useGetOrders();
-  const { carts } = useGetCarts();
 
   if (isLoading) {
     return (
       <div className="h-[80vh] flex justify-center items-center">
-        <Loader />
+        <LoadingSpinner />
       </div>
     );
   }
@@ -59,7 +54,7 @@ export default function OrderHistory() {
         <h2 className="text-[45px] font-bold text-primary">Order History</h2>
       </Fade>
       <div className="h-[55vh] overflow-y-scroll p-5">
-        <div className="grid grid-cols-4 gap-5">
+        <div className="grid grid-cols-3 gap-5">
           {orders.map((order) =>
             order.carts.map((course, idx) => (
               <VerticalCard key={idx} course={course} />

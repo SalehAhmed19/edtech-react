@@ -79,8 +79,8 @@ export default function Carts() {
         <div className="h-[55vh] overflow-y-scroll p-5">
           <div className="grid grid-cols-3 gap-5">
             {carts.map((cart, idx) => (
-              <div className="flex items-center gap-3">
-                <VerticalCard key={idx} course={cart} />
+              <div key={idx} className="flex items-center gap-3">
+                <VerticalCard course={cart} />
                 <button
                   className="bg-primary text-white p-3 rounded-full hover:scale-105 duration-300"
                   onClick={() => handleDelete(cart.courseId)}

@@ -18,20 +18,7 @@ export default function TeachersHome() {
               <span className="text-primary">Dashboard</span>
             </h2>
           </Fade>
-          {/* {enrolledCourses?.length > 0 && (
-            <div>
-              <h4 className="font-bold text-xl mb-5">
-                <span className="text-primary">Enrolled</span> Courses
-              </h4>
-              <div className="overflow-y-scroll h-[30vh]">
-                <div className="grid grid-cols-3 gap-5">
-                  {enrolledCourses.map((cart, idx) => (
-                    <DashboardHomeCourseCard key={idx} cart={cart} />
-                  ))}
-                </div>
-              </div>
-            </div>
-          )} */}
+
           <ul>
             <li>Marks</li>
             <li>Assignment Submitted</li>
