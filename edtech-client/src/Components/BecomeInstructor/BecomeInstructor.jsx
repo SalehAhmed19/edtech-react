@@ -9,7 +9,7 @@ export default function BecomeInstructor() {
       <Fade direction="up" cascade={true} duration={800}>
         <img src={teacher} alt="" className="w-76 mx-auto" />
         <div className="px-10">
-          <h2 className="text-[45px] font-bold text-center">
+          <h2 className="text-[35px] md:text-[45px] font-bold text-center">
             Become an
             <span className="text-primary"> Instructor</span>
           </h2>

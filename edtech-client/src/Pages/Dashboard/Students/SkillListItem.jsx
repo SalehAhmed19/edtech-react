@@ -20,7 +20,7 @@ export default function SkillListItem({ skill, idx }) {
           </div>
         </div>
 
-        <div className="flex justify-between gap-3 mt-5">
+        <div className="flex flex-col md:flex-row justify-between gap-3 mt-5">
           <p>
             <span className="block text-[#787878]">Skill Name:</span>{" "}
             <span className="font-semibold text-xl">{skill.name}</span>

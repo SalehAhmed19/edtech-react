@@ -9,8 +9,8 @@ export default function BecomeInstructorPage() {
   return (
     <div>
       <div className="md:max-w-[920px] lg:max-w-[1280px] mx-auto flex flex-col gap-22">
-        <div className="grid grid-cols-2 gap-5 items-center">
-          <div className="pr-20">
+        <div className="grid md:grid-cols-2 gap-5 items-center p-5">
+          <div className="md:pr-20 text-center md:text-left order-2 md:order-1">
             <Fade direction="up" cascade={true} duration={800}>
               <SectionTitleTwo title={"Become an Instructor?"} />
               <p>
@@ -25,7 +25,7 @@ export default function BecomeInstructorPage() {
               </Link>
             </Fade>
           </div>
-          <div>
+          <div className="order-1 md:order-2">
             <Fade direction="right" cascade={true} duration={800}>
               <img src={man} alt="man" />
             </Fade>

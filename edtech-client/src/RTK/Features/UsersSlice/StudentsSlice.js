@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
   isLoading: false,
   students: [],
-  student: null,
+  student: {},
   isError: false,
   searchItem: "",
 };
@@ -51,7 +51,7 @@ export const getStudent = createAsyncThunk(
     try {
       const response = await axiosPublic.get(
         // `https://edtech-react.vercel.app/api/students/${email}`
-        `/students?email=${email}`
+        `/students/single-student?email=${email}`
       );
 
       return response.data;
@@ -102,7 +102,7 @@ const StudentSlice = createSlice({
     // get students
     builder.addCase(getStudent.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.student = action.payload[0];
+      state.student = action.payload;
     });
     builder.addCase(getStudent.rejected, (state, action) => {
       state.isError = true;

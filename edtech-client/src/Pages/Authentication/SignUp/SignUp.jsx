@@ -21,7 +21,7 @@ export default function SignUp() {
       </div>
       <div className="flex flex-col py-20">
         <Fade direction="up" cascade={true} duration={800}>
-          <h2 className="text-[45px] font-bold">
+          <h2 className="text-[35px] md:text-[45px] font-bold">
             <span className="text-primary">Sign up</span> Now
           </h2>
           <p className="text-secondary">

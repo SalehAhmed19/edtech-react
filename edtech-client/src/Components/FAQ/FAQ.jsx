@@ -53,7 +53,7 @@ export default function FAQ() {
         <div>
           <Fade direction="up" cascade={true} duration={800}>
             <img src={faq} alt="" className="mx-auto" />
-            <h2 className="text-[45px] font-bold text-center">
+            <h2 className="text-[35px] md:text-[45px] font-bold text-center">
               <span className="text-primary">FAQ</span>s
             </h2>
             <p className="text-center text-secondary">

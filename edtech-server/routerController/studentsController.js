@@ -33,10 +33,11 @@ module.exports = (studentsCollection, usersCollection) => {
   });
 
   // get single users from db: students
-  router.get("/", async (req, res) => {
+  router.get("/single-student", async (req, res) => {
     const email = req.query.email;
     const query = { email: email };
     const student = await studentsCollection.findOne(query);
+    console.log(student);
 
     res.send(student);
   });

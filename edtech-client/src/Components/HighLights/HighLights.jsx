@@ -39,7 +39,7 @@ export default function HighLights() {
       className="p-16"
     >
       <Fade direction="up" cascade={true} duration={800}>
-        <h2 className="text-[45px] font-bold text-center">
+        <h2 className="text-[30px] md:text-[45px] font-bold text-center">
           Why
           <span className="text-primary"> Smart Education Center</span> is best
           for you?
@@ -49,7 +49,7 @@ export default function HighLights() {
         </p>
       </Fade>
 
-      <div className="grid grid-cols-3 gap-6 mt-10">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-10">
         {data.map((d, idx) => (
           <Zoom key={idx} cascade={true} duration={800}>
             <div

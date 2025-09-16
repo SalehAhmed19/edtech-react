@@ -13,7 +13,7 @@ export default function FreeCourses() {
     <div className="relative my-20">
       <div>
         <Fade direction="up" cascade={true} duration={800}>
-          <h2 className="text-[45px] font-bold text-center">
+          <h2 className="text-[35px] md:text-[45px] font-bold text-center">
             <span className="text-primary">Free</span> Courses
           </h2>
           <p className="text-center text-secondary">
@@ -22,7 +22,7 @@ export default function FreeCourses() {
         </Fade>
       </div>
       <div className="flex items-center justify-center md:max-w-[920px] lg:max-w-[1280px] mx-auto">
-        <div className="my-10 z-10 grid grid-cols-3 gap-5">
+        <div className="my-10 p-5 md:p-0 z-10 grid md:grid-cols-3 gap-5">
           {freeCourses.slice(0, 6).map((course, idx) => (
             <Zoom key={idx} cascade={true} duration={800}>
               <CourseCard
@@ -36,7 +36,11 @@ export default function FreeCourses() {
             </Zoom>
           ))}
         </div>
-        <img src={curve} alt="" className="absolute right-0 my-auto w-3/4" />
+        <img
+          src={curve}
+          alt=""
+          className="absolute right-0 my-auto w-3/4 hidden md:block"
+        />
       </div>
     </div>
   );

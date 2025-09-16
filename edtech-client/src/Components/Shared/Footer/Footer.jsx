@@ -11,7 +11,7 @@ export default function Footer() {
   const date = new Date().getFullYear();
   return (
     <>
-      <div className="bg-[#1e1e1e] text-white grid grid-cols-4 gap-5 px-10 py-20">
+      <div className="bg-[#1e1e1e] text-white grid md:grid-cols-4 gap-5 px-10 py-20">
         <div className="flex flex-col justify-between">
           <div>
             <img src={logo} alt="logo" className="w-36" />

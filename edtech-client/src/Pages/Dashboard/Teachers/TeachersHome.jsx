@@ -14,7 +14,7 @@ export default function TeachersHome() {
       <div className="grid grid-cols-2 place-content-center gap-5">
         <div className="flex flex-col gap-10">
           <Fade direction="up" cascade={true} duration={800}>
-            <h2 className="text-[45px] font-bold">
+            <h2 className="text-[35px] md:text-[45px] font-bold">
               <span className="text-primary">Dashboard</span>
             </h2>
           </Fade>
