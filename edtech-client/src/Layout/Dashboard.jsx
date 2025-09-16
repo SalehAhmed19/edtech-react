@@ -5,8 +5,6 @@ import TeachersNavigation from "../Pages/Dashboard/Navigations/TeachersNavigatio
 import { Toaster } from "react-hot-toast";
 
 import useGetAllUsers from "../Hooks/Users/useGetAllUsers";
-import StudentsDetails from "../Pages/Dashboard/Students/StudentsProfile/StudentsDetails";
-import TeacherDetails from "../Pages/Dashboard/Teachers/TeacherProfile/TeacherDetails";
 import { useState } from "react";
 import { TextIndentIcon, TextOutdentIcon } from "@phosphor-icons/react";
 
