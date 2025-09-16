@@ -52,7 +52,7 @@ export default function StripePayments() {
         </div>
         <div className="flex flex-col gap-10">
           <Fade direction="up" cascade={true} duration={800}>
-            <h2 className="text-[45px] font-bold">
+            <h2 className="text-[35px] md:text-[45px] font-bold">
               <span className="text-primary">Payment</span>
             </h2>
           </Fade>

@@ -7,7 +7,7 @@ export default function QuickTutorial() {
     <>
       <div className="bg-[#1e1e1e] pt-10 text-center text-white">
         <Fade direction="down" cascade={true} duration={800}>
-          <h2 className="text-[40px] font-semibold">
+          <h2 className="text-[30px] md:text-[40px] font-semibold">
             Quick <span className="text-primary">Tutorial</span>
           </h2>
           <p>Get Up to Speed in Minutes.</p>
@@ -26,15 +26,14 @@ export default function QuickTutorial() {
 
       <Fade direction="up" cascade={true} duration={800}>
         <iframe
-          width="560"
-          height="315"
+          // height="315"
           src="https://www.youtube.com/embed/X8BYu3dMKf0?si=XYRsthIyysjXI_bw"
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
-          className="w-1/2 h-[500px] mx-auto mt-5 rounded-2xl shadow-lg"
+          className="md:w-1/2 w-[90%] h-[300px] md:h-[500px] mx-auto mt-5 rounded-2xl shadow-lg"
         ></iframe>
       </Fade>
     </>

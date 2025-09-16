@@ -38,7 +38,9 @@ export default function AddSkills() {
   return (
     <div className="grid grid-cols-2 place-content-center h-screen">
       <Fade direction="up" cascade={true} duration={800}>
-        <h2 className="text-[45px] font-bold text-primary">Add Skills</h2>
+        <h2 className="text-[35px] md:text-[45px] font-bold text-primary">
+          Add Skills
+        </h2>
       </Fade>
       <div className="p-5 bg-gray-50 rounded-xl">
         <form

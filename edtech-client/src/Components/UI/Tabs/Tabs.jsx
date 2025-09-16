@@ -157,7 +157,7 @@ export default function SmoothTabs() {
   return (
     <div className="flex items-center justify-center mt-10">
       <div className="w-full bg-white">
-        <div className="flex flex-wrap gap-2 whitespace-nowrap w-full mb-6 pb-2">
+        <div className="flex justify-center flex-wrap gap-2 whitespace-nowrap w-full mb-6 pb-2">
           {tabs.slice(0, show ? show : 12).map((tab) => (
             <Fade direction="down" cascade={true} duration={800}>
               <button
@@ -184,7 +184,7 @@ export default function SmoothTabs() {
 
         {/* Tab Content */}
         <div className="relative overflow-hidden">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 transition-opacity duration-300 pb-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 transition-opacity duration-300 pb-5 px-5 md:px-5">
             {activeTabContent.length > 0 ? (
               activeTabContent.map((course, idx) => (
                 <CourseCard

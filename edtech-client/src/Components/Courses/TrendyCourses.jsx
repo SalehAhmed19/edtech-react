@@ -21,7 +21,7 @@ export default function TrendyCourses() {
     <div>
       {/* <SectionTitle title={"Trending Courses"} /> */}
       <Fade direction="up" cascade={true} duration={800}>
-        <h2 className="text-[45px] font-bold text-center">
+        <h2 className="text-[30px] md:text-[45px] font-bold text-center">
           <span className="text-primary">Trendy</span> Courses
         </h2>
         <p className="text-center text-secondary">
@@ -29,7 +29,7 @@ export default function TrendyCourses() {
         </p>
       </Fade>
 
-      <div className="mt-10 grid grid-cols-4 gap-5">
+      <div className="mt-10 p-5 md:p-0 grid md:grid-cols-4 gap-5">
         {trendingCourses.slice(0, show ? show : 4).map((course, idx) => (
           <Zoom key={idx} cascade={true} duration={800}>
             <CourseCard

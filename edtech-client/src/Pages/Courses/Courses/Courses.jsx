@@ -15,7 +15,7 @@ export default function Courses() {
   return (
     <div className="md:max-w-[920px] lg:max-w-[1280px] mx-auto my-10">
       <Fade direction="up" cascade={true} duration={800}>
-        <h2 className="text-[45px] font-bold text-center">
+        <h2 className="text-[35px] md:text-[45px] font-bold text-center">
           Our <span className="text-primary"> Courses</span>
         </h2>
         <p className="text-center text-secondary">

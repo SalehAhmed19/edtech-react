@@ -16,7 +16,7 @@ export default function StudentsProfile() {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-10">
+      <div className="grid md:grid-cols-2 gap-10 p-5 md:p-0">
         {singleUser?.role === "student" && <StudentsDetails />}
         {singleUser?.role === "teacher" && "Hi"}
         {/* <DividerTwo text={"Update Information"} /> */}

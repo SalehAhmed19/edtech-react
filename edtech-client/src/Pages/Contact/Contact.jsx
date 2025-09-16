@@ -23,7 +23,7 @@ import {
 export default function Contact() {
   return (
     <>
-      <div className="grid grid-cols-2 gap-5 h-96">
+      <div className="grid md:grid-cols-2 gap-5 h-96">
         <Zoom cascade={true} duration={800}>
           <div>
             <img
@@ -32,9 +32,9 @@ export default function Contact() {
             />
           </div>
         </Zoom>
-        <div className="pr-20 text-right place-content-center">
+        <div className="md:pr-20 text-center md:text-right place-content-center">
           <Fade direction="up" cascade={true} duration={800}>
-            <h2 className="text-[45px] font-bold text-center">
+            <h2 className="text-[35px] md:text-[45px] font-bold text-center">
               <span className="text-primary">Contact</span> us
             </h2>
             <p className="text-center text-secondary">
@@ -46,7 +46,7 @@ export default function Contact() {
 
       <div className="md:max-w-[920px] lg:max-w-[1280px] mx-auto flex flex-col gap-20">
         <Fade direction="down" cascade={true} duration={800}>
-          <div className="grid grid-cols-2">
+          <div className="grid md:grid-cols-2">
             <div className="bg-gray-50 p-10 rounded-l-xl">
               <h3 className="text-2xl font-bold mb-5 text-primary">
                 For any queries

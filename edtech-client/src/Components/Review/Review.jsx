@@ -15,8 +15,16 @@ export default function Review() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider({
+    breakpoints: {
+      "(min-width: 400px)": {
+        slides: { perView: 1, spacing: 5 },
+      },
+      "(min-width: 1000px)": {
+        slides: { perView: 3, spacing: 10 },
+      },
+    },
     slides: {
-      perView: 2,
+      perView: 3,
       spacing: 15,
     },
     initial: 0,
@@ -40,7 +48,7 @@ export default function Review() {
     <div className="mb-10">
       <Fade direction="up" cascade={true} duration={800}>
         {" "}
-        <h2 className="text-[45px] font-bold text-center">
+        <h2 className="text-[35px] md:text-[45px] font-bold text-center">
           <span className="text-primary">Reviews</span> of Students
         </h2>
         <p className="text-center text-secondary">

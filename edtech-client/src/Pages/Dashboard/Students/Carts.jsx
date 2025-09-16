@@ -43,9 +43,11 @@ export default function Carts() {
   }
   if (!carts || carts.length === 0) {
     return (
-      <div className="flex flex-col justify-center gap-10">
+      <div className="flex flex-col justify-center gap-10 p-5 md:p-0">
         <Fade direction="up" cascade={true} duration={800}>
-          <h2 className="text-[45px] font-bold text-primary">Carts</h2>
+          <h2 className="text-[35px] md:text-[45px] font-bold text-primary">
+            Carts
+          </h2>
         </Fade>
 
         <DashboardPlaceholder
@@ -69,7 +71,9 @@ export default function Carts() {
       <div className="flex flex-col gap-10">
         <div className="flex items-center justify-between">
           <Fade direction="up" cascade={true} duration={800}>
-            <h2 className="text-[45px] font-bold text-primary">Carts</h2>
+            <h2 className="text-[35px] md:text-[45px] font-bold text-primary">
+              Carts
+            </h2>
           </Fade>
           <h5 className="text-xl text-secondary">
             You have to pay:

@@ -10,10 +10,10 @@ export default function ContactSection() {
       <Fade direction="up" cascade={true} duration={800}>
         <img src={contact} alt="" className="mx-auto" />
       </Fade>
-      <div className="grid grid-cols-2 gap-5">
+      <div className="p-5 md:p-0 grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
           <Fade direction="left" cascade={true} duration={800}>
-            <h2 className="text-[45px] font-bold">
+            <h2 className="text-[35px] md:text-[45px] font-bold">
               <span className="text-primary">Contact</span> with us
             </h2>
             <p className="text-secondary">
